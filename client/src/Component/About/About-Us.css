@@ -1,0 +1,167 @@
+.active{
+    background-color: white;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+nav .title{
+    font-size: 1.5rem;
+    margin: 1rem;
+    font-weight: bold;
+    color: black;
+    padding-left: 50px;
+    display: -webkit-inline-box;
+
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul li{
+    list-style-type:none ;
+    align-self: center;
+
+}
+
+nav ul li a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+nav ul li a:hover{
+    color: black;
+}
+
+nav .menu{
+    display: none;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2rem;
+    height: 1.9rem;
+}
+
+nav .menu span{
+    height: 0.4rem;
+    width: 100%;
+    background-color: black;
+    border-radius: 0.2rem;
+}
+
+a.active {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+a.active {
+    background-color: #276ab3;
+    color: white;
+    padding: 10px 28px;
+    border-radius: 10px;
+    margin-left: 50px;
+    border: 2px solid white;
+}
+
+
+a.active:hover{
+    background-color: rgb(90, 118, 255);
+    color: white;
+    transition: all 0.4s ease-in;
+}
+
+
+@media (max-width:890px){
+    a.active{
+        margin-left: 10px;
+        padding: 10px 19px;
+    }
+
+    nav .title{
+        padding-left: 5px;
+    }    
+}
+
+@media (max-width:890px){
+    nav ul li a{
+        padding: 0.3rem;
+        margin: 0 0.3rem;
+        font-size: 14px;
+    }
+
+
+}
+
+@media (max-width:701px){
+    nav ul{
+      display: none;
+    }
+
+}
+
+@media (max-width:700px) {
+    nav .menu{
+        display: flex;
+        font-size: 1rem;
+        transition: all 0.4s ease-in-out;
+    }
+
+    nav{
+        flex-direction: column;
+        align-items: start;
+    }
+
+    nav ul{
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 0.25rem;
+    }
+
+    nav ul li{
+        align-self: START;
+        padding-left: 10px;
+    }
+
+    nav ul li a {
+        margin: 0.55rem 0.5rem;
+    }
+    nav ul.Open{
+        display: flex;
+        text-align-last: justify;
+    }
+
+    nav ul.Open li a{
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    nav ul:active{
+        transition: all 0.2s ease-in-out;
+    }
+
+}

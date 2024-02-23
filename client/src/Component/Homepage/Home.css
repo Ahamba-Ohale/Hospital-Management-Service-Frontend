@@ -1,0 +1,287 @@
+#home{
+    height: 60svh;
+    background-image: url(wel.jpg);
+    display: grid;
+    align-content: center;
+    background-position: center;
+    background-size: cover;
+}
+
+.home-body{
+    /* width: 50%; */
+    height: 60vh;
+    display: grid;
+    align-content: center;
+    padding: 0 100px;
+    opacity: 1;
+    background-image: linear-gradient(to right, #00276ab3, #ffffff00);
+}
+
+#home h1 p{
+    color: white;
+    padding-bottom: 10px;
+}
+
+#home a{
+    margin-top: 5px;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    background-color: white;
+    font-weight: 700;
+    color: #58a9c3;
+    border-radius: 5px;
+}
+
+
+#home a:hover{
+    background-color: rgb(93, 169, 228);
+    color: white;
+    transition: all 0.4s ease;
+}
+
+#home .p{
+    padding: 1px;
+    width: 60%;
+    color: white;
+    font-size: 14px;
+}
+
+.container{
+    margin: 0 20svh;
+}
+
+.about{
+    display: flex;
+    margin: 5% 6%;
+}
+
+.about-us{
+    padding-left: 50px;
+    text-align: center;
+    display: grid;
+    justify-items: center;
+    align-items: baseline;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.about-uss{
+    padding-right: 50px;
+    text-align: center;
+    display: grid;
+    align-content: space-around;
+    justify-items: center;
+}
+
+.about-us p{
+    text-align: left;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.about-uss p{
+    text-align: left;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.about-us h2, .about-uss h2{
+    color: #276ab3;
+}
+
+
+.about-us .learn{
+    color: white;
+    background-color:#276ab3;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.about-uss .learn{
+    color: white;
+    background-color:#276ab3;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.about-us .learn:hover{
+    color: white;
+    background-color: rgb(0, 89, 255);
+    transition: all 0.4s ease;
+}
+
+.about-uss .learn:hover{
+    color: white;
+    background-color: rgb(0, 89, 255);
+    transition: all 0.4s ease;
+}
+
+
+/* .about .img img{
+    width: 40vw;
+} */
+.about .img, .about-uss img {
+    width: 130pc;
+    height: 35vh;
+    border-radius: 5px;
+    background-color: #ededed;
+}
+
+#blog{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-direction: row;
+    margin: 30px 8%;
+
+    
+}
+
+.blogs{
+    width: 80%;
+    padding-bottom: 20px;
+}
+
+#blog .pic{
+    width: 25vw;
+    height: 25vh;
+    background-color: #ededed;
+    border-radius: 5px;
+}
+
+#blog .content{
+    padding: 20px 3px;
+    font-size: 13px;
+}
+
+#blog .dat{
+    font-weight: 900;
+    font-size: 13px;
+}
+
+#Health-Blog h2{
+    text-align: center;
+    color: #276ab3;
+}
+
+
+.button{
+    display: grid;
+    justify-content: center;
+}
+
+.button .learn{
+    color: white;
+    background-color: #276ab3;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+
+.button .learn:hover{
+    background-color:#276ab3;
+    color: white;
+    transition: all 0.4s ease;
+}
+
+footer .main .sub-dom{
+    display: flex;
+    justify-content: flex-end;
+    gap: 3rem;
+}
+.main{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 2.5rem 4rem;
+}
+
+.main .sub-dom .company ul li a{
+    color: #dacbcb;
+}
+
+.main .sub-dom .company ul li{
+    color: #dacbcb;
+    FONT-SIZE: 13PX;
+    LETTER-SPACING: 1PX;
+    padding: 0.7rem 0;
+}
+
+.main .sub h4,.main .sub-dom .company ul label b{
+    color: white;
+}
+
+footer{
+    MARGIN-TOP: 30PX;
+    PADDING: 20PX;
+    background-color: #276ab3;
+}
+.line{
+    border-top: 2px solid white ;
+}
+
+@media (max-width:800px) {
+    .about{
+        margin: 10% 3%;
+    }
+
+    footer .main .sub-dom {
+        gap: 1rem;
+        letter-spacing: 0;
+        display: block;
+        margin-top: 20px;
+    }
+
+    .main{
+        padding: 1.2rem 2rem;
+        display: block;
+    }
+
+    #blog{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #blog .pic{
+        width: unset;
+    }
+
+    .about-us{
+        padding-left: 10px;
+    }
+
+    .about-uss{
+        padding-right: 10px;
+        text-align: center;
+        display: grid;
+        align-content: space-around;
+        justify-items: center;
+    }
+
+    .about-uss p {
+        font-size: 13px;
+    }
+
+    .about-us p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width:490px) {
+    #blog{
+        margin: 30px 3%;
+        justify-content: space-around;
+    }
+
+    #blog .pic{
+        /* width: 30vw; */
+    }
+}

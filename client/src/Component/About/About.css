@@ -1,0 +1,196 @@
+.about-page{
+    height: 50svh;
+    background-color: #276ab3;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    padding: 0px 15%;
+}
+
+.about-h2{
+    padding: 30px;
+    color: white;
+}
+
+.about-content{
+    text-align: center;
+    color: white;
+}
+
+.white{
+    background-color: white;
+    display: block;
+    height: 20px;
+}
+
+.Navigate{
+    background-color: #276ab3;
+    display: block;
+    height: 20px;
+}
+
+.History{
+    margin: 5% 10%;
+    text-align: center;
+}
+
+.his{
+    color: #276ab3;
+    padding: 30px 0;
+}
+
+.his-p{
+    color: black;
+}
+
+.staff{
+    display: grid;
+}
+
+.pic{
+    max-width: 300px;
+    height: 35vh;
+    background-color: #ededed;
+    border-radius: 5px;
+}
+
+.name{
+    padding: 20px 0;
+    font-size: 15px;
+}
+
+.Course{
+    font-weight: 900;
+    font-size: 10px;
+}
+
+.details{
+    display: grid;
+    gap: 20px;
+    padding: 50px 0px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+}
+
+.profile{
+    padding: 0 20vh;
+}
+
+.profile h2{
+    text-align: center;
+    color: #276ab3;
+}
+/* 
+.profile .load{
+    text-align: center;
+    display: grid;
+    color: black;
+    border: 1px solid #969696;
+    padding: 6px;
+    border-radius: 5px;
+} */
+
+.meet-us{
+    margin: 20px 10%;
+}
+
+.meet-h1{
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 40px;
+    color:  #276ab3;
+}
+
+.Meet-li{
+    padding: 10px 0;
+}
+
+.load-btn{
+    display: block;
+    text-align: center;
+}
+
+.load-btn .load{
+    color: black;
+    font-weight: 600;
+    padding: 6px 15%;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+
+.load-btn .load:hover{
+    background-color: #ededed;
+    transition: all o.4s ease;
+}
+
+.cont a{
+    color: white;
+    font-size: 12px;
+}
+
+.cont{
+    padding-left: 10px;
+}
+
+@media (max-width:1200px) {
+    .profile{
+        padding: 0 10%;
+    }    
+
+    .pic {
+        height: 25vh;
+    }
+}
+
+@media (max-width:800px) {
+    .staff {
+        display: grid;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+
+    .pic{
+        width: 300px;
+    }
+}
+
+
+@media (max-width:400px) {
+    .profile{
+        padding: 0 5vh;
+    }    
+}
+
+@media (max-width:500px) {
+    .details{
+        padding: 50px 20px;
+    }
+
+    .home-body{
+        padding: 0 40px;
+    }
+
+    #home h1 p {
+        font-size: 25px;
+    }
+    
+    #home .p {
+        font-size: 12px;
+        letter-spacing: 0.2px;
+    }
+
+    #home .p {
+        width: 80%;
+    }
+    
+    
+}
+
+@media (max-width:300px) {
+    .details{
+        display: block;
+    }
+
+    .pic{
+        width: 200px;
+    }
+}
