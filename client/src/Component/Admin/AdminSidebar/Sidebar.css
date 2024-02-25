@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.Admin-container{
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.Admin-sidebar{
+    width: 20vw;
+    height: 100vh;
+    background-color:#276AB3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Admin-logo{
+    margin-top: 10px;
+    color: aliceblue;
+    width: 10rem;
+    height: 5rem;
+   
+}
+
+.menu-item ul li {
+
+    list-style: none;
+    font-size: 15px;
+    margin: 30px;
+    text-decoration: none
+
+    
+}
+
+.menu-item ul li a {
+    color: aliceblue;
+}
+
+.logout{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+
+.logout .setting a{
+    list-style: none;
+    font-size: 15px;
+    text-decoration: none;
+    color: aliceblue;
+    
+    
+}
+.logout .logout-opt a{
+    list-style: none;
+    font-size: 15px;
+    text-decoration: none;
+    color: aliceblue;
+    
+}
+
+.icon{
+    color: white;
+    font-size: 20px;
+}

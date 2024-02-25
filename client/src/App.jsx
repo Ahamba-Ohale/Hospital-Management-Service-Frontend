@@ -5,6 +5,8 @@ import Homepage from './Component/Homepage/Homepage';
 import About from './Component/About/About';
 import Services from './Component/Services/Services';
 import Healthblog from './Component/Health blog/Healthblog';
+import Admin from './Component/Admin/Admin';
+
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
           <Route path='/About' element={<About />} />
           <Route path='/Healthblog' element={<Healthblog />} />
           <Route path='*' element={<Error />} />
+          <Route path='/Admin' element={<Admin />} />
 
           <Route />
         </Routes>
