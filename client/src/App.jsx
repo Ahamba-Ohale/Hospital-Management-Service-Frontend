@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import Error from './Component/Error/Error';
 import Homepage from './Component/Homepage/Homepage';
@@ -7,6 +6,8 @@ import Services from './Component/Services/Services';
 import Healthblog from './Component/Health blog/Healthblog';
 import Box from './Component/BOX/box';
 import Foot from './Component/Important/Footer/Foot';
+import Admin from './Component/Admin/Admin';
+
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path='/Foot' element={<Foot />} />
           <Route path='/box' element={<Box />} />
           <Route path='*' element={<Error />} />
+          <Route path='/Admin' element={<Admin />} />
 
           <Route />
         </Routes>
