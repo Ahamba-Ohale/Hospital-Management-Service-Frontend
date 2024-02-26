@@ -1,0 +1,14 @@
+.firstRow{
+    display: flex;
+   justify-content: flex-start;
+   
+   
+}
+
+.firstRow > .main{
+    flex: 1 0 12.5rem;
+    border: #276AB3 solid 2px;
+    margin: 5px;
+    
+    height: 5rem;
+} 
