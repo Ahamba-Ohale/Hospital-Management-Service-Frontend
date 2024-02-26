@@ -9,10 +9,11 @@ const Homepage = () => {
 
   return (
     <div>
+
         <nav>
             <Link to="/" className='title'>Website</Link>
             <div className='menu' 
-                onClick={() => {
+                onClick={ () => {
                 setMenuOpen(!menuOpen);
                 }}
             >
@@ -23,24 +24,27 @@ const Homepage = () => {
             </div>
             <ul className={menuOpen ? "Open" : ""}>
                 <li>
-                    <Link to="/Home" >Home</Link>
+                    <a href="/Home" className='activate'>Home</a>
                 </li>
                 <li>
-                    <Link to="/About" >About Us</Link>
+                    <a href="/About" >About Us</a>
                 </li>
                 <li>
-                    <Link to="/Services" >Services</Link>
+                    <a href="/Blog" >Blogs</a>
                 </li>
                 <li>
-                    <Link to="/Contact Us" >Contact Us</Link>
+                    <a href="/Services" >Services</a>
                 </li>
                 <li>
-                    <Link to="/Book Apartment" >Book Apartment</Link>
+                    <a href="/Contact Us" >Contact Us</a>
                 </li>
                 <li>
-                    <Link to='/' class="active" >
+                    <a href="/Book Apartment" >Book Apartment</a>
+                </li>
+                <li>
+                    <a to='/' class="active" >
                         SIGNUP
-                    </Link>
+                    </a>
                 </li>
             </ul>
         </nav>
@@ -212,6 +216,7 @@ const Homepage = () => {
             </div>   
        </footer>
     </div>
+
 
 
 

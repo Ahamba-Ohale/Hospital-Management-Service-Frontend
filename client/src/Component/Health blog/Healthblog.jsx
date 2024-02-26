@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import React from 'react'
-import './health.css'
+// import './health.css'
 import './Healthblog.css'
 import {Link} from 'react-router-dom'
 
@@ -27,6 +27,9 @@ const Healthblog = () => {
                 </li>
                 <li>
                     <Link to="/About" >About Us</Link>
+                </li>
+                <li>
+                    <a href="/Blog"  className='activate'>Blogs</a>
                 </li>
                 <li>
                     <Link to="/Services" >Services</Link>

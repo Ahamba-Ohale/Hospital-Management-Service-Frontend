@@ -8,7 +8,7 @@ const Services = () => {
   return (
     <div>
 
-        <nav>
+<nav>
             <Link to="/" className='title'>Website</Link>
             <div className='menu' 
                 onClick={() => {
@@ -28,7 +28,10 @@ const Services = () => {
                     <Link to="/About" >About Us</Link>
                 </li>
                 <li>
-                    <Link to="/Services" >Services</Link>
+                    <a href="/Blog" >Blogs</a>
+                </li>
+                <li>
+                    <Link to="/Services" className='activate'>Services</Link>
                 </li>
                 <li>
                     <Link to="/Contact Us" >Contact Us</Link>
@@ -49,13 +52,6 @@ const Services = () => {
                 <h2 className='about-h2'>OUR SERVICES</h2>
                 <div className="about-content">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit assumenda iste mollitia suscipit optio odit nisi aperiam porro quia accusantium, expedita unde? Delectus iure eum exercitationem. Deleniti fuga adipisci perferendis.
-                </div>
-            </div>
-            <div className="white">
-            </div>
-            <div className="Navigate">
-            <div className="cont">
-                    <a href="">Home  </a> * <a href="">Our Services</a>
                 </div>
             </div>
         </div>

@@ -14,7 +14,7 @@
     align-content: center;
     padding: 0 100px;
     opacity: 1;
-    background-image: linear-gradient(to right, #00276ab3, #ffffff00);
+    background-image: linear-gradient(to right, #276AB3, #ffffff00);
 }
 
 #home h1 p{
@@ -129,11 +129,12 @@
     width: 130pc;
     height: 35vh;
     border-radius: 5px;
-    background-color: #ededed;
+    background-color: #dddddd;
 }
 
 #blog{
     display: flex;
+    gap: 20px;
     justify-content: space-evenly;
     align-items: stretch;
     flex-direction: row;
@@ -148,10 +149,11 @@
 }
 
 #blog .pic{
-    width: 25vw;
+    width: 100%;
+    max-width: none;
     height: 25vh;
-    background-color: #ededed;
-    border-radius: 5px;
+    background-color: #dddddd;
+    border-radius: 5px
 }
 
 #blog .content{

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import React from 'react'
-import './About-Us.css'
+// import './About-Us.css'
 import './About.css'
 import {Link} from 'react-router-dom'
 
@@ -26,7 +26,10 @@ const About = () => {
                     <Link to="/Home" >Home</Link>
                 </li>
                 <li>
-                    <Link to="/About" >About Us</Link>
+                    <Link to="/About" className='activate'>About Us</Link>
+                </li>
+                <li>
+                    <a href="/Blog" >Blogs</a>
                 </li>
                 <li>
                     <Link to="/Services" >Services</Link>
@@ -50,13 +53,6 @@ const About = () => {
                 <h2 className='about-h2'>ABOUT US</h2>
                 <div className="about-content">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit assumenda iste mollitia suscipit optio odit nisi aperiam porro quia accusantium, expedita unde? Delectus iure eum exercitationem. Deleniti fuga adipisci perferendis.
-                </div>
-            </div>
-            <div className="white">
-            </div>
-            <div className="Navigate">
-                <div className="cont">
-                    <a href="">Home  </a> * <a href="">About Us</a>
                 </div>
             </div>
         </div>
