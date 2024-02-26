@@ -6,6 +6,7 @@ import About from './Component/About/About';
 import Services from './Component/Services/Services';
 import Healthblog from './Component/Health blog/Healthblog';
 import Box from './Component/BOX/box';
+import Foot from './Component/Important/Footer/Foot';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path='/About' element={<About />} />
           <Route path='/Blog' element={<Healthblog />} />
           <Route path='/Healthblog' element={<Healthblog />} />
+          <Route path='/Foot' element={<Foot />} />
           <Route path='/box' element={<Box />} />
           <Route path='*' element={<Error />} />
 

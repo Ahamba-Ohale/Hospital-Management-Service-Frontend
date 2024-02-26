@@ -1,4 +1,4 @@
-/* body{
+body{
     background-color: #f5f5f5
 }
 
@@ -55,6 +55,12 @@ nav ul li a:hover{
     animation: underline 1.8s ease-out;
     color: rgb(255, 214, 137);
     transition: all 0.4s ease;
+}
+
+nav ul li a:active{
+    color: orange;
+    border-bottom: 3px solid orange;
+    animation: unset;
 }
 
 .activate{
@@ -221,19 +227,19 @@ small{
         transform: translateY(10%);
     }
     */
-/* }
-/*  */
-/* @keyframes wait {
+}
+
+@keyframes wait {
     0%{
         transform: translateX(100%);
         opacity: 0;
     }
     10%{
-        transform: translateX(10%);
+        /* transform: translateX(10%); */
         transition: all 1s ease;
         opacity: 0;
     }
 
 
 
-} */ 
+}
