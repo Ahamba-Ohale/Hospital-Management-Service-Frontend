@@ -5,7 +5,7 @@ import About from './Component/About/About';
 import Services from './Component/Services/Services';
 import Healthblog from './Component/Health blog/Healthblog';
 import Admin from './Component/Admin/Admin';
-
+import Register from './Component/Register/Register';
 
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
           <Route path='/Admin' element={<Admin />} />
 
           <Route />
+          <Route path='/Register' element={<Register />} />
         </Routes>
       </Router>
       
