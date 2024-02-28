@@ -122,14 +122,7 @@
     transition: all o.4s ease;
 }
 
-.cont a{
-    color: white;
-    font-size: 12px;
-}
 
-.cont{
-    padding-left: 10px;
-}
 
 @media (max-width:1200px) {
     .profile{
