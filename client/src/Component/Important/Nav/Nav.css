@@ -163,6 +163,7 @@ small{
     nav{
         flex-direction: column;
         align-items: start;
+        height: 60px;
     }
 
     nav ul{
