@@ -157,7 +157,6 @@ small{
         display: flex;
         font-size: 1rem;
         transition: all 0.4s ease-in-out;
-        contain: size;
     }
 
     nav{
