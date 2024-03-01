@@ -7,8 +7,8 @@ import Healthblog from './Component/Health blog/Healthblog';
 import Box from './Component/BOX/box';
 import Foot from './Component/Important/Footer/Foot';
 import Admin from './Component/Admin/Admin';
+import BookAppointment from './Component/BookAppointment/BookAppointment';
 import Register from './Component/Register/Register';
-
 
 function App() {
 
@@ -24,8 +24,8 @@ function App() {
           <Route path='/About' element={<About />} />
           <Route path='/Blog' element={<Healthblog />} />
           <Route path='/Healthblog' element={<Healthblog />} />
+          <Route path='/BookAppointment' element={<BookAppointment />} />
           <Route path='/Foot' element={<Foot />} />
-          <Route path='/box' element={<Box />} />
           <Route path='*' element={<Error />} />
           <Route path='/Admin' element={<Admin />} />
 

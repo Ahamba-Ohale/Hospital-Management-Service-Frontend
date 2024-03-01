@@ -36,7 +36,7 @@ const Nav = () => {
                     <a href="/Contact Us" >Contact Us</a>
                 </li>
                 <li>
-                    <a href="/Book Apartment" >Book Apartment</a>
+                    <a href="/BookAppointment" >Book Appointment</a>
                 </li>
                 <li>
                     <a to='/' class="active" >

@@ -1,4 +1,7 @@
+import React from "react";
 import "./Sidebar.css";
+import LineChart from "../Charts/LIneChart";
+import BarChart from "../Charts/BarChart";
 
 const Main = () => {
   return (
@@ -15,16 +18,16 @@ const Main = () => {
       </div>
 
       <div className="sub-header">
-        <div className="card">1</div>
-        <div className="card">2</div>
-        <div className="card">3</div>
-        <div className="card">4</div>
+        <div className="card"><BarChart /></div>
+        <div className="card"><BarChart /></div>
+        <div className="card"><BarChart /></div>
+        <div className="card"><BarChart /></div>
       </div>
 
       <div className="body-main">
         <div className="main">
-          <div className="top-main">Top Main</div>
-          <div className="bottom-main">Bottom Main</div>
+          <div className="top-main"> <LineChart /> </div>
+          <div className="bottom-main">main buttom</div>
         </div>
 
         <div className="right-section">
