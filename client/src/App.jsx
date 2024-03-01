@@ -7,7 +7,7 @@ import Healthblog from './Component/Health blog/Healthblog';
 import Box from './Component/BOX/box';
 import Foot from './Component/Important/Footer/Foot';
 import Admin from './Component/Admin/Admin';
-
+import Register from './Component/Register/Register';
 
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
           <Route path='/Admin' element={<Admin />} />
 
           <Route />
+          <Route path='/Register' element={<Register />} />
         </Routes>
       </Router>
       
