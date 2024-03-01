@@ -5,6 +5,7 @@ import About from './Component/About/About';
 import Services from './Component/Services/Services';
 import Healthblog from './Component/Health blog/Healthblog';
 import Admin from './Component/Admin/Admin';
+import Health from './Component/Admin/Health';
 
 
 
@@ -23,8 +24,8 @@ function App() {
           <Route path='/Healthblog' element={<Healthblog />} />
           <Route path='*' element={<Error />} />
           <Route path='/Admin' element={<Admin />} />
-
-          <Route />
+          <Route path='/HealthRecord' element={<Health />} />
+          <Route path='/Dashboard' element={<Admin />} />
         </Routes>
       </Router>
       
