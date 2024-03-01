@@ -21,8 +21,67 @@ const Healthblog = () => {
 
         <div className="healthblog">
             <h2 className="health">Health Blog</h2>
-            <div className="health-blog content">
-                
+            <div className="details">
+                <div className="staff">
+                    <div className="pic"></div>
+                    <div className="name">Lorem lorem</div>
+                    <div className="Course">Lorem lorem</div>
+                </div>
+                <div className="staff">
+                    <div className="pic"></div>
+                    <div className="name">Lorem lorem</div>
+                    <div className="Course">Lorem lorem</div>
+                </div>
+                <div className="staff">
+                    <div className="pic"></div>
+                    <div className="name">Lorem lorem</div>
+                    <div className="Course">Lorem lorem</div>
+                </div>
+                <div className="staff">
+                    <div className="pic"></div>
+                    <div className="name">Lorem lorem</div>
+                    <div className="Course">Lorem lorem</div>
+                </div>
+                <div className="staff">
+                    <div className="pic"></div>
+                    <div className="name">Lorem lorem</div>
+                    <div className="Course">Lorem lorem</div>
+                </div>
+                <div className="staff">
+                    <div className="pic"></div>
+                    <div className="name">Lorem lorem</div>
+                    <div className="Course">Lorem lorem</div>
+                </div>
+                <div className="staff">
+                    <div className="pic"></div>
+                    <div className="name">Lorem lorem</div>
+                    <div className="Course">Lorem lorem</div>
+                </div>
+                <div className="staff">
+                    <div className="pic"></div>
+                    <div className="name">Lorem lorem</div>
+                    <div className="Course">Lorem lorem</div>
+                </div>
+                <div className="staff">
+                    <div className="pic"></div>
+                    <div className="name">Lorem lorem</div>
+                    <div className="Course">Lorem lorem</div>
+                </div>
+                <div className="staff">
+                    <div className="pic"></div>
+                    <div className="name">Lorem lorem</div>
+                    <div className="Course">Lorem lorem</div>
+                </div>
+                <div className="staff">
+                    <div className="pic"></div>
+                    <div className="name">Lorem lorem</div>
+                    <div className="Course">Lorem lorem</div>
+                </div>
+                <div className="staff">
+                    <div className="pic"></div>
+                    <div className="name">Lorem lorem</div>
+                    <div className="Course">Lorem lorem</div>
+                </div>
             </div>
         </div>
 
