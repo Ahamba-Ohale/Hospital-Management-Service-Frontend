@@ -6,6 +6,10 @@ import Services from './Component/Services/Services';
 import Healthblog from './Component/Health blog/Healthblog';
 import Admin from './Component/Admin/Admin';
 import Health from './Component/Admin/Health';
+import Blog from './Component/Admin/Blog'
+import PatientDB from './Component/Admin/PatientDB';
+import HospitalManagement from './Component/Admin/HospitalManagement';
+import Analytics from './Component/Admin/Analytics';
 
 
 
@@ -26,6 +30,10 @@ function App() {
           <Route path='/Admin' element={<Admin />} />
           <Route path='/HealthRecord' element={<Health />} />
           <Route path='/Dashboard' element={<Admin />} />
+          <Route path='/Blog Data System' element={<Blog />} />
+          <Route path='/Patients Database' element={<PatientDB />} />
+          <Route path='/Hospital management' element={<HospitalManagement />} />
+          <Route path='/Data Analytics' element={<Analytics />} />
         </Routes>
       </Router>
       
