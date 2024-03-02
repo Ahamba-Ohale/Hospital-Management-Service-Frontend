@@ -1,0 +1,39 @@
+.Navigate {
+    background-color: #276ab3;
+    display: block;
+    height: 20px;
+}
+
+nav ul.Open {
+    display: flex;
+    text-align-last: justify;
+}
+
+.healthblog .health{
+    text-align: center;
+    margin-top: 20px;
+    color: #276ab3;
+}
+
+.healthblog .details {
+    display: grid;
+    justify-content: center;
+    margin: auto 100px;
+}
+
+.cont a{
+    color: white;
+    font-size: 14px;
+}
+
+.cont{
+    padding-left: 10px;
+}
+
+@media (max-width:700px) {
+    nav ul.Open {
+        display: flex;
+        text-align-last: justify;
+        background-color: #ededed;
+    }    
+}
