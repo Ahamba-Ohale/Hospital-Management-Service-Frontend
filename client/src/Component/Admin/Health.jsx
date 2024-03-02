@@ -6,8 +6,8 @@ const Health = () => {
     <div className="body">
       <div className="dashboard">
         <Sidebar />
-        <div className="main-body">          
-        <div className="header">
+        <div className="main-body">
+          <div className="header">
             <span className="search">
               <input type="text" placeholder="Search Patient" />
             </span>
@@ -26,7 +26,7 @@ const Health = () => {
 
           <div className="filter">
             <div className="card1">
-              <select id="sortBy" name="sortBy" >
+              <select id="sortBy" name="sortBy">
                 <option value="sortBy">Sort By</option>
                 <option value="newestPatients">Newest Patients</option>
                 <option value="oldestPatients">Oldest Patients</option>
@@ -41,7 +41,9 @@ const Health = () => {
             <div className="card1">
               <input type="date" id="date" name="startdate" />
             </div>
-            <button type="submit" id="btn">Filter</button>
+            <button type="submit" id="btn">
+              Filter
+            </button>
           </div>
 
           <div className="health__main">
@@ -70,7 +72,8 @@ const Health = () => {
                       <option value="...">...</option>
                       <option value="view">View</option>
                       <option value="delete">Delete</option>
-                    </select></td>
+                    </select>
+                  </td>
                 </tr>
                 <tr>
                   <td>2</td>
@@ -84,7 +87,8 @@ const Health = () => {
                       <option value="...">...</option>
                       <option value="view">View</option>
                       <option value="delete">Delete</option>
-                    </select></td>
+                    </select>
+                  </td>
                 </tr>
                 <tr>
                   <td>3</td>
@@ -98,7 +102,8 @@ const Health = () => {
                       <option value="...">...</option>
                       <option value="view">View</option>
                       <option value="delete">Delete</option>
-                    </select></td>
+                    </select>
+                  </td>
                 </tr>
                 <tr>
                   <td>4</td>
@@ -112,7 +117,8 @@ const Health = () => {
                       <option value="...">...</option>
                       <option value="view">View</option>
                       <option value="delete">Delete</option>
-                    </select></td>
+                    </select>
+                  </td>
                 </tr>
                 <tr>
                   <td>5</td>
@@ -126,7 +132,8 @@ const Health = () => {
                       <option value="...">...</option>
                       <option value="view">View</option>
                       <option value="delete">Delete</option>
-                    </select></td>
+                    </select>
+                  </td>
                 </tr>
                 <tr>
                   <td>6</td>
@@ -140,7 +147,8 @@ const Health = () => {
                       <option value="...">...</option>
                       <option value="view">View</option>
                       <option value="delete">Delete</option>
-                    </select></td>
+                    </select>
+                  </td>
                 </tr>
                 <tr>
                   <td>7</td>
@@ -154,7 +162,8 @@ const Health = () => {
                       <option value="...">...</option>
                       <option value="view">View</option>
                       <option value="delete">Delete</option>
-                    </select></td>
+                    </select>
+                  </td>
                 </tr>
                 <tr>
                   <td>8</td>
@@ -168,7 +177,8 @@ const Health = () => {
                       <option value="...">...</option>
                       <option value="view">View</option>
                       <option value="delete">Delete</option>
-                    </select></td>
+                    </select>
+                  </td>
                 </tr>
                 <tr>
                   <td>9</td>
@@ -180,9 +190,14 @@ const Health = () => {
                   <td className="action-column">
                     <select id="action" name="action">
                       <option value="...">...</option>
-                      <option value="view" id="option">View</option>
-                      <option value="delete" id="option">Delete</option>
-                    </select></td>
+                      <option value="view" id="option">
+                        View
+                      </option>
+                      <option value="delete" id="option">
+                        Delete
+                      </option>
+                    </select>
+                  </td>
                 </tr>
                 <tr>
                   <td>10</td>
@@ -194,9 +209,14 @@ const Health = () => {
                   <td className="action-column">
                     <select id="action" name="action">
                       <option value="...">...</option>
-                      <option value="view" id="option">View</option>
-                      <option value="delete" id="option">Delete</option>
-                    </select></td>
+                      <option value="view" id="option">
+                        View
+                      </option>
+                      <option value="delete" id="option">
+                        Delete
+                      </option>
+                    </select>
+                  </td>
                 </tr>
                 <tr>
                   <td>11</td>
@@ -208,9 +228,14 @@ const Health = () => {
                   <td className="action-column">
                     <select id="action" name="action">
                       <option value="...">...</option>
-                      <option value="view" id="option">View</option>
-                      <option value="delete" id="option">Delete</option>
-                    </select></td>
+                      <option value="view" id="option">
+                        View
+                      </option>
+                      <option value="delete" id="option">
+                        Delete
+                      </option>
+                    </select>
+                  </td>
                 </tr>
               </tbody>
             </table>

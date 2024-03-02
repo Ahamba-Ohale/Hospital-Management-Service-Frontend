@@ -291,6 +291,7 @@ h4 {
 
 .patient-list thead {
   padding: 15px;
+  width: 100%;
 }
 
 .patient-list {
