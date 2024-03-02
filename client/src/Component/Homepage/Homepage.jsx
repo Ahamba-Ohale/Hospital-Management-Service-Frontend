@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 // import React from 'react'
-import './Homepage.css'
+
 import './Home.css'
 import {Link} from 'react-router-dom'
 import Nav from '../Important/Nav/nav'
