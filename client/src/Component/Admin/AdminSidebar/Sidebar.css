@@ -43,7 +43,9 @@ body {
   padding: 10px;
   margin-top: 10px;
   cursor: pointer;
-  display: none;
+  width: 50px;
+
+  /* display: none; */
 }
 
 .Admin-logo {
@@ -54,6 +56,9 @@ body {
 .Admin-menu {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-item ul {
@@ -410,7 +415,7 @@ h4 {
   }
 
   .side-menu-bar {
-    width: 25%;
+    width: 20%;
     height: auto;
     z-index: 1;
   }
@@ -428,7 +433,9 @@ h4 {
   }
 
   .toggle-menu-btn {
-    display: inline;
+    display: flex;
+    margin: 0;
+    padding: 20px;
   }
 
   .logout,
@@ -494,7 +501,7 @@ h4 {
 
   .top-main,
   .bottom-main {
-    width: 49rem;
+    width: 50rem;
   }
 
   .search input {
@@ -503,6 +510,11 @@ h4 {
 
   .sub-header {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    height: 14rem;
+    width: 24rem;
   }
 
   .cards {
@@ -555,7 +567,7 @@ h4 {
   }
 
   .side-menu-bar.visible {
-    width: 10vw;
+    width: 13vw;
   }
 
   .dashboard.visible {
@@ -583,8 +595,8 @@ h4 {
   }
 
   .main-body {
-    margin-left: 10vw;
-    width: 84%;
+    margin-left: 12vw;
+    width: 88%;
   }
  
   .header {
@@ -611,12 +623,14 @@ h4 {
   .right-section {
     width: 100%;
     margin-top: 20px;
+    display: block;
   }
 
   .top-right,
   .bottom-right {
     height: 25rem;
     transition: 3s left;
+    margin-bottom: 20px;
   }
 
   .create {
@@ -632,7 +646,7 @@ h4 {
   }
 
   .card {
-    height: 5.5rem;
+    height: 14rem;
   }
 
   .cards {
@@ -650,7 +664,7 @@ h4 {
 
   .top-main,
   .bottom-main {
-    width: 21rem;
+    width: 24rem;
   }
 
   #btn {

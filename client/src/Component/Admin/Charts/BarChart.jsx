@@ -12,7 +12,7 @@ import { Bar } from "react-chartjs-2";
  */
 const BarChart = () => {
   // Define an array of labels.
-  const labels = ["January", "February", "March", "April", "May", "June"];
+  const labels = ["Jan", "Feb", "Mar", "Apr", "May", "June"];
 
   // Defined an object 
   const data = {
@@ -45,7 +45,7 @@ const BarChart = () => {
   // Return the Bar component, passing in the data and options objects as props.
   return (
     <div className="card">
-      <Bar data={data} options={options} />
+      <Bar data={data} options={options} className="bar" />
     </div>
   );
 };

@@ -1,9 +1,11 @@
 import React from "react";
 import Sidebar from "./AdminSidebar/Sidebar";
+import BarChart from "./Charts/BarChart";
+import LineChart from "./Charts/LIneChart";
 
 function Admin() {
   return (
-    <div className="body">
+    // <div className="body">
       <div className="dashboard">
         <Sidebar />
         <div className="main-body">
@@ -19,15 +21,15 @@ function Admin() {
           </div>
 
           <div className="sub-header">
-            <div className="card">1</div>
-            <div className="card">2</div>
-            <div className="card">3</div>
-            <div className="card">4</div>
+            <BarChart className="chart"/>
+            <BarChart className="chart"/>
+            <BarChart className="chart"/>
+            <BarChart className="chart"/>
           </div>
 
           <div className="body-main">
             <div className="main">
-              <div className="top-main">Top Main</div>
+              <div className="top-main"><LineChart /></div>
               <div className="bottom-main">Bottom Main</div>
             </div>
 
@@ -38,7 +40,7 @@ function Admin() {
           </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 }
 

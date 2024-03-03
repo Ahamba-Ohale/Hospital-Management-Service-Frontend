@@ -3,7 +3,7 @@ import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 
 
-const labels = ["January", "February", "March", "April", "May", "June"];
+const labels = ["Jan", "Feb", "Mar", "Apr", "May", "June"];
 
 
 const data = {
@@ -24,9 +24,9 @@ const div ={
 
 const LineChart = () => {
   return (
-    <div style={{width: '44rem', height: '28rem'}}>
+    
       <Line data={data} options={div}/> 
-    </div>
+    
   );
 };
 

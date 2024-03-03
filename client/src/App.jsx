@@ -33,6 +33,11 @@ function App() {
           <Route path='/Foot' element={<Foot />} />
           <Route path='*' element={<Error />} />
           <Route path='/Admin' element={<Admin />} />
+          <Route path='/HealthRecord' element={<Health />} />
+          <Route path='/Blog Data System' element={<Blog />} />
+          <Route path='/Patients Database' element={<PatientDB />} />
+          <Route path='/Hospital management' element={<HospitalManagement />} />
+          <Route path='/Data Analytics' element={<Analytics />} />
 
           <Route />
           <Route path='/Register' element={<Register />} />
