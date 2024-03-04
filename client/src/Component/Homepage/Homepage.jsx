@@ -5,6 +5,7 @@ import './Home.css'
 import {Link} from 'react-router-dom'
 import Nav from '../Important/Nav/nav'
 import Foot from '../Important/Footer/Foot'
+import {useEffect, useRef } from 'react';
 
 
 
@@ -14,7 +15,7 @@ const Homepage = () => {
   return (
     <div>
 
-        <Nav/>
+        <Nav />
 
 
         <div id="contain">
@@ -70,7 +71,7 @@ const Homepage = () => {
                     <div className="pic">
 
                     </div>
-                    <p className="content">
+                    <p className="contents">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Ipsa quis dolores vero facere, porro provident est sequi 
                     </p>
@@ -82,7 +83,7 @@ const Homepage = () => {
                     <div className="pic">
 
                     </div>
-                    <p className="content">
+                    <p className="contents">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Ipsa quis dolores vero facere, porro provident est sequi 
                     </p>
@@ -94,7 +95,7 @@ const Homepage = () => {
                     <div className="pic">
 
                     </div>
-                    <p className="content">
+                    <p className="contents">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Ipsa quis dolores vero facere, porro provident est sequi 
                     </p>

@@ -1,17 +1,21 @@
-body{
-    background-color: #f5f5f5
-}
-
-.active{
-    background-color: white;
-}
-
 *{
     margin: 0;
     padding: 0;
     list-style-type: none;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #f5f5f5
+}
+
+.blog{
+    color: black;
+}
+
+.active{
+    background-color: white;
 }
 
 nav{
@@ -25,7 +29,7 @@ nav{
 
 nav .title{
     font-size: 1.5rem;
-    margin: 1rem;
+    /* margin: 1rem; */
     font-weight: bold;
     color: black;
     padding-left: 50px;
@@ -57,27 +61,15 @@ nav ul li a:hover{
     transition: all 0.4s ease;
 }
 
-nav ul li a:active{
-    color: orange;
-    border-bottom: 3px solid orange;
-    animation: unset;
-}
-
-.activate{
-    color: orange;
-    border-bottom: 3px solid orange;
-    animation: unset;
-}
 
 .activate:hover{
-    
     animation: unset;
 }
 
 nav .menu{
     display: none;
     position: absolute;
-    top: 0.75rem;
+    top: 0.50rem;
     right: 0.5rem;
     flex-direction: column;
     justify-content: space-between;
@@ -122,6 +114,9 @@ small{
     color: white;
 }
 
+.Logo{
+    width: 40px;
+}
 
 @media (max-width:890px){
     a.active{
@@ -162,7 +157,8 @@ small{
     nav{
         flex-direction: column;
         align-items: start;
-        height: 60px;
+        height: 55px;
+        z-index: 200;
     }
 
     nav ul{
@@ -232,17 +228,17 @@ small{
 
 @keyframes wait {
     0%{
-        transform: translateX(100%);
+        transform: translateX(10%);
         opacity: 0;
     }
     10%{
-        /* transform: translateX(10%); */
+        transform: translateX(100%);
         transition: all 1s ease;
         opacity: 0;
     }
 }
 
-@media (max-width:1250px) {
+@media (max-width:1024px) {
     div{
         font-size: 16px;
     }

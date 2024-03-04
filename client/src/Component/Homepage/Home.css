@@ -1,3 +1,9 @@
+/* .activate{
+    color: orange;
+    border-bottom: 3px solid orange;
+    animation: unset;
+} */
+
 #home{
     height: 60svh;
     background-image: url(wel.jpg);
@@ -156,7 +162,7 @@
     border-radius: 5px
 }
 
-#blog .content{
+#blog .contents{
     padding: 20px 3px;
     font-size: 13px;
 }
@@ -285,5 +291,16 @@ footer{
 
     #blog .pic{
         /* width: 30vw; */
+    }
+}
+
+@media (max-width:599px) {
+    .about .img{
+        display: none;
+    }
+
+    .about-us p, .about-uss p {
+        font-size: 14px;
+        margin: 25px;
     }
 }
