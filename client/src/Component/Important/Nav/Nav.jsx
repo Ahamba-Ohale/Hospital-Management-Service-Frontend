@@ -39,7 +39,7 @@ const Nav = () => {
                     <a href="/BookAppointment" >Book Appointment</a>
                 </li>
                 <li>
-                    <a to='/' class="active" >
+                    <a to='/' className="active" >
                         SIGNUP
                     </a>
                 </li>

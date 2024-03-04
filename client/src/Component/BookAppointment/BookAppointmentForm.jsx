@@ -50,7 +50,7 @@ function BookAppointmentForm() {
                         <input type="tel" id="phone" required value={number} onChange={(e) => setNumber(e.target.value)}/>
                         <label for="tel">Phone Number:</label>
                     </div>
-                    <button>Submit</button>
+                    <button className='formbtn'>Submit</button>
                 </form>
                 
             </div>
