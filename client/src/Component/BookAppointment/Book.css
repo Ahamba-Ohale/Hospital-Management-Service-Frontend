@@ -99,23 +99,19 @@ img{width: 30vw;
   margin-top: 30px;
 
 }
-button{
-  background-color: #276AB3;
-  height:  2.5rem;
-  width: 10rem;
-  text-align: center;
-  line-height: 40px;
-  color: #d3d3d3;
-  font-size: 25px;
-  font-family: Arial, Helvetica, sans-serif;
-  border-radius: 20px;
-  border-style: none; 
-  margin-left: 12rem;
-  align-self: center;
+.formbtn{
+  background-color: #276ab3;
+  color: white;
+  padding: 10px 28px;
+  border-radius: 10px;
+  margin-left: 14rem;
+  border: 2px solid white;
+  cursor: pointer;
 }
 button:hover{
-  box-shadow: 0 0 5px #276AB3,
-  0 0 25px #276AB3, 0 0 50px, 0 0 100px, 0 0 200px;
+  background-color: rgb(90, 118, 255);
+  color: white;
+  transition: all 0.4s ease-in;
 }
 
 @media (max-width: 390px) {
@@ -138,7 +134,7 @@ button:hover{
     height: 40vh;
     margin-bottom: -120px;
   }
-  button{
+  .formbtn{
     width: 10rem;
     margin-left: 7rem;
   }
@@ -167,7 +163,7 @@ button:hover{
     height: 40vh;
     /* margin-bottom: -120px; */
   }
-  button{
+  .formbtn{
     width: 10rem;
     margin-left: 7rem;
   }
