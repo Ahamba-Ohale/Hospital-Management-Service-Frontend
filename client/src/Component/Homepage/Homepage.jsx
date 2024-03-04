@@ -41,7 +41,9 @@ const Homepage = () => {
                     <Link to="/Contact Us" >Contact Us</Link>
                 </li>
                 <li>
+
                     <Link to="/Book Appointment" >Book Appointment</Link>
+
                 </li>
                 <li>
                     <Link to='/Register' class="active" >
