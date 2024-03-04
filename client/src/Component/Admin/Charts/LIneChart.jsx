@@ -3,7 +3,7 @@ import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 
 
-const labels = ["Jan", "Feb", "Mar", "Apr", "May", "June"];
+const labels = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 
 const data = {
@@ -19,6 +19,16 @@ const data = {
 };
 const div ={
     maintainAspectRatio: false,
+    responsive: true,
+    scales: {
+      x: {
+        display: false,
+      },
+      y: {
+        display: true,
+        beginAtZero: true,
+      },
+    },
 }
 
 

@@ -14,7 +14,7 @@ const Homepage = () => {
 
   return (
     <div>
-
+        <Nav />
         <nav>
             <Link to="/" className='title'>Website</Link>
             <div className='menu' 
