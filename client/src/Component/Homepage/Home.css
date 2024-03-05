@@ -199,58 +199,11 @@
     transition: all 0.4s ease;
 }
 
-footer .main .sub-dom{
-    display: flex;
-    justify-content: flex-end;
-    gap: 3rem;
-}
-.main{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    padding: 2.5rem 4rem;
-}
-
-.main .sub-dom .company ul li a{
-    color: #dacbcb;
-}
-
-.main .sub-dom .company ul li{
-    color: #dacbcb;
-    FONT-SIZE: 13PX;
-    LETTER-SPACING: 1PX;
-    padding: 0.7rem 0;
-}
-
-.main .sub h4,.main .sub-dom .company ul label b{
-    color: white;
-}
-
-footer{
-    MARGIN-TOP: 30PX;
-    PADDING: 20PX;
-    background-color: #276ab3;
-}
-.line{
-    border-top: 2px solid white ;
-}
-
 @media (max-width:800px) {
     .about{
         margin: 10% 3%;
     }
 
-    footer .main .sub-dom {
-        gap: 1rem;
-        letter-spacing: 0;
-        display: block;
-        margin-top: 20px;
-    }
-
-    .main{
-        padding: 1.2rem 2rem;
-        display: block;
-    }
 
     #blog{
         display: flex;
@@ -300,7 +253,9 @@ footer{
     }
 
     .about-us p, .about-uss p {
-        font-size: 14px;
+        font-size: 12px;
         margin: 25px;
+        text-align: center;
+        padding: 0;
     }
 }

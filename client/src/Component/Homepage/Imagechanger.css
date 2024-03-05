@@ -1,0 +1,37 @@
+#home{
+    /* margin: 0;
+    padding: 0;
+    background-size: cover;
+    width: 100%;
+    height: 100vh; */
+    background-position: center;
+    animation-name: animation;
+    animation-direction: alternate-reverse;
+    animation-duration: 30s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+
+    height: 60svh;
+    /* background-image: url(wel.jpg); */
+    display: grid;
+    align-content: center;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  @keyframes animation {
+    0%{
+      background-image: url(doctor.jpg);
+    }
+    25%{
+      background-image: url(doctor1.jpg);
+    }
+    50%{
+      background-image: url(doctor2.jpg);
+    }
+    100%{
+      background-image: url(wel.jpg);
+    }
+  }
