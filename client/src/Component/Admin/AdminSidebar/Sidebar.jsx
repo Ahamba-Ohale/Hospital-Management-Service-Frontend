@@ -20,7 +20,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="dashboard">
+    // <div className="dashboard">
       <div className={`side-menu-bar ${menuVisible ? "visible" : ""}`}>
         <div className="Admin-logo">LOgo</div>
         <div className="Admin-menu">
@@ -96,7 +96,7 @@ const Sidebar = () => {
 
         <div className={`main-body ${menuVisible ? "" : "visible"}`}></div>
       </div>
-    </div>
+    // </div>
   );
 };
 

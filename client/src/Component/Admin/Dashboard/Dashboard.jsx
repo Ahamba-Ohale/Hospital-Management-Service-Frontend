@@ -1,7 +1,8 @@
 import React from "react";
-import Sidebar from "./AdminSidebar/Sidebar";
-import BarChart from "./Charts/BarChart";
-import LineChart from "./Charts/LIneChart";
+import Sidebar from "../AdminSidebar/Sidebar";
+import BarChart from "../Charts/BarChart";
+import LineChart from "../Charts/LIneChart";
+import './Dashboard.css'
 
 function Admin() {
   return (
@@ -75,7 +76,7 @@ function Admin() {
               </div>
             </div>
             <div className="bottom-main">
-              <div className="health__main">
+              <div className="healths__main">
                 <table className="patient-list">
                   <thead>
                     <tr>
@@ -263,10 +264,61 @@ function Admin() {
               
             </div>
             <div className="bottom-right">
-              <h3>Today Appointment</h3>
-              <div className="right-content">
+              <h4>Today Appointment</h4>
+              <div className="right-contents">
                 <div className="content-right">
                   2 hrs later
+                </div>
+                <div className="right-line">
+                  <div className="left-img"></div>
+                </div>
+                <div className="content-left">
+                  <h3>Minahil Khan</h3>
+                  <p>10:00 AM - 12:00 PM</p>
+                </div>
+              </div>
+              <div className="right-contents">
+                <div className="content-right">
+                  2 hrs later
+                </div>
+                <div className="right-line">
+                  <div className="left-img"></div>
+                </div>
+                <div className="content-left">
+                  <h3>Minahil Khan</h3>
+                  <p>10:00 AM - 12:00 PM</p>
+                </div>
+              </div>
+              <div className="right-contents">
+                <div className="content-right">
+                  2 hrs later
+                </div>
+                <div className="right-line">
+                  <div className="left-img"></div>
+                </div>
+                <div className="content-left">
+                  <h3>Minahil Khan</h3>
+                  <p>10:00 AM - 12:00 PM</p>
+                </div>
+              </div>
+              <div className="right-contents">
+                <div className="content-right">
+                  2 hrs later
+                </div>
+                <div className="right-line">
+                  <div className="left-img"></div>
+                </div>
+                <div className="content-left">
+                  <h3>Minahil Khan</h3>
+                  <p>10:00 AM - 12:00 PM</p>
+                </div>
+              </div>
+              <div className="right-contents">
+                <div className="content-right">
+                  2 hrs later
+                </div>
+                <div className="right-line">
+                  <div className="left-img"></div>
                 </div>
                 <div className="content-left">
                   <h3>Minahil Khan</h3>

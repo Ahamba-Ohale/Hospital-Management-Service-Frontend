@@ -4,18 +4,17 @@ import { useState } from 'react'
 // import './Homepage.css'
 import './Home.css'
 import {Link} from 'react-router-dom'
-// import Nav from '../Important/Nav/nav'
+import Nav from '../Important/Nav/nav'
 import Foot from '../Important/Footer/Foot'
 
 
 
 const Homepage = () => {    
-    const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <div>
         <Nav />
-        <nav>
+        {/* <nav>
             <Link to="/" className='title'>Website</Link>
             <div className='menu' 
                 onClick={() => {
@@ -51,7 +50,7 @@ const Homepage = () => {
                     </Link>
                 </li>
             </ul>
-        </nav>
+        </nav> */}
 
         <div id="contain">
             <div id="home">

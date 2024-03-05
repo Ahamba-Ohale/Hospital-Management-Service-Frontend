@@ -1,15 +1,15 @@
-import { GoPlus } from "react-icons/go";
-import Sidebar from "./AdminSidebar/Sidebar";
+import React from "react";
+import Sidebar from "../AdminSidebar/Sidebar";
 
-const Health = () => {
+const Blog = () => {
   return (
-    <div className="body">
+    // <div className="body">
       <div className="dashboard">
         <Sidebar />
         <div className="main-body">
           <div className="header">
             <span className="search">
-              <input type="text" placeholder="Search Patient" />
+              <input type="text" placeholder="Search Blog" />
             </span>
             <div className="notify">
               <div className="bell"></div>
@@ -18,18 +18,12 @@ const Health = () => {
             </div>
           </div>
 
-          <div className="sub-header">
-            <div className="cards">1</div>
-            <div className="cards">2</div>
-            <div className="cards">3</div>
-          </div>
-
           <div className="filter">
             <div className="card1">
               <select id="sortBy" name="sortBy">
                 <option value="sortBy">Sort By</option>
-                <option value="newestPatients">Newest Patients</option>
-                <option value="oldestPatients">Oldest Patients</option>
+                <option value="newestPatients">Newest Blogs</option>
+                <option value="oldestPatients">Oldest Bs</option>
               </select>
             </div>
             <div className="card1">
@@ -46,16 +40,17 @@ const Health = () => {
             </button>
           </div>
 
+
           <div className="health__main">
             <table className="patient-list">
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Patient Name</th>
+                  <th>Blog Name</th>
                   <th>Created At</th>
-                  <th>Gender</th>
-                  <th>Blood Group</th>
-                  <th>Age</th>
+                  <th>Authur</th>
+                  <th>Title</th>
+                  {/* <th>Age</th> */}
                   <th>Action</th>
                 </tr>
               </thead>
@@ -241,13 +236,10 @@ const Health = () => {
             </table>
           </div>
 
-          <div className="create">
-            <GoPlus />
-          </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 
-export default Health;
+export default Blog;

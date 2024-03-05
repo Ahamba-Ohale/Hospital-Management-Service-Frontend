@@ -6,9 +6,9 @@ import Services from './Component/Services/Services';
 import Healthblog from './Component/Health blog/Healthblog';
 import Box from './Component/BOX/box';
 import Foot from './Component/Important/Footer/Foot';
-import Admin from './Component/Admin/Admin';
-import Health from './Component/Admin/Health';
-import Blog from './Component/Admin/Blog'
+import Admin from './Component/Admin/Dashboard/Dashboard';
+import Health from './Component/Admin/Health/Health';
+import Blog from './Component/Admin/Blog/Blog'
 import PatientDB from './Component/Admin/PatientDB';
 import HospitalManagement from './Component/Admin/HospitalManagement';
 import Analytics from './Component/Admin/Analytics';
@@ -38,8 +38,6 @@ function App() {
           <Route path='/Patients Database' element={<PatientDB />} />
           <Route path='/Hospital management' element={<HospitalManagement />} />
           <Route path='/Data Analytics' element={<Analytics />} />
-
-          <Route />
           <Route path='/Register' element={<Register />} />
         </Routes>
       </Router>

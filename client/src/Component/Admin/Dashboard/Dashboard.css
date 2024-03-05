@@ -1,0 +1,390 @@
+/* Default styling for 1440px screen width */
+.dashboard {
+    display: flex;
+    background-color: #f7f5f5;
+  }
+
+.main-body {
+    margin-left: 20vw;
+    width: 80vw;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  .main-body .visible {
+    margin-left: 5vw;
+  }
+  
+  .header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    z-index: 100;
+    background-color: #f7f5f5 ;
+  }
+  
+  h4 {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .sub-header {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 12rem;
+  }
+  
+  .chartt {
+    width: 100%;
+    margin-top: 20px;
+    height: 6rem;
+    background-color: #f2f7f7;
+  }
+  
+  .chart-top {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .chart-img {
+    width: 20%;
+    height: 3rem;
+    background-color: #b8b5b5;
+  }
+  
+  .main {
+    /* grid-area: main; */
+    display: block;
+    /* grid-template-rows: 2fr 1fr; */
+    gap: 20px;
+    width:74%;
+    margin-right: 20px;
+    padding: 0; /* Remove padding */
+  }
+  
+  .top-main,
+  .bottom-main {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* width: 100%; Make it full width */
+    /* height: 15rem; Allow height to adjust based on content */
+  }
+  
+  .chart {
+    width: 49rem;
+    height: 20rem;
+  }
+  
+  .right-section {
+    /* grid-area: right-section; */
+    display: block;
+    /* grid-template-rows: 1fr 1fr; */
+    gap: 20px;
+    width: 25%;
+    height: 30rem;
+  }
+  
+  .top-right,
+  .bottom-right {
+    padding: 0;
+    border-radius: 5px;
+    height: 100%;
+    /* background-color: #f2f7f7; */
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .top-right h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+  }
+  
+  .right-content {
+    display: flex;
+    background-color: #ffffff;
+    padding: 10px;
+    gap: 10px;
+    border-bottom: 1px solid #c7c7c7;
+  }
+  
+  .right-img {
+    width: 3rem;
+    height: 3rem;
+    background-color: #c7c7c7;
+  }
+  
+  .bottom-right h4 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+  }
+
+  .body-main {
+    display: flex;
+  }
+  
+  .content-right {
+    width: 20%;
+  }
+
+  .healths__main {
+    background-color: #ffffff;
+    /* padding: 15px; */
+    width: 100%;
+    /* max-width: 61rem; */
+    height: 45rem;
+    border-radius: 5px;
+    /* margin-top: 30px; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: scroll;
+  }
+
+  .patient-list thead {
+    padding: 15px;
+    width: 100%;
+  }
+  
+  .patient-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    max-height: 300px;
+    overflow: hidden;
+  }
+  
+  .patient-list th,
+  .patient-list td {
+    border-bottom: 1px solid #f6f6f6;
+    padding: 13px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #3a3a3a;
+  }
+  
+  .patient-list th {
+    background-color: #f2f2f2;
+  }
+  
+  .patient-list tbody {
+    overflow-y: auto;
+  }
+  
+  /* Style for the Action column */
+  .action-column {
+    text-align: center;
+  }
+  
+  .action-column select {
+    padding-bottom: 15px;
+    width: 50%;
+    height: 3rem;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #b8b5b5;
+  }
+  
+  .right-contents {
+    display: flex;
+    padding: 0 10px;
+    gap: 10px;
+    background-color: #ffffff;
+  }
+  
+  .right-line {
+    width: 5px;
+    height: 5rem;
+    background-color: #b8b5b5;
+    display: flex;
+    align-items: center;
+  }
+  
+  .left-img {
+    background-color: #3a3a3a;
+    width: 10px;
+    height: 10px;
+    /* position: absolute; */
+    right: 195px;
+  }
+  
+  
+  /* Media queries for tablet and smaller screens */
+  @media screen and (min-width: 1024px) and (max-width: 1300px) {
+    .side-menu-bar {
+      width: 20vw;
+      height: auto;
+    }
+  
+    * {
+      font-size: 13px;
+    }
+
+    .chart {
+      width: 42rem;
+    }
+  
+    .main-body {
+      width: 80vw;
+      padding: 15px;
+      /* min-height: inherit; */
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 830px) {
+    .dashboard {
+      flex-direction: column;
+    }
+  
+    .main-body {
+      margin-left: 8vw;
+      width: 92vw;
+      padding: 10px;
+    }
+    /* .side-menu-bar.visible {
+      width: 7vw;
+    } */
+  
+    .header {
+      z-index: 0;
+      width: 100%;
+    }
+  
+    .main {
+      width: 100%;
+      padding: 0;
+    }
+
+    .chart {
+      width: 40rem;
+    }
+  
+    .search input {
+      width: 100%;
+    }
+  
+    .sub-header {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .body-main {
+      display: block;
+    }
+  
+    .card {
+      height: 12rem;
+      width: 100%;
+    }
+  
+    .right-section {
+      width: 100%;
+      margin-top: 20px;
+      /* height: 34rem; */
+      display: flex;
+    }
+  
+    .top-right,
+    .bottom-right {
+      width: 100%;
+    }
+  }
+  
+  @media screen and (min-width: 320px) and (max-width: 600px) {
+    .dashboard.visible {
+      flex-direction: row;
+    }
+  
+    .main-body {
+      margin-left: 12vw;
+      width: 100%;
+    }
+   
+    .header {
+      z-index: 0;
+      width: 100%;
+    }
+
+    .chart {
+      width: 20rem;
+    }
+  
+    .search {
+      width: 13rem;
+    }
+  
+    .search input {
+      width: 80%;
+    }
+  
+    .sub-header {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    h4 {
+      font-size: 11px;
+    }
+  
+    .right-section {
+      width: 100%;
+      margin-top: 20px;
+      display: block;
+    }
+  
+    .top-right,
+    .bottom-right {
+      /* height: 25rem; */
+      transition: 3s left;
+      margin-bottom: 20px;
+    }
+  
+    .card {
+      height: 14rem;
+    }
+  
+    .body-main {
+      display: block;
+    }
+  
+    .main {
+      padding: 0;
+      width: 100%;
+    }
+  
+    .top-main,
+    .bottom-main {
+      /* width: 24rem; */
+    }
+  
+    #btn {
+      width: 75%;
+    }
+  }
