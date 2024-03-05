@@ -1,10 +1,9 @@
 import { useState } from 'react'
 
 // import React from 'react'
-
 import './Home.css'
 import {Link} from 'react-router-dom'
-// import Nav from '../Important/Nav/nav'
+import Nav from '../Important/Nav/nav'
 import Foot from '../Important/Footer/Foot'
 
 
@@ -14,7 +13,7 @@ const Homepage = () => {
 
   return (
     <div>
-
+        <Nav />
         <nav>
             <Link to="/" className='title'>Website</Link>
             <div className='menu' 
@@ -41,7 +40,9 @@ const Homepage = () => {
                     <Link to="/Contact Us" >Contact Us</Link>
                 </li>
                 <li>
-                    <Link to="/Book Apartment" >Book Apartment</Link>
+
+                    <Link to="/Book Appointment" >Book Appointment</Link>
+
                 </li>
                 <li>
                     <Link to='/Register' class="active" >

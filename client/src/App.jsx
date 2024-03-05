@@ -1,3 +1,4 @@
+
 import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import Error from './Component/Error/Error';
 import Homepage from './Component/Homepage/Homepage';
@@ -18,6 +19,7 @@ import Register from './Component/Register/Register';
 function App() {
 
 
+
   return (
     <div>
 
@@ -29,10 +31,15 @@ function App() {
           <Route path='/About' element={<About />} />
           <Route path='/Blog' element={<Healthblog />} />
           <Route path='/Healthblog' element={<Healthblog />} />
-          <Route path='/BookAppointment' element={<BookAppointment />} />
+          <Route path='/Book Appointment' element={<BookAppointment />} />
           <Route path='/Foot' element={<Foot />} />
           <Route path='*' element={<Error />} />
           <Route path='/Admin' element={<Admin />} />
+          <Route path='/HealthRecord' element={<Health />} />
+          <Route path='/Blog Data System' element={<Blog />} />
+          <Route path='/Patients Database' element={<PatientDB />} />
+          <Route path='/Hospital management' element={<HospitalManagement />} />
+          <Route path='/Data Analytics' element={<Analytics />} />
 
           <Route />
           <Route path='/Register' element={<Register />} />

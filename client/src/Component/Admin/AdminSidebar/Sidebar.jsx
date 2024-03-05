@@ -27,7 +27,7 @@ const Sidebar = () => {
           <div className="menu-item">
             <ul>
               <li>
-                <Link to="/Dashboard">
+                <Link to="/Admin">
                   <FaHome className="icon" />
                   {!menuVisible && <span>Dashboard</span>}
                 </Link>
