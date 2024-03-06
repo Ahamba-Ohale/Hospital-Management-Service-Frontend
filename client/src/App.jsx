@@ -9,11 +9,12 @@ import Foot from './Component/Important/Footer/Foot';
 import Admin from './Component/Admin/Dashboard/Dashboard';
 import Health from './Component/Admin/Health/Health';
 import Blog from './Component/Admin/Blog/Blog'
-import PatientDB from './Component/Admin/PatientDB';
+import PatientDB from './Component/Admin/PatientDB/PatientDB';
 import HospitalManagement from './Component/Admin/HospitalManagement';
 import Analytics from './Component/Admin/Analytics';
 import BookAppointment from './Component/BookAppointment/BookAppointment';
 import Register from './Component/Register/Register';
+import PatientInfo from './Component/Admin/PatientDB/PatientInfo';
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
           <Route path='/Hospital management' element={<HospitalManagement />} />
           <Route path='/Data Analytics' element={<Analytics />} />
           <Route path='/Register' element={<Register />} />
+          <Route path='/PatientInfo/view' element={<PatientInfo />} />
         </Routes>
       </Router>
       

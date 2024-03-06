@@ -4,7 +4,6 @@ import './Health.css'
 
 const Health = () => {
   return (
-    // <div className="body">
       <div className="dashboard">
         <Sidebar />
         <div className="main-body">
@@ -20,9 +19,9 @@ const Health = () => {
           </div>
 
           <div className="sub-header">
-            <div className="cards">1</div>
-            <div className="cards">2</div>
-            <div className="cards">3</div>
+            <div className="cards">Total Appointments Today</div>
+            <div className="cards">Medication</div>
+            <div className="cards">Total Consultations</div>
           </div>
 
           <div className="filter">
@@ -247,7 +246,6 @@ const Health = () => {
           </div>
         </div>
       </div>
-    // </div>
   );
 };
 

@@ -12,7 +12,7 @@
   }
   
   .header {
-    z-index: 0;
+    z-index: 10;
     width: 100%;
     padding: 5px;
   }
@@ -25,7 +25,7 @@
   }
 
   .bell {
-    background-color: crimson;
+    /* background-color: crimson; */
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -121,25 +121,49 @@
   
   /* Style for the Action column */
   .action-column {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
   }
   
-  #action {
-    padding: 0;
-    width: 50%;
-    height: 3rem;
+  /* #action {
+    width: 30%;
     cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    font-weight: 700;
-    text-align: center;
     border-radius: 5px;
     border: 1px solid #b8b5b5;
+  } */
+
+  .custom-select {
+    width: 30%;
+  }
+
+  .custom-select__control {
+    min-height: unset;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 8px;
+  }
+
+  .custom-select__menu {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 8px;
+  }
+
+  .custom-select__option {
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  #action .control {
+    min-height: unset;
+  }
+
+  #action .indicatorSeparator {
+    display: none;
   }
   
   #option {
