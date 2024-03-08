@@ -3,6 +3,7 @@ import Sidebar from "../AdminSidebar/Sidebar";
 import BarChart from "../Charts/BarChart";
 import LineChart from "../Charts/LIneChart";
 import './Dashboard.css'
+import PatientChart from "../Charts/PatientChart";
 
 function Admin() {
   return (
@@ -30,7 +31,7 @@ function Admin() {
               </div>
             </div>
             <div className="chartt">
-              <BarChart className="chart" />
+              <PatientChart className="chart" />
             </div>
           </div>
           <div className="card">
