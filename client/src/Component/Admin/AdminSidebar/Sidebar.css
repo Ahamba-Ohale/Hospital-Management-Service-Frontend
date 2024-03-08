@@ -1,0 +1,253 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Default styling for 1440px screen width */
+
+.side-menu-bar {
+  width: 20vw;
+  height: 100vh;
+  position: fixed;
+  background-color: #276AB3;
+  color: #ecf0f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 200;
+  transition: width 0.3s ease;
+}
+
+.side-menu-bar, .main-body {
+  transition: all 0.3s ease;
+}
+
+/* Add these styles for collapsible menu */
+/* .side-menu-bar.visible {
+  width: 5vw;
+  overflow: hidden;
+} */
+
+.menu-item {
+  padding: 10px;
+}
+
+.toggle-menu-btn {
+  background-color: #276AB3;
+  color: #ecf0f1;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  width: 50px;
+
+  /* display: none; */
+}
+
+.Admin-logo {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.Admin-menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: #ecf0f1;
+  margin-left: 10px;
+}
+
+.menu-item .icon {
+  margin-right: 5px;
+}
+
+.logout,
+.setting,
+.logout-opt ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.logout,
+.setting li,
+.logout-opt li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.logout a,
+.setting a,
+.logout-opt a {
+  text-decoration: none;
+  color: #ecf0f1;
+  margin-left: 10px;
+}
+
+.logout .icon,
+.setting .icon,
+.logout-opt .icon {
+  margin-right: 5px;
+}
+
+.logout,
+.setting,
+.logout-opt {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 1026px) and (max-width: 1300px){
+  
+}
+
+@media screen and (min-width: 768px) and (max-width: 830px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .side-menu-bar {
+    height: 100%;
+    width: 30%;
+    z-index: 200;
+  }
+
+  .Admin-logo {
+    margin-bottom: 3rem;
+  }
+
+  .menu-item li {
+    margin-bottom: 30px;
+  }
+
+  .menu-item {
+    padding: 10px;
+  }
+
+  .toggle-menu-btn {
+    display: flex;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .logout,
+  .setting,
+  .logout-opt ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .logout,
+  .setting li,
+  .logout-opt li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .logout a,
+  .setting a,
+  .logout-opt a {
+    text-decoration: none;
+    color: #ecf0f1;
+    margin-left: 10px;
+  }
+
+  .logout .icon,
+  .setting .icon,
+  .logout-opt .icon {
+    margin-right: 5px;
+  }
+
+  .logout,
+  .setting,
+  .logout-opt {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .side-menu-bar.visible {
+    width: 8vw;
+  }
+
+  .search input {
+    width: 100%;
+  }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+  .side-menu-bar {
+    width: 60%;
+  }
+
+  .side-menu-bar.visible {
+    width: 13vw;
+  }
+
+  .dashboard.visible {
+    flex-direction: row;
+  }
+
+  .toggle-menu-btn {
+    display: inline;
+  }
+
+  .Admin-logo {
+    margin-bottom: 3rem;
+  }
+
+  .Admin-menu {
+    margin-bottom: 1rem;
+  }
+
+  .menu-item li {
+    margin-bottom: 30px;
+  }
+
+  .menu-item {
+    padding: 15px;
+  }
+
+  .main-body {
+    margin-left: 12vw;
+    width: 85%;
+  }
+ 
+  .header {
+    z-index: 0;
+    width: 24rem;
+  }
+
+  .search {
+    width: 13rem;
+  }
+
+  .search input {
+    width: 80%;
+  }
+
+}

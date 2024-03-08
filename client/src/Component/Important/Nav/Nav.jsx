@@ -37,10 +37,17 @@ const Nav = () => {
                     <Link to="/Contact-Us" className='Contact'>Contact Us</Link>
                 </li>
                 <li>
+
                     <Link to="/Book Apartment" className='Book'>Book Apartment</Link>
                 </li>
                 <li>
                     <Link to='/' className="active" >
+
+                    <a href="/BookAppointment" >Book Appointment</a>
+                </li>
+                <li>
+                    <a to='/' className="active" >
+
                         SIGNUP
                     </Link>
                 </li>

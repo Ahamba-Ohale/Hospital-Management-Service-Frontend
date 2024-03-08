@@ -25,6 +25,7 @@ nav{
     background-color: white;
     position: sticky;
     top: 0;
+  
 }
 
 nav .title{
@@ -239,8 +240,9 @@ small{
 }
 
 @media (max-width:1024px) {
+
     div{
         font-size: 16px;
     }
-}
+} */
 

@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import React from 'react'
+
+// import React from 'react'
 // import './Homepage.css'
 import './Home.css'
 import './Imagechanger.css'
@@ -11,13 +12,10 @@ import {useEffect, useRef } from 'react';
 
 
 const Homepage = () => {    
-    const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <div>
-
         <Nav />
-
 
         <div id="contain">
             <div id="home">
@@ -113,8 +111,6 @@ const Homepage = () => {
 
         <Foot/>
     </div>
-
-
 
 
   )
