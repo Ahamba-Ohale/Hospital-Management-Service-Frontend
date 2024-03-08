@@ -1,7 +1,7 @@
 const apiUrl = 'http://localhost:8080/api';
 
 
-function getPatientsData(id) {
+function getAppointmentData() {
   return new Promise(async (resolve, reject) => {
     try {
       const response = await fetch(`${apiUrl}/getAppointments/`);
@@ -14,4 +14,4 @@ function getPatientsData(id) {
   });
 }
 
-export default getPatientsData;
+export default getAppointmentData;

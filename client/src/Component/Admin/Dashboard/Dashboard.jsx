@@ -4,6 +4,8 @@ import BarChart from "../Charts/BarChart";
 import LineChart from "../Charts/LIneChart";
 import './Dashboard.css'
 import PatientChart from "../Charts/PatientChart";
+import AppointmentChart from '../Charts/AppointmentPage'
+
 
 function Admin() {
   return (
@@ -38,11 +40,11 @@ function Admin() {
             <div className="chart-top">
               <div className="chart-img"></div>
               <div className="chart-text">
-                <h3>Total Patients</h3>
+                <h3>Total Appointment</h3>
               </div>
             </div>
             <div className="chartt">
-              <BarChart className="chart" />
+              <AppointmentChart className="chart" />
             </div>
           </div>
           <div className="card">

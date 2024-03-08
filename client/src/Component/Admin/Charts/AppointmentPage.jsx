@@ -1,32 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import getPatientsData from "../ChartApi/GetPatientApi";
-import Chart from "chart.js/auto";
+import getAppointmentData from '../ChartApi/GetAppointmentApi'; // Corrected import
 import { Bar } from "react-chartjs-2";
 
-const AppointmentCharts = () => {
-  const [patientData, setPatientData] = useState([]);
+const AppointmentChart = () => {
+  const [appointmentData, setAppointmentData] = useState([]);
   const [monthlyCounts, setMonthlyCounts] = useState({});
 
   useEffect(() => {
-    const fetchPatientData = async () => {
+    const fetchAppointmentData = async () => {
       try {
-        const data = await getPatientsData();
-        setPatientData(data);
+        const data = await getAppointmentData(); // Corrected function name
+        setAppointmentData(data);
       } catch (error) {
-        console.error('Error fetching patient data:', error);
+        console.error('Error fetching appointment data:', error);
       }
     };
 
-    fetchPatientData();
-  }, []);
+    fetchAppointmentData();
+  }, [setAppointmentData]);
 
   useEffect(() => {
-    // Calculate monthly counts when patientData changes
+    // Calculate monthly counts when appointmentData changes
     const calculateMonthlyCounts = () => {
       const counts = {};
 
-      patientData.forEach((patient) => {
-        const month = new Date(patient.createdAt).getMonth();
+      appointmentData.forEach((appointment) => {
+        const month = new Date(appointment.createdAt).getMonth();
         counts[month] = (counts[month] || 0) + 1;
       });
 
@@ -34,9 +33,9 @@ const AppointmentCharts = () => {
     };
 
     calculateMonthlyCounts();
-  }, [patientData]);
+  }, [appointmentData]);
 
-  const viewData = () => {
+  const viewAppData = () => {
     // Generate an array of counts for each month from January to December
     const countsArray = Array.from({ length: 12 }, (_, monthIndex) => monthlyCounts[monthIndex] || 0);
    
@@ -65,7 +64,6 @@ const AppointmentCharts = () => {
         display: false,
         beginAtZero: true, 
       },
-
       y: {
         display: true,
         beginAtZero: true,
@@ -87,9 +85,8 @@ const AppointmentCharts = () => {
   };
 
   return (
-    <Bar data={viewData()} options={options} className="bar" />
+    <Bar data={viewAppData()} options={options} className="bar" />
   );
 };
 
-export default PatientChart;
-
+export default AppointmentChart;
