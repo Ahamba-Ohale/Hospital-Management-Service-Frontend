@@ -1,8 +1,15 @@
+/* .blog:active{
+    color: orange;
+    border-bottom: 3px solid orange;
+    animation: unset;
+} */
+
 .Navigate {
     background-color: #276ab3;
     display: block;
     height: 20px;
 }
+
 
 nav ul.Open {
     display: flex;
@@ -14,7 +21,6 @@ nav ul.Open {
     margin-top: 20px;
     color: #276ab3;
 }
-
 .healthblog .details {
     display: grid;
     justify-content: center;
@@ -30,10 +36,56 @@ nav ul.Open {
     padding-left: 10px;
 }
 
+.author{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.content{
+    font-size: 14px;
+    font-family: sans-serif;
+    max-height: 40px;
+    overflow: hidden;
+    display: none;
+    width: 345px;
+}
+
+.titles{
+    text-align: center;
+    max-width: 100%;
+    max-height: 25px;
+    margin: 10px 0;
+}
+
+
+.pictures{
+    width: 100%;
+    height: 25vh;
+    border-radius: 5px;
+    max-width: 100%;
+    background-color: #ededed;
+}
+
 @media (max-width:700px) {
     nav ul.Open {
         display: flex;
         text-align-last: justify;
         background-color: #ededed;
     }    
+}
+
+@media (max-width:800px) {
+    .pictures{
+        width: 100%;
+        height: 25vh;
+        border-radius: 5px;
+        max-width: 100%;
+        background-color: #ededed;
+    }
+
+    .healthblog .details {
+        margin: auto 20px;
+    }
 }

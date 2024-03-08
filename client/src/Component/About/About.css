@@ -15,6 +15,7 @@
 .about-content{
     text-align: center;
     color: white;
+    font-size: 14px;
 }
 
 .white{
@@ -41,6 +42,7 @@
 
 .his-p{
     color: black;
+    font-size: 14px;
 }
 
 .staff{
@@ -100,8 +102,9 @@
     color:  #276ab3;
 }
 
-.Meet-li{
+.Meet-li {
     padding: 10px 0;
+    font-size: 14px;
 }
 
 .load-btn{
@@ -124,7 +127,7 @@
 
 
 
-@media (max-width:1200px) {
+@media (max-width:1020px) {
     .profile{
         padding: 0 20px;
     }    

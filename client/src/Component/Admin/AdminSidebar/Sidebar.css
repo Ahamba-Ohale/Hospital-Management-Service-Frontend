@@ -4,10 +4,6 @@ body {
 }
 
 /* Default styling for 1440px screen width */
-.dashboard {
-  display: flex;
-  background-color: #f7f5f5;
-}
 
 .side-menu-bar {
   width: 20vw;
@@ -19,6 +15,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+  z-index: 200;
   transition: width 0.3s ease;
 }
 
@@ -121,13 +118,11 @@ body {
   margin-top: 1rem;
 }
 
-.main-body {
-  margin-left: 20vw;
-  width: 80vw;
-  padding: 20px;
-  min-height: 100vh;
+@media screen and (min-width: 1026px) and (max-width: 1300px){
+  
 }
 
+<<<<<<< HEAD
 .main-body .visible {
   margin-left: 5vw;
 }
@@ -466,14 +461,17 @@ h4 {
 }
 
 @media screen and (max-width: 768px) {
+=======
+@media screen and (min-width: 768px) and (max-width: 830px) {
+>>>>>>> 6b520be424e83e074f6ee9ff160fbf521d4ac251
   .dashboard {
     flex-direction: column;
   }
 
   .side-menu-bar {
-    width: 25%;
-    height: auto;
-    z-index: 1;
+    height: 100%;
+    width: 30%;
+    z-index: 200;
   }
 
   .Admin-logo {
@@ -532,12 +530,8 @@ h4 {
     margin-top: 1rem;
   }
 
-  .main-body {
-    margin-left: 8.5vw;
-    width: 88%;
-    padding: 10px;
-  }
   .side-menu-bar.visible {
+<<<<<<< HEAD
     width: 7vw;
   }
 
@@ -558,11 +552,15 @@ h4 {
   .top-main,
   .bottom-main {
     /* width: 50rem; */
+=======
+    width: 8vw;
+>>>>>>> 6b520be424e83e074f6ee9ff160fbf521d4ac251
   }
 
   .search input {
     width: 100%;
   }
+<<<<<<< HEAD
 
   .sub-header {
     grid-template-columns: repeat(2, 1fr);
@@ -615,11 +613,14 @@ h4 {
   /* .patient-list {
     overflow: hidden;
   } */
+=======
+>>>>>>> 6b520be424e83e074f6ee9ff160fbf521d4ac251
 }
+
 
 @media screen and (min-width: 320px) and (max-width: 600px) {
   .side-menu-bar {
-    width: 50%;
+    width: 60%;
   }
 
   .side-menu-bar.visible {
@@ -668,6 +669,7 @@ h4 {
     width: 80%;
   }
 
+<<<<<<< HEAD
   .sub-header {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -746,3 +748,6 @@ h4 {
 
   
 }
+=======
+}
+>>>>>>> 6b520be424e83e074f6ee9ff160fbf521d4ac251

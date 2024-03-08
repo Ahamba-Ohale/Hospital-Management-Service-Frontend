@@ -1,19 +1,22 @@
 import { useState } from 'react'
 
 // import React from 'react'
+
 import './Home.css'
+import './Imagechanger.css'
 import {Link} from 'react-router-dom'
 import Nav from '../Important/Nav/nav'
 import Foot from '../Important/Footer/Foot'
+import {useEffect, useRef } from 'react';
 
 
 
 const Homepage = () => {    
-    const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <div>
         <Nav />
+
         <nav>
             <Link to="/" className='title'>Website</Link>
             <div className='menu' 
@@ -51,6 +54,7 @@ const Homepage = () => {
                 </li>
             </ul>
         </nav>
+
 
         <div id="contain">
             <div id="home">
@@ -105,7 +109,7 @@ const Homepage = () => {
                     <div className="pic">
 
                     </div>
-                    <p className="content">
+                    <p className="contents">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Ipsa quis dolores vero facere, porro provident est sequi 
                     </p>
@@ -117,7 +121,7 @@ const Homepage = () => {
                     <div className="pic">
 
                     </div>
-                    <p className="content">
+                    <p className="contents">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Ipsa quis dolores vero facere, porro provident est sequi 
                     </p>
@@ -129,7 +133,7 @@ const Homepage = () => {
                     <div className="pic">
 
                     </div>
-                    <p className="content">
+                    <p className="contents">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Ipsa quis dolores vero facere, porro provident est sequi 
                     </p>
