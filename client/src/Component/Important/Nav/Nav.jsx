@@ -41,10 +41,12 @@ const Nav = () => {
                     <Link to="/Book Apartment" className='Book'>Book Apartment</Link>
                 </li>
                 <li>
-                    <Link to='/BookAppointment' className="active" >Book Appointment</Link>
+
+                    <Link to='/BookAppointment' className="active">Book Appointment</Link>
                 </li>
                 <li>
-                    <Link to='/' className="active" >
+                    <Link to='/' className="active">
+
 
                         SIGNUP
                     </Link>
