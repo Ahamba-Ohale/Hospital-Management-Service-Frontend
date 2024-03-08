@@ -239,8 +239,12 @@ small{
     }
 }
 
+<<<<<<< HEAD
+/* @media (max-width:1250px) {
+=======
 @media (max-width:1024px) {
 
+>>>>>>> 6b520be424e83e074f6ee9ff160fbf521d4ac251
     div{
         font-size: 16px;
     }

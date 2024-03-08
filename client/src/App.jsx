@@ -1,3 +1,4 @@
+
 import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import Error from './Component/Error/Error';
 import Homepage from './Component/Homepage/Homepage';
@@ -22,6 +23,7 @@ import CreatePatient from './Component/Admin/PatientDB/CreatePatient';
 function App() {
 
 
+
   return (
     <div>
 
@@ -33,6 +35,7 @@ function App() {
           <Route path='/About' element={<About />} />
           <Route path='/Blog' element={<Healthblog />} />
           <Route path='/Healthblog' element={<Healthblog />} />
+
           <Route path='/Contact-Us' element={<Contact />} />
           <Route path='/Book Appointment' element={<BookAppointment />} />
           <Route path='/Foot' element={<Foot />} />
@@ -43,6 +46,9 @@ function App() {
           <Route path='/Patients Database' element={<PatientDB />} />
           <Route path='/Hospital management' element={<HospitalManagement />} />
           <Route path='/Data Analytics' element={<Analytics />} />
+
+          <Route />
+
           <Route path='/Register' element={<Register />} />
           <Route path='/PatientInfo/view' element={<PatientInfo />} />
           <Route path='/Add-new-record' element={<NewMedRecord />} />
