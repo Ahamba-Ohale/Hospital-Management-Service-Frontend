@@ -39,7 +39,7 @@ const HealthInfo = () => {
         setBMIReview("Obese");
       }
     }
-    
+
     // Handle save changes logic here
   };
 
@@ -58,103 +58,115 @@ const HealthInfo = () => {
 
   return (
     <div className="patient-content__heal">
-      <div className="form-group">
-        <label htmlFor="genotype">Genotype</label>
-        <input
-          type="text"
-          id="genotype"
-          name="genotype"
-          value={genotype}
-          onChange={(e) => setGenotype(e.target.value)}
-          className="input-field"
-          placeholder="Genotype"
-        />
-      </div>
+      <div className="formm">
+        <form>
+          <label htmlFor="genotype">
+            Genotype:
+            <input
+              type="text"
+              id="genotype"
+              name="genotype"
+              value={genotype}
+              onChange={(e) => setGenotype(e.target.value)}
+              className="input-field"
+              placeholder="Genotype"
+            />
+          </label>
 
-      <div className="form-group">
-        <label htmlFor="bloodType">Blood Type</label>
-        <Select
-          id="bloodType"
-          name="bloodType"
-          value={bloodType}
-          onChange={(selectedOption) => setBloodType(selectedOption)}
-          options={bloodTypeOptions}
-          placeholder="Blood Group"
-        />
-      </div>
+          <label htmlFor="bloodType">
+            Blood Type:
+            <Select
+              id="bloodType"
+              name="bloodType"
+              value={bloodType}
+              onChange={(selectedOption) => setBloodType(selectedOption)}
+              options={bloodTypeOptions}
+              placeholder="Blood Group"
+            />
+          </label>
 
-      <div className="form-group">
-        <label htmlFor="weight">Weight (kg): </label>
-        <input
-          type="number"
-          id="weight"
-          name="weight"
-          value={weight}
-          onChange={(e) => setWeight(e.target.value)}
-          className="input-field"
-          placeholder="Enter your Weight..."
-        />
-      </div>
+          <label htmlFor="weight">
+            Weight (kg):
+            <input
+              type="number"
+              id="weight"
+              name="weight"
+              value={weight}
+              onChange={(e) => setWeight(e.target.value)}
+              className="input-field"
+              placeholder="Enter your Weight..."
+            />
+          </label>
 
-      <div className="form-group">
-        <label htmlFor="height">Height (cm): </label>
-        <input
-          type="number"
-          id="height"
-          name="height"
-          value={height}
-          onChange={(e) => setHeight(e.target.value)}
-          className="input-field"
-          placeholder="Enter your Height..."
-        />
-      </div>
+          <label htmlFor="height">
+            Height (cm):
+            <input
+              type="number"
+              id="height"
+              name="height"
+              value={height}
+              onChange={(e) => setHeight(e.target.value)}
+              className="input-field"
+              placeholder="Enter your Height..."
+            />
+          </label>
 
-      <div className="form-group">
-        <label htmlFor="bmiResult"> Your BMI</label>
-        <input
-          type="text"
-          id="bmiResult"
-          value={calculateBMI() !== null ? calculateBMI() : ""}
-          readOnly
-          placeholder="BMI Result"
-        />
-        <p className="bmi-review">{bmiReview}</p>
-      </div>
+          <br />
 
-      <div className="form-group">
-        <label htmlFor="allergies">Allergies</label>
-        <TextareaAutosize
-          id="allergies"
-          name="allergies"
-          value={allergies}
-          onChange={(e) => setAllergies(e.target.value)}
-          className="input-field"
-          placeholder="Allergies"
-        />
-      </div>
+          <label htmlFor="bmiResult">
+            {" "}
+            Your BMI:
+            <input
+              type="text"
+              id="bmiResult"
+              value={calculateBMI() !== null ? calculateBMI() : ""}
+              readOnly
+              placeholder="BMI Result"
+            />
+          </label>
+          <p className="bmi-review">{bmiReview}</p>
 
-      <div className="form-group">
-        <label htmlFor="habits">Habits</label>
-        <TextareaAutosize
-          id="habits"
-          name="habits"
-          value={habits}
-          onChange={(e) => setHabits(e.target.value)}
-          className="input-field"
-          placeholder="What are some of your daily habits"
-        />
-      </div>
+          <br />
 
-      <div className="form-group">
-        <label htmlFor="medicalHistory">Medical History</label>
-        <TextareaAutosize
-          id="medicalHistory"
-          name="medicalHistory"
-          value={medicalHistory}
-          onChange={(e) => setMedicalHistory(e.target.value)}
-          className="input-field"
-          placeholder=""
-        />
+          <label htmlFor="allergies">
+            Allergies:
+            <TextareaAutosize
+              id="allergies"
+              name="allergies"
+              value={allergies}
+              onChange={(e) => setAllergies(e.target.value)}
+              className="input-field"
+              placeholder="Allergies"
+            />
+          </label>
+          <br />
+
+          <label htmlFor="habits">
+            Habits:
+            <TextareaAutosize
+              id="habits"
+              name="habits"
+              value={habits}
+              onChange={(e) => setHabits(e.target.value)}
+              className="input-field"
+              placeholder="What are some of your daily habits"
+            />
+          </label>
+
+          <br />
+
+          <label htmlFor="medicalHistory">
+            Medical History
+            <TextareaAutosize
+              id="medicalHistory"
+              name="medicalHistory"
+              value={medicalHistory}
+              onChange={(e) => setMedicalHistory(e.target.value)}
+              className="input-field"
+              placeholder=""
+            />
+          </label>
+        </form>
       </div>
 
       <button type="button" className="save-btn" onClick={handleSaveChanges}>

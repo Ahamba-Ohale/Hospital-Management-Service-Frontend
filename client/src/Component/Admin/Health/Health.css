@@ -1,7 +1,7 @@
 /* Health Records Page */
 .health__main {
     background-color: #ffffff;
-    padding: 15px;
+    /* padding: 15px; */
     width: 100%;
     /* max-width: 61rem; */
     height: 45rem;
@@ -40,7 +40,7 @@
 
   .cards {
     background-color: #ffffff;
-    padding: 15px;
+    /* padding: 15px; */
     display: flex;
     align-items: center;
     justify-content: center;

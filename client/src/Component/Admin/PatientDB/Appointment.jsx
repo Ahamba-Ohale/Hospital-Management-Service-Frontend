@@ -1,7 +1,15 @@
-import React from 'react'
+import { useState } from 'react'
 import { GrView } from 'react-icons/gr'
+import AddAppointmentModal from './AddAppointment';
 
 const Appointment = () => {
+
+  const [isAddModalVisible, setAddModalVisible] = useState(false);
+
+  const toggleAddModal = () => {
+    setAddModalVisible(!isAddModalVisible);
+  };
+
   return (
     <div className="patient-content__app">
         <div className="patient-content__apptop">
@@ -26,7 +34,7 @@ const Appointment = () => {
                 <td>Pending</td>
                 <td>10:00 AM - 12:00 PM</td>
                 <td className="action-column">
-                    <div><GrView size={20}/></div>
+                    <div onClick={toggleAddModal}><GrView size={20}/></div>
                 </td>
               </tr>
               <tr>
@@ -35,7 +43,7 @@ const Appointment = () => {
                 <td>Pending</td>
                 <td>10:00 AM - 12:00 PM</td>
                 <td className="action-column">
-                    <div><GrView size={20}/></div>
+                    <div onClick={toggleAddModal}><GrView size={20}/></div>
                 </td>
               </tr>
               <tr>
@@ -94,6 +102,7 @@ const Appointment = () => {
               </tr>
             </tbody>
           </table>
+          {isAddModalVisible && <AddAppointmentModal onClose={toggleAddModal} />}
         </div>
 
     </div>

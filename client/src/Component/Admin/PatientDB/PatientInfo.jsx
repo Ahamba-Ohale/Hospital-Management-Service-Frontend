@@ -14,6 +14,8 @@ import { LiaFileInvoiceDollarSolid } from "react-icons/lia";
 import { MdOutlinePayment } from "react-icons/md";
 import { FaXRay } from "react-icons/fa6";
 import { GiHealthPotion } from "react-icons/gi";
+import { IoReturnUpBack } from 'react-icons/io5';
+import { useNavigate } from 'react-router-dom';
 
 const PatientInfo = () => {
 
@@ -22,6 +24,13 @@ const PatientInfo = () => {
     const handleTabClick = (tabName) => {
       setActiveTab(tabName);
     };
+
+    const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1); // This will go back to the previous page in history
+  };
+    
 
   return (
     <div className="dashboard">
@@ -36,6 +45,11 @@ const PatientInfo = () => {
                     <div className="img"></div>
                     <h4>Patient name</h4>
                 </div>
+            </div>
+
+            <div className="history">
+              <div className="back" onClick={handleGoBack}><IoReturnUpBack /></div>
+              <div className="page-name">John Doe</div>
             </div>
 
             <div className="patient-main__content">

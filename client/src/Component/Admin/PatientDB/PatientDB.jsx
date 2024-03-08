@@ -380,7 +380,7 @@ const PatientDB = () => {
           </table>
         </div>
 
-        <Link to="/Add-Patient">
+        <Link to="/CreatePatient">
         <div className="create">
           <GoPlus />
         </div>
