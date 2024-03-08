@@ -1,6 +1,5 @@
-import { useState } from 'react'
+import { useState} from 'react'
 import React from 'react'
-// import './health.css'
 import './Healthblog.css'
 import {Link} from 'react-router-dom'
 import Nav from '../Important/Nav/nav'
@@ -10,7 +9,8 @@ const Healthblog = () => {
     const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <div>
+    <div> 
+
         <Nav />
 
         <div className="Navigate">
@@ -23,64 +23,76 @@ const Healthblog = () => {
             <h2 className="health">Health Blog</h2>
             <div className="details">
                 <div className="staff">
-                    <div className="pic"></div>
-                    <div className="name">Lorem lorem</div>
-                    <div className="Course">Lorem lorem</div>
+                    <div className="pictures"></div>
+                    <div className="author_date author">
+                        <p>10 Feb 24</p>
+                    </div>
+                    <h4 className="titles">Blog Title and more header for blog </h4>
+                    <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
                 </div>
                 <div className="staff">
-                    <div className="pic"></div>
-                    <div className="name">Lorem lorem</div>
-                    <div className="Course">Lorem lorem</div>
+                    <div className="pictures"></div>
+                    <div className="author_date author">
+                        <p>10 Feb 24</p>
+                    </div>
+                    <h4 className="titles">Blog Title and more header for blog </h4>
+                    <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
                 </div>
                 <div className="staff">
-                    <div className="pic"></div>
-                    <div className="name">Lorem lorem</div>
-                    <div className="Course">Lorem lorem</div>
+                    <div className="pictures"></div>
+                    <div className="author_date author">
+                        <p>10 Feb 24</p>
+                    </div>
+                    <h4 className="titles">Blog Title and more header for blog </h4>
+                    <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
                 </div>
                 <div className="staff">
-                    <div className="pic"></div>
-                    <div className="name">Lorem lorem</div>
-                    <div className="Course">Lorem lorem</div>
+                    <div className="pictures"></div>
+                    <div className="author_date author">
+                        <p>10 Feb 24</p>
+                    </div>
+                    <h4 className="titles">Blog Title and more header for blog </h4>
+                    <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
                 </div>
                 <div className="staff">
-                    <div className="pic"></div>
-                    <div className="name">Lorem lorem</div>
-                    <div className="Course">Lorem lorem</div>
+                    <div className="pictures"></div>
+                    <div className="author_date author">
+                        <p>10 Feb 24</p>
+                    </div>
+                    <h4 className="titles">Blog Title and more header for blog </h4>
+                    <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
                 </div>
                 <div className="staff">
-                    <div className="pic"></div>
-                    <div className="name">Lorem lorem</div>
-                    <div className="Course">Lorem lorem</div>
+                    <div className="pictures"></div>
+                    <div className="author_date author">
+                        <p>10 Feb 24</p>
+                    </div>
+                    <h4 className="titles">Blog Title and more header for blog </h4>
+                    <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
                 </div>
                 <div className="staff">
-                    <div className="pic"></div>
-                    <div className="name">Lorem lorem</div>
-                    <div className="Course">Lorem lorem</div>
+                    <div className="pictures"></div>
+                    <div className="author_date author">
+                        <p>10 Feb 24</p>
+                    </div>
+                    <h4 className="titles">Blog Title and more header for blog </h4>
+                    <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
                 </div>
                 <div className="staff">
-                    <div className="pic"></div>
-                    <div className="name">Lorem lorem</div>
-                    <div className="Course">Lorem lorem</div>
+                    <div className="pictures"></div>
+                    <div className="author_date author">
+                        <p>10 Feb 24</p>
+                    </div>
+                    <h4 className="titles">Blog Title and more header for blog </h4>
+                    <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
                 </div>
                 <div className="staff">
-                    <div className="pic"></div>
-                    <div className="name">Lorem lorem</div>
-                    <div className="Course">Lorem lorem</div>
-                </div>
-                <div className="staff">
-                    <div className="pic"></div>
-                    <div className="name">Lorem lorem</div>
-                    <div className="Course">Lorem lorem</div>
-                </div>
-                <div className="staff">
-                    <div className="pic"></div>
-                    <div className="name">Lorem lorem</div>
-                    <div className="Course">Lorem lorem</div>
-                </div>
-                <div className="staff">
-                    <div className="pic"></div>
-                    <div className="name">Lorem lorem</div>
-                    <div className="Course">Lorem lorem</div>
+                    <div className="pictures"></div>
+                    <div className="author_date author">
+                        <p>10 Feb 24</p>
+                    </div>
+                    <h4 className="titles">Blog Title and more header for blog </h4>
+                    <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
                 </div>
             </div>
         </div>

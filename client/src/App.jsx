@@ -5,6 +5,7 @@ import About from './Component/About/About';
 import Services from './Component/Services/Services';
 import Healthblog from './Component/Health blog/Healthblog';
 import Foot from './Component/Important/Footer/Foot';
+import Contact from './Component/Contact-us/Contact';
 import Admin from './Component/Admin/Dashboard/Dashboard';
 import Health from './Component/Admin/Health/Health';
 import Blog from './Component/Admin/Blog/Blog'
@@ -16,6 +17,7 @@ import Register from './Component/Register/Register';
 import PatientInfo from './Component/Admin/PatientDB/PatientInfo';
 import NewMedRecord from './Component/Admin/PatientDB/NewMedRecord';
 import CreatePatient from './Component/Admin/PatientDB/CreatePatient';
+
 
 function App() {
 
@@ -31,6 +33,7 @@ function App() {
           <Route path='/About' element={<About />} />
           <Route path='/Blog' element={<Healthblog />} />
           <Route path='/Healthblog' element={<Healthblog />} />
+          <Route path='/Contact-Us' element={<Contact />} />
           <Route path='/Book Appointment' element={<BookAppointment />} />
           <Route path='/Foot' element={<Foot />} />
           <Route path='*' element={<Error />} />

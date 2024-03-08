@@ -5,13 +5,14 @@ import {Link} from 'react-router-dom'
 
 const Nav = () => {
     const [menuOpen, setMenuOpen] = useState(false)
+    
 
   return (
         <nav>
-            <Link to="/" className='title'>Website</Link>
+            <Link to="/" className='title'><img src="Logo.png" alt="Logo" className='Logo' /></Link>
             <div className='menu' 
                 onClick={ () => {
-                setMenuOpen(!menuOpen);
+                    setMenuOpen(!menuOpen);
                 }}
             >
                 <i class="fa-duotone fa-bars"></i>
@@ -24,24 +25,31 @@ const Nav = () => {
                     <a href="/Home" className='activate'>Home</a>
                 </li>
                 <li>
-                    <a href="/About" >About Us</a>
+                    <Link to="/About" className='About'>About Us</Link>
                 </li>
                 <li>
-                    <a href="/Blog" >Blogs</a>
+                    <Link to="/Blog" className='blog' id='blogs' >Blogs</Link>
                 </li>
                 <li>
-                    <a href="/Services" >Services</a>
+                    <Link to="/Services" className='service'>Services</Link>
                 </li>
                 <li>
-                    <a href="/Contact Us" >Contact Us</a>
+                    <Link to="/Contact-Us" className='Contact'>Contact Us</Link>
                 </li>
                 <li>
+
+                    <Link to="/Book Apartment" className='Book'>Book Apartment</Link>
+                </li>
+                <li>
+                    <Link to='/' className="active" >
+
                     <a href="/BookAppointment" >Book Appointment</a>
                 </li>
                 <li>
                     <a to='/' className="active" >
+
                         SIGNUP
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </nav>
