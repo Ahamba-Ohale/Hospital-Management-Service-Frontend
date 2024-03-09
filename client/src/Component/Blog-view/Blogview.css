@@ -1,0 +1,40 @@
+.bview{
+    margin: 10px 120px;
+}
+
+.tview{
+    display: flex;
+    height: 40vh;
+}
+
+.tview .btitle {
+    width: 40%;
+    display: grid;
+    align-content: center;
+    /* overflow: scroll; */
+}
+
+.tview .bpicture {
+    width: 80%;
+    text-align: center;
+}
+.tview .btitle .b-h2{
+    font-size: 28px;
+}
+
+.tview .bpicture .bimg{
+    width: 60%;
+    height: 100%;
+}
+.bview .cview .pcontent{
+    font-size: 20px;
+}
+.bview .cview {
+    margin-top: 30px;
+}
+
+@media (max-width:425px) {
+    .bview{
+        margin: 10px 20px;
+    }
+}
