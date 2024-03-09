@@ -1,9 +1,4 @@
 #home{
-    /* margin: 0;
-    padding: 0;
-    background-size: cover;
-    width: 100%;
-    height: 100vh; */
     background-position: center;
     animation-name: animation;
     animation-direction: alternate-reverse;
@@ -12,9 +7,6 @@
     animation-iteration-count: infinite;
     animation-play-state: running;
     animation-timing-function: ease-in-out;
-
-    height: 60svh;
-    /* background-image: url(wel.jpg); */
     display: grid;
     align-content: center;
     background-position: center;

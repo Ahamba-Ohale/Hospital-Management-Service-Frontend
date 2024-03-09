@@ -1,7 +1,32 @@
-import React from "react";
+import { useState } from "react";
 import Sidebar from "../AdminSidebar/Sidebar";
+import Select from 'react-select';
+import { Link } from "react-router-dom"
+import DatePicker from "react-datepicker";
+
+
+const options = [
+  { value: 'view', label: 'View', link: '/PatientInfo/view' },
+  { value: 'delete', label: 'Delete', link: '/PatientInfo' },
+];
+
+const sortBy = [
+  { value: 'newest patient', label: 'Newest Patient' },
+  { value: 'oldest patient', label: 'Oldest Patient' },
+];
+const gender = [
+  { value: 'male', label: 'Male' },
+  { value: 'female', label: 'Female' },
+];
+
 
 const Blog = () => {
+
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+
   return (
     // <div className="body">
       <div className="dashboard">
@@ -20,21 +45,36 @@ const Blog = () => {
 
           <div className="filter">
             <div className="card1">
-              <select id="sortBy" name="sortBy">
-                <option value="sortBy">Sort By</option>
-                <option value="newestPatients">Newest Blogs</option>
-                <option value="oldestPatients">Oldest Bs</option>
-              </select>
+            <Select
+              defaultValue={selectedOption}
+              onChange={setSelectedOption}
+              options={sortBy.map(option => ({
+                value: option.value,
+                label: option.label
+              }))} 
+              placeholder= "Sort By"
+            />
             </div>
             <div className="card1">
-              <select name="gender" id="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-              </select>
+            <Select
+              defaultValue={selectedOption}
+              onChange={setSelectedOption}
+              options={gender.map(option => ({
+                value: option.value,
+                label: option.label
+              }))} 
+              placeholder= "Gender"
+            />
             </div>
             <div className="card1">
-              <input type="date" id="date" name="startdate" />
-            </div>
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+              startDate={startDate}
+              endDate={endDate}
+              selectsRange
+              dateFormatShow="DD MMMM,YYYY"
+            />            </div>
             <button type="submit" id="btn">
               Filter
             </button>
@@ -61,13 +101,23 @@ const Blog = () => {
                   <td>2022-03-01</td>
                   <td>Male</td>
                   <td>A+</td>
-                  <td>35</td>
+                  {/* <td>35</td> */}
                   <td className="action-column">
-                    <select id="action" name="action">
-                      <option value="...">...</option>
-                      <option value="view">View</option>
-                      <option value="delete">Delete</option>
-                    </select>
+                  <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                   </td>
                 </tr>
                 <tr>
@@ -76,13 +126,23 @@ const Blog = () => {
                   <td>2022-03-02</td>
                   <td>Female</td>
                   <td>B-</td>
-                  <td>28</td>
+                  {/* <td>28</td> */}
                   <td className="action-column">
-                    <select id="action" name="action">
-                      <option value="...">...</option>
-                      <option value="view">View</option>
-                      <option value="delete">Delete</option>
-                    </select>
+                  <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                   </td>
                 </tr>
                 <tr>
@@ -91,13 +151,23 @@ const Blog = () => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
+                  {/* <td></td> */}
                   <td className="action-column">
-                    <select id="action" name="action">
-                      <option value="...">...</option>
-                      <option value="view">View</option>
-                      <option value="delete">Delete</option>
-                    </select>
+                  <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                   </td>
                 </tr>
                 <tr>
@@ -106,13 +176,23 @@ const Blog = () => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
+                  {/* <td></td> */}
                   <td className="action-column">
-                    <select id="action" name="action">
-                      <option value="...">...</option>
-                      <option value="view">View</option>
-                      <option value="delete">Delete</option>
-                    </select>
+                  <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                   </td>
                 </tr>
                 <tr>
@@ -121,13 +201,23 @@ const Blog = () => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
+                  {/* <td></td> */}
                   <td className="action-column">
-                    <select id="action" name="action">
-                      <option value="...">...</option>
-                      <option value="view">View</option>
-                      <option value="delete">Delete</option>
-                    </select>
+                  <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                   </td>
                 </tr>
                 <tr>
@@ -136,13 +226,23 @@ const Blog = () => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
+                  {/* <td></td> */}
                   <td className="action-column">
-                    <select id="action" name="action">
-                      <option value="...">...</option>
-                      <option value="view">View</option>
-                      <option value="delete">Delete</option>
-                    </select>
+                  <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                   </td>
                 </tr>
                 <tr>
@@ -151,13 +251,23 @@ const Blog = () => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
+                  {/* <td></td> */}
                   <td className="action-column">
-                    <select id="action" name="action">
-                      <option value="...">...</option>
-                      <option value="view">View</option>
-                      <option value="delete">Delete</option>
-                    </select>
+                  <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                   </td>
                 </tr>
                 <tr>
@@ -166,13 +276,23 @@ const Blog = () => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
+                  {/* <td></td> */}
                   <td className="action-column">
-                    <select id="action" name="action">
-                      <option value="...">...</option>
-                      <option value="view">View</option>
-                      <option value="delete">Delete</option>
-                    </select>
+                  <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                   </td>
                 </tr>
                 <tr>
@@ -181,17 +301,23 @@ const Blog = () => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
+                  {/* <td></td> */}
                   <td className="action-column">
-                    <select id="action" name="action">
-                      <option value="...">...</option>
-                      <option value="view" id="option">
-                        View
-                      </option>
-                      <option value="delete" id="option">
-                        Delete
-                      </option>
-                    </select>
+                  <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                   </td>
                 </tr>
                 <tr>
@@ -200,17 +326,23 @@ const Blog = () => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
+                  {/* <td></td> */}
                   <td className="action-column">
-                    <select id="action" name="action">
-                      <option value="...">...</option>
-                      <option value="view" id="option">
-                        View
-                      </option>
-                      <option value="delete" id="option">
-                        Delete
-                      </option>
-                    </select>
+                  <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                   </td>
                 </tr>
                 <tr>
@@ -219,17 +351,22 @@ const Blog = () => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                   <td className="action-column">
-                    <select id="action" name="action">
-                      <option value="...">...</option>
-                      <option value="view" id="option">
-                        View
-                      </option>
-                      <option value="delete" id="option">
-                        Delete
-                      </option>
-                    </select>
+                  <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                   </td>
                 </tr>
               </tbody>

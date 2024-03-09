@@ -7,11 +7,12 @@ import Services from './Component/Services/Services';
 import Healthblog from './Component/Health blog/Healthblog';
 import Foot from './Component/Important/Footer/Foot';
 import Contact from './Component/Contact-us/Contact';
+import Blogview from './Component/Blog-view/Blogview';
 import Admin from './Component/Admin/Dashboard/Dashboard';
 import Health from './Component/Admin/Health/Health';
 import Blog from './Component/Admin/Blog/Blog'
 import PatientDB from './Component/Admin/PatientDB/PatientDB';
-import HospitalManagement from './Component/Admin/HospitalManagement';
+import HospitalManagement from './Component/Admin/HospitalManagement/HospitalManagement';
 import Analytics from './Component/Admin/Analytics';
 import BookAppointment from './Component/BookAppointment/BookAppointment';
 import Register from './Component/Register/Register';
@@ -21,8 +22,6 @@ import CreatePatient from './Component/Admin/PatientDB/CreatePatient';
 
 
 function App() {
-
-
 
   return (
     <div>
@@ -35,8 +34,8 @@ function App() {
           <Route path='/About' element={<About />} />
           <Route path='/Blog' element={<Healthblog />} />
           <Route path='/Healthblog' element={<Healthblog />} />
-
           <Route path='/Contact-Us' element={<Contact />} />
+          <Route path='/Blogview' element={<Blogview />} />
           <Route path='/Book Appointment' element={<BookAppointment />} />
           <Route path='/Foot' element={<Foot />} />
           <Route path='*' element={<Error />} />
@@ -46,9 +45,6 @@ function App() {
           <Route path='/Patients Database' element={<PatientDB />} />
           <Route path='/Hospital management' element={<HospitalManagement />} />
           <Route path='/Data Analytics' element={<Analytics />} />
-
-          <Route />
-
           <Route path='/Register' element={<Register />} />
           <Route path='/PatientInfo/view' element={<PatientInfo />} />
           <Route path='/Add-new-record' element={<NewMedRecord />} />

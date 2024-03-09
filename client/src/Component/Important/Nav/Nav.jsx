@@ -1,6 +1,7 @@
 import React from 'react'
 import './Nav.css'
 import { useState } from 'react'
+import {NavLink} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 
 const Nav = () => {
@@ -9,7 +10,7 @@ const Nav = () => {
 
   return (
         <nav>
-            <Link to="/" className='title'><img src="Logo.png" alt="Logo" className='Logo' /></Link>
+            <NavLink to="/" className='title'><img src="Logo.png" alt="Logo" className='Logo' /></NavLink>
             <div className='menu' 
                 onClick={ () => {
                     setMenuOpen(!menuOpen);
@@ -22,32 +23,34 @@ const Nav = () => {
             </div>
             <ul className={menuOpen ? "Open" : ""}>
                 <li>
-                    <a href="/Home" className='activate'>Home</a>
+                    <NavLink to="/Home" className='activate'>Home</NavLink>
                 </li>
                 <li>
-                    <Link to="/About" className='About'>About Us</Link>
+                    <NavLink to="/About" className='About'>About Us</NavLink>
                 </li>
                 <li>
-                    <Link to="/Blog" className='blog' id='blogs' >Blogs</Link>
+                    <NavLink to="/Blog" className='blog' id='blogs' >Blogs</NavLink>
                 </li>
                 <li>
-                    <Link to="/Services" className='service'>Services</Link>
+                    <NavLink to="/Services" className='service'>Services</NavLink>
                 </li>
                 <li>
-                    <Link to="/Contact-Us" className='Contact'>Contact Us</Link>
+                    <NavLink to="/Contact-Us" className='Contact'>Contact Us</NavLink>
                 </li>
                 <li>
+
+                    <NavLink to="/Book Apartment" className='Book'>Book Appointment</NavLink>
+                </li>
+                <li>
+                    <Link to='/' className="act" >
 
                     <Link to="/Book Apartment" className='Book'>Book Apartment</Link>
                 </li>
                 <li>
-
                     <Link to='/BookAppointment' className="active">Book Appointment</Link>
                 </li>
                 <li>
                     <Link to='/' className="active">
-
-
                         SIGNUP
                     </Link>
                 </li>
