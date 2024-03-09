@@ -4,7 +4,7 @@ import React from 'react'
 import './Home.css'
 import './Imagechanger.css'
 import {Link} from 'react-router-dom'
-import Nav from '../Important/Nav/nav'
+import Nav from '../Important/Nav/Nav'
 import Foot from '../Important/Footer/Foot'
 import {useEffect, useRef } from 'react';
 
@@ -22,7 +22,7 @@ const Homepage = () => {
         <div id="contain">
             <div id="home">
                 <div className="home-body">
-                    <h1>
+                    <h1 className='header1' >
                         <p>GREAT TOWERS</p>
                         <p>SPECIALIST HOSPITAL</p>
                     </h1>
@@ -30,7 +30,7 @@ const Homepage = () => {
                     <p className='p'>Lorem ipsum, dolor sit amet consectetur adipisicing Lorem, ip.</p>
                     <p className='p'>Lorem ipsum, dolor sit amet consectet</p>
                     
-                    <a href=''>Sign Up</a>
+                    <a href='' className='link-tag'>Sign Up</a>
                 </div>
             </div>
             <div className="about">
@@ -38,8 +38,8 @@ const Homepage = () => {
                     {/* <img src="new.jpg" alt="Image" /> */}
                 </div>
                 <div className="about-us">
-                    <h2>About Us</h2>
-                    <p>
+                    <h2 className='para-h2-1' >About Us</h2>
+                    <p className='para-g1'>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
@@ -50,8 +50,8 @@ const Homepage = () => {
             </div>
             <div className="about">
                 <div className="about-uss">
-                    <h2>Our Services</h2>
-                    <p>
+                    <h2 className='para-h2-2'>Our Services</h2>
+                    <p className='para-g2'>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
@@ -66,7 +66,7 @@ const Homepage = () => {
         </div>
 
         <div id="Health-Blog">
-            <h2>Health Blog</h2>
+            <h2 className='health-h2'>Health Blog</h2>
             <div id="blog">
                 <div className="blogs">
                     <div className="pic">

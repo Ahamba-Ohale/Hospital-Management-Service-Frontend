@@ -7,6 +7,7 @@ import Services from './Component/Services/Services';
 import Healthblog from './Component/Health blog/Healthblog';
 import Foot from './Component/Important/Footer/Foot';
 import Contact from './Component/Contact-us/Contact';
+import Blogview from './Component/Blog-view/Blogview';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path='/Blog' element={<Healthblog />} />
           <Route path='/Healthblog' element={<Healthblog />} />
           <Route path='/Contact-Us' element={<Contact />} />
+          <Route path='/Blogview' element={<Blogview />} />
           <Route path='/Foot' element={<Foot />} />
           <Route path='*' element={<Error />} />
           <Route />

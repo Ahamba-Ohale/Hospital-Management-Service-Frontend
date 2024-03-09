@@ -3,7 +3,7 @@ import React from 'react'
 // import './About-Us.css'
 import './About.css'
 import {Link} from 'react-router-dom'
-import Nav from '../Important/Nav/nav'
+import Nav from '../Important/Nav/Nav'
 import Foot from '../Important/Footer/Foot'
 
 const About = () => {    

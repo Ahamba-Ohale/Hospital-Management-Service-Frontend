@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { useState } from 'react'
-import Nav from '../Important/Nav/nav'
+import Nav from '../Important/Nav/Nav'
 import Foot from '../Important/Footer/Foot'
 
 const Services = () => {

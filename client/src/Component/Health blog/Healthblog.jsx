@@ -2,7 +2,7 @@ import { useState} from 'react'
 import React from 'react'
 import './Healthblog.css'
 import {Link} from 'react-router-dom'
-import Nav from '../Important/Nav/nav'
+import Nav from '../Important/Nav/Nav'
 import Foot from '../Important/Footer/Foot'
 
 const Healthblog = () => {    
@@ -11,7 +11,9 @@ const Healthblog = () => {
   return (
     <div> 
 
-        <Nav />
+        <Nav 
+            
+        />
 
         <div className="Navigate">
             <div className="cont">
