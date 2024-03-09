@@ -17,19 +17,19 @@ const Homepage = () => {
     <div>
         <Nav />
 
-        <nav>
+        {/* <nav>
             <Link to="/" className='title'>Website</Link>
             <div className='menu' 
-                onClick={() => {
-                setMenuOpen(!menuOpen);
-                }}
+                // onClick={() => {
+                // setMenuOpen(!menuOpen);
+                // }}
             >
                 <i className="fa-duotone fa-bars"></i>
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <ul className={menuOpen ? "Open" : ""}>
+            <ul>
                 <li>
                     <Link to="/Home" >Home</Link>
                 </li>
@@ -53,7 +53,7 @@ const Homepage = () => {
                     </Link>
                 </li>
             </ul>
-        </nav>
+        </nav> */}
 
 
         <div id="contain">
