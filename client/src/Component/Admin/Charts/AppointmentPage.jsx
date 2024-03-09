@@ -35,7 +35,7 @@ const AppointmentChart = () => {
     calculateMonthlyCounts();
   }, [appointmentData]);
 
-  const viewAppData = () => {
+  const viewData = () => {
     // Generate an array of counts for each month from January to December
     const countsArray = Array.from({ length: 12 }, (_, monthIndex) => monthlyCounts[monthIndex] || 0);
    
@@ -48,7 +48,7 @@ const AppointmentChart = () => {
       ],
       datasets: [
         {
-          backgroundColor: "#276AB3",
+          backgroundColor: "red",
           borderColor: "#276AB3",
           data: countsArray,
         },
@@ -85,7 +85,7 @@ const AppointmentChart = () => {
   };
 
   return (
-    <Bar data={viewAppData()} options={options} className="bar" />
+    <Bar data={viewData()} options={options} className="bar" />
   );
 };
 
