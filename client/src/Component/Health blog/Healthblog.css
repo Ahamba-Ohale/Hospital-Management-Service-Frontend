@@ -11,11 +11,6 @@
 }
 
 
-nav ul.Open {
-    display: flex;
-    text-align-last: justify;
-}
-
 .healthblog .health{
     text-align: center;
     margin-top: 20px;

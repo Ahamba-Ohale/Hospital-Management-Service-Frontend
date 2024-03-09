@@ -35,8 +35,9 @@
     text-align: center;
 }
 
-.contact-form h1{
+.contact-form .contact-h1{
     margin-bottom: 10px;
+    color: #276AB3;
 }
 
 .contact-form-txt{

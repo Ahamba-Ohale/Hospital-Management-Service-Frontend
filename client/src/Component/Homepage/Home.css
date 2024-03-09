@@ -5,7 +5,7 @@
 } */
 
 #home{
-    height: 60svh;
+    height: 70svh;
     background-image: url(wel.jpg);
     display: grid;
     align-content: center;
@@ -15,7 +15,7 @@
 
 .home-body{
     /* width: 50%; */
-    height: 60vh;
+    height: 70vh;
     display: grid;
     align-content: center;
     padding: 0 100px;
@@ -23,12 +23,12 @@
     background-image: linear-gradient(to right, #276AB3, #ffffff00);
 }
 
-#home h1 p{
+#home .header1{
     color: white;
     padding-bottom: 10px;
 }
 
-#home a{
+#home .link-tag{
     margin-top: 5px;
     padding: 10px;
     width: 100px;
@@ -80,19 +80,19 @@
     justify-items: center;
 }
 
-.about-us p{
+.about-us .para-g1{
     text-align: left;
     font-size: 15px;
     letter-spacing: 1px;
 }
 
-.about-uss p{
+.about-uss .para-g2{
     text-align: left;
     font-size: 15px;
     letter-spacing: 1px;
 }
 
-.about-us h2, .about-uss h2{
+.about-us .para-h2-1, .about-uss .para-h2-2{
     color: #276ab3;
 }
 
@@ -165,6 +165,7 @@
 #blog .contents{
     padding: 20px 3px;
     font-size: 13px;
+    letter-spacing: .5px;
 }
 
 #blog .dat{
@@ -172,7 +173,7 @@
     font-size: 13px;
 }
 
-#Health-Blog h2{
+#Health-Blog .health-h2{
     text-align: center;
     color: #276ab3;
 }
@@ -227,16 +228,13 @@
         justify-items: center;
     }
 
-    .about-uss p {
+    .about-uss .para-g2, .about-us .para-g1{
         font-size: 13px;
     }
 
-    .about-us p {
-        font-size: 13px;
-    }
 }
 
-@media (max-width:490px) {
+@media (max-width:425px) {
     #blog{
         margin: 30px 3%;
         justify-content: space-around;
@@ -245,14 +243,25 @@
     #blog .pic{
         /* width: 30vw; */
     }
+
+    #home{
+        height: 60svh;
+    }
+    
+    .home-body{
+        /* width: 50%; */
+        height: 60vh;
+
+    }
 }
+
 
 @media (max-width:599px) {
     .about .img{
         display: none;
     }
 
-    .about-us p, .about-uss p {
+    .about-us .para-g1, .about-uss .para-g2{
         font-size: 12px;
         margin: 25px;
         text-align: center;
