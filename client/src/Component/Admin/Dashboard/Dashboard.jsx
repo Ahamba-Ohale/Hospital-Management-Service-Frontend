@@ -3,6 +3,9 @@ import Sidebar from "../AdminSidebar/Sidebar";
 import BarChart from "../Charts/BarChart";
 import LineChart from "../Charts/LIneChart";
 import './Dashboard.css'
+import PatientChart from "../Charts/PatientChart";
+import AppointmentChart from '../Charts/AppointmentPage'
+import PrescriptionChart from "../Charts/prescriptionCharts";
 import Select from 'react-select';
 import { Link } from "react-router-dom";
 
@@ -41,29 +44,29 @@ function Admin() {
               </div>
             </div>
             <div className="chartt">
-              <BarChart className="chart" />
+              <PatientChart className="chart" />
             </div>
           </div>
           <div className="card">
             <div className="chart-top">
               <div className="chart-img"></div>
               <div className="chart-text">
-                <h3>Total Patients</h3>
+                <h3>Total Appointment</h3>
               </div>
             </div>
             <div className="chartt">
-              <BarChart className="chart" />
+              <AppointmentChart className="chart" />
             </div>
           </div>
           <div className="card">
             <div className="chart-top">
               <div className="chart-img"></div>
               <div className="chart-text">
-                <h3>Total Patients</h3>
+                <h3>Prescriptions</h3>
               </div>
             </div>
             <div className="chartt">
-              <BarChart className="chart" />
+              <PrescriptionChart className="chart" />
             </div>
           </div>
           <div className="card">
