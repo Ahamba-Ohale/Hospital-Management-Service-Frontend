@@ -1,0 +1,302 @@
+
+.signup_container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup_form_container {
+  width: 1000px;
+  height: 500px;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
+    0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+}
+
+.login_container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login_form_container {
+  width: 1000px;
+  height: 500px;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
+    0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+}
+
+.login_container .form_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.login_container .left {
+  flex: 2;
+  background-color: #fff;
+}
+
+.login_container .left h1 {
+  color: black;
+  margin: 20px 0 20px 0;
+}
+
+.login_container .right h1 {
+  color: white;
+}
+
+.login_container .right {
+  flex: 1;
+  background-color: #276ab3;
+}
+
+.login_container .error_msg,
+.login_container .success_msg {
+  top: 6rem;
+}
+
+.login_container .white_btn,
+.login_container .blue_btn {
+  background-color: #fff;
+  color: #276ab3;
+}
+
+.login_container .blue_btn {
+  background-color: #276ab3;
+  color: #fff;
+}
+
+.login_container .btn_good {
+  background-color: #276ab3;
+}
+
+.login_container .btn_bad {
+  background-color: #276ab3;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #276ab3;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.left h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 35px;
+  align-self: center;
+}
+
+.right {
+  flex: 2;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.form_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
+  justify-items: start;
+}
+
+.right h1 {
+  font-size: 40px;
+  margin-top: 0;
+  color: #000;
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+.input {
+  outline: none;
+  border: none;
+  width: 300px;
+  padding: 15px;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  background-color: #edf5f3;
+  margin: 5px 0 20px 0;
+  font-size: 14px;
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  font-size: .8rem;
+  color: hsl(0, 0%, 50%);
+}
+
+.input_group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.error_msg,
+.success_msg {
+  width: 370px;
+  padding: 15px;
+  margin: 0 0 10px 0;
+  position: absolute;
+  top: 4rem;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  font-size: 14px;
+  background-color: #f34646;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.success_msg {
+  background-color: #276ab3;
+}
+
+.white_btn,
+.blue_btn {
+  border: none;
+  outline: none;
+  padding: 12px 0;
+  background-color: white;
+  border-radius: 20px;
+  color: #276ab3;
+  width: 180px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .4s;
+}
+
+.blue_btn {
+  background-color: #276ab3;
+  color: white;
+  margin: 10px 0 0 0;
+}
+  
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.password-box {
+  position: absolute;
+  right: .01rem;
+  top: .6rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.password-line {
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 1px;
+  background-color: hsl(0, 0%, 80%);
+  margin-bottom: 6px;
+  margin-top: 6px;
+  box-sizing: border-box;
+}
+
+.password-icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: color 150ms;
+  transition: color 150ms;
+  color: hsl(0, 0%, 80%);
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.password-icon i {
+  display: inline-block;
+  line-height: 1;
+}
+
+.success_container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.css-b62m3t-container {
+  margin-bottom: 20px !important;
+}
+
+.css-w9q2zk-Input2 {
+  opacity: 0 !important;
+  margin: 0 2px !important;
+  padding: 0 60px 0 0 !important;
+}
+
+.css-t3ipsp-control:hover {
+  border-color: #276ab3 !important;
+}
+
+.css-art2ul-ValueContainer2 {
+  padding: 0 8px !important;
+}
+
+.btn {
+  position: absolute;
+  bottom: 5rem;
+}
+
+.btn_good {
+  background-color: #276ab3;
+}
+
+.btn_bad {
+  background-color: #276ab3;
+  cursor: default;
+  opacity: 0.2;
+}
