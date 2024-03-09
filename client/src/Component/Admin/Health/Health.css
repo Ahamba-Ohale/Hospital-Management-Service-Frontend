@@ -1,0 +1,370 @@
+/* Health Records Page */
+.health__main {
+    background-color: #ffffff;
+    /* padding: 15px; */
+    width: 100%;
+    /* max-width: 61rem; */
+    height: 45rem;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: scroll;
+  }
+  
+  .header {
+    z-index: 10;
+    width: 100%;
+    padding: 5px;
+  }
+
+  .notify {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    /* width: 55%; */
+  }
+
+  .bell {
+    /* background-color: crimson; */
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+
+  .img {
+    background-color: #276AB3;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+
+  .cards {
+    background-color: #ffffff;
+    /* padding: 15px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card1 {
+    width: 65%;
+    border-radius: 5px;
+  }
+  
+  .filter {
+    display: flex;
+    gap: 10px;
+  }
+
+  #btn {
+    background-color: #276AB3;
+    padding: 10px;
+    color: #e8e8e8;
+    font-size: 18px;
+    width: 45%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* margin-left: 2rem; */
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  #sortBy,
+  #gender,
+  #date {
+    background-color: #ffffff;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid;
+    font-size: 15px;
+    color: #3a3a3a;
+    font-weight: 700;
+  }
+  
+  .patient-list thead {
+    padding: 15px;
+    width: 100%;
+  }
+  
+  .patient-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    /* max-height: 300px; */
+    overflow: hidden;
+  }
+  
+  .patient-list th,
+  .patient-list td {
+    border-bottom: 1px solid #f6f6f6;
+    padding: 13px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #3a3a3a;
+  }
+  
+  .patient-list th {
+    background-color: #f2f2f2;
+  }
+  
+  .patient-list tbody {
+    overflow-y: auto;
+  }
+  
+  /* Style for the Action column */
+  .action-column {
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+  }
+  
+  /* #action {
+    width: 30%;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 5px;
+    border: 1px solid #b8b5b5;
+  } */
+
+  .custom-select {
+    width: 30%;
+  }
+
+  .custom-select__control {
+    min-height: unset;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 8px;
+  }
+
+  .custom-select__menu {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 8px;
+  }
+
+  .custom-select__option {
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  #action .control {
+    min-height: unset;
+  }
+
+  #action .indicatorSeparator {
+    display: none;
+  }
+  
+  #option {
+    font-size: 15px;
+  }
+  
+  .action-column select option {
+    padding: 35px;
+  }
+  
+  .create {
+    font-size: 20px;
+    background-color: #276AB3;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #f2f2f2;
+    font-weight: 700;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+  
+
+  /* Media queries for tablet and smaller screens */
+  @media screen and (min-width: 1024px) and (max-width: 1300px) {
+    .side-menu-bar {
+      width: 20vw;
+      height: auto;
+    }
+  
+    /* .top-main,
+  .bottom-main {
+    width: 41.5rem;
+    height: 20rem;
+  } */
+  
+    * {
+      font-size: 13px;
+    }
+  
+    .main-body {
+      width: 80vw;
+      padding: 20px;
+      /* min-height: inherit; */
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 830px) {
+    .dashboard {
+      flex-direction: column;
+    }
+  
+    .main-body {
+      margin-left: 8vw;
+      width: 92vw;
+      padding: 20px;
+    }
+
+    .header {
+      z-index: 0;
+      width: 100%;
+    }
+
+    .body-main {
+      display: block;
+    }
+  
+    .main {
+      width: 100%;
+      padding: 0;
+    }
+    
+    .search input {
+      width: 100%;
+    }
+  
+    .sub-header {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .cards {
+      width: 100%;
+    }
+  
+    .create {
+      right: 2%;
+      bottom: 5%;
+    }
+  
+    .health__main {
+      width: 100%;
+      overflow: scroll;
+      /* max-width: 100%; */
+    }
+  
+    #sortBy,
+    #gender,
+    #date {
+      padding: 8px;
+      font-size: 14px; 
+    }
+  
+    .card1 {
+      width: 65%;
+    }
+  
+    /* .patient-list {
+      overflow: hidden;
+    } */
+  }
+  
+  @media screen and (min-width: 320px) and (max-width: 600px) {
+    .dashboard.visible {
+      flex-direction: row;
+    }
+  
+    .main-body {
+      margin-left: 12vw;
+      width: 86vw;
+    }
+   
+    .header {
+      z-index: 0;
+      width: 100%;
+    }
+  
+    .search {
+      width: 60%;
+    }
+  
+    .search input {
+      width: 90%;
+    }
+
+    .notify {
+        width: 55%;
+      }
+  
+    .sub-header {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    h4 {
+      font-size: 11px;
+    }
+  
+    .create {
+      right: 2%;
+      bottom: 5%;
+    }
+  
+    .health__main {
+      width: 100%;
+      /* max-width: 100%; */
+      overflow: scroll;
+      height: 60vw;
+    }
+  
+    .cards {
+      height: 8rem;
+      width: 100%;
+    }
+  
+    .body-main {
+      display: block;
+    }
+  
+    #btn {
+      width: 100%;
+    }
+  
+    #sortBy,
+    #gender,
+    #date {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .filter {
+      display: block;
+    }
+  
+    .card1 {
+      margin-bottom: 10px;
+      width: 100%;
+    } 
+  }

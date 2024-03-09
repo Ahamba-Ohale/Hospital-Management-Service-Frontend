@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import React from 'react'
-// import './Homepage.css'
+
+// import React from 'react'
+
 import './Home.css'
 import './Imagechanger.css'
 import {Link} from 'react-router-dom'
@@ -11,12 +12,48 @@ import {useEffect, useRef } from 'react';
 
 
 const Homepage = () => {    
-    const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <div>
-
         <Nav />
+
+        <nav>
+            <Link to="/" className='title'>Website</Link>
+            <div className='menu' 
+                onClick={() => {
+                setMenuOpen(!menuOpen);
+                }}
+            >
+                <i className="fa-duotone fa-bars"></i>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul className={menuOpen ? "Open" : ""}>
+                <li>
+                    <Link to="/Home" >Home</Link>
+                </li>
+                <li>
+                    <Link to="/About" >About Us</Link>
+                </li>
+                <li>
+                    <Link to="/Services" >Services</Link>
+                </li>
+                <li>
+                    <Link to="/Contact Us" >Contact Us</Link>
+                </li>
+                <li>
+
+                    <Link to="/Book Appointment" >Book Appointment</Link>
+
+                </li>
+                <li>
+                    <Link to='/Register' class="active" >
+                        SIGNUP
+                    </Link>
+                </li>
+            </ul>
+        </nav>
 
 
         <div id="contain">
@@ -113,8 +150,6 @@ const Homepage = () => {
 
         <Foot/>
     </div>
-
-
 
 
   )

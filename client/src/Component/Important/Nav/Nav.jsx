@@ -38,10 +38,20 @@ const Nav = () => {
                     <NavLink to="/Contact-Us" className='Contact'>Contact Us</NavLink>
                 </li>
                 <li>
+
                     <NavLink to="/Book Apartment" className='Book'>Book Appointment</NavLink>
                 </li>
                 <li>
                     <Link to='/' className="act" >
+
+                    <Link to="/Book Apartment" className='Book'>Book Apartment</Link>
+                </li>
+                <li>
+
+                    <Link to='/BookAppointment' className="active">Book Appointment</Link>
+                </li>
+                <li>
+                    <Link to='/' className="active">
                         SIGNUP
                     </Link>
                 </li>
