@@ -1,10 +1,21 @@
-import React from "react";
+import { useState } from "react";
 import Sidebar from "../AdminSidebar/Sidebar";
 import BarChart from "../Charts/BarChart";
 import LineChart from "../Charts/LIneChart";
 import './Dashboard.css'
+import Select from 'react-select';
+import { Link } from "react-router-dom";
+
+const options = [
+  { value: 'view', label: 'View', link: '/PatientInfo/view' },
+  { value: 'delete', label: 'Delete', link: '/PatientInfo' },
+];
+
 
 function Admin() {
+
+  const [selectedOption, setSelectedOption] = useState(null);
+
   return (
     // <div className="body">
     <div className="dashboard">
@@ -98,11 +109,21 @@ function Admin() {
                       <td>A+</td>
                       <td>35</td>
                       <td className="action-column">
-                        <select id="action" name="action">
-                          <option value="...">...</option>
-                          <option value="view">View</option>
-                          <option value="delete">Delete</option>
-                        </select>
+                      <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                       </td>
                     </tr>
                     <tr>
@@ -113,11 +134,21 @@ function Admin() {
                       <td>B-</td>
                       <td>28</td>
                       <td className="action-column">
-                        <select id="action" name="action">
-                          <option value="...">...</option>
-                          <option value="view">View</option>
-                          <option value="delete">Delete</option>
-                        </select>
+                      <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                       </td>
                     </tr>
                     <tr>
@@ -128,11 +159,21 @@ function Admin() {
                       <td></td>
                       <td></td>
                       <td className="action-column">
-                        <select id="action" name="action">
-                          <option value="...">...</option>
-                          <option value="view">View</option>
-                          <option value="delete">Delete</option>
-                        </select>
+                      <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                       </td>
                     </tr>
                     <tr>
@@ -143,11 +184,21 @@ function Admin() {
                       <td></td>
                       <td></td>
                       <td className="action-column">
-                        <select id="action" name="action">
-                          <option value="...">...</option>
-                          <option value="view">View</option>
-                          <option value="delete">Delete</option>
-                        </select>
+                      <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                       </td>
                     </tr>
                     <tr>
@@ -158,11 +209,21 @@ function Admin() {
                       <td></td>
                       <td></td>
                       <td className="action-column">
-                        <select id="action" name="action">
-                          <option value="...">...</option>
-                          <option value="view">View</option>
-                          <option value="delete">Delete</option>
-                        </select>
+                      <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                       </td>
                     </tr>
                     <tr>
@@ -173,11 +234,21 @@ function Admin() {
                       <td></td>
                       <td></td>
                       <td className="action-column">
-                        <select id="action" name="action">
-                          <option value="...">...</option>
-                          <option value="view">View</option>
-                          <option value="delete">Delete</option>
-                        </select>
+                      <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                       </td>
                     </tr>
                     <tr>
@@ -188,11 +259,21 @@ function Admin() {
                       <td></td>
                       <td></td>
                       <td className="action-column">
-                        <select id="action" name="action">
-                          <option value="...">...</option>
-                          <option value="view">View</option>
-                          <option value="delete">Delete</option>
-                        </select>
+                      <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                       </td>
                     </tr>
                     <tr>
@@ -203,11 +284,21 @@ function Admin() {
                       <td></td>
                       <td></td>
                       <td className="action-column">
-                        <select id="action" name="action">
-                          <option value="...">...</option>
-                          <option value="view">View</option>
-                          <option value="delete">Delete</option>
-                        </select>
+                      <Select 
+                    className="custom-select-control"
+                    id="action"
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options.map(option => ({
+                      value: option.value,
+                      label: (
+                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                        {option.label}
+                        </Link>
+                      ),
+                    }))}
+                    placeholder='...'
+                  />
                       </td>
                     </tr>
                     

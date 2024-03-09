@@ -22,7 +22,7 @@ const Nav = () => {
             </div>
             <ul className={menuOpen ? "Open" : ""}>
                 <li>
-                    <a href="/Home" className='activate'>Home</a>
+                    <Link to="/Home" className='activate'>Home</Link>
                 </li>
                 <li>
                     <Link to="/About" className='About'>About Us</Link>
@@ -37,17 +37,13 @@ const Nav = () => {
                     <Link to="/Contact-Us" className='Contact'>Contact Us</Link>
                 </li>
                 <li>
-
                     <Link to="/Book Apartment" className='Book'>Book Apartment</Link>
                 </li>
                 <li>
-
                     <Link to='/BookAppointment' className="active">Book Appointment</Link>
                 </li>
                 <li>
                     <Link to='/' className="active">
-
-
                         SIGNUP
                     </Link>
                 </li>
