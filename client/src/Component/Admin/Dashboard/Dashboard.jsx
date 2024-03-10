@@ -63,7 +63,7 @@ function Admin() {
             <div className="chart-top">
               <div className="chart-img"></div>
               <div className="chart-text">
-                <h3>Total Patients</h3>
+                <h3>Total Earnings</h3>
               </div>
             </div>
             <div className="chartt">
