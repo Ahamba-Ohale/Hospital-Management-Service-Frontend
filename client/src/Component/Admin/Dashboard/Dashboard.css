@@ -10,6 +10,10 @@
     padding: 20px;
     min-height: 100vh;
   }
+
+.main-body p {
+  font-size: 13px;
+}
   
   .main-body .visible {
     margin-left: 5vw;
@@ -256,6 +260,8 @@
     .main-body {
       width: 80vw;
       padding: 15px;
+      font-size: 13px;
+      color: #b8b5b5;
       /* min-height: inherit; */
     }
   }

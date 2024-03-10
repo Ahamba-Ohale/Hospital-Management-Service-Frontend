@@ -1,102 +1,38 @@
-import { GoPlus } from "react-icons/go";
-import Sidebar from "../AdminSidebar/Sidebar";
-import './Health.css'
-import { Link } from "react-router-dom"
+import React, { useState } from 'react'
+// import { GrView } from "react-icons/gr";
+// import { RiDeleteBin5Line } from "react-icons/ri";
+import { Link } from 'react-router-dom';
 import Select from 'react-select';
-import DatePicker from "react-datepicker";
-import { useState } from "react";
 
 const options = [
-  { value: 'view', label: 'View', link: '/PatientInfo/view' },
-  { value: 'delete', label: 'Delete', link: '/PatientInfo' },
-];
-
-const sortBy = [
-  { value: 'newest patient', label: 'Newest Patient' },
-  { value: 'oldest patient', label: 'Oldest Patient' },
-];
-const gender = [
-  { value: 'male', label: 'Male' },
-  { value: 'female', label: 'Female' },
-];
+    { value: 'view', label: 'View', link: '/PatientInfo/view' },
+    { value: 'delete', label: 'Delete', link: '/PatientInfo' },
+  ];  
 
 
-const Health = () => {
-  const [selectedOption, setSelectedOption] = useState(null);
+const Roles = () => {
 
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+    const [selectedOption, setSelectedOption] = useState(null);
+
+
+    // const [NewMedRecord, setNewMedRecord] = useState(false);
 
   return (
-      <div className="dashboard">
-        <Sidebar />
-        <div className="main-body">
-          <div className="header">
-            <span className="search">
-              <input type="text" placeholder="Search Patient" />
-            </span>
-            <div className="notify">
-              <div className="bell"></div>
-              <div className="img"></div>
-              <h4>Patient name</h4>
-            </div>
-          </div>
+    <div className="patient-content__med">
+      <div className="patient-content__top">
+        <h2>Roles</h2>
+      </div>
 
-          <div className="sub-header">
-            <div className="cards">Total Appointments Today</div>
-            <div className="cards">Medication</div>
-            <div className="cards">Total Consultations</div>
-          </div>
-
-          <div className="filter">
-          <div className="card1">
-            <Select
-              defaultValue={selectedOption}
-              onChange={setSelectedOption}
-              options={sortBy.map(option => ({
-                value: option.value,
-                label: option.label
-              }))} 
-              placeholder= "Sort By"
-            />
-          </div>
-          <div className="card1">
-            <Select
-              defaultValue={selectedOption}
-              onChange={setSelectedOption}
-              options={gender.map(option => ({
-                value: option.value,
-                label: option.label
-              }))} 
-              placeholder= "Gender"
-            />
-          </div>
-          <div className="card1">
-            <DatePicker
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
-              startDate={startDate}
-              endDate={endDate}
-              selectsRange
-              dateFormatShow="DD MMMM,YYYY"
-            />
-          </div>
-          <button type="submit" id="btn">
-            Filter
-          </button>
-        </div>
-
-
-          <div className="health__main">
+      <div className="health__main">
             <table className="patient-list">
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Patient Name</th>
+                  <th>Employee Name</th>
                   <th>Created At</th>
+                  <th>Department</th>
                   <th>Gender</th>
-                  <th>Blood Group</th>
-                  <th>Age</th>
+                  <th>Role</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -276,116 +212,116 @@ const Health = () => {
                   />
                   </td>
                 </tr>
-                <tr>
-                  <td>8</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td className="action-column">
-                  <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                  </td>
-                </tr>
-                <tr>
-                  <td>9</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td className="action-column">
-                  <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                  </td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td className="action-column">
-                  <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                  </td>
-                </tr>
-                <tr>
-                  <td>11</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td className="action-column">
-                  <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                  </td>
-                </tr>
               </tbody>
             </table>
           </div>
 
-          <div className="create">
-            <GoPlus />
+      {/* <div className="patient-content__medd">
+        <div className="patient-content__med1">
+          <div className="patient-content__date">
+            <p>
+              <b>2nd, Feb 2024</b>
+            </p>
+          </div>
+          <div className="patient-content__right">
+            <p>
+              <b>Complaint:</b> Fever, Headache
+            </p>
+            <p>
+              <b>Diagnosis:</b> Malaria, Hypertension
+            </p>
+            <p>
+              <b>Treatment:</b> Surgery, Chemotherapy
+            </p>
+            <p>
+              <b>Prescription:</b> Paracetamol, Amoxicillin, Ibuprofen
+            </p>
+          </div>
+          <div className="patient-content__amt">
+            <p>
+              <b>$15000</b>
+            </p>
+          </div>
+          <div className="patient-content__ico">
+            <div>
+              <GrView size={20} />
+            </div>
+            <div>
+              <RiDeleteBin5Line size={20} />
+            </div>
           </div>
         </div>
-      </div>
+        <div className="patient-content__med1">
+          <div className="patient-content__date">
+            <p>
+              <b>2nd, Feb 2024</b>
+            </p>
+          </div>
+          <div className="patient-content__right">
+            <p>
+              <b>Complaint:</b> Fever, Headache
+            </p>
+            <p>
+              <b>Diagnosis:</b> Malaria, Hypertension
+            </p>
+            <p>
+              <b>Treatment:</b> Surgery, Chemotherapy
+            </p>
+            <p>
+              <b>Prescription:</b> Paracetamol, Amoxicillin, Ibuprofen
+            </p>
+          </div>
+          <div className="patient-content__amt">
+            <p>
+              <b>$15000</b>
+            </p>
+          </div>
+          <div className="patient-content__ico">
+            <div>
+              <GrView size={20} />
+            </div>
+            <div>
+              <RiDeleteBin5Line size={20} />
+            </div>
+          </div>
+        </div>
+        <div className="patient-content__med1">
+          <div className="patient-content__date">
+            <p>
+              <b>2nd, Feb 2024</b>
+            </p>
+          </div>
+          <div className="patient-content__right">
+            <p>
+              <b>Complaint:</b> Fever, Headache
+            </p>
+            <p>
+              <b>Diagnosis:</b> Malaria, Hypertension
+            </p>
+            <p>
+              <b>Treatment:</b> Surgery, Chemotherapy
+            </p>
+            <p>
+              <b>Prescription:</b> Paracetamol, Amoxicillin, Ibuprofen
+            </p>
+          </div>
+          <div className="patient-content__amt">
+            <p>
+              <b>$15000</b>
+            </p>
+          </div>
+          <div className="patient-content__ico">
+            <div>
+              <GrView size={20} />
+            </div>
+            <div>
+              <RiDeleteBin5Line size={20} />
+            </div>
+          </div>
+        </div>
+      </div> */}
+    </div>
   );
-};
+}
 
-export default Health;
+export default Roles
