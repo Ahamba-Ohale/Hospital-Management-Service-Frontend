@@ -1,5 +1,11 @@
+/* .activate{
+    color: orange;
+    border-bottom: 3px solid orange;
+    animation: unset;
+} */
+
 #home{
-    height: 60svh;
+    height: 70svh;
     background-image: url(wel.jpg);
     display: grid;
     align-content: center;
@@ -9,7 +15,7 @@
 
 .home-body{
     /* width: 50%; */
-    height: 60vh;
+    height: 70vh;
     display: grid;
     align-content: center;
     padding: 0 100px;
@@ -17,12 +23,12 @@
     background-image: linear-gradient(to right, #276AB3, #ffffff00);
 }
 
-#home h1 p{
+#home .header1{
     color: white;
     padding-bottom: 10px;
 }
 
-#home a{
+#home .link-tag{
     margin-top: 5px;
     padding: 10px;
     width: 100px;
@@ -74,19 +80,19 @@
     justify-items: center;
 }
 
-.about-us p{
+.about-us .para-g1{
     text-align: left;
     font-size: 15px;
     letter-spacing: 1px;
 }
 
-.about-uss p{
+.about-uss .para-g2{
     text-align: left;
     font-size: 15px;
     letter-spacing: 1px;
 }
 
-.about-us h2, .about-uss h2{
+.about-us .para-h2-1, .about-uss .para-h2-2{
     color: #276ab3;
 }
 
@@ -156,9 +162,10 @@
     border-radius: 5px
 }
 
-#blog .content{
+#blog .contents{
     padding: 20px 3px;
     font-size: 13px;
+    letter-spacing: .5px;
 }
 
 #blog .dat{
@@ -166,7 +173,7 @@
     font-size: 13px;
 }
 
-#Health-Blog h2{
+#Health-Blog .health-h2{
     text-align: center;
     color: #276ab3;
 }
@@ -193,58 +200,11 @@
     transition: all 0.4s ease;
 }
 
-footer .main .sub-dom{
-    display: flex;
-    justify-content: flex-end;
-    gap: 3rem;
-}
-.main{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    padding: 2.5rem 4rem;
-}
-
-.main .sub-dom .company ul li a{
-    color: #dacbcb;
-}
-
-.main .sub-dom .company ul li{
-    color: #dacbcb;
-    FONT-SIZE: 13PX;
-    LETTER-SPACING: 1PX;
-    padding: 0.7rem 0;
-}
-
-.main .sub h4,.main .sub-dom .company ul label b{
-    color: white;
-}
-
-footer{
-    MARGIN-TOP: 30PX;
-    PADDING: 20PX;
-    background-color: #276ab3;
-}
-.line{
-    border-top: 2px solid white ;
-}
-
 @media (max-width:800px) {
     .about{
         margin: 10% 3%;
     }
 
-    footer .main .sub-dom {
-        gap: 1rem;
-        letter-spacing: 0;
-        display: block;
-        margin-top: 20px;
-    }
-
-    .main{
-        padding: 1.2rem 2rem;
-        display: block;
-    }
 
     #blog{
         display: flex;
@@ -268,16 +228,13 @@ footer{
         justify-items: center;
     }
 
-    .about-uss p {
+    .about-uss .para-g2, .about-us .para-g1{
         font-size: 13px;
     }
 
-    .about-us p {
-        font-size: 13px;
-    }
 }
 
-@media (max-width:490px) {
+@media (max-width:425px) {
     #blog{
         margin: 30px 3%;
         justify-content: space-around;
@@ -285,5 +242,29 @@ footer{
 
     #blog .pic{
         /* width: 30vw; */
+    }
+
+    #home{
+        height: 60svh;
+    }
+    
+    .home-body{
+        /* width: 50%; */
+        height: 60vh;
+
+    }
+}
+
+
+@media (max-width:599px) {
+    .about .img{
+        display: none;
+    }
+
+    .about-us .para-g1, .about-uss .para-g2{
+        font-size: 12px;
+        margin: 25px;
+        text-align: center;
+        padding: 0;
     }
 }

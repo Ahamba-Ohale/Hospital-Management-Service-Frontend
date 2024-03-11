@@ -1,0 +1,29 @@
+#home{
+    background-position: center;
+    animation-name: animation;
+    animation-direction: alternate-reverse;
+    animation-duration: 30s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+    display: grid;
+    align-content: center;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  @keyframes animation {
+    0%{
+      background-image: url(doctor.jpg);
+    }
+    25%{
+      background-image: url(doctor1.jpg);
+    }
+    50%{
+      background-image: url(doctor2.jpg);
+    }
+    100%{
+      background-image: url(wel.jpg);
+    }
+  }

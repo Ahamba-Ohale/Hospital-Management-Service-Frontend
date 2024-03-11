@@ -1,0 +1,274 @@
+.patient-main__content {
+    display: flex;
+    width: 100%;
+    gap: 8%;
+    padding: 40px;
+}
+
+.patient-menu {
+    width: 30%;
+    height: 45rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0px  5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.patient-menu__content {
+    width: 75%;
+    display: block;
+    column-gap: 10px;
+    padding: 20px;
+}
+
+.patient-img {
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    background-color: aquamarine;
+}
+
+.patient-content__text {
+    text-align: center;
+    line-height:  1.6;
+    margin-bottom: 10px;
+}
+
+.patient-menu__buttons {
+    display: block;
+}
+
+.patient-content__medrec {
+    width: 100%;
+    height: 3rem;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-align: left;
+    cursor: pointer;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+#iconn {
+    margin-right: 8px;
+}
+
+.patient-content {
+    width: 63%;
+    /* height: 20rem; */
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow-y: scroll;
+    box-shadow: 0px  5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.patient-content__top {
+    /* padding: 10px; */
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+.patient-content h2 {
+    /* padding: 10px; */
+    display: flex;
+    font-size: 15pt;
+    width: 100%;
+}
+.patient-content__button {
+    /* padding: 10px; */
+    display: flex;
+    background-color: #276AB3;
+    
+}
+
+.patient-content__med1 {
+    display: flex;
+    justify-content: space-between;
+    background-color: #eeeff0;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height:  20px;
+    color: #4e5052;
+    margin-bottom: 10px;
+}
+
+.patient-content__date {
+    width: 8rem;
+}
+
+.patient-content__right {
+    width: 17rem;
+}
+
+.patient-content__ico {
+    display: flex;
+    gap: 10px;
+}
+
+.patient-content__medre {
+    width: 50%;
+    height: 3rem;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: #276AB3;
+    border: none;
+    cursor: pointer;
+}
+
+.patient-content__image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.patient-content__imgmain {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* background-color: #eeeff0; */
+    grid-gap: 20px; /* Adjust the gap as needed */
+    height: 75vh;
+  }
+  
+  .patient-img__container {
+    background-color: #f0f0f0; /* Add your styling */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    height: 100%;
+    /* Add other styles as needed */
+  }
+  
+  .patient-content__imgnew {
+    /* Add your styling for the new container */
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 10px;
+    height: 25vh;
+  }
+  
+  .medical-form {
+    padding: 20px;
+  }
+  
+  .formm label {
+    position: relative;
+    display: block;
+    margin-bottom: 5px;
+    /* font-size: 14px; */
+    font-weight: bold;
+    color: #000;
+    font-size: 14px;
+  }
+
+  .formm input {
+    border: 1px solid #4e5052;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .checkbox {
+    display: flex;
+    padding: 0;
+  }
+
+  /* textarea {
+    /* resize: vertical; */
+  /* } */ */
+  
+  .save-btn {
+    background-color: #276AB3;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .save-btn:hover {
+    background-color: #1E528E;
+  }
+  
+  .history {
+    display: flex;
+    margin-left: 40px;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .back {
+    width: 40px;
+    height: 40px;
+    border: 1.5px dashed #4e5052;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+  }
+
+  .page-name {
+    font-size: 14pt;
+    font-weight: 700;
+
+  }
+
+  .patient-menuu {
+    width: 30%;
+    height: 23rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0px  5px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-left: 10%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .add-appointment-modal {
+    background: white;
+    width: 60vw;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  

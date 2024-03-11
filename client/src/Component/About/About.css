@@ -1,10 +1,13 @@
 .about-page{
-    height: 50svh;
+    height: 55svh;
     background-color: #276ab3;
     display: grid;
     align-content: center;
     justify-items: center;
     padding: 0px 15%;
+    background-image: url(doctor2.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
 .about-h2{
@@ -15,6 +18,8 @@
 .about-content{
     text-align: center;
     color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
 .white{
@@ -41,6 +46,8 @@
 
 .his-p{
     color: black;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
 .staff{
@@ -48,7 +55,6 @@
 }
 
 .pic{
-    max-width: 300px;
     height: 35vh;  
     background-color: #dddddd;
     border-radius: 5px;
@@ -100,8 +106,10 @@
     color:  #276ab3;
 }
 
-.Meet-li{
+.Meet-li {
     padding: 10px 0;
+    font-size: 14px;
+    letter-spacing: .5px;
 }
 
 .load-btn{
@@ -122,18 +130,11 @@
     transition: all o.4s ease;
 }
 
-.cont a{
-    color: white;
-    font-size: 12px;
-}
 
-.cont{
-    padding-left: 10px;
-}
 
-@media (max-width:1200px) {
+@media (max-width:1020px) {
     .profile{
-        padding: 0 10%;
+        padding: 0 20px;
     }    
 
     .pic {

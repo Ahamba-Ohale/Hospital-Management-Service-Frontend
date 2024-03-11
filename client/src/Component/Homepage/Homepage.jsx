@@ -1,32 +1,35 @@
 import { useState } from 'react'
 
 // import React from 'react'
+
 import './Home.css'
+import './Imagechanger.css'
 import {Link} from 'react-router-dom'
-import Nav from '../Important/Nav/nav'
+import Nav from '../Important/Nav/Nav'
 import Foot from '../Important/Footer/Foot'
+import {useEffect, useRef } from 'react';
 
 
 
 const Homepage = () => {    
-    const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <div>
+        <Nav />
 
-        <nav>
+        {/* <nav>
             <Link to="/" className='title'>Website</Link>
             <div className='menu' 
-                onClick={() => {
-                setMenuOpen(!menuOpen);
-                }}
+                // onClick={() => {
+                // setMenuOpen(!menuOpen);
+                // }}
             >
                 <i className="fa-duotone fa-bars"></i>
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <ul className={menuOpen ? "Open" : ""}>
+            <ul>
                 <li>
                     <Link to="/Home" >Home</Link>
                 </li>
@@ -40,7 +43,9 @@ const Homepage = () => {
                     <Link to="/Contact Us" >Contact Us</Link>
                 </li>
                 <li>
-                    <Link to="/Book Apartment" >Book Apartment</Link>
+
+                    <Link to="/Book Appointment" >Book Appointment</Link>
+
                 </li>
                 <li>
                     <Link to='/Register' class="active" >
@@ -48,12 +53,13 @@ const Homepage = () => {
                     </Link>
                 </li>
             </ul>
-        </nav>
+        </nav> */}
+
 
         <div id="contain">
             <div id="home">
                 <div className="home-body">
-                    <h1>
+                    <h1 className='header1' >
                         <p>GREAT TOWERS</p>
                         <p>SPECIALIST HOSPITAL</p>
                     </h1>
@@ -61,7 +67,7 @@ const Homepage = () => {
                     <p className='p'>Lorem ipsum, dolor sit amet consectetur adipisicing Lorem, ip.</p>
                     <p className='p'>Lorem ipsum, dolor sit amet consectet</p>
                     
-                    <a href=''>Sign Up</a>
+                    <a href='' className='link-tag'>Sign Up</a>
                 </div>
             </div>
             <div className="about">
@@ -69,8 +75,8 @@ const Homepage = () => {
                     {/* <img src="new.jpg" alt="Image" /> */}
                 </div>
                 <div className="about-us">
-                    <h2>About Us</h2>
-                    <p>
+                    <h2 className='para-h2-1' >About Us</h2>
+                    <p className='para-g1'>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
@@ -81,8 +87,8 @@ const Homepage = () => {
             </div>
             <div className="about">
                 <div className="about-uss">
-                    <h2>Our Services</h2>
-                    <p>
+                    <h2 className='para-h2-2'>Our Services</h2>
+                    <p className='para-g2'>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
@@ -97,13 +103,13 @@ const Homepage = () => {
         </div>
 
         <div id="Health-Blog">
-            <h2>Health Blog</h2>
+            <h2 className='health-h2'>Health Blog</h2>
             <div id="blog">
                 <div className="blogs">
                     <div className="pic">
 
                     </div>
-                    <p className="content">
+                    <p className="contents">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Ipsa quis dolores vero facere, porro provident est sequi 
                     </p>
@@ -115,7 +121,7 @@ const Homepage = () => {
                     <div className="pic">
 
                     </div>
-                    <p className="content">
+                    <p className="contents">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Ipsa quis dolores vero facere, porro provident est sequi 
                     </p>
@@ -127,7 +133,7 @@ const Homepage = () => {
                     <div className="pic">
 
                     </div>
-                    <p className="content">
+                    <p className="contents">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Ipsa quis dolores vero facere, porro provident est sequi 
                     </p>

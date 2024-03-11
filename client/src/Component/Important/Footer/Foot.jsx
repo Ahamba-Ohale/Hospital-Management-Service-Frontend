@@ -57,7 +57,7 @@ const Foot = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="company">
+                <div className="company seperate">
                     <ul>
                         <label>
                             <b>

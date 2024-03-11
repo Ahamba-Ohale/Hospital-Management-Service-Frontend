@@ -1,17 +1,19 @@
 import React from 'react'
 import './Nav.css'
 import { useState } from 'react'
+import {NavLink} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 
 const Nav = () => {
     const [menuOpen, setMenuOpen] = useState(false)
+    
 
   return (
         <nav>
-            <Link to="/" className='title'>Website</Link>
+            <NavLink to="/" className='title'><img src="Logo.png" alt="Logo" className='Logo' /></NavLink>
             <div className='menu' 
                 onClick={ () => {
-                setMenuOpen(!menuOpen);
+                    setMenuOpen(!menuOpen);
                 }}
             >
                 <i class="fa-duotone fa-bars"></i>
@@ -21,27 +23,29 @@ const Nav = () => {
             </div>
             <ul className={menuOpen ? "Open" : ""}>
                 <li>
-                    <a href="/Home" className='activate'>Home</a>
+                    <NavLink to="/Home" className='activate'>Home</NavLink>
                 </li>
                 <li>
-                    <a href="/About" >About Us</a>
+                    <NavLink to="/About" className='About'>About Us</NavLink>
                 </li>
                 <li>
-                    <a href="/Blog" >Blogs</a>
+                    <NavLink to="/Blog" className='blog' id='blogs' >Blogs</NavLink>
                 </li>
                 <li>
-                    <a href="/Services" >Services</a>
+                    <NavLink to="/Services" className='service'>Services</NavLink>
                 </li>
                 <li>
-                    <a href="/Contact Us" >Contact Us</a>
+                    <NavLink to="/Contact-Us" className='Contact'>Contact Us</NavLink>
                 </li>
                 <li>
-                    <a href="/Book Apartment" >Book Apartment</a>
+
+                    <NavLink to="/Book Apartment" className='Book'>Book Appointment</NavLink>
                 </li>
+                
                 <li>
-                    <a to='/' class="active" >
+                    <Link to='/' className="active">
                         SIGNUP
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </nav>
