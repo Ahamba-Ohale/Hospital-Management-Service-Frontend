@@ -63,7 +63,7 @@
 
 .login_container .error_msg,
 .login_container .success_msg {
-  top: 6rem;
+  top: 14rem;
 }
 
 .login_container .white_btn,
@@ -163,7 +163,7 @@
   padding: 15px;
   margin: 0 0 10px 0;
   position: absolute;
-  top: 4rem;
+  top: 13rem;
   letter-spacing: 1px;
   line-height: 1.5;
   font-size: 14px;
@@ -288,7 +288,7 @@
 
 .btn {
   position: absolute;
-  bottom: 5rem;
+  bottom: 14rem;
 }
 
 .btn_good {

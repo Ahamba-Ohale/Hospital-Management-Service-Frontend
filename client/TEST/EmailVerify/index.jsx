@@ -1,29 +1,23 @@
 import { useState, useEffect, Fragment } from 'react';
-import './auth.css';
-import success from '../../../public/verified.png';
+import './styles.modules.css';
+import success from '../../public/verified.png';
 import { Link, useParams } from 'react-router-dom';
-import Axios from 'axios';
-import Error from '../Error/Error';
-import { BiLoaderCircle } from 'react-icons/bi';
+import axios from 'axios';
 
-const VerifyEmail = () => {
-  const [loading, setLoading] = useState(false);
+const EmailVerify = () => {
   const [validUrl, setValidUrl] = useState(false);
   const param = useParams();
 
   useEffect(() => {
     const verifyEmailUrl = async () => {
       try {
-        setLoading(true);
-        const url = `http://localhost:8080/api/register/${param.id}/verify/${param.token}`;
-        const { data } = await Axios.get(url)
+        const url = `http://localhost:8080/api/users/${param.id}/verify/${param.token}`;
+        const { data } = await axios.get(url)
         console.log(data);
         setValidUrl(true);
       } catch (error) {
         console.error(error);
         setValidUrl(false);
-      } finally {
-        setLoading(false);
       }
     };
     verifyEmailUrl();
@@ -37,23 +31,18 @@ const VerifyEmail = () => {
           <h1>Email verified successfully</h1>
           <Link to="/login">
             <button
-              disabled={loading}
               type="submit"
-              className="blue_btn"
+              className="green_btn"
             >
-              {loading ? (
-                <BiLoaderCircle className="animate-spin" color="#fff" size={25} />
-              ) : (
-                'Sign In'
-              )}
+              Login
             </button>
           </Link>
         </div>
       ) : (
-        <Error />
+        <h1>404 Not Found</h1>
       )}
     </Fragment>
   );
 };
 
-export default VerifyEmail;
+export default EmailVerify;

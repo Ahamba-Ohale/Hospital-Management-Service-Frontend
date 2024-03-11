@@ -3,12 +3,10 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { BiLoaderCircle } from 'react-icons/bi';
 import passwordValidator from 'password-validator';
 import './auth.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
 const Login = () => {
-  const navigate = useNavigate();
-
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [msg, setMsg] = useState('');
@@ -77,37 +75,24 @@ const Login = () => {
   
     let formErrors = {};
   
-    const filledFields = Object.values(data).filter((value) => {
-      return value !== null && value !== '' && value !== undefined;
+    // Validate each field
+    Object.entries(data).forEach(([type, value]) => {
+      let fieldError = null;
+      switch (type) {
+        case 'email':
+          fieldError = validateEmail(value);
+          break;
+        case 'password':
+          fieldError = validatePassword(value);
+          break;
+        default:
+          break;
+      }
+  
+      if (fieldError) {
+        formErrors[type] = fieldError;
+      }
     });
-  
-    const emptyFields = Object.values(data).filter((value) => {
-      return value === null || value === '' || value === undefined;
-    });
-  
-    // Check if empty fields are greater than filled fields
-    if (emptyFields.length > filledFields.length) {
-      formErrors['_general'] = 'Please fill out all required fields';
-    } else {
-      // Validate each field
-      Object.entries(data).forEach(([type, value]) => {
-        let fieldError = null;
-        switch (type) {
-          case 'email':
-            fieldError = validateEmail(value);
-            break;
-          case 'password':
-            fieldError = validatePassword(value);
-            break;
-          default:
-            break;
-        }
-  
-        if (fieldError) {
-          formErrors[type] = fieldError;
-        }
-      });
-    }
   
     if (Object.keys(formErrors).length > 0) {
       setError({ type: 'form', messages: formErrors });
@@ -115,8 +100,7 @@ const Login = () => {
     }
   
     return false;
-  };
-   
+  };   
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -128,7 +112,7 @@ const Login = () => {
       const url = 'http://localhost:8080/api/login';
       const { data:response } = await Axios.post(url, data)
       localStorage.setItem("token", response.data);
-      navigate("/patient");
+      window.location = "/patient";
       setMsg(response.message);
     } catch (error) {
       if (error.response && error.response.status >= 400 && error.response.status <= 500) {

@@ -7,9 +7,13 @@ import Healthblog from './Component/Health blog/Healthblog';
 import Box from './Component/BOX/box';
 import Foot from './Component/Important/Footer/Foot';
 import Admin from './Component/Admin/Admin';
+import Main from '../TEST/Main';
+import Signup from '../TEST/Signup';
+import Signin from '../TEST/Signin';
+import EmailVerify from '../TEST/EmailVerify';
 import Register from './Component/auth/Register';
 import Login from './Component/auth/Login';
-import ForgotPassword from './Component/auth/ForgotPassword';
+// import ForgotPassword from './Component/auth/ForgotPassword';
 import VerifyEmail from './Component/auth/VerifyEmail';
 import Patient from './Component/Patient/Patient';
 
@@ -33,12 +37,17 @@ function App() {
           <Route path='/Admin' element={<Admin />} />
 
           <Route />
+          {user && <Route path="/main" exact element={<Main />} />}
+          <Route path='/signup' exact element={<Signup />} />
+          <Route path='/signin' exact element={<Signin />} />
+          <Route path='/main' exact element={<Navigate replace to="/login" />} />
+          <Route path='/users/:id/verify/:token' element={<EmailVerify />} />
+
           {user && <Route path="/patient" exact element={<Patient />} />}
           <Route path='/register' exact element={<Register />} />
-          <Route path='/verify-email/:token/verify/:id' exact element={<VerifyEmail />} />
           <Route path='/login' exact element={<Login />} />
           <Route path='/patient' exact element={<Navigate replace to="/login" />} />
-          <Route path='/forgotPassword' element={<ForgotPassword />} />
+          <Route path='/users/:id/verify/:token' element={<VerifyEmail />} />
         </Routes>
       </Router>
       
