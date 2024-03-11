@@ -219,7 +219,6 @@ const Register = () => {
       setLoading(true);
       const url = 'http://localhost:8080/api/register';
       const { data: response } = await Axios.post(url, data);
-
       setMsg(response.message);
     } catch (error) {
       if (error.response && error.response.status >= 400 && error.response.status <= 500) {

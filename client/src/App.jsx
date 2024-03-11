@@ -33,11 +33,11 @@ function App() {
           <Route path='/Admin' element={<Admin />} />
 
           <Route />
-          {user && <Route path="/patient" element={<Patient />} />}
-          <Route path='/register' element={<Register />} />
-          <Route path='/verify-email/:token/verify/:id' element={<VerifyEmail />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/patient' element={<Navigate replace="/login" />} />
+          {user && <Route path="/patient" exact element={<Patient />} />}
+          <Route path='/register' exact element={<Register />} />
+          <Route path='/verify-email/:token/verify/:id' exact element={<VerifyEmail />} />
+          <Route path='/login' exact element={<Login />} />
+          <Route path='/patient' exact element={<Navigate replace to="/login" />} />
           <Route path='/forgotPassword' element={<ForgotPassword />} />
         </Routes>
       </Router>
