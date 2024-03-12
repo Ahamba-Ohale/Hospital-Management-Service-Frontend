@@ -9,11 +9,12 @@ const Blogview = () => {
       <Nav />
       <div className="bview">
         <div className="tview">
-          <div className="btitle">
-            <h2 className="b-h2">Blog titles more and more</h2>
-          </div>
           <div className="bpicture">
-            <img src="doctor.jpg" alt="" className='bimg' />
+            <img src="doctor2.jpg" alt="" className='bimg' />
+          </div>
+          <div className="btitle">
+            <h2 className="b-h2">Blog titles more and moreBlog titles more and more</h2>
+            <p className="date">FEB 12 2024</p>
           </div>
         </div>
         <div className="cview">

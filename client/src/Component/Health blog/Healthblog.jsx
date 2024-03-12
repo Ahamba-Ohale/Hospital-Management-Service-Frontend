@@ -27,7 +27,7 @@ const Healthblog = () => {
                 <div className="staff">
                     <div className="pictures"></div>
                     <div className="author_date author">
-                        <p>10 Feb 24</p>
+                        <p className='author_p'>10 Feb 24</p>
                     </div>
                     <h4 className="titles">Blog Title and more header for blog </h4>
                     <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
@@ -35,7 +35,7 @@ const Healthblog = () => {
                 <div className="staff">
                     <div className="pictures"></div>
                     <div className="author_date author">
-                        <p>10 Feb 24</p>
+                        <p className='author_p'>10 Feb 24</p>
                     </div>
                     <h4 className="titles">Blog Title and more header for blog </h4>
                     <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
@@ -43,7 +43,7 @@ const Healthblog = () => {
                 <div className="staff">
                     <div className="pictures"></div>
                     <div className="author_date author">
-                        <p>10 Feb 24</p>
+                        <p className='author_p'>10 Feb 24</p>
                     </div>
                     <h4 className="titles">Blog Title and more header for blog </h4>
                     <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
@@ -51,7 +51,7 @@ const Healthblog = () => {
                 <div className="staff">
                     <div className="pictures"></div>
                     <div className="author_date author">
-                        <p>10 Feb 24</p>
+                        <p className='author_p'>10 Feb 24</p>
                     </div>
                     <h4 className="titles">Blog Title and more header for blog </h4>
                     <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
@@ -59,7 +59,7 @@ const Healthblog = () => {
                 <div className="staff">
                     <div className="pictures"></div>
                     <div className="author_date author">
-                        <p>10 Feb 24</p>
+                        <p className='author_p'>10 Feb 24</p>
                     </div>
                     <h4 className="titles">Blog Title and more header for blog </h4>
                     <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
@@ -67,7 +67,7 @@ const Healthblog = () => {
                 <div className="staff">
                     <div className="pictures"></div>
                     <div className="author_date author">
-                        <p>10 Feb 24</p>
+                        <p className='author_p'>10 Feb 24</p>
                     </div>
                     <h4 className="titles">Blog Title and more header for blog </h4>
                     <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
@@ -75,7 +75,7 @@ const Healthblog = () => {
                 <div className="staff">
                     <div className="pictures"></div>
                     <div className="author_date author">
-                        <p>10 Feb 24</p>
+                        <p className='author_p'>10 Feb 24</p>
                     </div>
                     <h4 className="titles">Blog Title and more header for blog </h4>
                     <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
@@ -83,7 +83,7 @@ const Healthblog = () => {
                 <div className="staff">
                     <div className="pictures"></div>
                     <div className="author_date author">
-                        <p>10 Feb 24</p>
+                        <p className='author_p'>10 Feb 24</p>
                     </div>
                     <h4 className="titles">Blog Title and more header for blog </h4>
                     <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
@@ -91,11 +91,20 @@ const Healthblog = () => {
                 <div className="staff">
                     <div className="pictures"></div>
                     <div className="author_date author">
-                        <p>10 Feb 24</p>
+                        <p className='author_p'>10 Feb 24</p>
                     </div>
                     <h4 className="titles">Blog Title and more header for blog </h4>
                     <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
                 </div>
+                <div className="staff">
+                    <div className="pictures"></div>
+                    <div className="author_date author">
+                        <p className='author_p'>10 Feb 24</p>
+                    </div>
+                    <h4 className="titles">Blog Title and more header for blog </h4>
+                    <div className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestias?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus totam tenetur, facilis deserunt aperiam ullam cupiditate. Quis dicta vel quas, quasi amet, ipsam impedit pariatur incidunt reprehenderit numquam et.</div>
+                </div>
+ 
             </div>
         </div>
 

@@ -1,0 +1,39 @@
+.Service-page{
+    height: 55svh;
+    background-color: #276ab3;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    padding: 0px 15%;
+    background-image: url(doctor.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.Service-page{
+    padding: 30px;
+    color: white;
+}
+
+.Service-content{
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.Service-History{
+    margin: 5% 10%;
+    text-align: center;
+}
+
+.Service-his{
+    color: #276ab3;
+    padding: 30px 0;
+}
+
+.Service-his-p{
+    color: black;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
