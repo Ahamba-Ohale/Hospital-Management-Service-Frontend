@@ -2,8 +2,11 @@ import React from "react";
 import Sidebar from "./AdminSidebar/Sidebar";
 import PatientChart from "./Charts/PatientChart";
 import LineChart from "./Charts/LIneChart";
+import axios from "axios";
+
 
 function Admin() {
+
   return (
     // <div className="body">
     <div className="dashboard">
@@ -80,7 +83,7 @@ function Admin() {
                   <thead>
                     <tr>
                       <th>#</th>
-                      <th>Patient Name</th>
+                      <th>Patientyyyyyyy Name</th>
                       <th>Created At</th>
                       <th>Gender</th>
                       <th>Blood Group</th>
@@ -209,7 +212,7 @@ function Admin() {
                         </select>
                       </td>
                     </tr>
-                    
+                     
                   </tbody>
                 </table>
               </div>
