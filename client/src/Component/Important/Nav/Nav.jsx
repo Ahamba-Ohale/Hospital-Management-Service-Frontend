@@ -41,8 +41,6 @@ const Nav = () => {
 
                     <NavLink to="/Book Apartment" className='Book'>Book Appointment</NavLink>
                 </li>
-               
-               
                 <li>
                     <Link to='/' className="active">
                         SIGNUP

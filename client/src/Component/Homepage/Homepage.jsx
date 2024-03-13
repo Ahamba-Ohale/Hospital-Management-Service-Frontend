@@ -17,8 +17,6 @@ const Homepage = () => {
     <div>
         <Nav />
 
-        
-
         <div id="contain">
             <div id="home">
                 <div className="home-body">
