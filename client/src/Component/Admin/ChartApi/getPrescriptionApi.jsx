@@ -5,6 +5,7 @@ function getPrescriptionsData(id) {
   return new Promise(async (resolve, reject) => {
     try {
       const response = await fetch(`${apiUrl}/getTreatmentPlans/`);
+      console.log(response.data);
       const data = await response.json();
       resolve(data);
     } catch (error) {

@@ -21,6 +21,9 @@ import NewMedRecord from './Component/Admin/PatientDB/NewMedRecord';
 import CreatePatient from './Component/Admin/PatientDB/CreatePatient';
 
 
+
+
+
 function App() {
 
   return (

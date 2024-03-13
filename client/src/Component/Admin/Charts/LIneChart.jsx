@@ -29,6 +29,11 @@ const div ={
         beginAtZero: true,
       },
     },
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },  
 }
 
 
