@@ -5,7 +5,7 @@
 } */
 
 #home{
-    height: 70svh;
+    height: 100svh;
     background-image: url(wel.jpg);
     display: grid;
     align-content: center;
@@ -15,7 +15,7 @@
 
 .home-body{
     /* width: 50%; */
-    height: 70vh;
+    height: 100vh;
     display: grid;
     align-content: center;
     padding: 0 100px;

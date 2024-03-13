@@ -9,14 +9,14 @@ const Nav = () => {
     
 
   return (
-        <nav>
+        <nav className='nav'>
             <NavLink to="/" className='title'><img src="Logo.png" alt="Logo" className='Logo' /></NavLink>
             <div className='menu' 
                 onClick={ () => {
                     setMenuOpen(!menuOpen);
                 }}
             >
-                <i class="fa-duotone fa-bars"></i>
+                <i className="fa-duotone fa-bars"></i>
                 <span></span>
                 <span></span>
                 <span></span>
