@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 import Select from 'react-select';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
 
 const options = [
   { value: 'view', label: 'View', link: '/PatientInfo/view' },
@@ -26,6 +27,26 @@ const PatientDB = () => {
 
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+
+
+
+
+  const [patients, setPatients] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from the backend when the component mounts
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/Patients/"); // Replace with your backend API endpoint
+        setPatients(response.data);
+      } catch (error) {
+        console.error("Error fetching patients:", error);
+      }
+    };
+
+    fetchData();
+  }, []); 
+
 
   return (
     <div className="dashboard">
@@ -100,281 +121,34 @@ const PatientDB = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>2022-03-01</td>
-                <td>Male</td>
-                <td>A+</td>
-                <td>35</td>
-                <td className="action-column">
-                  <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Jane Doe</td>
-                <td>2022-03-02</td>
-                <td>Female</td>
-                <td>B-</td>
-                <td>28</td>
-                <td className="action-column">
+              {patients.map((patient, index) => 
+              <tr key={index}>
+              <td>{ index + 1}</td>
+              <td>{patient.name}</td>
+              <td>{patient.createdAt}</td>
+              <td>{patient.gender} </td>
+              <td>{patient.bloodtype}</td>
+              <td>{patient.age}</td>
+              <td className="action-column">
                 <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td className="action-column">
-                <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td className="action-column">
-                <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td className="action-column">
-                <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td className="action-column">
-                <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td className="action-column">
-                <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td className="action-column">
-                <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>9</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td className="action-column">
-                <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>10</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td className="action-column">
-                <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>11</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td className="action-column">
-                <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                </td>
-              </tr>
+                  className="custom-select-control"
+                  id="action"
+                  defaultValue={selectedOption}
+                  onChange={setSelectedOption}
+                  options={options.map(option => ({
+                    value: option.value,
+                    label: (
+                      <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
+                      {option.label}
+                      </Link>
+                    ),
+                  }))}
+                  placeholder='...'
+                />
+              </td>
+            </tr>
+              )}
+              
             </tbody>
           </table>
         </div>

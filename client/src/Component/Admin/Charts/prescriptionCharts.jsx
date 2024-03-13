@@ -35,7 +35,7 @@ const PrescriptionChart = () => {
     calculateMonthlyCounts();
   }, [prescriptionData]);
 
-  const viewData = useMemo(() => {
+  const viewPrescriptionData = useMemo(() => {
     // Generate an array of counts for each month from January to December
     const countsArray = Array.from({ length: 12 }, (_, monthIndex) => monthlyCounts[monthIndex] || 0);
    
@@ -56,7 +56,7 @@ const PrescriptionChart = () => {
     };
   }, [monthlyCounts]);
 
-  const options = {
+  const Prescriptionoptions = {
     maintainAspectRatio: false,
     responsive: true,
     scales: {
@@ -85,7 +85,7 @@ const PrescriptionChart = () => {
   };
 
   return (
-    <Bar data={viewData} options={options} className="bar" />
+    <Bar data={viewPrescriptionData} options={Prescriptionoptions} className="bar" />
   );
 };
 
