@@ -1,5 +1,8 @@
 import React from 'react'
 import { GrView } from 'react-icons/gr'
+import { Link } from 'react-router-dom'
+import { GoPlus } from "react-icons/go";
+
 
 const Invoice = () => {
   return (
@@ -95,6 +98,13 @@ const Invoice = () => {
             </tbody>
           </table>
         </div>
+
+        <Link to="/CreateInvoice">
+        <div className="create">
+          <GoPlus />
+        </div>
+        </Link>
+
 
     </div>
   )

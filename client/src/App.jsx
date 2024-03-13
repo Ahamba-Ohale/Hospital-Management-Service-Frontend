@@ -19,6 +19,7 @@ import Register from './Component/Register/Register';
 import PatientInfo from './Component/Admin/PatientDB/PatientInfo';
 import NewMedRecord from './Component/Admin/PatientDB/NewMedRecord';
 import CreatePatient from './Component/Admin/PatientDB/CreatePatient';
+import CreateInvoice from './Component/Admin/PatientDB/CreateInvoice';
 
 
 function App() {
@@ -49,6 +50,8 @@ function App() {
           <Route path='/PatientInfo/view' element={<PatientInfo />} />
           <Route path='/Add-new-record' element={<NewMedRecord />} />
           <Route path='/CreatePatient' element={<CreatePatient />} />
+          <Route path="/CreateInvoice" element={<CreateInvoice />} />
+        
         </Routes>
       </Router>
       

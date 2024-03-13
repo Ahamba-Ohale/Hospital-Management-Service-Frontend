@@ -18,7 +18,7 @@ import ComplianceTools from './ComplianceTools';
 import './HospitalManagement.css'
 
 const HospitalManagement = () => {
-    const [activeTab, setActiveTab] = useState('MedicalRecord');
+    const [activeTab, setActiveTab] = useState('StaffManagement');
 
     const handleTabClick = (tabName) => {
       setActiveTab(tabName);
@@ -47,7 +47,7 @@ const HospitalManagement = () => {
 
             <div className="history">
               <div className="back" onClick={handleGoBack}><IoReturnUpBack /></div>
-              <div className="page-name">John Doe</div>
+              <div className="page-name">Great Tower Management</div>
             </div>
 
             <div className="patient-main__content">
@@ -55,9 +55,9 @@ const HospitalManagement = () => {
                     <div className="patient-menu__content">
                         <div className="patient-img"></div>
                         <div className="patient-content__text">
-                            <h3>John Doe</h3>
+                            <h3>Administrator</h3>
                             <p>
-                               johndoe@gmail.com<br/>
+                               admin@greattower.com<br/>
                             </p>
                             <p>(+234) 456-7890</p>
                         </div>
