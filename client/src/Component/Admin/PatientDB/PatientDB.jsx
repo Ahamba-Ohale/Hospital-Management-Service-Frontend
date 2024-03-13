@@ -37,7 +37,7 @@ const PatientDB = () => {
     // Fetch data from the backend when the component mounts
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/Patients/"); // Replace with your backend API endpoint
+        const response = await axios.get("http://localhost:8080/api/Patients/");
         setPatients(response.data);
       } catch (error) {
         console.error("Error fetching patients:", error);
@@ -127,7 +127,7 @@ const PatientDB = () => {
               <td>{patient.name}</td>
               <td>{patient.createdAt}</td>
               <td>{patient.gender} </td>
-              <td>{patient.bloodtype}</td>
+              <td>{patient.bloodType}</td>
               <td>{patient.age}</td>
               <td className="action-column">
                 <Select 
