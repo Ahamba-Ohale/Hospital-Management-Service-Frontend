@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Sidebar from "../AdminSidebar/Sidebar";
 import { GoPlus } from "react-icons/go";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Select from 'react-select';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -9,7 +9,7 @@ import axios from "axios";
 
 const options = [
   { value: 'view', label: 'View', link: '/PatientInfo/view' },
-  { value: 'delete', label: 'Delete', link: '/PatientInfo' },
+  { value: 'delete', label: 'Delete', },
 ];
 
 const sortBy = [
@@ -22,7 +22,7 @@ const gender = [
 ];
 
 const PatientDB = () => {
-
+  
   const [selectedOption, setSelectedOption] = useState(null);
 
   const [startDate, setStartDate] = useState(null);
@@ -32,6 +32,8 @@ const PatientDB = () => {
 
 
   const [patients, setPatients] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch data from the backend when the component mounts
@@ -46,6 +48,20 @@ const PatientDB = () => {
 
     fetchData();
   }, []); 
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:8080/api/Patients/${id}`);
+      // After successful deletion, update the patient list by refetching data
+      const response = await axios.get("http://localhost:8080/api/Patients/");
+      setPatients(response.data);
+      navigate('/Patients Database');
+      // history.push(`/PatientInfo/${id}`);
+    } catch (error) {
+      console.error("Error deleting patient:", error);
+    }
+  };
+
 
 
   return (
@@ -134,8 +150,14 @@ const PatientDB = () => {
                   className="custom-select-control"
                   id="action"
                   defaultValue={selectedOption}
-                  onChange={setSelectedOption}
+                  onChange={(selectedOption)=> {
+                    if (selectedOption.value === 'delete') {
+                      handleDelete(patient._id);
+                    }
+                  }}
+                  isSearchable={false}
                   options={options.map(option => ({
+
                     value: option.value,
                     label: (
                       <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
@@ -144,6 +166,7 @@ const PatientDB = () => {
                     ),
                   }))}
                   placeholder='...'
+                  
                 />
               </td>
             </tr>
