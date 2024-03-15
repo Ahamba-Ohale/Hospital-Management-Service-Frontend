@@ -7,7 +7,18 @@
 
 .patient-menu {
     width: 25%;
-    height: 45rem;
+    height: 30rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.patient-menu_health {
+    width: 25%;
+    height: 25rem;
     background-color: #fff;
     display: flex;
     justify-content: center;
@@ -17,10 +28,15 @@
 }
 
 .patient-menu__content {
-    width: 80%;
+    /* width: 80%; */
     display: block;
     column-gap: 10px;
     padding: 20px;
+}
+
+.patient-menu__content div {
+    align-self: center;
+    
 }
 
 .patient-img {
@@ -40,6 +56,7 @@
 .patient-menu__buttons {
     display: block;
 }
+
 
 .patient-content__medrec {
     width: 100%;
@@ -172,15 +189,22 @@
 
 .formm label {
     position: relative;
-    display: block;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     font-weight: bold;
-    color: #000;
+    color: #4e5052;
     font-size: 14px;
+    font-weight: 700;
+}
+
+.textarea {
+    width: 100%;
+    height: 5rem;
+    color: #4e5052;
+    border-radius: 5px;
 }
 
 .formm input {
-    border: 1px solid #4e5052;
+    border: .5px solid #b4cbe4;
 }
 
 .input-field {
@@ -222,9 +246,40 @@
 
 .history {
     display: flex;
-    margin-left: 40px;
-    gap: 20px;
+    margin-left: 20px;
     align-items: center;
+    justify-content: space-between;
+}
+
+.history-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.history-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.history-share {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #276AB3;
+    border: 1px dashed #b4cbe4;
+    cursor: pointer;
+}
+
+.history-button button {
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: none;
+    background-color: #276AB3;
+    color: #e6dddd;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 .back {
@@ -235,6 +290,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .page-name {
@@ -268,7 +324,7 @@
 
 .add-appointment-modal {
     background: white;
-    width: 60vw;
+    width: 45vw;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -284,8 +340,12 @@
 .close-button {
     background: none;
     border: none;
+    background-color: #e6dddd;
+    border-radius: 5px;
+    width: 40px;
     font-size: 24px;
     cursor: pointer;
+
 }
 
 .modal-content label {
@@ -352,7 +412,6 @@
 }
 
 .invoice-card__add {
-    border: .5px solid #eeeff0;
     cursor: pointer;
     height: 40px;
     display: flex;
@@ -361,7 +420,7 @@
     padding: 20px;
     border-radius: 5px;
     background-color: #eeeff0;
-    color: #4e5052;
+    color: #276AB3;
     font-weight: 700;
 }
 
@@ -401,8 +460,9 @@
 
 .invoice-btn {
     width: 95%;
-    border: 1px dashed #9c9c9c;
+    border: 1px dashed #276AB3;
     background-color: transparent;
+    color: #276AB3;
     cursor: pointer;
     text-align: center;
     padding: 10px;
@@ -463,3 +523,104 @@
   border: none;
   cursor: pointer;
 }
+
+.invoice-dat {
+    line-height: 25px;
+}
+
+/* Style for the email, SMS, and Whatsapp options */
+.email {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border: .5px solid #9c9c9c;
+    border-radius: 8px;
+  }
+
+  .email-text h2, p {
+    color: #4e5052;
+  }
+  
+  .email-text,
+  .email-text h2:hover{
+    color: #ccc;
+  }
+  
+  /* Style for the email icon */
+  .email-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Style for the email text */
+  .email-text {
+    flex-grow: 1;
+  }
+  
+  /* Hover effect for the email options */
+  .email:hover {
+    background-color: #276AB3;
+  }
+  
+  /* Style for the send button */
+  .moda-content button {
+    background-color: #276AB3;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the send button */
+  .moda-content button:hover {
+    background-color: #0056b3;
+  }
+
+  .createpatient {
+    margin: 20px 0;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.1);
+    border-radius: 10px;
+  }
+
+  .createpatient label {
+    position: relative;
+    color: #4e5052;
+    margin: 15px 0;
+  }
+
+  .createpatient input {
+    border-color: none;
+    padding: 20px;
+  }
+  
+  .create-button {
+    display: flex;
+    gap: 20px;
+    /* width: 100%; */
+  }
+
+  .create-button button {
+    width: 100%;
+    font-size: 18px;
+    padding: 15px;
+    background-color: #276AB3;
+    border: none;
+    color: #e6dddd;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+  }

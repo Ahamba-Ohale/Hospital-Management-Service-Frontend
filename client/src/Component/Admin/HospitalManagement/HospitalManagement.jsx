@@ -24,11 +24,11 @@ const HospitalManagement = () => {
       setActiveTab(tabName);
     };
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    const handleGoBack = () => {
-        navigate(-1); // This will go back to the previous page in history
-    };
+    // const handleGoBack = () => {
+    //     navigate(-1); // This will go back to the previous page in history
+    // };
     
   return (
     <div className="dashboard">
@@ -45,15 +45,14 @@ const HospitalManagement = () => {
                 </div>
             </div>
 
-            <div className="history">
-              <div className="back" onClick={handleGoBack}><IoReturnUpBack /></div>
+            <div className="page-title">
               <div className="page-name">Great Tower Management</div>
             </div>
 
             <div className="patient-main__content">
                 <div className="patient-menu">
                     <div className="patient-menu__content">
-                        <div className="patient-img"></div>
+                        {/* <div className="patient-img"></div> */}
                         <div className="patient-content__text">
                             <h3>Administrator</h3>
                             <p>

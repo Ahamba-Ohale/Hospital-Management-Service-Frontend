@@ -1,13 +1,12 @@
 import { useState } from 'react'
 import { IoMdNotificationsOutline } from "react-icons/io";
 import Sidebar from '../AdminSidebar/Sidebar'
-import './PatientDB.css'
-import MedicalRecord from './MedicalRecord'
-import Appointment from './Appointment'
-import Invoice from './Invoice'
-import Payment from './Payment'
-import Images from './Images'
-import HealthInfo from './HealthInfo';
+import MedicalRecord from '../PatientDB/MedicalRecord'
+import Appointment from '../PatientDB/Appointment'
+import Invoice from '../PatientDB/Invoice'
+import Payment from '../PatientDB/Payment'
+import Images from '../PatientDB/Images'
+import HealthInfo from '../PatientDB/HealthInfo';
 import { FaHandHoldingMedical } from "react-icons/fa6"
 import { SlCalender } from "react-icons/sl";
 import { LiaFileInvoiceDollarSolid } from "react-icons/lia";
@@ -55,7 +54,7 @@ const PatientInfo = () => {
             </div>
 
             <div className="patient-main__content">
-                <div className="patient-menu">
+                <div className="patient-menu_health">
                     <div className="patient-menu__content">
                         {/* <div className="patient-img"></div> */}
                         <div className="patient-content__text">
@@ -79,20 +78,6 @@ const PatientInfo = () => {
                               activeTab === 'Appointment' ? 'active' : ''
                             }`}><SlCalender id='iconn'/>
                                 Appointment
-                            </button>
-                            <button 
-                           onClick={() => handleTabClick('Invoice')}
-                           className={`patient-content__medrec ${
-                             activeTab === 'Invoice' ? 'active' : ''
-                           }`}><LiaFileInvoiceDollarSolid id='iconn'/>
-                                Invoice
-                            </button>
-                            <button 
-                             onClick={() => handleTabClick('Payment')}
-                             className={`patient-content__medrec ${
-                               activeTab === 'Payment' ? 'active' : ''
-                             }`}><MdOutlinePayment id='iconn'/>
-                                Payment
                             </button>
                             <button 
                              onClick={() => handleTabClick('Images')}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { GrView } from "react-icons/gr";
+import { GrFormView  } from "react-icons/gr";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { Link } from 'react-router-dom';
 import ViewMedRec from './ViewMedRec';
@@ -55,7 +55,7 @@ const MedicalRecord = () => {
             </p>
           </div>
           <div className="patient-content__ico">
-          <div onClick={toggleAddModal}><GrView size={20}/></div>
+          <div onClick={toggleAddModal}><GrFormView  size={20}/></div>
             <div className='del'>
               <RiDeleteBin5Line size={20} />
             </div>
@@ -87,7 +87,7 @@ const MedicalRecord = () => {
             </p>
           </div>
           <div className="patient-content__ico">
-          <div onClick={toggleAddModal}><GrView size={20}/></div>
+          <div onClick={toggleAddModal}><GrFormView  size={20}/></div>
             <div className='del'>
               <RiDeleteBin5Line size={20} />
             </div>
@@ -119,7 +119,7 @@ const MedicalRecord = () => {
             </p>
           </div>
           <div className="patient-content__ico">
-          <div onClick={toggleAddModal}><GrView size={20}/></div>
+          <div onClick={toggleAddModal}><GrFormView  size={20}/></div>
             <div className='del'>
               <RiDeleteBin5Line size={20} />
             </div>

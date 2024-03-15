@@ -29,8 +29,6 @@ const PatientDB = () => {
   const [endDate, setEndDate] = useState(null);
 
 
-
-
   const [patients, setPatients] = useState([]);
 
   useEffect(() => {
@@ -45,7 +43,7 @@ const PatientDB = () => {
     };
 
     fetchData();
-  }, []); 
+  }, []);
 
 
   return (
@@ -68,6 +66,11 @@ const PatientDB = () => {
           <div className="cards">Monthly Patients</div>
           <div className="cards">Yearly Patients</div>
         </div>
+
+        <div className="page-title">
+          <h2>Patients Database</h2>
+        </div>
+
 
         <div className="filter">
           <div className="card1">

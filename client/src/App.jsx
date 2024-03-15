@@ -20,6 +20,10 @@ import PatientInfo from './Component/Admin/PatientDB/PatientInfo';
 import NewMedRecord from './Component/Admin/PatientDB/NewMedRecord';
 import CreatePatient from './Component/Admin/PatientDB/CreatePatient';
 import CreateInvoice from './Component/Admin/PatientDB/CreateInvoice';
+import InvoiceEdit from './Component/Admin/PatientDB/InvoiceEdit';
+import InvoiceView from './Component/Admin/PatientDB/InvoiceView';
+import ShareInvoice from './Component/Admin/PatientDB/ShareInvoice';
+import PatientHealthInfo from './Component/Admin/Health/PatientHealthInfo';
 
 
 
@@ -54,6 +58,10 @@ function App() {
           <Route path='/Add-new-record' element={<NewMedRecord />} />
           <Route path='/CreatePatient' element={<CreatePatient />} />
           <Route path="/CreateInvoice" element={<CreateInvoice />} />
+          <Route path="/InvoiceEdit" element={<InvoiceEdit />} />
+          <Route path='/InvoiceView' element={<InvoiceView />} />
+          <Route path='/ShareInvoice' element={<ShareInvoice />} />
+          <Route path='/PatientHealthInfo' element={<PatientHealthInfo />} />
         
         </Routes>
       </Router>
