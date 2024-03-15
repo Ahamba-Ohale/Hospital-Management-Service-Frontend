@@ -15,7 +15,7 @@ const VerifyEmail = () => {
     const verifyEmailUrl = async () => {
       try {
         setLoading(true);
-        const url = `http://localhost:8080/api/register/${param.id}/verify/${param.token}`;
+        const url = `http://localhost:8080/api/users/${param.id}/verify/${param.token}`;
         const { data } = await Axios.get(url)
         console.log(data);
         setValidUrl(true);

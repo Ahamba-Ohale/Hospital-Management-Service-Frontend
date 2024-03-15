@@ -217,7 +217,7 @@ const Register = () => {
 
     try {
       setLoading(true);
-      const url = 'http://localhost:8080/api/register';
+      const url = 'http://localhost:8080/api/users';
       const { data: response } = await Axios.post(url, data);
       setMsg(response.message);
     } catch (error) {

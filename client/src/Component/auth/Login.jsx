@@ -109,10 +109,10 @@ const Login = () => {
 
     try {
       setLoading(true);
-      const url = 'http://localhost:8080/api/login';
-      const { data:response } = await Axios.post(url, data)
+      const url = 'http://localhost:8080/api/auth';
+      const { data: response } = await Axios.post(url, data);
       localStorage.setItem("token", response.data);
-      window.location = "/patient";
+      window.location = "/Portal"
       setMsg(response.message);
     } catch (error) {
       if (error.response && error.response.status >= 400 && error.response.status <= 500) {
