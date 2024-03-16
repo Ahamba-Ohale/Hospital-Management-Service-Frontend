@@ -47,10 +47,10 @@ function App() {
           <Route path='/HealthRecord' element={<Health />} />
           <Route path='/Blog Data System' element={<Blog />} />
           <Route path='/Patients Database' element={<PatientDB />} />
+          <Route path='/PatientInfo/view/' element={<PatientInfo />} />
           <Route path='/Hospital management' element={<HospitalManagement />} />
           <Route path='/Data Analytics' element={<Analytics />} />
           <Route path='/Register' element={<Register />} />
-          <Route path='/PatientInfo/view' element={<PatientInfo />} />
           <Route path='/Add-new-record' element={<NewMedRecord />} />
           <Route path='/CreatePatient' element={<CreatePatient />} />
         </Routes>
