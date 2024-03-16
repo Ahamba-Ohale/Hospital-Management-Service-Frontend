@@ -24,6 +24,12 @@ import InvoiceEdit from './Component/Admin/PatientDB/InvoiceEdit';
 import InvoiceView from './Component/Admin/PatientDB/InvoiceView';
 import ShareInvoice from './Component/Admin/PatientDB/ShareInvoice';
 import PatientHealthInfo from './Component/Admin/Health/PatientHealthInfo';
+import EditBlog from './Component/Admin/Blog/EditBlog';
+import AddEmployee from './Component/Admin/HospitalManagement/AddEmployee';
+import AddSpecialist from './Component/Admin/HospitalManagement/AddSpecialist';
+import AddRole from './Component/Admin/HospitalManagement/AddRole';
+import AddLeave from './Component/Admin/HospitalManagement/AddLeave';
+import AddTrainee from './Component/Admin/HospitalManagement/AddTrainee';
 
 
 
@@ -62,6 +68,12 @@ function App() {
           <Route path='/InvoiceView' element={<InvoiceView />} />
           <Route path='/ShareInvoice' element={<ShareInvoice />} />
           <Route path='/PatientHealthInfo' element={<PatientHealthInfo />} />
+          <Route path='/EditBlog' element={<EditBlog />} />
+          <Route path='/AddEmployee' element={<AddEmployee />} />
+          <Route path='/AddSpecialist' element={<AddSpecialist />} />
+          <Route path='/AddRole' element={<AddRole />} />
+          <Route path='/AddLeave' element={<AddLeave />} />
+          <Route path='/AddTrainee' element={<AddTrainee />} />
         
         </Routes>
       </Router>

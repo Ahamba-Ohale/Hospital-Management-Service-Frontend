@@ -8,6 +8,8 @@
 .patient-menu {
     width: 25%;
     height: 30rem;
+    position: sticky;
+    top: 80px;
     background-color: #fff;
     display: flex;
     justify-content: center;
@@ -19,6 +21,8 @@
 .patient-menu_health {
     width: 25%;
     height: 25rem;
+    position: sticky;
+    top: 80px;
     background-color: #fff;
     display: flex;
     justify-content: center;
@@ -196,6 +200,18 @@
     font-weight: 700;
 }
 
+.formm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #276AB3;
+    border: none;
+    border-radius: 5px;
+    color: #eeeff0;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+
 .textarea {
     width: 100%;
     height: 5rem;
@@ -218,6 +234,10 @@
 .checkbox {
     display: flex;
     padding: 0;
+}
+
+.checkbox input {
+    width: 30px;
 }
 
 .textarea {
@@ -301,6 +321,8 @@
 .patient-menuu {
     width: 30%;
     height: 23rem;
+    position: sticky;
+    top: 80px;
     background-color: #fff;
     display: flex;
     justify-content: center;

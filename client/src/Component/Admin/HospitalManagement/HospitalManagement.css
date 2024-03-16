@@ -25,5 +25,8 @@
     background-color: #276AB3;
     border: none;
     cursor: pointer;
+}
 
+.patient-content__medd {
+    margin-top: 20px;
 }
