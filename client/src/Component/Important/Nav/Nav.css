@@ -10,11 +10,8 @@ body{
     background-color: #f5f5f5
 }
 
-.blog{
-    color: black;
-}
 
-.active{
+.nav .active{
     color: orange;
 }
 
@@ -46,8 +43,8 @@ body{
 
 .nav ul li a{
     display: block;
-    text-decoration: none;
     color: black;
+    text-decoration: none;
     padding: 0.5rem;
     margin: 0 0.5rem;
     font-size: 15px;
@@ -94,7 +91,7 @@ body{
     color: white;
     padding: 10px 28px;
     border-radius: 10px;
-    margin-left: 50px;
+    margin-left: 30px;
     border: 2px solid white;
     cursor: progress;
 }
@@ -178,6 +175,7 @@ small{
         animation: wait .5s ease-in;
         display: flex;
         text-align-last: justify;
+        background-color: #ededed;
     }
 
     .nav ul.Open li a{

@@ -5,7 +5,7 @@
 } */
 
 #home{
-    height: 100svh;
+    height: 70svh;
     background-image: url(wel.jpg);
     display: grid;
     align-content: center;
@@ -15,12 +15,12 @@
 
 .home-body{
     /* width: 50%; */
-    height: 100vh;
+    height: 70vh;
     display: grid;
     align-content: center;
     padding: 0 100px;
     opacity: 1;
-    background-image: linear-gradient(to right, #276AB3, #ffffff00);
+    background-image: linear-gradient(to right, #276ab38c, #ffffff00);
 }
 
 #home .header1{
@@ -245,12 +245,12 @@
     }
 
     #home{
-        height: 60svh;
+        height: 70svh;
     }
     
     .home-body{
         /* width: 50%; */
-        height: 60vh;
+        height: 70vh;
 
     }
 }

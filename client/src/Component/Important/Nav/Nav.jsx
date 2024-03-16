@@ -1,7 +1,7 @@
 import React from 'react'
 import './Nav.css'
 import { useState } from 'react'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import {Link} from 'react-router-dom'
 
 const Nav = () => {
@@ -23,22 +23,22 @@ const Nav = () => {
             </div>
             <ul className={menuOpen ? "Open" : ""}>
                 <li>
-                    <NavLink to="/Home" className='activate'>Home</NavLink>
+                    <NavLink to="/">Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/About" className='About'>About Us</NavLink>
+                    <NavLink to="/About">About Us</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/Blog" className='blog' id='blogs' >Blogs</NavLink>
+                    <NavLink to="/Blog" >Blogs</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/Services" className='service'>Services</NavLink>
+                    <NavLink to="/Services">Services</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/Contact-Us" className='Contact'>Contact Us</NavLink>
+                    <NavLink to="/Contact-Us">Contact Us</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/Book Apartment" className='Book'>Book Appointment</NavLink>
+                    <NavLink to="/Book Apartment">Book Appointment</NavLink>
                 </li>
                 <li>
                     <Link to='/' className="act" >

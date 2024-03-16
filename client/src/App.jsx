@@ -8,6 +8,7 @@ import Healthblog from './Component/Health blog/Healthblog';
 import Foot from './Component/Important/Footer/Foot';
 import Contact from './Component/Contact-us/Contact';
 import Blogview from './Component/Blog-view/Blogview';
+import Registration from './Component/Registertion/Registration';
 
 
 function App() {
@@ -18,8 +19,8 @@ function App() {
 
       <Router>
         <Routes>
-          <Route path='/Home' element={<Homepage />} />
           <Route path='/' element={<Homepage />} />
+          <Route path='/SignUp' element={<Registration/>} />
           <Route path='/Services' element={<Services />} />
           <Route path='/About' element={<About />} />
           <Route path='/Blog' element={<Healthblog />} />
