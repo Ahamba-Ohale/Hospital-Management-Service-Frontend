@@ -34,32 +34,28 @@ const CreatePatient = () => {
         </div>
 
         <div className="history">
+          <div className="history-right">
           <div className="back" onClick={handleGoBack}>
             <IoReturnUpBack />
           </div>
           <div className="page-name">Create Patient</div>
+          </div>
         </div>
 
         <div className="createpatient">
           <form>
-            <label for="fname">Fullname:</label>
-            <br />
-            <input type="text" id="fname" name="first_name" />
-            <br />
-            <br />
+            <label htmlFor="fname">Fullname:
+              <input type="text" id="fname" name="first_name" />
+            </label>
+            
+            <label htmlFor="phone number">Phone Number:  
+              <input type="text" id="phone number" name="first_name" />
+            </label>
 
-            <label for="phone number">Phone Number:</label>
-            <br />
-            <input type="text" id="phone number" name="first_name" />
-            <br />
-            <br />
-
-            <label for="email">Email:</label>
-            <br />
-            <input type="text" id="email" name="email" />
-            <br />
-            <br />
-
+            <label htmlFor="email">Email:
+              <input type="text" id="email" name="email" />
+            </label>
+              <br />
             <Select
               defaultValue={selectedOption}
               onChange={setSelectedOption}
@@ -68,7 +64,21 @@ const CreatePatient = () => {
                 label: option.label,
               }))}
               placeholder="Gender"
+              className="select"
             />
+
+            <label htmlFor="date">Date of Birth:
+              <input type="date" name="dob" id="dob" />
+            </label>
+
+            <label htmlFor="address">Address:
+              <input type="text" id="email" name="email" />
+            </label>
+
+              <div className="create-button">
+                <button>Delete</button> 
+                <button>Submit</button> 
+              </div>
           </form>
         </div>
       </div>

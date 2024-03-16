@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { GrView } from 'react-icons/gr'
+import { GrFormView } from "react-icons/gr";
 import AddAppointmentModal from './AddAppointment';
 
 const Appointment = () => {
@@ -34,7 +34,7 @@ const Appointment = () => {
                 <td>Pending</td>
                 <td>10:00 AM - 12:00 PM</td>
                 <td className="action-column">
-                    <div onClick={toggleAddModal}><GrView size={20}/></div>
+                    <div onClick={toggleAddModal}><GrFormView  size={20}/></div>
                 </td>
               </tr>
               <tr>
@@ -43,7 +43,7 @@ const Appointment = () => {
                 <td>Pending</td>
                 <td>10:00 AM - 12:00 PM</td>
                 <td className="action-column">
-                    <div onClick={toggleAddModal}><GrView size={20}/></div>
+                    <div onClick={toggleAddModal}><GrFormView  size={20}/></div>
                 </td>
               </tr>
               <tr>
@@ -52,7 +52,7 @@ const Appointment = () => {
                 <td>Pending</td>
                 <td>10:00 AM - 12:00 PM</td>
                 <td className="action-column">
-                    <div><GrView size={20}/></div>
+                    <div><GrFormView  size={20}/></div>
                 </td>
               </tr>
               <tr>
@@ -61,7 +61,7 @@ const Appointment = () => {
                 <td>Pending</td>
                 <td>10:00 AM - 12:00 PM</td>
                 <td className="action-column">
-                    <div><GrView size={20}/></div>
+                    <div><GrFormView  size={20}/></div>
                 </td>
               </tr>
               <tr>
@@ -70,7 +70,7 @@ const Appointment = () => {
                 <td>Approved</td>
                 <td>10:00 AM - 12:00 PM</td>
                 <td className="action-column">
-                    <div><GrView size={20}/></div>
+                    <div><GrFormView  size={20}/></div>
                 </td>
               </tr>
               <tr>
@@ -79,7 +79,7 @@ const Appointment = () => {
                 <td>Pending</td>
                 <td>10:00 AM - 12:00 PM</td>
                 <td className="action-column">
-                    <div><GrView size={20}/></div>
+                    <div><GrFormView  size={20}/></div>
                 </td>
               </tr>
               <tr>
@@ -88,7 +88,7 @@ const Appointment = () => {
                 <td>Canceled</td>
                 <td>10:00 AM - 12:00 PM</td>
                 <td className="action-column">
-                    <div><GrView size={20}/></div>
+                    <div><GrFormView  size={20}/></div>
                 </td>
               </tr>
               <tr>
@@ -97,7 +97,7 @@ const Appointment = () => {
                 <td>Pending</td>
                 <td>10:00 AM - 12:00 PM</td>
                 <td className="action-column">
-                    <div><GrView size={20}/></div>
+                    <div><GrFormView  size={20}/></div>
                 </td>
               </tr>
             </tbody>

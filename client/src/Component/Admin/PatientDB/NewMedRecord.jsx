@@ -4,7 +4,6 @@ import { IoMdNotificationsOutline } from 'react-icons/io';
 import { IoReturnUpBack } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
-import TextareaAutosize from "react-textarea-autosize";
 
 const NewMedRecord = () => {
 
@@ -64,14 +63,16 @@ const NewMedRecord = () => {
         </div>
 
         <div className="history">
-          <div className="back" onClick={handleGoBack}><IoReturnUpBack /></div>
+         <div className="history-right">
+         <div className="back" onClick={handleGoBack}><IoReturnUpBack /></div>
           <div className="page-name">New Medical Record</div>
+         </div>
         </div>
 
         <div className="patient-main__content">
           <div className="patient-menuu">
             <div className="patient-menu__content">
-              <div className="patient-img"></div>
+              {/* <div className="patient-img"></div> */}
               <div className="patient-content__text">
                 <h3>John Doe</h3>
                 <p>johndoe@gmail.com</p>
@@ -83,10 +84,9 @@ const NewMedRecord = () => {
 
           <div className="patient-content">
             <div className="formm">
-              <form action="#">
+              <form>
                 <label htmlFor="doctor">Doctor :
-                <input type="text" id="doctor" required placeholder='Doctor'/></label>
-                <br />
+                <input type="text" id="doctor" required /></label>
 
                 <label htmlFor="specialization">Specialization :
                 <Select
@@ -96,49 +96,27 @@ const NewMedRecord = () => {
                         value: option.value,
                         label: option.label
                     }))} 
-                    placeholder= "Specialization"
                 />
                 </label>
-                <br />
 
                 <label htmlFor="complaint">Complaint :
-                <TextareaAutosize
-                    id="complaint"
-                    name="complaint"
-                    value={complaint}
-                    onChange={(e) => setComplaint(e.target.value)}
-                    className="input-field"
-                    placeholder="Complaint"
-                />
+                <textarea name="complaint" id="complaint" className='textarea'></textarea>
                 </label>
-                <br />
+                
                 <label htmlFor="diagnosis">Diagnosis :
-                <TextareaAutosize
-                    id="diagnosis"
-                    name="diagnosis"
-                    value={diagnosis}
-                    onChange={(e) => setDiagnosis(e.target.value)}
-                    className="input-field"
-                    placeholder="Diagnosis"
-                />
+                <textarea name="diagnosis" id="diagnosis" className='textarea'></textarea>
                 </label>
-                <br />
+                
                 <label htmlFor="vitals">Vitals :
-                <TextareaAutosize
-                    id="vitals"
-                    name="vitals"
-                    value={vitals}
-                    onChange={(e) => setVitals(e.target.value)}
-                    className="input-field"
-                    placeholder="Vitals"
-                />
+                <textarea name="vitals" id="vitals" className='textarea'></textarea>
                 </label>
-                <br />
 
                 <label>Treatments:</label>
-                    {treatmentOptions.map((treatment) => (
-                <div key={treatment} className='checkbox'>
-                    <input
+                  
+                <div className='checkbox'>
+                    <input type="checkbox" name="" id="" /><p>BP</p>
+                    
+                    {/* <input
                         type="checkbox"
                         id={treatment}
                         name="treatments"
@@ -146,9 +124,9 @@ const NewMedRecord = () => {
                         checked={selectedTreatments.includes(treatment)}
                         onChange={() => handleCheckboxChange(treatment)}
                     />
-                    <label htmlFor={treatment}>{treatment}</label>
+                    <label htmlFor={treatment}>{treatment}</label> */}
                 </div>
-                ))}
+                
               </form>
             </div>
             

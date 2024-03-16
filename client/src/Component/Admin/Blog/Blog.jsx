@@ -43,6 +43,12 @@ const Blog = () => {
             </div>
           </div>
 
+          
+          <div className="page-title">
+          <h2>Blogs Records</h2>
+        </div>
+
+
           <div className="filter">
             <div className="card1">
             <Select
@@ -79,7 +85,6 @@ const Blog = () => {
               Filter
             </button>
           </div>
-
 
           <div className="health__main">
             <table className="patient-list">

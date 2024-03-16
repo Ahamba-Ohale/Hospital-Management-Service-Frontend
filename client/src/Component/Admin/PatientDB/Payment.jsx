@@ -1,5 +1,5 @@
 import React from 'react'
-import { GrView } from 'react-icons/gr'
+import { GrFormView  } from 'react-icons/gr'
 
 const Payment = () => {
   return (
@@ -28,7 +28,7 @@ const Payment = () => {
                 <td>$4000</td>
                 <td>Cash</td>
                 <td className="action-column">
-                    <div><GrView size={20}/></div>
+                    <div><GrFormView  size={20}/></div>
                 </td>
               </tr>
               <tr>
@@ -38,7 +38,7 @@ const Payment = () => {
                 <td>$4000</td>
                 <td>Cash</td>
                 <td className="action-column">
-                    <div><GrView size={20}/></div>
+                    <div><GrFormView  size={20}/></div>
                 </td>
               </tr>
               <tr>
@@ -48,7 +48,7 @@ const Payment = () => {
                 <td>$4000</td>
                 <td>Cash</td>
                 <td className="action-column">
-                    <div><GrView size={20}/></div>
+                    <div><GrFormView  size={20}/></div>
                 </td>
               </tr>
               <tr>
@@ -58,7 +58,7 @@ const Payment = () => {
                 <td>$4000</td>
                 <td>Cash</td>
                 <td className="action-column">
-                    <div><GrView size={20}/></div>
+                    <div><GrFormView  size={20}/></div>
                 </td>
               </tr>
               <tr>
@@ -68,7 +68,7 @@ const Payment = () => {
                 <td>$4000</td>
                 <td>Cash</td>
                 <td className="action-column">
-                    <div><GrView size={20}/></div>
+                    <div><GrFormView  size={20}/></div>
                 </td>
               </tr>
               <tr>
@@ -78,7 +78,7 @@ const Payment = () => {
                 <td>$4000</td>
                 <td>Cash</td>
                 <td className="action-column">
-                    <div><GrView size={20}/></div>
+                    <div><GrFormView  size={20}/></div>
                 </td>
               </tr>
               <tr>
@@ -88,7 +88,7 @@ const Payment = () => {
                 <td>$4000</td>
                 <td>Cash</td>
                 <td className="action-column">
-                    <div><GrView size={20}/></div>
+                    <div><GrFormView  size={20}/></div>
                 </td>
               </tr>
               <tr>
@@ -98,7 +98,7 @@ const Payment = () => {
                 <td>$4000</td>
                 <td>Cash</td>
                 <td className="action-column">
-                    <div><GrView size={20}/></div>
+                    <div><GrFormView  size={20}/></div>
                 </td>
               </tr>
             </tbody>
