@@ -1,6 +1,6 @@
 import { useState, useEffect, Fragment } from 'react';
 import './auth.css';
-import success from '../../../public/verified.png';
+import success from '/verified.png';
 import { Link, useParams } from 'react-router-dom';
 import Axios from 'axios';
 import Error from '../Error/Error';

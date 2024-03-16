@@ -1,5 +1,6 @@
 
-import {Navigate, Route, BrowserRouter as Router, Routes} from 'react-router-dom';
+// import {Navigate, Route, BrowserRouter as Router, Routes} from 'react-router-dom';
+import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import Error from './Component/Error/Error';
 import Homepage from './Component/Homepage/Homepage';
 import About from './Component/About/About';
@@ -26,7 +27,7 @@ import Records from './Component/PatientPortal/Records/Records';
 
 
 function App() {
-  const user = localStorage.getItem("token");
+  // const user = localStorage.getItem("token");
 
   return (
     <>
@@ -53,10 +54,11 @@ function App() {
           <Route path='/Add-new-record' element={<NewMedRecord />} />
           <Route path='/CreatePatient' element={<CreatePatient />} />
 
-          {user && <Route path='/Portal' exact element={<PatientPortal />} />}
+          {/* {user && <Route path='/Portal' exact element={<PatientPortal />} />} */}
+          <Route path='/Portal' exact element={<PatientPortal />} />
           <Route path='/register' exact element={<Register />} />
           <Route path='/login' exact element={<Login />} />
-          <Route path='/Portal' exact element={<Navigate replace to="/login" />} />
+          {/* <Route path='/Portal' exact element={<Navigate replace to="/login" />} /> */}
           <Route path="/uers/:id/verify/:token" element={<VerifyEmail />} />
           <Route path='/Records' element={<Records />} />
         </Routes>

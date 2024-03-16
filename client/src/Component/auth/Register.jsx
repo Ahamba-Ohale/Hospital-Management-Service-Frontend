@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { BiLoaderCircle } from 'react-icons/bi';
 import passwordValidator from 'password-validator';
@@ -78,7 +78,7 @@ const Register = () => {
 
   const validateEmail = (value) => {
     const reg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return reg.test(value) ? null : 'Please enter a valid email address';
+    return reg.test(value) ? 'Please enter a valid email address' : null;
   };
 
   const validatePassword = (value) => {
@@ -209,6 +209,15 @@ const Register = () => {
     return false;
   };
    
+  useEffect(() => {
+    // Clear error message after 5 seconds
+    const errorTimeout = setTimeout(() => {
+      setError('');
+    }, 5000);
+
+    // Clear the timer when component unmounts or when error state changes
+    return () => clearTimeout(errorTimeout);
+  }, [error]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -227,6 +236,7 @@ const Register = () => {
         console.error(error);
         setError('An unexpected error occurred. Please try again later.');
       }
+      console.log(error)
     } finally {
       setLoading(false);
     }

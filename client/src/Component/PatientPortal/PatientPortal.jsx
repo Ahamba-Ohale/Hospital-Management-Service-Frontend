@@ -1,7 +1,7 @@
 import "./PatientPortal.css";
 import Sidebar from "./Bar/Sidebar";
-import LineChart from "../Admin/Charts/LIneChart";
-import PatientChart from "../Admin/Charts/PatientChart";
+// import LineChart from "../Admin/Charts/LIneChart";
+// import PatientChart from "../Admin/Charts/PatientChart";
 import Topbar from "./Bar/Topbar";
 import { useState } from "react";
 
@@ -16,10 +16,10 @@ export default function Patient() {
         <main className="patient_portal">
             <Sidebar isActive={isActive} />
 
-            <div className={`patient_main ${isActive ? 'active' : ''}`}>
+            <div className={`patient_main ${isActive ? 'pactive' : ''}`}>
                 <Topbar handleToggleClick={handleToggleClick} isActive={isActive} />
                         
-                <div className="sub-header">
+                {/* <div className="sub-header">
                     <div className="card">
                     <div className="chart-top">
                         <div className="chart-img"></div>
@@ -269,7 +269,7 @@ export default function Patient() {
                         </div>
                     </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </main>
     );

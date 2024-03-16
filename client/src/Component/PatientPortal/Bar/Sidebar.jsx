@@ -23,7 +23,7 @@ export default function Sidebar({ isActive }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = "http://localhost:8080/api/register";
+        const url = "http://localhost:8080/api/users/all";
         const { data: response } = await Axios.get(url);
         setUser({
           name: response.name,
@@ -71,7 +71,7 @@ export default function Sidebar({ isActive }) {
   }, []);
 
   return (
-    <nav className={`portal_navigation ${isActive ? "active" : ""}`}>
+    <nav className={`portal_navigation ${isActive ? "pactive" : ""}`}>
       <div className="portal_logo">
         <img src="/Logo.png" alt="G.T.H Logo" />
       </div>
