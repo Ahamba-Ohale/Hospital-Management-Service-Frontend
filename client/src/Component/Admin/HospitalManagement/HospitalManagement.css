@@ -30,3 +30,39 @@
 .patient-content__medd {
     margin-top: 20px;
 }
+
+.billing-and-invoicing-container {
+    padding: 20px;
+  }
+  
+  .invoice-list {
+    display: grid;
+    grid-gap: 10px;
+  }
+  
+  .invoice-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .invoice-info {
+    flex: 1;
+  }
+  
+  .view-invoice-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .view-invoice-btn:hover {
+    background-color: #0056b3;
+  }
+  
