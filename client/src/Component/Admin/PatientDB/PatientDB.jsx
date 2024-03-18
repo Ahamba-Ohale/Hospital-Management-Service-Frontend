@@ -25,7 +25,6 @@ const gender = [
 const PatientDB = () => {
   
   const [selectedOption, setSelectedOption] = useState(null);
-
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [userCount, setUserCount] = useState(0);
@@ -79,6 +78,45 @@ const PatientDB = () => {
   };
 
 
+
+
+
+  const [userMonthCount, setUserMonthCount] = useState(0);
+  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth() + 1); // Initialize with the current month
+
+  useEffect(() => {
+    const fetchPatients = async () => {
+      try {
+        const response = await fetch(`http://localhost:8080/api/Patients/`);
+        const patients = await response.json();
+
+        // Filter patients created in the current month
+        const currentMonthPatients = patients.filter(patient => {
+          const patientCreatedAt = new Date(patient.createdAt);
+          return patientCreatedAt.getMonth() + 1 === currentMonth;
+        });
+
+        setUserMonthCount(currentMonthPatients.length);
+      } catch (error) {
+        console.error('Error fetching patients:', error);
+      }
+    };
+
+    fetchPatients();
+  }, [currentMonth]); // Add currentMonth to the dependency array
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const newMonth = new Date().getMonth() + 1;
+      if (newMonth !== currentMonth) {
+        setCurrentMonth(newMonth);
+      }
+    }, 60000); // Check every minute for a new month
+
+    return () => clearInterval(interval);
+  }, [currentMonth]);
+
+
   
 
 
@@ -107,7 +145,7 @@ const PatientDB = () => {
           <div className="cards">
             <p style={{color: '#1E528E', fontSize: '25px', fontWeight:'bold',}} className="total-patients">MONTHLY PATIENTS</p>
             <FaUsersLine className="patient-icon"/>
-            <span className="monthly-patient-icon-span">{userCount}</span>
+            <span className="monthly-patient-icon-span">{userMonthCount}</span>
           </div>
           <div className="cards">Yearly Patients</div>
         </div>
