@@ -116,6 +116,24 @@ const PatientDB = () => {
     return () => clearInterval(interval);
   }, [currentMonth]);
 
+  const [totalUserCount, setTotalUserCount] = useState(0);
+  useEffect(() => {
+    const fetchPatients = async () => {
+      try {
+        const response = await fetch(`http://localhost:8080/api/Patients/`);
+        const patients = await response.json();
+
+        // Calculate the total count of patients for all months
+        const totalCount = patients.length;
+        setTotalUserCount(totalCount);
+      } catch (error) {
+        console.error('Error fetching patients:', error);
+      }
+    };
+
+    fetchPatients();
+  }, []);
+
 
   
 
@@ -147,7 +165,11 @@ const PatientDB = () => {
             <FaUsersLine className="patient-icon"/>
             <span className="monthly-patient-icon-span">{userMonthCount}</span>
           </div>
-          <div className="cards">Yearly Patients</div>
+          <div className="cards">
+          <p style={{color: '#1E528E', fontSize: '25px', fontWeight:'bold',}} className="total-patients">YEARLY PATIENTS</p>
+            <FaUsersLine className="patient-icon"/>
+            <span className="yearly-patient-icon-span">{totalUserCount}</span>
+          </div>
         </div>
 
         <div className="filter">

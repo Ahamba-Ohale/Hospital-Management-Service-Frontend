@@ -302,5 +302,15 @@
   top: 160px;
   left: 780px;
   color: red;
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: 700;
+ }
+
+ .yearly-patient-icon-span{
+  position: absolute;
+  top: 160px;
+  right: 125px;
+  color: red;
+  font-size: 30px;
+  font-weight: 700;
  }
