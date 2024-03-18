@@ -25,6 +25,7 @@ import CreatePatient from './Component/Admin/PatientDB/CreatePatient';
 
 
 
+
 function App() {
 
   return (
@@ -46,13 +47,13 @@ function App() {
           <Route path='/Admin' element={<Admin />} />
           <Route path='/HealthRecord' element={<Health />} />
           <Route path='/Blog Data System' element={<Blog />} />
-          <Route path='/Patients Database' element={<PatientDB />} />
-          <Route path='/PatientInfo/view/' element={<PatientInfo />} />
           <Route path='/Hospital management' element={<HospitalManagement />} />
           <Route path='/Data Analytics' element={<Analytics />} />
           <Route path='/Register' element={<Register />} />
           <Route path='/Add-new-record' element={<NewMedRecord />} />
           <Route path='/CreatePatient' element={<CreatePatient />} />
+          <Route path='/Patients Database' element={<PatientDB />} />
+          <Route path='/PatientInfo/view/' element={<PatientInfo />} />
         </Routes>
       </Router>
       

@@ -16,27 +16,17 @@ import { MdOutlinePayment } from "react-icons/md";
 import { FaXRay } from "react-icons/fa6";
 import { GiHealthPotion } from "react-icons/gi";
 import { IoReturnUpBack } from 'react-icons/io5';
-import { useNavigate, useParams } from 'react-router-dom';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+
+
 
 const PatientInfo = () => {
-  const { id } = useParams();
-  const [patientData, setPatientData] = useState([]);
 
-  useEffect(() => {
-    // Fetch patient data based on the ID
-    axios.get(`http://localhost:8080/api/patients/${id}`)
-      .then(response => {
-        setPatientData(response.data);
-      })
-      .catch(error => {
-        console.error("Error fetching patient data:", error);
-      });
-  }, [id]);
 
-  // if (!patientData) {
-  //   return <div>Loading...</div>;
-  // }
+ 
+ 
+
 
     const [activeTab, setActiveTab] = useState('MedicalRecord');
 
@@ -68,7 +58,7 @@ const PatientInfo = () => {
 
             <div className="history">
               <div className="back" onClick={handleGoBack}><IoReturnUpBack /></div>
-              <div className="page-name">{patientData.name}</div>
+              <div className="page-name"><h1>patient name</h1></div>
             </div>
 
             <div className="patient-main__content">
@@ -76,11 +66,11 @@ const PatientInfo = () => {
                     <div className="patient-menu__content">
                         <div className="patient-img"></div>
                         <div className="patient-content__text">
-                            <h3><h1>name</h1></h3>
+                            <h3>name</h3>
                             <p>
-                               {patientData.email}<br/>
+                               email<br/>
                             </p>
-                            <p>{patientData.phoneNumber}</p>
+                            <p>number</p>
                         </div>
                         <div className="patient-menu__buttons">
                             <button 

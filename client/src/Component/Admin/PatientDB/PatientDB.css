@@ -272,3 +272,34 @@
     cursor: pointer;
   }
   
+ /* .total-patient-number{
+  color: #1E528E;
+  
+  font-weight: bold;
+ } */
+ .total-patients{
+  position: absolute;
+  top: 120px;
+  font-weight: bold;
+ }
+ .patient-icon{
+  position: absolute;
+  top: 165px;
+  color: #1E528E;
+  font-size: 50px;
+ }
+ .patient-icon-span{
+  position: absolute;
+  top: 155px;
+  left: 450px;
+  color: red;
+  font-size: 30px;
+  font-weight: 700;
+ }
+ .monthly-patient-icon-span{
+  position: absolute;
+  top: 160px;
+  left: 780px;
+  color: red;
+  font-size: 20px;
+ }

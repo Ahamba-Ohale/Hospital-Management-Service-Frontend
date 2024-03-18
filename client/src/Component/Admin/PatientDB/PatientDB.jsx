@@ -6,6 +6,7 @@ import Select from 'react-select';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import { FaUsersLine } from "react-icons/fa6";
 
 const options = [
   { value: 'view', label: 'View', link: '/PatientInfo/view' },
@@ -27,6 +28,21 @@ const PatientDB = () => {
 
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const [userCount, setUserCount] = useState(0);
+  useEffect(() => {
+    const fetchUserCount = async () => {
+      try {
+        const response = await fetch(`http://localhost:8080/api/Patients/`);
+        const data = await response.json();
+        setUserCount(data.length);
+      } catch (error) {
+        console.error('Error fetching user count:', error);
+      }
+    };
+
+    fetchUserCount();
+  }, []);
+
 
 
 
@@ -63,6 +79,9 @@ const PatientDB = () => {
   };
 
 
+  
+
+
 
   return (
     <div className="dashboard">
@@ -80,8 +99,16 @@ const PatientDB = () => {
         </div>
 
         <div className="sub-header">
-          <div className="cards">Total Patients</div>
-          <div className="cards">Monthly Patients</div>
+          <div className="cards">
+            <p style={{color: '#1E528E', fontSize: '25px', fontWeight:'bold',}} className="total-patients">TOTAL PATIENTS</p>
+            <FaUsersLine className="patient-icon"/>
+            <span className="patient-icon-span">{userCount}</span>
+          </div>
+          <div className="cards">
+            <p style={{color: '#1E528E', fontSize: '25px', fontWeight:'bold',}} className="total-patients">MONTHLY PATIENTS</p>
+            <FaUsersLine className="patient-icon"/>
+            <span className="monthly-patient-icon-span">{userCount}</span>
+          </div>
           <div className="cards">Yearly Patients</div>
         </div>
 

@@ -159,9 +159,11 @@ function Admin() {
                             defaultValue={selectedOption}
                             onChange={setSelectedOption}
                             options={options.map(option => ({
-                              value: option.value,
+                              value: patient,
                               label: (
-                                <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                <Link to={option.link} 
+                                  state={{ patientData: patient }} // pass the patient object here
+                                  style={{ textDecoration: 'none', color: 'inherit' }}>
                                   {option.label}
                                 </Link>
                               ),
