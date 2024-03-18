@@ -23,7 +23,6 @@ import Register from './Component/auth/Register';
 import Login from './Component/auth/Login';
 import VerifyEmail from './Component/auth/VerifyEmail';
 import PatientPortal from './Component/PatientPortal/PatientPortal';
-import Records from './Component/PatientPortal/Records/Records';
 
 
 function App() {
@@ -54,16 +53,14 @@ function App() {
           <Route path='/Add-new-record' element={<NewMedRecord />} />
           <Route path='/CreatePatient' element={<CreatePatient />} />
 
-          {/* {user && <Route path='/Portal' exact element={<PatientPortal />} />} */}
-          <Route path='/Portal' exact element={<PatientPortal />} />
+          {/* {user && <Route path='/Patient/Portal/*' exact element={<PatientPortal />} />} */}
+          <Route path='/Patient/Portal/*' exact element={<PatientPortal />} />
           <Route path='/register' exact element={<Register />} />
           <Route path='/login' exact element={<Login />} />
           {/* <Route path='/Portal' exact element={<Navigate replace to="/login" />} /> */}
           <Route path="/uers/:id/verify/:token" element={<VerifyEmail />} />
-          <Route path='/Records' element={<Records />} />
         </Routes>
       </Router>
-      
     </>
   )
 }
