@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 
-const AddAppointment = ({ onClose }) => {
+const ViewMedRec = ({ onClose }) => {
   const [formData, setFormData] = useState({
     // Your form data here
     date: '',
@@ -24,27 +24,11 @@ const AddAppointment = ({ onClose }) => {
     onClose();
   };
 
-  const modalRef = useRef();
-
-  const handleClickOutside = (e) => {
-    if (modalRef.current && !modalRef.current.contains(e.target)) {
-      onClose();
-    }
-  };
-
-
-  useEffect(() => {
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, []);
-
   return (
     <div className="modal-overlay">
       <div className="add-appointment-modal">
         <div className="modal-header">
-          <h2>Add Appointment</h2>
+          <h2>9 March 2024</h2>
           <button className="close-button" onClick={onClose}>
             &times;
           </button>
@@ -52,22 +36,38 @@ const AddAppointment = ({ onClose }) => {
         <div className="modal-content">
           <form onSubmit={handleSubmit}>
             {/* Your form fields */}
-            <label>Date:</label>
+            <label htmlFor='complaint'>Complaint:
             <input
-              type="date"
-              name="date"
+              type="text"
+              name="complaint"
+              className="input-field"
               value={formData.date}
               onChange={handleChange}
               required
             />
-            <label>Time:</label>
+            </label>
+            
+            <label htmlFor='diagnosis'>Diagnosis:
             <input
-              type="time"
-              name="time"
+              type="text"
+              name="diagnosis"
+              className="input-field"
               value={formData.time}
               onChange={handleChange}
               required
             />
+            </label>
+
+            <label htmlFor='treatment'>Treatment:
+            <input
+              type="text"
+              name="treatment"
+              className="input-field"
+              value={formData.time}
+              onChange={handleChange}
+              required
+            />
+            </label>
             {/* Add more form fields as needed */}
             <button type="submit">Add Appointment</button>
           </form>
@@ -77,4 +77,4 @@ const AddAppointment = ({ onClose }) => {
   );
 };
 
-export default AddAppointment;
+export default ViewMedRec;

@@ -7,7 +7,7 @@ import DatePicker from "react-datepicker";
 import { useState } from "react";
 
 const options = [
-  { value: 'view', label: 'View', link: '/PatientInfo/view' },
+  { value: 'view', label: 'View', link: '/PatientHealthInfo' },
   { value: 'delete', label: 'Delete', link: '/PatientInfo' },
 ];
 
@@ -48,6 +48,10 @@ const Health = () => {
             <div className="cards">Total Consultations</div>
           </div>
 
+          <div className="page-title">
+          <h2>Patient Health Records</h2>
+        </div>
+        
           <div className="filter">
           <div className="card1">
             <Select
@@ -85,7 +89,6 @@ const Health = () => {
             Filter
           </button>
         </div>
-
 
           <div className="health__main">
             <table className="patient-list">

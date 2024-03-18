@@ -23,6 +23,11 @@ import Register from './Component/auth/Register';
 import Login from './Component/auth/Login';
 import VerifyEmail from './Component/auth/VerifyEmail';
 import PatientPortal from './Component/PatientPortal/PatientPortal';
+import CreateInvoice from './Component/Admin/PatientDB/CreateInvoice';
+import InvoiceEdit from './Component/Admin/PatientDB/InvoiceEdit';
+import InvoiceView from './Component/Admin/PatientDB/InvoiceView';
+import ShareInvoice from './Component/Admin/PatientDB/ShareInvoice';
+import PatientHealthInfo from './Component/Admin/Health/PatientHealthInfo';
 
 
 function App() {
@@ -52,13 +57,18 @@ function App() {
           <Route path='/PatientInfo/view' element={<PatientInfo />} />
           <Route path='/Add-new-record' element={<NewMedRecord />} />
           <Route path='/CreatePatient' element={<CreatePatient />} />
-
           {/* {user && <Route path='/Patient/Portal/*' exact element={<PatientPortal />} />} */}
           <Route path='/Patient/Portal/*' exact element={<PatientPortal />} />
           <Route path='/register' exact element={<Register />} />
           <Route path='/login' exact element={<Login />} />
           {/* <Route path='/Portal' exact element={<Navigate replace to="/login" />} /> */}
           <Route path="/uers/:id/verify/:token" element={<VerifyEmail />} />
+          <Route path="/CreateInvoice" element={<CreateInvoice />} />
+          <Route path="/InvoiceEdit" element={<InvoiceEdit />} />
+          <Route path='/InvoiceView' element={<InvoiceView />} />
+          <Route path='/ShareInvoice' element={<ShareInvoice />} />
+          <Route path='/PatientHealthInfo' element={<PatientHealthInfo />} />
+        
         </Routes>
       </Router>
     </>
