@@ -22,7 +22,7 @@ const Sidebar = () => {
   return (
     // <div className="dashboard">
       <div className={`side-menu-bar ${menuVisible ? "visible" : ""}`}>
-        <div className="Admin-logo">LOgo</div>
+        <div className="Admin-logo"><img src="Logo.png" alt="Logo" className='Logo' /></div>
         <div className="Admin-menu">
           <div className="menu-item">
             <ul>

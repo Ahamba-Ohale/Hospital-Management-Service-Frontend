@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const AddAppointment = ({ onClose }) => {
   const [formData, setFormData] = useState({
@@ -23,6 +23,22 @@ const AddAppointment = ({ onClose }) => {
     // Then close the modal
     onClose();
   };
+
+  const modalRef = useRef();
+
+  const handleClickOutside = (e) => {
+    if (modalRef.current && !modalRef.current.contains(e.target)) {
+      onClose();
+    }
+  };
+
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="modal-overlay">
