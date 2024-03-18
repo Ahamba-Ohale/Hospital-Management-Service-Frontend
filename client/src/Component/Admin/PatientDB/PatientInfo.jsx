@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+
 import { IoMdNotificationsOutline } from "react-icons/io";
 import Sidebar from '../AdminSidebar/Sidebar'
 import './PatientDB.css'
@@ -17,7 +18,15 @@ import { GiHealthPotion } from "react-icons/gi";
 import { IoReturnUpBack } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 
+
+
+
 const PatientInfo = () => {
+
+
+ 
+ 
+
 
     const [activeTab, setActiveTab] = useState('MedicalRecord');
 
@@ -59,11 +68,11 @@ const PatientInfo = () => {
                     <div className="patient-menu__content">
                         {/* <div className="patient-img"></div> */}
                         <div className="patient-content__text">
-                            <h3>John Doe</h3>
+                            <h3>name</h3>
                             <p>
-                               johndoe@gmail.com<br/>
+                               email<br/>
                             </p>
-                            <p>(+234) 456-7890</p>
+                            <p>number</p>
                         </div>
                         <div className="patient-menu__buttons">
                             <button 

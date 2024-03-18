@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Sidebar from "../AdminSidebar/Sidebar";
 import BarChart from "../Charts/BarChart";
 import LineChart from "../Charts/LIneChart";
@@ -8,6 +8,7 @@ import AppointmentChart from '../Charts/AppointmentPage'
 import PrescriptionChart from "../Charts/prescriptionCharts";
 import Select from 'react-select';
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const options = [
   { value: 'view', label: 'View', link: '/PatientInfo/view' },
@@ -18,6 +19,45 @@ const options = [
 function Admin() {
 
   const [selectedOption, setSelectedOption] = useState(null);
+
+  const [patients, setPatients] = useState([]);
+
+  const [fivePatients, setFivePatients] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from the backend when the component mounts
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/Patients/");
+        setPatients(response.data);
+      } catch (error) {
+        console.error("Error fetching patients:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
+  useEffect(() => {
+    const fetchPatients = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/api/patients/')
+        const data = await response.json();
+        // Sort patients by creation date in descending order
+        data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        // Take the first 5 patients
+        const recentPatients = data.slice(0, 5);
+        setFivePatients(recentPatients);
+      } catch (error) {
+        console.error('Error fetching patient data:', error);
+      }
+    };
+
+    fetchPatients();
+  }, []);
+
+
 
   return (
     // <div className="body">
@@ -104,207 +144,36 @@ function Admin() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>John Doe</td>
-                      <td>2022-03-01</td>
-                      <td>Male</td>
-                      <td>A+</td>
-                      <td>35</td>
-                      <td className="action-column">
-                      <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Jane Doe</td>
-                      <td>2022-03-02</td>
-                      <td>Female</td>
-                      <td>B-</td>
-                      <td>28</td>
-                      <td className="action-column">
-                      <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td className="action-column">
-                      <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td className="action-column">
-                      <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td className="action-column">
-                      <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td className="action-column">
-                      <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>7</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td className="action-column">
-                      <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>8</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td className="action-column">
-                      <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                      </td>
-                    </tr>
-                    
+                    {patients.map((patient, index) =>
+                      <tr key={index}>
+                        <td>{index + 1}</td>
+                        <td>{patient.name}</td>
+                        <td>{patient.createdAt}</td>
+                        <td>{patient.gender} </td>
+                        <td>{patient.bloodType}</td>
+                        <td>{patient.age}</td>
+                        <td className="action-column">
+                          <Select
+                            className="custom-select-control"
+                            id="action"
+                            defaultValue={selectedOption}
+                            onChange={setSelectedOption}
+                            options={options.map(option => ({
+                              value: patient,
+                              label: (
+                                <Link to={option.link} 
+                                  state={{ patientData: patient }} // pass the patient object here
+                                  style={{ textDecoration: 'none', color: 'inherit' }}>
+                                  {option.label}
+                                </Link>
+                              ),
+                            }))}
+                            placeholder='...'
+                          />
+                        </td>
+                      </tr>
+                    )}
+
                   </tbody>
                 </table>
               </div>
@@ -314,49 +183,18 @@ function Admin() {
           <div className="right-section">
             <div className="top-right">
               <h3>Recent Patients</h3>
-              <div className="right-content">
+              {fivePatients.map((patient, index) =>(
+                <div key={index} className="right-content">
                 <div className="right-img"></div>
                 <div className="right-text">
-                  <h4>Amina Smith</h4>
-                  <p>+234 907 524 5232</p>
+                  <h4>{patient.name}</h4>
                 </div>
-                <div className="right-time">2:00 PM</div>
+                <div className="right-time">{patient.createdAt}</div>
               </div>
-              <div className="right-content">
-                <div className="right-img"></div>
-                <div className="right-text">
-                  <h4>Amina Smith</h4>
-                  <p>+234 907 524 5232</p>
-                </div>
-                <div className="right-time">2:00 PM</div>
-              </div>
-              <div className="right-content">
-                <div className="right-img"></div>
-                <div className="right-text">
-                  <h4>Amina Smith</h4>
-                  <p>+234 907 524 5232</p>
-                </div>
-                <div className="right-time">2:00 PM</div>
-              </div>
-              <div className="right-content">
-                <div className="right-img"></div>
-                <div className="right-text">
-                  <h4>Amina Smith</h4>
-                  <p>+234 907 524 5232</p>
-                </div>
-                <div className="right-time">2:00 PM</div>
-              </div>
-              <div className="right-content">
-                <div className="right-img"></div>
-                <div className="right-text">
-                  <h4>Amina Smith</h4>
-                  <p>+234 907 524 5232</p>
-                </div>
-                <div className="right-time">2:00 PM</div>
-              </div>
-              
-              
-            </div>
+              ) )}
+
+
+
             <div className="bottom-right">
               <h4>Today Appointment</h4>
               <div className="right-contents">

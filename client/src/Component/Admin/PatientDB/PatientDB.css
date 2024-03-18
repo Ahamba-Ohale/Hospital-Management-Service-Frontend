@@ -615,6 +615,34 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,.1);
     border-radius: 10px;
   }
+  
+ .total-patients{
+  position: absolute;
+  top: 120px;
+  font-weight: bold;
+ }
+ .patient-icon{
+  position: absolute;
+  top: 165px;
+  color: #105eb74a;
+  font-size: 50px;
+  
+ }
+ .patient-icon-span{
+  position: absolute;
+  top: 155px;
+  left: 450px;
+  color: red;
+  font-size: 30px;
+  font-weight: 700;
+ }
+ .monthly-patient-icon-span{
+  position: absolute;
+  top: 160px;
+  left: 780px;
+  color: red;
+  font-size: 20px;
+ }
 
   .createpatient label {
     position: relative;

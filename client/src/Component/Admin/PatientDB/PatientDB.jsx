@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 import Sidebar from "../AdminSidebar/Sidebar";
 import { GoPlus } from "react-icons/go";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Select from 'react-select';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import { FaUsersLine } from "react-icons/fa6";
 
 const options = [
   { value: 'view', label: 'View', link: '/PatientInfo/view' },
-  { value: 'delete', label: 'Delete', link: '/PatientInfo' },
+  { value: 'delete', label: 'Delete', },
 ];
 
 const sortBy = [
@@ -22,20 +23,36 @@ const gender = [
 ];
 
 const PatientDB = () => {
-
+  
   const [selectedOption, setSelectedOption] = useState(null);
-
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const [userCount, setUserCount] = useState(0);
+  useEffect(() => {
+    const fetchUserCount = async () => {
+      try {
+        const response = await fetch(`http://localhost:8080/api/Patients/`);
+        const data = await response.json();
+        setUserCount(data.length);
+      } catch (error) {
+        console.error('Error fetching user count:', error);
+      }
+    };
+
+    fetchUserCount();
+  }, []);
+
 
 
   const [patients, setPatients] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch data from the backend when the component mounts
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/Patients/"); // Replace with your backend API endpoint
+        const response = await axios.get("http://localhost:8080/api/Patients/");
         setPatients(response.data);
       } catch (error) {
         console.error("Error fetching patients:", error);
@@ -44,6 +61,62 @@ const PatientDB = () => {
 
     fetchData();
   }, []);
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:8080/api/Patients/${id}`);
+      // After successful deletion, update the patient list by refetching data
+      const response = await axios.get("http://localhost:8080/api/Patients/");
+      setPatients(response.data);
+      navigate('/Patients Database');
+      // history.push(`/PatientInfo/${id}`);
+    } catch (error) {
+      console.error("Error deleting patient:", error);
+    }
+  };
+
+
+
+
+
+  const [userMonthCount, setUserMonthCount] = useState(0);
+  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth() + 1); // Initialize with the current month
+
+  useEffect(() => {
+    const fetchPatients = async () => {
+      try {
+        const response = await fetch(`http://localhost:8080/api/Patients/`);
+        const patients = await response.json();
+
+        // Filter patients created in the current month
+        const currentMonthPatients = patients.filter(patient => {
+          const patientCreatedAt = new Date(patient.createdAt);
+          return patientCreatedAt.getMonth() + 1 === currentMonth;
+        });
+
+        setUserMonthCount(currentMonthPatients.length);
+      } catch (error) {
+        console.error('Error fetching patients:', error);
+      }
+    };
+
+    fetchPatients();
+  }, [currentMonth]); // Add currentMonth to the dependency array
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const newMonth = new Date().getMonth() + 1;
+      if (newMonth !== currentMonth) {
+        setCurrentMonth(newMonth);
+      }
+    }, 60000); // Check every minute for a new month
+
+    return () => clearInterval(interval);
+  }, [currentMonth]);
+
+
+  
+
 
 
   return (
@@ -62,8 +135,16 @@ const PatientDB = () => {
         </div>
 
         <div className="sub-header">
-          <div className="cards">Total Patients</div>
-          <div className="cards">Monthly Patients</div>
+          <div className="cards">
+            <p style={{color: '#1E528E', fontSize: '25px', fontWeight:'bold',}} className="total-patients">TOTAL PATIENTS</p>
+            <FaUsersLine className="patient-icon"/>
+            <span className="patient-icon-span">{userCount}</span>
+          </div>
+          <div className="cards">
+            <p style={{color: '#1E528E', fontSize: '25px', fontWeight:'bold',}} className="total-patients">MONTHLY PATIENTS</p>
+            <FaUsersLine className="patient-icon"/>
+            <span className="monthly-patient-icon-span">{userMonthCount}</span>
+          </div>
           <div className="cards">Yearly Patients</div>
         </div>
 
@@ -130,15 +211,21 @@ const PatientDB = () => {
               <td>{patient.name}</td>
               <td>{patient.createdAt}</td>
               <td>{patient.gender} </td>
-              <td>{patient.bloodtype}</td>
+              <td>{patient.bloodType}</td>
               <td>{patient.age}</td>
               <td className="action-column">
                 <Select 
                   className="custom-select-control"
                   id="action"
                   defaultValue={selectedOption}
-                  onChange={setSelectedOption}
+                  onChange={(selectedOption)=> {
+                    if (selectedOption.value === 'delete') {
+                      handleDelete(patient._id);
+                    }
+                  }}
+                  isSearchable={false}
                   options={options.map(option => ({
+
                     value: option.value,
                     label: (
                       <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
@@ -147,6 +234,7 @@ const PatientDB = () => {
                     ),
                   }))}
                   placeholder='...'
+                  
                 />
               </td>
             </tr>
