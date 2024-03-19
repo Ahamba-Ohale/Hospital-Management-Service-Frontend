@@ -1,11 +1,10 @@
-const apiUrl = 'http://localhost:8080/api';
+const Url = 'http://localhost:8080/api';
 
 
 function getPrescriptionsData(id) {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch(`${apiUrl}/getTreatmentPlans/`);
-      console.log(response.data);
+      const response = await fetch(`${Url}/treatmentPlan/`);
       const data = await response.json();
       resolve(data);
     } catch (error) {

@@ -37,6 +37,8 @@ import AddLeave from './Component/Admin/HospitalManagement/AddLeave';
 import AddTrainee from './Component/Admin/HospitalManagement/AddTrainee';
 
 
+
+
 function App() {
   // const user = localStorage.getItem("token");
 
@@ -58,9 +60,11 @@ function App() {
           <Route path='/Admin' element={<Admin />} />
           <Route path='/HealthRecord' element={<Health />} />
           <Route path='/Blog Data System' element={<Blog />} />
-          <Route path='/Patients Database' element={<PatientDB />} />
           <Route path='/Hospital management' element={<HospitalManagement />} />
           <Route path='/Data Analytics' element={<Analytics />} />
+          <Route path='/Register' element={<Register />} />
+          <Route path='/Patients Database' element={<PatientDB />} />
+          <Route path='/PatientInfo/view/' element={<PatientInfo />} />
           <Route path='/PatientInfo/view' element={<PatientInfo />} />
           <Route path='/Add-new-record' element={<NewMedRecord />} />
           <Route path='/CreatePatient' element={<CreatePatient />} />
@@ -82,7 +86,6 @@ function App() {
           <Route path='/AddRole' element={<AddRole />} />
           <Route path='/AddLeave' element={<AddLeave />} />
           <Route path='/AddTrainee' element={<AddTrainee />} />
-        
         </Routes>
       </Router>
       
