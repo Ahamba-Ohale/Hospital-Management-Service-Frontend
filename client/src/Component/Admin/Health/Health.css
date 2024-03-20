@@ -371,3 +371,46 @@
       width: 100%;
     } 
   }
+
+  .today-appointment{
+    position: absolute;
+    top: 120px;
+    font-weight: bold;
+    color: #276AB3;
+  }
+  .appointment-booked-icon{
+    position: absolute;
+    top: 165px;
+    color: #105eb7c1;
+    font-size: 30px;
+  }
+  .total-appointment-number{
+    position: absolute;
+    top: 150px;
+    left: 445px;
+    color: rgba(255, 0, 0, 0.623);
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .total-consultation{
+    position: absolute;
+    top: 120px;
+    font-weight: bold;
+    color: #276AB3;
+  }
+
+  .total-consultation-span{
+    position: absolute;
+    top: 150px;
+    right: 145px;
+    color: rgba(255, 0, 0, 0.623);
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .total-consultation-icon{
+    position: absolute;
+    top: 165px;
+    color: #105eb7c1;
+    font-size: 30px;
+  }
