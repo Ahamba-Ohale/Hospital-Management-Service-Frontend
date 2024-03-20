@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import { Axios } from "axios";
+import axios from "axios"; // Changed import
 import {
   LuClipboardList,
   LuPill,
@@ -15,12 +15,11 @@ import {
 import { Link } from "react-router-dom";
 import { FaChevronLeft } from "react-icons/fa6";
 
-export default function Sidebar({ sidebarClose, setSidebarClose }) {
+export default function Sidebar({ sidebarClose, setSidebarClose, selected }) { 
   const [user, setUser] = useState({
     name: "",
     email: "",
   });
-  const [selected, setSelected] = useState(0); // State to manage the selected index
 
   const ModSidebarOpen = () => {
     setSidebarClose(!sidebarClose);
@@ -30,7 +29,7 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
     const fetchData = async () => {
       try {
         const url = "http://localhost:8080/api/users/all";
-        const { data: response } = await Axios.get(url);
+        const { data: response } = await axios.get(url); // Changed Axios to axios
         setUser({
           name: response.name,
           email: response.email,
@@ -40,40 +39,6 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
       }
     };
     fetchData();
-  }, []);
-
-  useEffect(() => {
-    // Get the pathname from the location object
-    const { pathname } = location;
-    // Update the selected index based on the current pathname
-    switch (pathname) {
-      case "/Patient/Portal":
-        setSelected(0);
-        break;
-      case "/Patient/Records":
-        setSelected(1);
-        break;
-      case "/Patient/Appointments":
-        setSelected(2);
-        break;
-      case "/Patient/Prescriptions":
-        setSelected(3);
-        break;
-      case "/Patient/Billings":
-        setSelected(4);
-        break;
-      case "/Patient/Messages":
-        setSelected(5);
-        break;
-      case "/Patient/Settings":
-        setSelected(6);
-        break;
-      case "/Patient/Help":
-        setSelected(7);
-        break;
-      default:
-        setSelected(0);
-    }
   }, []);
 
   return (
@@ -92,7 +57,6 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
           <Link
             to="/Patient/Portal"
             className={selected === 0 ? "active_link" : ""}
-            onClick={() => setSelected(0)}
           >
             <i className="icon">
               <LuLayoutDashboard size={25} />
@@ -105,7 +69,6 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
           <Link
             to="/Patient/Records"
             className={selected === 1 ? "active_link" : ""}
-            onClick={() => setSelected(1)}
           >
             <i className="icon">
               <LuClipboardList size={25} />
@@ -118,7 +81,6 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
           <Link
             to="/Patient/Appointments"
             className={selected === 2 ? "active_link" : ""}
-            onClick={() => setSelected(2)}
           >
             <i className="icon">
               <LuCalendarDays size={25} />
@@ -131,7 +93,6 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
           <Link
             to="/Patient/Prescriptions"
             className={selected === 3 ? "active_link" : ""}
-            onClick={() => setSelected(3)}
           >
             <i className="icon">
               <LuPill size={25} />
@@ -144,7 +105,6 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
           <Link
             to="/Patient/Bills"
             className={selected === 4 ? "active_link" : ""}
-            onClick={() => setSelected(4)}
           >
             <i className="icon">
               <LuCreditCard size={25} />
@@ -157,7 +117,6 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
           <Link
             to="/Patient/Messages"
             className={selected === 5 ? "active_link" : ""}
-            onClick={() => setSelected(5)}
           >
             <i className="icon">
               <LuMessagesSquare size={25} />
@@ -170,7 +129,6 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
           <Link
             to="/Patient/Settings"
             className={selected === 6 ? "active_link" : ""}
-            onClick={() => setSelected(6)}
           >
             <i className="icon">
               <LuSettings size={25} />
@@ -183,7 +141,6 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
           <Link
             to="/Patient/Help"
             className={selected === 7 ? "active_link" : ""}
-            onClick={() => setSelected(7)}
           >
             <i className="icon">
               <LuLifeBuoy size={25} />
@@ -269,7 +226,7 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
 //             <li>
 //               <Link to={to} 
 //                 className={selected === 0 ? "active_link" : ""} 
-//                 onClick={() => setSelected(0)}
+//          
 //               >
 //                 <i className="icon">
 //                   {icon}

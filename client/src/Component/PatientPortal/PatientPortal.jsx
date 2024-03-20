@@ -1,52 +1,55 @@
-import "./PatientPortal.css";
-//  
-// import Topbar from "./Bar/Topbar";
-// import Dashboard from "./pages/Dashboard";
-// import Records from "./pages/Records";
-// import Appointments from "./pages/Appointments";
-// import Prescriptions from "./pages/Prescriptions";
-// import Bills from "./pages/Bills";
-// import Settings from "./pages/Settings";
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Sidebar from "./Bar/Sidebar";
 import Topbar from "./Bar/Topbar";
 import MyRoutes from "../../routes/MyRoutes";
-
-// export default function Patient() {
-//     const [isActive, setIsActive] = useState(false);
-
-//     const handleToggleClick = () => {
-//         setIsActive(prevIsActive => !prevIsActive);
-//     };
-
-//     return (
-//         <main className="patient_portal">
-//             <Sidebar isActive={isActive} />
-
-//             <div className={`patient_main ${isActive ? 'pactive' : ''}`}>
-//                 <Topbar handleToggleClick={handleToggleClick} isActive={isActive} />
-
-//                 <div className="patient_content">
-//                     <Dashboard />
-//                     <Records />
-//                     <Appointments />
-//                     <Prescriptions />
-//                     <Bills />
-//                     <Settings />
-//                 </div>
-//             </div>
-//         </main>
-//     );
-// }
+import { useLocation } from "react-router-dom";
 
 export default function PatientPortal() {
+    const [selected, setSelected] = useState(0); // State to manage the selected index
+    const location = useLocation(); // Get the current location using useLocation hook
+
+    // useEffect function to manage selected index
+    useEffect(() => {
+        // Update the selected index based on the current pathname
+        switch (location.pathname) {
+            case "/Patient/Portal":
+                setSelected(0);
+                break;
+            case "/Patient/Records":
+                setSelected(1);
+                break;
+            case "/Patient/Appointments":
+                setSelected(2);
+                break;
+            case "/Patient/Prescriptions":
+                setSelected(3);
+                break;
+            case "/Patient/Bills":
+                setSelected(4);
+                break;
+            case "/Patient/Messages":
+                setSelected(5);
+                break;
+            case "/Patient/Settings":
+                setSelected(6);
+                break;
+            case "/Patient/Help":
+                setSelected(7);
+                break;
+            default:
+                setSelected(0);
+        }
+    }, [location.pathname]); // Run this effect whenever location.pathname changes
+
     const [sidebarClose, setSidebarClose] = useState(false);
+
     return (
         <>
             <main className={`patient_portal ${sidebarClose ? 'pactive' : ''}`}>
                 <Sidebar 
-                    sidebarClose={sidebarClose} setSidebarClose={setSidebarClose}
+                    sidebarClose={sidebarClose} 
+                    setSidebarClose={setSidebarClose}
+                    selected={selected} // Pass selected state here
                 />
                 <section 
                     className={`patient_main ${sidebarClose ? 'pactive' : ''}`}

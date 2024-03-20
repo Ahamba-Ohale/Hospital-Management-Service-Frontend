@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Route, Routes } from "react-router-dom";
 import Overview from "../Component/PatientPortal/pages/Overview";
 import Records from "../Component/PatientPortal/pages/Records";
@@ -8,11 +9,11 @@ import Feedback from "../Component/PatientPortal/pages/Feedback";
 import Settings from "../Component/PatientPortal/pages/Settings";
 import Help from "../Component/PatientPortal/pages/Help";
 
-export default function MyRoutes() {
+export default function MyRoutes({ selected, updateSelectedIndex }) {
     return (
         <>
             <Routes>
-                <Route path="/Patient/Portal" element={<Overview />} />
+                <Route path="/Patient/Portal" element={<Overview selected={selected} updateSelectedIndex={updateSelectedIndex} />} />
                 <Route path="/Patient/Records" element={<Records />} />
                 <Route path="/Patient/Appointments" element={<Appointments />} />
                 <Route path="/Patient/Prescriptions" element={<Prescriptions />} />
