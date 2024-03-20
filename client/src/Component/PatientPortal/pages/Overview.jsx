@@ -33,6 +33,14 @@ export default function Overview() {
                                 <img src="/doctor5.png" alt="Doctor" />
                             </div>
                         </div>
+                        <div className="overview_appoint-header">
+                                <h2>Appointments</h2>
+                                <NavLink 
+                                    to="/Patient/Appointments" 
+                                    activeClassName="active_link">
+                                    View All
+                                </NavLink>
+                        </div>
                         <div className="overview_vitals">
                             <div className="vitals_card">
                                 <div>

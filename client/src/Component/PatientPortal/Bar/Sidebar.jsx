@@ -61,6 +61,7 @@ export default function Sidebar({ sidebarClose, setSidebarClose, selected }) {
             <i className="icon">
               <LuLayoutDashboard size={25} />
             </i>
+            {/* <span>Overview</span> */}
             {!sidebarClose && <span>Overview</span>}
           </Link>
         </li>

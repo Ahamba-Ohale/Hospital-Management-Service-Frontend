@@ -348,9 +348,17 @@
 .patient_topbar .dropdown-item svg {
     margin-right: 1rem;
 }
+
+.patient_topbar .dropdown-item a {
+    color: #222;
+}
   
 .patient_topbar .dropdown-item:hover {
     background-color: #276ab3;
+    color: #f5f5f5;
+}
+
+.patient_topbar .dropdown-item:hover a {
     color: #f5f5f5;
 }
 

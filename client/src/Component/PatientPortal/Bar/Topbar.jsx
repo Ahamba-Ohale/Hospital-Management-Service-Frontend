@@ -4,6 +4,7 @@ import { IoSearchOutline } from 'react-icons/io5';
 import {  FaChevronDown, FaRegBell, FaRegUser } from 'react-icons/fa6';
 import { MdLogout, MdOutlineSettings } from "react-icons/md";
 import { useState, useEffect } from "react";
+import { NavLink } from 'react-router-dom';
 
 export default function Topbar() {
     // const [isFirstIcon, setIsFirstIcon] = useState(true);
@@ -68,15 +69,27 @@ export default function Topbar() {
                         {/* Dropdown content */}
                         <div className="dropdown-item">
                             <FaRegUser />
-                            Profile
+                            <NavLink 
+                                to="/Patient/Portal" 
+                                activeClassName="active_link">
+                                Profile
+                            </NavLink>
                         </div>
                         <div className="dropdown-item">
-                        <MdOutlineSettings />
-                            Settings
+                            <MdOutlineSettings />
+                            <NavLink 
+                                to="/Patient/Settings" 
+                                activeClassName="active_link">
+                                Settings
+                            </NavLink>
                         </div>
                         <div className="dropdown-item">
                             <MdLogout />
-                            Logout
+                            <NavLink 
+                                to="/Patient/Portal" 
+                                activeClassName="active_link">
+                                Logout
+                            </NavLink>
                         </div>
                     </div>
                 </div>
