@@ -57,14 +57,16 @@ const PatientInfo = () => {
             </div>
 
             <div className="history">
+              <div className="history-right">
               <div className="back" onClick={handleGoBack}><IoReturnUpBack /></div>
-              <div className="page-name"><h1>patient name</h1></div>
+              <div className="page-name">John Doe</div>
+              </div>
             </div>
 
             <div className="patient-main__content">
                 <div className="patient-menu">
                     <div className="patient-menu__content">
-                        <div className="patient-img"></div>
+                        {/* <div className="patient-img"></div> */}
                         <div className="patient-content__text">
                             <h3>name</h3>
                             <p>

@@ -44,8 +44,6 @@ const PatientDB = () => {
 
 
 
-
-
   const [patients, setPatients] = useState([]);
 
   const navigate = useNavigate();
@@ -62,7 +60,7 @@ const PatientDB = () => {
     };
 
     fetchData();
-  }, []); 
+  }, []);
 
   const handleDelete = async (id) => {
     try {
@@ -171,6 +169,11 @@ const PatientDB = () => {
             <span className="yearly-patient-icon-span">{totalUserCount}</span>
           </div>
         </div>
+
+        <div className="page-title">
+          <h2>Patients Database</h2>
+        </div>
+
 
         <div className="filter">
           <div className="card1">

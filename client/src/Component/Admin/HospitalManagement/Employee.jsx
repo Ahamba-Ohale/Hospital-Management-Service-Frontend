@@ -3,9 +3,12 @@ import React, { useState } from 'react'
 // import { RiDeleteBin5Line } from "react-icons/ri";
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
+import { GoPlus } from "react-icons/go";
+import { RiDeleteBin5Line } from 'react-icons/ri';
+
 
 const options = [
-    { value: 'view', label: 'View', link: '/PatientInfo/view' },
+    { value: 'view', label: 'View', link: '/PatientInfo' },
     { value: 'delete', label: 'Delete', link: '/PatientInfo' },
   ];  
 
@@ -33,6 +36,7 @@ const Employee = () => {
                   <th>Department</th>
                   <th>Gender</th>
                   <th>Age</th>
+                  <th>Salary</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -44,22 +48,11 @@ const Employee = () => {
                   <td>Male</td>
                   <td>A+</td>
                   <td>35</td>
+                  <td>35</td>
                   <td className="action-column">
-                  <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
+                  <div>
+                        <RiDeleteBin5Line />
+                      </div>
                   </td>
                 </tr>
                 <tr>
@@ -69,22 +62,11 @@ const Employee = () => {
                   <td>Female</td>
                   <td>B-</td>
                   <td>28</td>
+                  <td>28</td>
                   <td className="action-column">
-                  <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
+                  <div>
+                        <RiDeleteBin5Line />
+                      </div>
                   </td>
                 </tr>
                 <tr>
@@ -94,22 +76,11 @@ const Employee = () => {
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td></td>
                   <td className="action-column">
-                  <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
+                  <div>
+                        <RiDeleteBin5Line />
+                      </div>
                   </td>
                 </tr>
                 <tr>
@@ -119,22 +90,11 @@ const Employee = () => {
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td></td>
                   <td className="action-column">
-                  <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
+                  <div>
+                        <RiDeleteBin5Line />
+                      </div>
                   </td>
                 </tr>
                 <tr>
@@ -144,22 +104,11 @@ const Employee = () => {
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td></td>
                   <td className="action-column">
-                  <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
+                  <div>
+                        <RiDeleteBin5Line />
+                      </div>
                   </td>
                 </tr>
                 <tr>
@@ -169,22 +118,11 @@ const Employee = () => {
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td></td>
                   <td className="action-column">
-                  <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
+                  <div>
+                        <RiDeleteBin5Line />
+                      </div>
                   </td>
                 </tr>
                 <tr>
@@ -194,22 +132,11 @@ const Employee = () => {
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td></td>
                   <td className="action-column">
-                  <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
+                  <div>
+                        <RiDeleteBin5Line />
+                      </div>
                   </td>
                 </tr>
                 <tr>
@@ -219,207 +146,24 @@ const Employee = () => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td className="action-column">
-                  <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                  </td>
-                </tr>
-                <tr>
-                  <td>9</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
                   <td></td>
                   <td className="action-column">
-                  <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                  </td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td className="action-column">
-                  <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
-                  </td>
-                </tr>
-                <tr>
-                  <td>11</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td className="action-column">
-                  <Select 
-                    className="custom-select-control"
-                    id="action"
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options.map(option => ({
-                      value: option.value,
-                      label: (
-                        <Link to={option.link} style={{ textDecoration: 'none', color: 'inherit'}}>
-                        {option.label}
-                        </Link>
-                      ),
-                    }))}
-                    placeholder='...'
-                  />
+                  <div>
+                        <RiDeleteBin5Line />
+                      </div>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-      {/* <div className="patient-content__medd">
-        <div className="patient-content__med1">
-          <div className="patient-content__date">
-            <p>
-              <b>2nd, Feb 2024</b>
-            </p>
-          </div>
-          <div className="patient-content__right">
-            <p>
-              <b>Complaint:</b> Fever, Headache
-            </p>
-            <p>
-              <b>Diagnosis:</b> Malaria, Hypertension
-            </p>
-            <p>
-              <b>Treatment:</b> Surgery, Chemotherapy
-            </p>
-            <p>
-              <b>Prescription:</b> Paracetamol, Amoxicillin, Ibuprofen
-            </p>
-          </div>
-          <div className="patient-content__amt">
-            <p>
-              <b>$15000</b>
-            </p>
-          </div>
-          <div className="patient-content__ico">
-            <div>
-              <GrView size={20} />
-            </div>
-            <div>
-              <RiDeleteBin5Line size={20} />
-            </div>
-          </div>
+
+<Link to="/AddEmployee">
+        <div className="create">
+          <GoPlus />
         </div>
-        <div className="patient-content__med1">
-          <div className="patient-content__date">
-            <p>
-              <b>2nd, Feb 2024</b>
-            </p>
-          </div>
-          <div className="patient-content__right">
-            <p>
-              <b>Complaint:</b> Fever, Headache
-            </p>
-            <p>
-              <b>Diagnosis:</b> Malaria, Hypertension
-            </p>
-            <p>
-              <b>Treatment:</b> Surgery, Chemotherapy
-            </p>
-            <p>
-              <b>Prescription:</b> Paracetamol, Amoxicillin, Ibuprofen
-            </p>
-          </div>
-          <div className="patient-content__amt">
-            <p>
-              <b>$15000</b>
-            </p>
-          </div>
-          <div className="patient-content__ico">
-            <div>
-              <GrView size={20} />
-            </div>
-            <div>
-              <RiDeleteBin5Line size={20} />
-            </div>
-          </div>
-        </div>
-        <div className="patient-content__med1">
-          <div className="patient-content__date">
-            <p>
-              <b>2nd, Feb 2024</b>
-            </p>
-          </div>
-          <div className="patient-content__right">
-            <p>
-              <b>Complaint:</b> Fever, Headache
-            </p>
-            <p>
-              <b>Diagnosis:</b> Malaria, Hypertension
-            </p>
-            <p>
-              <b>Treatment:</b> Surgery, Chemotherapy
-            </p>
-            <p>
-              <b>Prescription:</b> Paracetamol, Amoxicillin, Ibuprofen
-            </p>
-          </div>
-          <div className="patient-content__amt">
-            <p>
-              <b>$15000</b>
-            </p>
-          </div>
-          <div className="patient-content__ico">
-            <div>
-              <GrView size={20} />
-            </div>
-            <div>
-              <RiDeleteBin5Line size={20} />
-            </div>
-          </div>
-        </div>
-      </div> */}
+        </Link>
+
     </div>
   );
 }
