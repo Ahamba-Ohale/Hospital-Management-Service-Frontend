@@ -12,7 +12,6 @@ import { useState } from "react";
 import Sidebar from "./Bar/Sidebar";
 import Topbar from "./Bar/Topbar";
 import MyRoutes from "../../routes/MyRoutes";
-import Settings from "./pages/Settings";
 
 // export default function Patient() {
 //     const [isActive, setIsActive] = useState(false);
@@ -46,12 +45,15 @@ export default function PatientPortal() {
     return (
         <>
             <main className={`patient_portal ${sidebarClose ? 'pactive' : ''}`}>
-                <Sidebar sidebarClose={sidebarClose} setSidebarClose={setSidebarClose}/>
-                <section className={`patient_main ${sidebarClose ? 'pactive' : ''}`}>
+                <Sidebar 
+                    sidebarClose={sidebarClose} setSidebarClose={setSidebarClose}
+                />
+                <section 
+                    className={`patient_main ${sidebarClose ? 'pactive' : ''}`}
+                >
                     <Topbar />
                     <div className="patient_content">
                         <MyRoutes />
-                        <Settings />
                     </div>
                 </section>
             </main>

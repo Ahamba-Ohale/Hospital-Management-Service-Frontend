@@ -14,7 +14,7 @@ export default function Settings() {
     return (
         <>
             <div className="patient_main-title">Settings</div>
-            <div className="patient_settings">
+            <section className="patient_settings">
                 <div className="patient_settings-left">
                     <div className="img_box">
                         <img src='/doctor.jpg' />
@@ -52,7 +52,7 @@ export default function Settings() {
                     {currentModal === 'Information' && <Information />}
                     {currentModal === 'Password' && <Password />}
                 </div>
-            </div>
+            </section>
         </>
     )
 }

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { IoSearchOutline } from 'react-icons/io5';
 // import { FaChevronLeft, FaChevronRight, FaRegBell, FaRegUser } from 'react-icons/fa6';
-import {  FaRegBell, FaRegUser } from 'react-icons/fa6';
+import {  FaChevronDown, FaRegBell, FaRegUser } from 'react-icons/fa6';
 import { MdLogout, MdOutlineSettings } from "react-icons/md";
 import { useState, useEffect } from "react";
 
@@ -44,8 +44,8 @@ export default function Topbar() {
                         className="dropdown_button"
                         onClick={() => setShowNotification(!showNotification)}
                     >
-                        <FaRegBell size={25} />
-                        <div className="notification_circle">3</div>
+                        <FaRegBell size={20} />
+                        <div className="notification_circle"></div>
                     </span>
                     <div className={`dropdown ${showNotification ? 'show' : ''}`}>
                         {/* Dropdown content */}
@@ -58,14 +58,13 @@ export default function Topbar() {
                 <div className="img_box">
                     <img src='/doctor.jpg' />
                 </div>
+                <h4>John Doe</h4>
                 <div className="dropdown_button-container">
-                    <h4 
-                        className="dropdown_button"
+                    <FaChevronDown
+                        style={{ cursor: 'pointer' }}
                         onClick={() => setShowProfile(!showProfile)}
-                    >
-                        John Doe
-                    </h4>
-                    <div className={`dropdown ${showProfile ? 'show' : ''}`}>
+                    />
+                    <div className={`dropdown ${showProfile ? 'show' : ''}`} style={{ top: '2rem', right: '-.5rem' }}>
                         {/* Dropdown content */}
                         <div className="dropdown-item">
                             <FaRegUser />

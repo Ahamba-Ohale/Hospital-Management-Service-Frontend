@@ -40,7 +40,7 @@ export default function Password() {
         <div className="modal_container-btn">
             <button>
                 Save Changes
-                <FiCheckCircle size={20} style={{ marginLeft: '1rem' }} />
+                <FiCheckCircle size={20} style={{ marginLeft: '.5rem' }} />
             </button>
         </div>
     </>

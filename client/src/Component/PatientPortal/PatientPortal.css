@@ -1,21 +1,25 @@
 .patient_portal {
-    position: relative;
     width: 100%;
     background-color: #edf3fb;
-    transition: all 0.5s;
 }
 
 .patient_portal.pactive {
     width: calc(100% - 80px);
 }
 
+/*==========================================================
+    ---------------    Sidebar Styling   ---------------
+==========================================================*/
+
 .portal_navigation {
     position: fixed;
     height: 100vh;
+    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
+    border-left: 10px solid #276ab3;
     background-color: #276ab3;
     transition: 0.5s;
     overflow: hidden;
@@ -66,8 +70,13 @@
     display: block;
 }
 
+.portal_navigation ul li {
+    height: 76px;
+}
+
 .portal_navigation ul li .active_link {
     background-color: #f5f5f5;
+    height: 76px;
     position: relative;
     width: 100%;
     border-top-left-radius: 30px;
@@ -78,6 +87,9 @@
     position: relative;
     text-decoration: none;
     width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 76px;
     display: flex;
     align-items: center;
     color: #f5f5f5;
@@ -91,36 +103,13 @@
     text-decoration: none;
     width: 100%;
     display: flex;
+    padding-left: .5rem;
     align-items: center;
     font-weight: 600;
+    transition: all 0.5s;
     color: #276ab3;
     opacity: 1;
-}
-
-.portal_navigation ul li a.active_link::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: -50px;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border-radius: 50%;
-    box-shadow: 35px 35px 0 10px #f5f5f5;
-    pointer-events: none;
-}
-
-.portal_navigation ul li a.active_link::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: -50px;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border-radius: 50%;
-    box-shadow: 35px -35px 0 10px #f5f5f5;
-    pointer-events: none;
+    transition: 0.5s;
 }
 
 .portal_navigation ul li a:hover{
@@ -157,7 +146,6 @@
     position: relative;
     display: block;
     padding: 0 10px;
-    height: 60px;
     font-size: 1.2rem;
     line-height: 60px;
     text-align: start;
@@ -203,6 +191,10 @@
     font-size: .75rem;
 }
 
+/*==========================================================
+    ---------------    Main Page Styling   ---------------
+==========================================================*/
+
 .patient_main {
     position: absolute;
     width: calc(100% - 300px);
@@ -220,20 +212,27 @@
 
 .patient_main-title {
     font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
     margin-bottom: 2rem;
 }
 
+/*==========================================================
+    ---------------    Topbar Styling   ---------------
+==========================================================*/
+
 .patient_topbar {
     position: fixed;
-    width: calc(100% - 285px);
-    left: 285px;
+    width: calc(100% - 300px);
+    left: 300px;
+    top: 0;
     z-index: 1000;
     height: 50px;
+    background: #f5f5f5;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
-    box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
     transition: 0.5s;
 }
 
@@ -305,14 +304,13 @@
 
 .patient_topbar .notification_circle {
     position: absolute;
-    top: 0;
-    right: -5px;
+    top: 5px;
+    right: 1px;
     background-color: orange;
     color: white;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    font-size: 12px;
+    width: 10px;
+    height: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -324,7 +322,7 @@
   
 .patient_topbar .dropdown {
     position: absolute;
-    top: calc(100% + 5px);
+    top: calc(100% + -5px);
     right: 0;
     background-color: #ffffff;
     border: 1px solid #ccc;
@@ -376,17 +374,318 @@
     object-fit: cover;
 }
 
+/*==========================================================
+    ---------------    Main Content Styling   ---------------
+==========================================================*/
+
 .patient_content {
     position: relative;
-    top: 2rem;
+    top: 0;
     width: 100%;
-    padding: 3rem 2rem 5rem;
+    padding: 5rem 2rem 1rem;
 }
+
+/*==========================================================
+    ---------------    Overview Styling   ---------------
+==========================================================*/
+
+.patient_overview {
+    animation: slideInDown 1s ease-in-out;
+}
+
+.patient_content .greet {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.patient_content .greet p {
+    font-weight: 600;
+    color: #222;
+    font-size: 1.5rem;
+    line-height: 2;
+}
+
+.overview_sides {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+    margin-top: 2rem;
+}
+
+.overview_left {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: #fff;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+}
+
+.overview_banner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* flex-direction: row-reverse; */
+    height: 15rem;
+    padding: 0 3rem;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    letter-spacing: 1px;
+    background: #276ab3;
+    color: #f5f5f5;
+}
+
+.banner_text h4 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.banner_text p {
+    color: #f5f5f5;
+    font-weight: 100;
+}
+
+.banner_image img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.overview_vitals {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+}
+
+.vitals_card {
+    position: relative;
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+
+.vitals_card:hover {
+    background: #276ab3;
+    transition: all 0.5s;
+}
+
+.vitals_name {
+    position: relative;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.vitals_number {
+    color: #222;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.vitals_icon {
+    font-size: 1.5rem;
+    color: #276ab3;
+}
+
+.vitals_card:hover .vitals_name,
+.vitals_card:hover .vitals_number,
+.vitals_card:hover .vitals_icon {
+    color: #f5f5f5;
+} 
+
+.overview_right {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+}
+
+.overview_appoint-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.overview_appoint-header h2 {
+    font-weight: 600;
+    color: #276ab3;
+}
+
+.overview_appoint-header a {
+    position: relative;
+    padding: 5px 10px;
+    background: #276ab3;
+    color: #f5f5f5;
+    border-radius: 6px;
+}
+
+.overview_appoint table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.overview_appoint table thead td {
+    font-weight: 600;
+}
+
+.overview_appoint table tr {
+    color: #222;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.overview_appoint table tr:last-child {
+    border-bottom: none;
+}
+
+.overview_appoint table tbody tr:hover {
+    background: #276ab3;
+    color: #f5f5f5;
+}
+
+.overview_appoint table tr td {
+    padding: 10px;
+}
+
+.overview_appoint table tr td:last-child {
+    text-align: end;
+}
+
+.overview_appoint table tr td:nth-child(3) {
+    text-align: start;
+}
+
+.overview_appoint table tr td:nth-child(4) {
+    text-align: end;
+}
+
+.status.active {
+    padding: 2px 4px;
+    background: #8de02c;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.declined {
+    padding: 2px 4px;
+    background: #f00;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.pending {
+    padding: 2px 4px;
+    background: #f9ca3f;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.completed {
+    padding: 2px 4px;
+    background: #969696;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.emergency {
+    padding: 2px 4px;
+    background: #c05a5a;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.upcoming {
+    padding: 2px 4px;
+    background: #1795ce;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.overview_messages table tr td {
+    padding: 12px 10px;
+}
+
+.overview_messages table tr td h4 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+
+.overview_messages table tr td h4 span {
+    font-size: 14px;
+    color: #222;
+}
+
+.overview_messages table tr:hover {
+    background: #276ab3;
+    color: #f5f5f5;
+}
+
+.overview_messages table tr:hover td h4 span {
+    color: #f5f5f5;
+}
+
+.overview_right-img {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.overview_right-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes slideInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+}
+
+/*==========================================================
+    ---------------    Settings Styling   ---------------
+==========================================================*/
 
 .patient_settings {
     display: flex;
     width: 100%;
-    gap: 8%;
+    gap: 6rem;
 } 
 
 .patient_settings-left {
@@ -399,7 +698,7 @@
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0px  5px 20px rgba(0, 0, 0, 0.3);
-    animation: slideInLeft 1.5s ease-in-out;
+    animation: slideInLeft 1s ease-in-out;
 }
 
 @keyframes slideInLeft {
@@ -470,7 +769,7 @@
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0px  5px 20px rgba(0, 0, 0, 0.3);
-    animation: slideInRight 1.5s ease-in-out;
+    animation: slideInRight 1s ease-in-out;
 }
 
 @keyframes slideInRight {
@@ -518,6 +817,10 @@
     font-size: 14px;
 }
 
+.modal_container .modal_input:focus {
+    border: 2px solid #276ab3;
+}
+
 .modal_container-btn button,
 .modal_container-btns button {
     border: none;
@@ -546,6 +849,10 @@
 .modal_container-btns button:hover {
     opacity: 0.8;
 }
+
+/*==========================================================
+    ---------------    Media Styling   ---------------
+==========================================================*/
 
 @media screen and (max-width: 1024px) and (max-width: 1300px) {
     .portal_logo {

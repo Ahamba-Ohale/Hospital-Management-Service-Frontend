@@ -62,7 +62,7 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
       case "/Patient/Billings":
         setSelected(4);
         break;
-      case "/Patient/Feedback":
+      case "/Patient/Messages":
         setSelected(5);
         break;
       case "/Patient/Settings":
@@ -79,7 +79,7 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
   return (
     <nav className={`portal_navigation ${sidebarClose ? "pactive" : ""}`}>
       <div className="toggle" onClick={ModSidebarOpen}>
-           <button style={{ transform: sidebarClose ? 'rotate(180deg)' : 'initial', left: sidebarClose ? '60px' : '260px' }}>
+           <button style={{ transform: sidebarClose ? 'rotate(180deg)' : 'initial', left: sidebarClose ? '50px' : '270px' }}>
              <FaChevronLeft color="#f5f5f5" />
            </button>
       </div>
@@ -97,7 +97,7 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
             <i className="icon">
               <LuLayoutDashboard size={25} />
             </i>
-            <span>Dashboard</span>
+            {!sidebarClose && <span>Overview</span>}
           </Link>
         </li>
 
@@ -110,7 +110,7 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
             <i className="icon">
               <LuClipboardList size={25} />
             </i>
-            <span>Medical Records</span>
+            {!sidebarClose && <span>Medical Records</span>}
           </Link>
         </li>
 
@@ -123,7 +123,7 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
             <i className="icon">
               <LuCalendarDays size={25} />
             </i>
-            <span>Appointments</span>
+            {!sidebarClose && <span>Appointments</span>}
           </Link>
         </li>
 
@@ -136,7 +136,7 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
             <i className="icon">
               <LuPill size={25} />
             </i>
-            <span>Prescriptions</span>
+            {!sidebarClose && <span>Prescriptions</span>}
           </Link>
         </li>
 
@@ -149,20 +149,20 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
             <i className="icon">
               <LuCreditCard size={25} />
             </i>
-            <span>Billings and Payments</span>
+            {!sidebarClose && <span>Billings and Payments</span>}
           </Link>
         </li>
 
         <li>
           <Link
-            to="/Patient/Feedback"
+            to="/Patient/Messages"
             className={selected === 5 ? "active_link" : ""}
             onClick={() => setSelected(5)}
           >
             <i className="icon">
               <LuMessagesSquare size={25} />
             </i>
-            <span>Feedback</span>
+            {!sidebarClose && <span>Messages</span>}
           </Link>
         </li>
 
@@ -175,7 +175,7 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
             <i className="icon">
               <LuSettings size={25} />
             </i>
-            <span>Settings</span>
+            {!sidebarClose && <span>Settings</span>}
           </Link>
         </li>
 
@@ -188,7 +188,7 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
             <i className="icon">
               <LuLifeBuoy size={25} />
             </i>
-            <span>Help</span>
+            {!sidebarClose && <span>Help</span>}
           </Link>
         </li>
       </ul>
@@ -209,7 +209,6 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
     </nav>
   );
 }
-
 
 /* export default function //Sidebar({// sidebarClose, //setSidebarClose }) {
 //   const ModSidebarOpen = () => {
@@ -308,45 +307,45 @@ export default function Sidebar({ sidebarClose, setSidebarClose }) {
 //   );
 // } */
 
-const LinksArray = [
-  {
-    label: "Dashboard",
-    icon: <LuLayoutDashboard size={25} />,
-    to: "/Patient/Portal"
-  },
-  {
-    label: "Medical Records",
-    icon: <LuClipboardList size={25} />,
-    to: "/Patient/Records"
-  },
-  {
-    label: "Appointments",
-    icon: <LuCalendarDays size={25} />,
-    to: "/Patient/Appointments"
-  },
-  {
-    label: "Prescriptions",
-    icon: <LuPill size={25} />,
-    to: "/Patient/Prescriptions"
-  },
-  {
-    label: "Billings and Payments",
-    icon: <LuCreditCard size={25} />,
-    to: "/Patient/Bills"
-  },
-  {
-    label: "Feedback",
-    icon: <LuMessagesSquare size={25} />,
-    to: "/Patient/Feedback"
-  },
-  {
-    label: "Settings",
-    icon: <LuSettings size={25} />,
-    to: "/Patient/Settings"
-  },
-  {
-    label: "Help",
-    icon: <LuLifeBuoy size={25} />,
-    to: "/Patient/Help"
-  },
-];
+// const LinksArray = [
+//   {
+//     label: "Overview",
+//     icon: <LuLayoutDashboard size={25} />,
+//     to: "/Patient/Portal"
+//   },
+//   {
+//     label: "Medical Records",
+//     icon: <LuClipboardList size={25} />,
+//     to: "/Patient/Records"
+//   },
+//   {
+//     label: "Appointments",
+//     icon: <LuCalendarDays size={25} />,
+//     to: "/Patient/Appointments"
+//   },
+//   {
+//     label: "Prescriptions",
+//     icon: <LuPill size={25} />,
+//     to: "/Patient/Prescriptions"
+//   },
+//   {
+//     label: "Billings and Payments",
+//     icon: <LuCreditCard size={25} />,
+//     to: "/Patient/Bills"
+//   },
+//   {
+//     label: "Messages",
+//     icon: <LuMessagesSquare size={25} />,
+//     to: "/Patient/Messages"
+//   },
+//   {
+//     label: "Settings",
+//     icon: <LuSettings size={25} />,
+//     to: "/Patient/Settings"
+//   },
+//   {
+//     label: "Help",
+//     icon: <LuLifeBuoy size={25} />,
+//     to: "/Patient/Help"
+//   },
+// ];

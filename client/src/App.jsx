@@ -1,7 +1,6 @@
 
 // import {Navigate, Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
-import Error from './Component/Error/Error';
 import Homepage from './Component/Homepage/Homepage';
 import About from './Component/About/About';
 import Services from './Component/Services/Services';
@@ -28,7 +27,7 @@ import InvoiceEdit from './Component/Admin/PatientDB/InvoiceEdit';
 import InvoiceView from './Component/Admin/PatientDB/InvoiceView';
 import ShareInvoice from './Component/Admin/PatientDB/ShareInvoice';
 import PatientHealthInfo from './Component/Admin/Health/PatientHealthInfo';
-
+import Error from './Component/Error/Error';
 
 function App() {
   // const user = localStorage.getItem("token");
@@ -36,6 +35,7 @@ function App() {
   return (
     <>
       <Router>
+        <PatientPortal />
         <Routes>
           <Route path='/Home' element={<Homepage />} />
           <Route path='/' element={<Homepage />} />
@@ -47,7 +47,6 @@ function App() {
           <Route path='/Blogview' element={<Blogview />} />
           <Route path='/Book Appointment' element={<BookAppointment />} />
           <Route path='/Foot' element={<Foot />} />
-          <Route path='*' element={<Error />} />
           <Route path='/Admin' element={<Admin />} />
           <Route path='/HealthRecord' element={<Health />} />
           <Route path='/Blog Data System' element={<Blog />} />
@@ -58,7 +57,7 @@ function App() {
           <Route path='/Add-new-record' element={<NewMedRecord />} />
           <Route path='/CreatePatient' element={<CreatePatient />} />
           {/* {user && <Route path='/Patient/Portal/*' exact element={<PatientPortal />} />} */}
-          <Route path='/Patient/Portal/*' exact element={<PatientPortal />} />
+          {/* <Route path='/Patient/Portal/*' exact element={<PatientPortal />} /> */}
           <Route path='/register' exact element={<Register />} />
           <Route path='/login' exact element={<Login />} />
           {/* <Route path='/Portal' exact element={<Navigate replace to="/login" />} /> */}
@@ -68,7 +67,7 @@ function App() {
           <Route path='/InvoiceView' element={<InvoiceView />} />
           <Route path='/ShareInvoice' element={<ShareInvoice />} />
           <Route path='/PatientHealthInfo' element={<PatientHealthInfo />} />
-        
+          <Route path='*' element={<Error />} />
         </Routes>
       </Router>
     </>

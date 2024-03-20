@@ -72,12 +72,12 @@ export default function Information() {
             <div className="modal_container-btns">
                 <button>
                     Delete Account
-                    <FiTrash2 size={20} style={{ marginLeft: '1rem' }} />
+                    <FiTrash2 size={20} style={{ marginLeft: '.5rem' }} />
                 </button>
 
                 <button>
                     Save Changes
-                    <FiCheckCircle size={20} style={{ marginLeft: '1rem' }} />
+                    <FiCheckCircle size={20} style={{ marginLeft: '.5rem' }} />
                 </button>
             </div>
         </>
