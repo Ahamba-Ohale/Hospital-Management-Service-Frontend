@@ -3,18 +3,20 @@ import Sidebar from "../AdminSidebar/Sidebar";
 import Select from 'react-select';
 import { Link } from "react-router-dom"
 import DatePicker from "react-datepicker";
+import './Blog.css'
 
 
 const options = [
+  { value: 'edit', label: 'Edit', link: '/EditBlog'},
   { value: 'view', label: 'View', link: '/PatientInfo/view' },
   { value: 'delete', label: 'Delete', link: '/PatientInfo' },
 ];
 
 const sortBy = [
-  { value: 'newest patient', label: 'Newest Patient' },
-  { value: 'oldest patient', label: 'Oldest Patient' },
+  { value: 'newest blog', label: 'Newest Blog' },
+  { value: 'oldest blog', label: 'Oldest Blog' },
 ];
-const gender = [
+const author = [
   { value: 'male', label: 'Male' },
   { value: 'female', label: 'Female' },
 ];
@@ -48,6 +50,29 @@ const Blog = () => {
           <h2>Blogs Records</h2>
         </div>
 
+        <div className="metrics-container">
+        <div className="metric">
+          <h2>Total Posts</h2>
+          <p>100</p>
+        </div>
+        <div className="metric">
+          <h2>Total Comments</h2>
+          <p>50</p>
+        </div>
+        <div className="metric">
+          <h2>Total Users</h2>
+          <p>200</p>
+        </div>
+      </div>
+      <div className="activity-feed">
+        <h2>Recent Activity</h2>
+        <ul>
+          <li>User John Doe published a new post</li>
+          <li>User Jane Smith commented on a post</li>
+          <li>User Admin updated the site settings</li>
+        </ul>
+      </div>
+
 
           <div className="filter">
             <div className="card1">
@@ -65,11 +90,11 @@ const Blog = () => {
             <Select
               defaultValue={selectedOption}
               onChange={setSelectedOption}
-              options={gender.map(option => ({
+              options={author.map(option => ({
                 value: option.value,
                 label: option.label
               }))} 
-              placeholder= "Gender"
+              placeholder= "Blog Author"
             />
             </div>
             <div className="card1">
@@ -85,6 +110,7 @@ const Blog = () => {
               Filter
             </button>
           </div>
+
 
           <div className="health__main">
             <table className="patient-list">

@@ -25,5 +25,56 @@
     background-color: #276AB3;
     border: none;
     cursor: pointer;
-
 }
+
+.patient-content__medd {
+    margin-top: 20px;
+}
+
+.billing-invoicing-container {
+    margin-top: 20px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .invoices-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .invoice-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: calc(33.33% - 20px); /* Adjust width based on your layout */
+  }
+  
+  .invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+  
+  .invoice-title {
+    font-size: 18px;
+  }
+  
+  .invoice-date {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .invoice-details p {
+    margin: 5px 0;
+  }
+  
+  .invoice-details strong {
+    font-weight: bold;
+  }
+  
