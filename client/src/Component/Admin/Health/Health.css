@@ -123,18 +123,8 @@
   .action-column {
     display: flex;
     justify-content: center;
-    /* text-align: center; */
   }
   
-  /* #action {
-    width: 30%;
-    cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 5px;
-    border: 1px solid #b8b5b5;
-  } */
 
   .custom-select {
     width: 30%;

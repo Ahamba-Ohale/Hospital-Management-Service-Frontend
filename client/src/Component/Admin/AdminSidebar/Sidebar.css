@@ -50,6 +50,11 @@ body {
   margin-bottom: 3rem;
 }
 
+.Logo {
+  /* background-color: #f2f2f2; */
+  color: #ecf0f1;
+}
+
 .Admin-menu {
   display: flex;
   flex-direction: column;

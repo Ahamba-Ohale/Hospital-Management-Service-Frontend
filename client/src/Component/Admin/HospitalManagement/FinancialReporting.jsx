@@ -7,6 +7,7 @@ import Specialist from './Specialist';
 import Roles from './RolesMgt';
 import LeaveMgt from './LeaveMgt';
 import TrainingMgt from './TrainingMgt';
+import BillingAndInvoicing from './BillingAndInvoicing';
 
 
 
@@ -14,7 +15,7 @@ const FinancilaReporting = () => {
 
       // const [employee, setEmployee] = useState(false);
 
-      const [activeTab, setActiveTab] = useState('Employee');
+      const [activeTab, setActiveTab] = useState('BillingAndInvoicing');
 
       const handleTabClick = (tabName) => {
         setActiveTab(tabName);
@@ -28,18 +29,18 @@ const FinancilaReporting = () => {
 
     <div className="staff-button">
     <button 
-       onClick={() => handleTabClick('Employee')}
+       onClick={() => handleTabClick('BillingAndInvoicing')}
        className={`hospital-mgt__but ${
-       activeTab === 'Employee' ? 'active' : ''
+       activeTab === 'BillingAndInvoicing' ? 'active' : ''
        }`}>
-          Employee
+          Bills & Invoice
        </button>
     <button 
        onClick={() => handleTabClick('Specialist')}
        className={`hospital-mgt__but ${
        activeTab === 'Specialist' ? 'active' : ''
        }`}>
-          Specialist
+          Revenue
        </button>
       
        <button 
@@ -47,14 +48,14 @@ const FinancilaReporting = () => {
        className={`hospital-mgt__but ${
        activeTab === 'Roles' ? 'active' : ''
        }`}>
-          Roles
+          Expenses
        </button>
        <button 
        onClick={() => handleTabClick('LeaveMgt')}
        className={`hospital-mgt__but ${
        activeTab === 'LeaveMgt' ? 'active' : ''
        }`}>
-          Leave Mgt
+          Budgeting
        </button>
 
        <button 
@@ -62,13 +63,13 @@ const FinancilaReporting = () => {
        className={`hospital-mgt__but ${
        activeTab === 'TrainingMgt' ? 'active' : ''
        }`}>
-          Training Mgt
+          Insurance Mgt
        </button>
       
     </div>
 
     <div className="patient-content__medd">
-    {activeTab === 'Employee' && <Employee />}
+    {activeTab === 'BillingAndInvoicing' && <BillingAndInvoicing />}
     {activeTab === 'Specialist' && <Specialist />}
     {activeTab === 'Roles' && <Roles />}
     {activeTab === 'LeaveMgt' && <LeaveMgt />}

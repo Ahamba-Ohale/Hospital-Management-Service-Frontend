@@ -28,6 +28,12 @@ import InvoiceView from './Component/Admin/PatientDB/InvoiceView';
 import ShareInvoice from './Component/Admin/PatientDB/ShareInvoice';
 import PatientHealthInfo from './Component/Admin/Health/PatientHealthInfo';
 import Error from './Component/Error/Error';
+import EditBlog from './Component/Admin/Blog/EditBlog';
+import AddEmployee from './Component/Admin/HospitalManagement/AddEmployee';
+import AddSpecialist from './Component/Admin/HospitalManagement/AddSpecialist';
+import AddRole from './Component/Admin/HospitalManagement/AddRole';
+import AddLeave from './Component/Admin/HospitalManagement/AddLeave';
+import AddTrainee from './Component/Admin/HospitalManagement/AddTrainee';
 
 function App() {
   // const user = localStorage.getItem("token");
@@ -50,9 +56,11 @@ function App() {
           <Route path='/Admin' element={<Admin />} />
           <Route path='/HealthRecord' element={<Health />} />
           <Route path='/Blog Data System' element={<Blog />} />
-          <Route path='/Patients Database' element={<PatientDB />} />
           <Route path='/Hospital management' element={<HospitalManagement />} />
           <Route path='/Data Analytics' element={<Analytics />} />
+          <Route path='/Register' element={<Register />} />
+          <Route path='/Patients Database' element={<PatientDB />} />
+          <Route path='/PatientInfo/view/' element={<PatientInfo />} />
           <Route path='/PatientInfo/view' element={<PatientInfo />} />
           <Route path='/Add-new-record' element={<NewMedRecord />} />
           <Route path='/CreatePatient' element={<CreatePatient />} />
@@ -68,6 +76,12 @@ function App() {
           <Route path='/ShareInvoice' element={<ShareInvoice />} />
           <Route path='/PatientHealthInfo' element={<PatientHealthInfo />} />
           <Route path='*' element={<Error />} />
+          <Route path='/EditBlog' element={<EditBlog />} />
+          <Route path='/AddEmployee' element={<AddEmployee />} />
+          <Route path='/AddSpecialist' element={<AddSpecialist />} />
+          <Route path='/AddRole' element={<AddRole />} />
+          <Route path='/AddLeave' element={<AddLeave />} />
+          <Route path='/AddTrainee' element={<AddTrainee />} />
         </Routes>
       </Router>
     </>

@@ -4,14 +4,13 @@ import { IoMdNotificationsOutline } from 'react-icons/io';
 import { IoReturnUpBack } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
+import { RiDeleteBin5Line } from "react-icons/ri";
+import { MdOutlineSaveAlt } from "react-icons/md";
+
 
 const NewMedRecord = () => {
 
     const [selectedOption, setSelectedOption] = useState(null);
-    const [complaint, setComplaint] = useState("")
-    const [diagnosis, setDiagnosis] = useState("")
-    const [vitals, setVitals] = useState("");
-
 
     const navigate = useNavigate();
 
@@ -112,22 +111,86 @@ const NewMedRecord = () => {
                 </label>
 
                 <label>Treatments:</label>
-                  
-                <div className='checkbox'>
-                    <input type="checkbox" name="" id="" /><p>BP</p>
-                    
-                    {/* <input
+                    {treatmentOptions.map((treatment) => (
+                <div key={treatment} className='checkbox'>
+                    <label htmlFor={treatment}>
+                    <input
                         type="checkbox"
                         id={treatment}
                         name="treatments"
                         value={treatment}
                         checked={selectedTreatments.includes(treatment)}
                         onChange={() => handleCheckboxChange(treatment)}
-                    />
-                    <label htmlFor={treatment}>{treatment}</label> */}
+                    />{treatment}
+                    </label>
                 </div>
-                
+                ))}
               </form>
+
+              <div className="medicine">
+              <h3>Medicine</h3>
+
+              <table className="invoice-table">
+                <thead>
+                  <th>Item</th>
+                  <th>Item Price (Ngn)</th>
+                  <th>Dosage</th>
+                  <th>Instraction</th>
+                  <th>Quantity</th>
+                  <th>Amount (Ngn)</th>
+                  <th>Action</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Surgery</td>
+                    <td>100,000</td>
+                    <td>1-M/A/E</td>
+                    <td>After meal</td>
+                    <td>1</td>
+                    <td>100,000</td>
+                    <td>
+                      <div>
+                        <RiDeleteBin5Line />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Surgery</td>
+                    <td>100,000</td>
+                    <td>1-M/A/E</td>
+                    <td>After meal</td>
+                    <td>1</td>
+                    <td>100,000</td>
+                    <td>
+                      <div>
+                        <RiDeleteBin5Line />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Surgery</td>
+                    <td>100,000</td>
+                    <td>1-M/A/E</td>
+                    <td>After meal</td>
+                    <td>1</td>
+                    <td>100,000</td>
+                    <td>
+                      <div>
+                        <RiDeleteBin5Line />
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div className="invoice-btn">+ Add Medicine</div>
+              </div>
+
+              <label htmlFor="tests">Tests :
+                <textarea name="tests" id="tests" className='textarea'></textarea>
+                </label>
+
+              <button>Save <MdOutlineSaveAlt /></button>
             </div>
             
           </div>

@@ -48,7 +48,7 @@ const AppointmentChart = () => {
       ],
       datasets: [
         {
-          backgroundColor: "red",
+          backgroundColor: "orange",
           borderColor: "#276AB3",
           data: countsArray,
         },
