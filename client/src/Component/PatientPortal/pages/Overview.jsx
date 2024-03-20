@@ -2,6 +2,7 @@ import { FaTemperatureLow } from "react-icons/fa";
 import { IoIosPulse } from "react-icons/io";
 import { MdOutlineBloodtype, MdAir } from "react-icons/md";
 import { NavLink } from "react-router-dom"
+import PatientPortal from '../PatientPortal'
 
 export default function Overview() {
     const greet = new Date().getHours();
@@ -17,6 +18,7 @@ export default function Overview() {
     
     return (
         <>
+        <PatientPortal />
             <div className="greet">
                 <p>Good {time} John Doe!</p>
                 <span>How are you feeling this {time}?</span>
