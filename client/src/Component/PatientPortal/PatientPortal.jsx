@@ -12,29 +12,29 @@ export default function PatientPortal() {
     useEffect(() => {
         // Update the selected index based on the current pathname
         switch (location.pathname) {
-            case "/Patient/Portal":
+            case "/Patient/Overview":
                 setSelected(0);
                 break;
-            case "/Patient/Records":
+            case "/Patient/Profile":
                 setSelected(1);
                 break;
-            case "/Patient/Appointments":
+            case "/Patient/Records":
                 setSelected(2);
                 break;
-            case "/Patient/Prescriptions":
+            case "/Patient/Appointments":
                 setSelected(3);
                 break;
-            case "/Patient/Bills":
+            case "/Patient/Prescriptions":
                 setSelected(4);
                 break;
-            case "/Patient/Messages":
+            case "/Patient/Bills":
                 setSelected(5);
                 break;
-            case "/Patient/Settings":
+            case "/Patient/Messages":
                 setSelected(6);
                 break;
             case "/Patient/Help":
-                setSelected(7);
+                setSelected(8);
                 break;
             default:
                 setSelected(0);

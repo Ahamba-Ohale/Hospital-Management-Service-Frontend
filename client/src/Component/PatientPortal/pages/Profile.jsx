@@ -4,7 +4,7 @@ import { FiUserPlus, FiLock } from "react-icons/fi";
 import PersonalInfo from './PersonalInfo';
 import Password from './Password';
 
-export default function Settings() {
+export default function Profile() {
     const [currentModal, setCurrentModal] = useState('PersonalInfo');
 
     const handleModalClick = (modalName) => {
@@ -13,8 +13,8 @@ export default function Settings() {
 
     return (
         <>
-            <div className="patient_main-title">Settings</div>
-            <section className="patient_modals patient_settings">
+            <div className="patient_main-title">My Profile</div>
+            <section className="patient_modals patient_profile">
                 <div className="patient_modals-left">
                     <div className="img_box">
                         <img src='/doctor.jpg' />

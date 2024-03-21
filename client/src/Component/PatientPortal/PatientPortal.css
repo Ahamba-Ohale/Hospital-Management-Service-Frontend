@@ -182,8 +182,8 @@
 
 .portal_footer .detail h4,
 .patient_topbar .user_details h4,
-.patient_settings h4,
-.patient_settings-details span:nth-of-type(2) {
+.patient_modals h4,
+.patient_modals-details span:nth-of-type(2) {
     font-weight: 600;
 }
 
@@ -260,13 +260,15 @@
     padding: 5px 20px;
     padding-left: 40px;
     outline: none;
+    background: #f5f5f5;
     border: .1px solid #ddd7d7;
     color: #222;
     font-size: .8rem;
 }
 
 .patient_topbar .search label input:focus {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(39, 106, 179, 0.40);
+    background: #fff;
 }
 
 .patient_topbar .search label input::placeholder {
@@ -363,7 +365,7 @@
 }
 
 .patient_topbar .user_details .img_box,
-.patient_settings .img_box {
+.patient_modals .img_box {
     position: relative;
     width: 40px;
     height: 40px;
@@ -373,7 +375,7 @@
 }
 
 .patient_topbar .user_details img,
-.patient_settings img {
+.patient_modals img {
     position: absolute;
     top: 0;
     left: 0;
@@ -410,7 +412,7 @@
     font-weight: 600;
     color: #222;
     font-size: 1.5rem;
-    line-height: 2;
+    margin-bottom: .5rem;
 }
 
 .overview_sides {
@@ -435,7 +437,6 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* flex-direction: row-reverse; */
     height: 15rem;
     padding: 0 3rem;
     border-radius: 20px;
@@ -675,29 +676,18 @@
     object-fit: cover;
 }
 
-@keyframes slideInDown {
-    0% {
-      opacity: 0;
-      transform: translateY(100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0%);
-    }
-}
-
 /*==========================================================
-    ---------------    Settings Styling   ---------------
+    ---------------    Modals Styling   ---------------
 ==========================================================*/
 
-.patient_settings {
+.patient_modals {
     display: flex;
     width: 100%;
     gap: 6rem;
 } 
 
-.patient_settings-left {
-    height: 25rem;
+.patient_modals-left {
+    height: 30rem;
     width: 35%;
     display: flex;
     flex-direction: column;
@@ -709,23 +699,12 @@
     animation: slideInLeft 1s ease-in-out;
 }
 
-@keyframes slideInLeft {
-    0% {
-      opacity: 0;
-      transform: translateX(-100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0%);
-    }
-} 
-
-.patient_settings-left .img_box {
+.patient_modals-left .img_box {
     width: 10rem;
     height: 10rem;
 }
 
-.patient_settings-details {
+.patient_modals-details {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -733,14 +712,14 @@
     margin-bottom: 10px;
 }
 
-.patient_settings-modals {
+.patient_modals-modals {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 0 3rem;
 }
 
-.patient_settings-modals button {
+.patient_modals-modals button {
     width: 100%;
     height: 3rem;
     border-radius: 10px;
@@ -753,22 +732,22 @@
     cursor: pointer;
 }
 
-.patient_settings-modals button:hover {
+.patient_modals-modals button:hover {
     background: #e8ecf0;
     color: #276ab3;
 }
 
-.patient_settings-modals button.current {
+.patient_modals-modals button.current {
     background: #e8ecf0;
     color: #276ab3;
 }
 
-.patient_settings-modals button span {
+.patient_modals-modals button span {
     margin-left: 1rem;
     font-size: .9rem;
 }
 
-.patient_settings-right {
+.patient_modals-right {
     flex: 2;
     height: max-content;
     display: flex;
@@ -778,17 +757,6 @@
     border-radius: 8px;
     box-shadow: 0px  5px 20px rgba(0, 0, 0, 0.3);
     animation: slideInRight 1s ease-in-out;
-}
-
-@keyframes slideInRight {
-    0% {
-      opacity: 0;
-      transform: translateX(100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0%);
-    }
 } 
 
 .modal_container {
@@ -806,15 +774,6 @@
     margin-bottom: .5rem;
 }
 
-.modal_img {
-    border: 2px dashed rgba(0, 0, 0, 0.3);
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 8px;
-    height: 25vh;
-}
-
 .modal_container .modal_input {
     border: .1px solid rgba(0, 0, 0, 0.3);
     color: #222;
@@ -826,11 +785,10 @@
 }
 
 .modal_container .modal_input:focus {
-    border: 2px solid #276ab3;
+    outline: 1px solid #276ab3;
 }
 
-.modal_container-btn button,
-.modal_container-btns button {
+.modal_container-btn button {
     border: none;
     outline: none;
     padding: 12px 0;
@@ -846,17 +804,103 @@
     cursor: pointer;
 }
 
-.modal_container-btns {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 2%;
-}
-
-.modal_container-btn button:hover,
-.modal_container-btns button:hover {
+.modal_container-btn button:hover {
     opacity: 0.8;
 }
+
+/*==========================================================
+    ---------------    Profile Styling   ---------------
+==========================================================*/
+
+.patient_profile .modal_img {
+    border: 2px dashed rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    height: 25vh;
+}
+
+.patient_profile .info_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.patient_profile .info_container .personal_info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.patient_profile .info_container .personal_info i {
+    background: #276ab3;
+    border-radius: 5px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.patient_profile .info_container .personal_info div {
+    margin-left: 1rem;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.patient_profile .info_container .personal_info div p {
+    font-weight: 900;
+}
+
+/*==========================================================
+    ---------------    Records Styling   ---------------
+==========================================================*/
+
+/* .patient_records .patient_modals-left {
+    height: 30rem;
+} */
+
+/*==========================================================
+    ---------------    Keyframes   ---------------
+==========================================================*/
+
+@keyframes slideInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+}
+
+@keyframes slideInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+} 
 
 /*==========================================================
     ---------------    Media Styling   ---------------

@@ -34,12 +34,7 @@ export default function Overview() {
                             </div>
                         </div>
                         <div className="overview_appoint-header">
-                                <h2>Appointments</h2>
-                                <NavLink 
-                                    to="/Patient/Appointments" 
-                                    activeClassName="active_link">
-                                    View All
-                                </NavLink>
+                            <h2 style={{ paddingLeft: '1.5rem' }}>Vitals</h2>
                         </div>
                         <div className="overview_vitals">
                             <div className="vitals_card">

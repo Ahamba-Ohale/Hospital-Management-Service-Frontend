@@ -70,17 +70,9 @@ export default function Topbar() {
                         <div className="dropdown-item">
                             <FaRegUser />
                             <NavLink 
-                                to="/Patient/Portal" 
+                                to="/Patient/Profile" 
                                 activeClassName="active_link">
                                 Profile
-                            </NavLink>
-                        </div>
-                        <div className="dropdown-item">
-                            <MdOutlineSettings />
-                            <NavLink 
-                                to="/Patient/Settings" 
-                                activeClassName="active_link">
-                                Settings
                             </NavLink>
                         </div>
                         <div className="dropdown-item">
