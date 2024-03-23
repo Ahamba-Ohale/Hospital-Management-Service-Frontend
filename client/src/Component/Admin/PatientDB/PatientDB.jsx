@@ -13,22 +13,29 @@ const options = [
   { value: 'delete', label: 'Delete',  },
 ];
 
-const sortBy = [
-  { value: 'newest patient', label: 'Newest Patient' },
-  { value: 'oldest patient', label: 'Oldest Patient' },
+// Highlighted changes start here
+const sortByOptions = [
+  { value: 'newest', label: 'Newest Patient' },
+  { value: 'oldest', label: 'Oldest Patient' },
 ];
-const gender = [
+// Highlighted changes end here
+
+const genderOptions = [
   { value: 'male', label: 'Male' },
   { value: 'female', label: 'Female' },
 ];
-
 const PatientDB = () => {
   
   
   const [selectedOption, setSelectedOption] = useState(null);
+  const [sortByOption, setSortByOption] = useState(null);
+  // Highlighted changes end here
+  const [selectedGender, setSelectedGender] = useState(null);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [userCount, setUserCount] = useState(0);
+  
+  
   useEffect(() => {
     const fetchUserCount = async () => {
       try {
@@ -75,9 +82,6 @@ const PatientDB = () => {
       console.error("Error deleting patient:", error);
     }
   };
-
-
-
 
 
   const [userMonthCount, setUserMonthCount] = useState(0);
@@ -134,8 +138,25 @@ const PatientDB = () => {
   }, []);
 
 
-  
+// Highlighted changes start here
+const sortPatients = (sortByOption) => {
+  const sortedPatients = [...patients];
+  if (sortByOption === 'newest') {
+    sortedPatients.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  } else if (sortByOption === 'oldest') {
+    sortedPatients.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+  }
+  setPatients(sortedPatients);
+};
+// Highlighted changes end here
 
+// Highlighted changes start here
+useEffect(() => {
+  if (sortByOption) {
+    sortPatients(sortByOption.value); // Pass the value of the selected option
+  }
+}, [sortByOption]);
+// Highlighted changes end here
 
 
   return (
@@ -178,27 +199,22 @@ const PatientDB = () => {
 
         <div className="filter">
           <div className="card1">
-            <Select
-              defaultValue={selectedOption}
-              onChange={setSelectedOption}
-              options={sortBy.map(option => ({
-                value: option.value,
-                label: option.label
-              }))} 
-              placeholder= "Sort By"
-            />
+          <Select
+            value={sortByOption}
+            onChange={setSortByOption}
+            options={sortByOptions}
+            placeholder="Sort By"
+          />
           </div>
-          <div className="card1">
-            <Select
-              defaultValue={selectedOption}
-              onChange={setSelectedOption}
-              options={gender.map(option => ({
-                value: option.value,
-                label: option.label
-              }))} 
-              placeholder= "Gender"
-            />
-          </div>
+         {/* Highlighted changes end here */}
+        <div className="card1">
+          <Select
+            value={selectedGender}
+            onChange={setSelectedGender}
+            options={genderOptions}
+            placeholder="Gender"
+          />
+        </div>
           <div className="card1">
             <DatePicker
               selected={startDate}
