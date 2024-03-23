@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Sidebar from '../AdminSidebar/Sidebar';
 import { IoMdNotificationsOutline } from 'react-icons/io';
 import { IoReturnUpBack } from 'react-icons/io5';
@@ -6,13 +6,17 @@ import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { MdOutlineSaveAlt } from "react-icons/md";
-
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const NewMedRecord = () => {
 
-    const [selectedOption, setSelectedOption] = useState(null);
-
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedTreatments, setSelectedTreatments] = useState([]);
+  const { patient_id } = useParams();
+  const [patientData, setPatientData] = useState(null);
+  const apiUrl = `http://localhost:8080/api`;
 
   const handleGoBack = () => {
     navigate(-1); // This will go back to the previous page in history
@@ -23,7 +27,7 @@ const NewMedRecord = () => {
     { value: 'Paediatrist', label: 'Paediatrist' },
   ];
 
-  const [selectedTreatments, setSelectedTreatments] = useState([]);
+  
 
   const treatmentOptions = [
     'Surgery',
@@ -44,6 +48,51 @@ const NewMedRecord = () => {
     }
   };
   
+
+
+
+
+
+  useEffect(() => {
+    const fetchPatientData = async () => {
+      try {
+        const response = await axios.get(`${apiUrl}/patients/${patient_id}`);
+        setPatientData(response.data);
+      } catch (error) {
+        console.error('Error fetching patient data:', error);
+      }
+    };
+
+    fetchPatientData();
+  }, [apiUrl, patient_id]);
+ 
+  if (!patientData) {
+    return <div>Loading...</div>;
+  }
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div className="dashboard">
       <Sidebar />
@@ -57,7 +106,7 @@ const NewMedRecord = () => {
               <IoMdNotificationsOutline />
             </div>
             <div className="img"></div>
-            <h4>Patient Name</h4>
+            <h4>{patientData.name}</h4>
           </div>
         </div>
 
@@ -73,11 +122,11 @@ const NewMedRecord = () => {
             <div className="patient-menu__content">
               {/* <div className="patient-img"></div> */}
               <div className="patient-content__text">
-                <h3>John Doe</h3>
-                <p>johndoe@gmail.com</p>
-                <p>(+234) 456-7890</p>
+                <h3>{patientData.name}</h3>
+                <p>{patientData.email}</p>
+                <p>{patientData.phoneNumber}</p>
               </div>
-              <div className="age">Age: 21</div>
+              <div className="age">{patientData.age}</div>
             </div>
           </div>
 

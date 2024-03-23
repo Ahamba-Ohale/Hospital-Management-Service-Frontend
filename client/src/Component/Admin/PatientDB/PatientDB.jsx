@@ -9,8 +9,8 @@ import axios from "axios";
 import { FaUsersLine } from "react-icons/fa6";
 
 const options = [
-  { value: 'view', label: 'View', link: '/PatientInfo/view' },
-  { value: 'delete', label: 'Delete', },
+  { value: 'view', label: 'View',},
+  { value: 'delete', label: 'Delete',  },
 ];
 
 const sortBy = [
@@ -23,6 +23,7 @@ const gender = [
 ];
 
 const PatientDB = () => {
+  
   
   const [selectedOption, setSelectedOption] = useState(null);
   const [startDate, setStartDate] = useState(null);
@@ -243,6 +244,8 @@ const PatientDB = () => {
                   onChange={(selectedOption)=> {
                     if (selectedOption.value === 'delete') {
                       handleDelete(patient._id);
+                    } else if (selectedOption.value === 'view') {
+                      navigate(`/PatientInfo/view/${patient._id}`);
                     }
                   }}
                   isSearchable={false}

@@ -16,7 +16,8 @@ import { MdOutlinePayment } from "react-icons/md";
 import { FaXRay } from "react-icons/fa6";
 import { GiHealthPotion } from "react-icons/gi";
 import { IoReturnUpBack } from 'react-icons/io5';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
 
 
 
@@ -24,17 +25,43 @@ import { useNavigate } from 'react-router-dom';
 const PatientInfo = () => {
 
 
- 
- 
+  const navigate = useNavigate();
+
+  const { patient_id } = useParams();
+
+  const [patientData, setPatientData] = useState(null);
+
+  const [activeTab, setActiveTab] = useState('MedicalRecord');
+  
+  const apiUrl = `http://localhost:8080/api`;
+
+  
 
 
-    const [activeTab, setActiveTab] = useState('MedicalRecord');
+
+  useEffect(() => {
+    const fetchPatientData = async () => {
+      try {
+        const response = await axios.get(`${apiUrl}/patients/${patient_id}`);
+        setPatientData(response.data);
+      } catch (error) {
+        console.error('Error fetching patient data:', error);
+      }
+    };
+
+    fetchPatientData();
+  }, [apiUrl, patient_id]);
+ 
+  if (!patientData) {
+    return <div>Loading...</div>;
+  }
+   
 
     const handleTabClick = (tabName) => {
       setActiveTab(tabName);
     };
 
-    const navigate = useNavigate();
+   
 
   const handleGoBack = () => {
     navigate(-1); // This will go back to the previous page in history
@@ -52,14 +79,14 @@ const PatientInfo = () => {
                 <div className="notify">
                     <div className="bell"><IoMdNotificationsOutline style={{width:'100%'}}/></div>
                     <div className="img"></div>
-                    <h4>Patient name</h4>
+                    <h4>{patientData.name}</h4>
                 </div>
             </div>
 
             <div className="history">
               <div className="history-right">
               <div className="back" onClick={handleGoBack}><IoReturnUpBack /></div>
-              <div className="page-name">John Doe</div>
+              <div className="page-name">{patientData.name}</div>
               </div>
             </div>
 
@@ -68,11 +95,11 @@ const PatientInfo = () => {
                     <div className="patient-menu__content">
                         {/* <div className="patient-img"></div> */}
                         <div className="patient-content__text">
-                            <h3>name</h3>
+                            <h3>Name: {patientData.name}</h3>
                             <p>
-                               email<br/>
+                               Email: {patientData.email}<br/>
                             </p>
-                            <p>number</p>
+                            <p>Number: {patientData.phoneNumber}</p>
                         </div>
                         <div className="patient-menu__buttons">
                             <button 
