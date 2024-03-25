@@ -1,18 +1,19 @@
 /* eslint-disable react/prop-types */
 import { IoSearchOutline } from 'react-icons/io5';
-import { FaChevronLeft, FaChevronRight, FaRegBell, FaRegUser } from 'react-icons/fa6';
+// import { FaChevronLeft, FaChevronRight, FaRegBell, FaRegUser } from 'react-icons/fa6';
+import {  FaChevronDown, FaRegBell, FaRegUser } from 'react-icons/fa6';
 import { MdLogout, MdOutlineSettings } from "react-icons/md";
 import { useState, useEffect } from "react";
 
-export default function Topbar({ handleToggleClick }) {
-    const [isFirstIcon, setIsFirstIcon] = useState(true);
+export default function Topbar() {
+    // const [isFirstIcon, setIsFirstIcon] = useState(true);
     const [showNotification, setShowNotification] = useState(false);
     const [showProfile, setShowProfile] = useState(false);
 
-    const handleIconClick = () => {
-        setIsFirstIcon(prevIsFirstIcon => !prevIsFirstIcon);
-        handleToggleClick();
-    };
+    // const handleIconClick = () => {
+    //     setIsFirstIcon(prevIsFirstIcon => !prevIsFirstIcon);
+    //     handleToggleClick();
+    // };
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -31,15 +32,8 @@ export default function Topbar({ handleToggleClick }) {
 
     return (
         <div className="patient_topbar">
-            <div className="toggle">
-                {isFirstIcon ? (
-                    <i><FaChevronLeft size={25} onClick={handleIconClick} /></i>
-                ) : (
-                    <i><FaChevronRight size={25} onClick={handleIconClick} /></i>
-                )}
-            </div>
             <div className="search">
-                <label className="">
+                <label>
                     <input type="text" placeholder="Search here" />
                     <IoSearchOutline size={20} />
                 </label>
@@ -50,8 +44,8 @@ export default function Topbar({ handleToggleClick }) {
                         className="dropdown_button"
                         onClick={() => setShowNotification(!showNotification)}
                     >
-                        <FaRegBell size={25} />
-                        <div className="notification_circle">3</div>
+                        <FaRegBell size={20} />
+                        <div className="notification_circle"></div>
                     </span>
                     <div className={`dropdown ${showNotification ? 'show' : ''}`}>
                         {/* Dropdown content */}
@@ -64,14 +58,13 @@ export default function Topbar({ handleToggleClick }) {
                 <div className="img_box">
                     <img src='/doctor.jpg' />
                 </div>
+                <h4>John Doe</h4>
                 <div className="dropdown_button-container">
-                    <h4 
-                        className="dropdown_button"
+                    <FaChevronDown
+                        style={{ cursor: 'pointer' }}
                         onClick={() => setShowProfile(!showProfile)}
-                    >
-                        John Doe
-                    </h4>
-                    <div className={`dropdown ${showProfile ? 'show' : ''}`}>
+                    />
+                    <div className={`dropdown ${showProfile ? 'show' : ''}`} style={{ top: '2rem', right: '-.5rem' }}>
                         {/* Dropdown content */}
                         <div className="dropdown-item">
                             <FaRegUser />
