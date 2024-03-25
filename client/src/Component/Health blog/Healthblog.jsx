@@ -15,7 +15,7 @@ const Healthblog = () => {
     const [menuOpen, setMenuOpen] = useState(false)
     const { ref, inView } = useInView({
       triggerOnce: true, // Only trigger once
-      threshold: 0.2, // Trigger animation when 20% of the element is in view
+      threshold: 0, // Trigger animation when 20% of the element is in view
     });
   
     useEffect(() => {

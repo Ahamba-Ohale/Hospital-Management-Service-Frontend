@@ -179,6 +179,7 @@
 }
 
 @media (max-width:425px) {
+    
     .healthm {
         display: block;
 
@@ -250,7 +251,4 @@
     .bblog-title {
         text-transform: capitalize;
     }
-    
-    
-
 }
