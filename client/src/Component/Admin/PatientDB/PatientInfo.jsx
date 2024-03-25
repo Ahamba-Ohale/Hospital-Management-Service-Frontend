@@ -63,7 +63,7 @@ const PatientInfo = () => {
   }
    
 
-    const [activeTab, setActiveTab] = useState('MedicalRecord');
+   
 
     const handleTabClick = (tabName) => {
       setActiveTab(tabName);

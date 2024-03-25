@@ -190,6 +190,6 @@ const MedicalRecord = () => {
       {isAddModalVisible && <ViewMedRec onClose={toggleAddModal} />}
     </div>
   );
-};
+}};
 
 export default MedicalRecord;
