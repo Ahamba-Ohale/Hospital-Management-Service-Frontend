@@ -8,17 +8,17 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import LoadingEffect from '../../LoadingEffects/LoadingEffect';
 
-const MedicalRecord = () => {
 
+  
+
+
+
+const MedicalRecord = () => {
   const { patient_id } = useParams();
   const [patientData, setPatientData] = useState(null);
   const apiUrl = `http://localhost:8080/api`;
 
   const [NewMedRecord, setNewMedRecord] = useState(false);
-
-
-
-const MedicalRecord = () => {
 
   const [isAddModalVisible, setAddModalVisible] = useState(false);
   const loading = LoadingEffect();
@@ -190,6 +190,6 @@ const MedicalRecord = () => {
       {isAddModalVisible && <ViewMedRec onClose={toggleAddModal} />}
     </div>
   );
-}};
+};
 
 export default MedicalRecord;
