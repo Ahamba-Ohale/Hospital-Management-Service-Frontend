@@ -195,7 +195,7 @@ function Admin() {
 
 
 
-            <div className="bottom-right">
+            {/* <div className="bottom-right">
               <h4>Today Appointment</h4>
               <div className="right-contents">
                 <div className="content-right">
@@ -257,7 +257,7 @@ function Admin() {
                   <p>10:00 AM - 12:00 PM</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
