@@ -1,3 +1,43 @@
+.patient-vitals {
+    display: flex;
+    width: 100%;
+    /* justify-content: right; */
+    align-items: center;
+    gap: 20px;
+    margin: 20px 20px 0 20px;
+}
+
+.vitals {
+    padding: 10px 20px;
+    font-size: 1em;
+    text-align: center;
+    height: 5rem;
+    font-weight: 600;
+    border: none;
+    background-color: #fff;
+    color: #276AB3;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-vitals {
+    width: 10rem;
+    background-color: #276AB3;
+    height: 3rem;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    line-height: 3rem;
+    border: none;
+    border-radius: 5px;
+    user-select: none;
+    margin-left: 140px;
+}
+
+
 .patient-main__content {
     display: flex;
     width: 100%;
@@ -220,7 +260,10 @@
 }
 
 .formm input {
-    border: .5px solid #b4cbe4;
+    border: .5px solid #9c9c9c;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .input-field {
@@ -406,6 +449,9 @@
 .invoice-date input {
     border: #4e5052 solid 1px;
     color: #3a3a3a;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .invoice-main__mid {
@@ -510,6 +556,9 @@
 
 .invoice-main__botleft input {
     border: #9c9c9c solid 1px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .invoice-resultt {
@@ -664,6 +713,10 @@
   .createpatient input {
     border-color: none;
     padding: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid  rgba(0,0,0,.1);
   }
   
   .create-button {
@@ -684,4 +737,69 @@
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 5px;
+  }
+
+  .patient-t {
+    background-color: #e4e8ec;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+
+  .pat-but {
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .pat-but button{
+    padding: 5px 10px;
+    background-color: #276AB3;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    width: 100px;
+  }
+
+  .patient-vital {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+  }
+
+  .patient-test {
+    /* display: flex; */
+  }
+
+  .tests {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: #4e5052;
+    background-color: #e4e8ec;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+
+  .tests p {
+    width: 60%;
+  }
+
+  .age {
+    background-color: #e08d10;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
+    font-size: 13px;
+  }
+
+  .patient-vita {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
   }

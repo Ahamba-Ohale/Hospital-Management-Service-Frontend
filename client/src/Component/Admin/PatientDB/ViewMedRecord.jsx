@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Sidebar from '../AdminSidebar/Sidebar';
 import { IoMdNotificationsOutline } from 'react-icons/io';
 import { IoReturnUpBack } from 'react-icons/io5';
@@ -6,17 +6,13 @@ import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { MdOutlineSaveAlt } from "react-icons/md";
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
 
-const NewMedRecord = () => {
 
-  const navigate = useNavigate();
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [selectedTreatments, setSelectedTreatments] = useState([]);
-  const { patient_id } = useParams();
-  const [patientData, setPatientData] = useState(null);
-  const apiUrl = `http://localhost:8080/api`;
+const ViewMedRecord = () => {
+
+    const [selectedOption, setSelectedOption] = useState(null);
+
+    const navigate = useNavigate();
 
   const handleGoBack = () => {
     navigate(-1); // This will go back to the previous page in history
@@ -27,7 +23,7 @@ const NewMedRecord = () => {
     { value: 'Paediatrist', label: 'Paediatrist' },
   ];
 
-  
+  const [selectedTreatments, setSelectedTreatments] = useState([]);
 
   const treatmentOptions = [
     'Surgery',
@@ -48,51 +44,6 @@ const NewMedRecord = () => {
     }
   };
   
-
-
-
-
-
-  useEffect(() => {
-    const fetchPatientData = async () => {
-      try {
-        const response = await axios.get(`${apiUrl}/patients/${patient_id}`);
-        setPatientData(response.data);
-      } catch (error) {
-        console.error('Error fetching patient data:', error);
-      }
-    };
-
-    fetchPatientData();
-  }, [apiUrl, patient_id]);
- 
-  if (!patientData) {
-    return <div>Loading...</div>;
-  }
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   return (
     <div className="dashboard">
       <Sidebar />
@@ -106,7 +57,7 @@ const NewMedRecord = () => {
               <IoMdNotificationsOutline />
             </div>
             <div className="img"></div>
-            <h4>{patientData.name}</h4>
+            <h4>Patient Name</h4>
           </div>
         </div>
 
@@ -122,12 +73,11 @@ const NewMedRecord = () => {
             <div className="patient-menu__content">
               {/* <div className="patient-img"></div> */}
               <div className="patient-content__text">
-
-                <h3>{patientData.name}</h3>
-                <p>{patientData.email}</p>
-                <p>{patientData.phoneNumber}</p>
+                <h3>John Doe</h3>
+                <p>johndoe@gmail.com</p>
+                <p>(+234) 456-7890</p>
               </div>
-              <div className="age">{patientData.age}</div>
+              <div className="age">Age: 21</div>
             </div>
           </div>
 
@@ -159,14 +109,9 @@ const NewMedRecord = () => {
                 <textarea name="diagnosis" id="diagnosis" className='textarea'></textarea>
                 </label>
                 
-                <div><b>Vitals :</b>
-                <div className="patient-vita">
-              <div className="vitals">Blood Pressure <br /><br /> 120/80</div>
-              <div className="vitals">Blood Pressure <br /><br /> 120/80</div>
-              <div className="vitals">Blood Pressure <br /><br /> 120/80</div>
-              <div className="vitals">Blood Pressure <br /><br /> 120/80</div>
-            </div>
-                </div>
+                <label htmlFor="vitals">Vitals :
+                <textarea name="vitals" id="vitals" className='textarea'></textarea>
+                </label>
 
                 <label>Treatments:</label>
                     {treatmentOptions.map((treatment) => (
@@ -258,4 +203,4 @@ const NewMedRecord = () => {
   );
 };
 
-export default NewMedRecord;
+export default ViewMedRecord;

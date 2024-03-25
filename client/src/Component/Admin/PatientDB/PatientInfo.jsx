@@ -21,8 +21,6 @@ import axios from 'axios';
 import LoadingEffect from '../../LoadingEffects/LoadingEffect';
 
 
-
-
 const PatientInfo = () => {
 
 
@@ -65,6 +63,8 @@ const PatientInfo = () => {
   }
    
 
+    const [activeTab, setActiveTab] = useState('MedicalRecord');
+
     const handleTabClick = (tabName) => {
       setActiveTab(tabName);
     };
@@ -96,6 +96,14 @@ const PatientInfo = () => {
               <div className="back" onClick={handleGoBack}><IoReturnUpBack /></div>
               <div className="page-name">{patientData.name}</div>
               </div>
+            </div>
+
+            <div className="patient-vitals">
+              <div className="vitals">Blood Pressure: <br /><br /> 120/80</div>
+              <div className="vitals">Blood Sugar: <br /><br /> 4mg</div>
+              <div className="vitals">Temperature: <br /><br /> 36 degrees</div>
+              <div className="vitals">Respiration Rate: <br /><br /> 72/minute</div>
+              <div className="edit-vitals">Edit</div>
             </div>
 
             <div className="patient-main__content">
