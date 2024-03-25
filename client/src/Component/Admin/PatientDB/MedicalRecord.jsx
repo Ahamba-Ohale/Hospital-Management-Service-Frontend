@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import ViewMedRec from './ViewMedRec';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import LoadingEffect from '../../LoadingEffects/LoadingEffect';
 
 const MedicalRecord = () => {
 
@@ -14,6 +15,7 @@ const MedicalRecord = () => {
 
   const [NewMedRecord, setNewMedRecord] = useState(false);
   const [isAddModalVisible, setAddModalVisible] = useState(false);
+  const loading = LoadingEffect();
 
   const toggleAddModal = () => {
     setAddModalVisible(!isAddModalVisible);
@@ -36,7 +38,12 @@ const MedicalRecord = () => {
   }, [apiUrl, patient_id]);
  
   if (!patientData) {
-    return <div>Loading...</div>;
+    return <div style={{
+      display: 'flex',
+      position: 'fixed',
+      top: '50%',
+      left: '50%',
+    }}>{loading}</div>;
   }
    
 
