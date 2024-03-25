@@ -1,5 +1,7 @@
 
 // import {Navigate, Route, BrowserRouter as Router, Routes} from 'react-router-dom';
+
+import Error from './Component/Error/Error';
 import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import Homepage from './Component/Homepage/Homepage';
 import About from './Component/About/About';
@@ -68,11 +70,19 @@ function App() {
           <Route path='/Hospital management' element={<HospitalManagement />} />
           <Route path='/Data Analytics' element={<Analytics />} />
           <Route path='/Register' element={<Register />} />
+        
+
+
           <Route path='/Patients Database' element={<PatientDB />} />
-          <Route path='/PatientInfo/view/' element={<PatientInfo />} />
+          <Route path='/PatientInfo/view/:patient_id' element={<PatientInfo />} />
+
+
+          <Route path='/Add-new-record/:patient_id' element={<NewMedRecord />} />
           <Route path='/PatientInfo/view' element={<PatientInfo />} />
+
           <Route path='/Add-new-record' element={<NewMedRecord />} />
           <Route path='/ViewMedRec' element={<ViewMedRec />} />
+
           <Route path='/CreatePatient' element={<CreatePatient />} />
           {/* {user && <Route path='/Patient/Portal/*' exact element={<PatientPortal />} />} */}
           {/* <Route path='/Patient/Portal/*' exact element={<PatientPortal />} /> */}
