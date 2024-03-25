@@ -43,6 +43,7 @@ import Bills from "./Component/PatientPortal/pages/Bills";
 import Feedback from "./Component/PatientPortal/pages/Feedback";
 import Settings from "./Component/PatientPortal/pages/Settings";
 import Help from "./Component/PatientPortal/pages/Help";
+import ViewMedRec from './Component/Admin/PatientDB/ViewMedRec';
 
 function App() {
   // const user = localStorage.getItem("token");
@@ -71,6 +72,7 @@ function App() {
           <Route path='/PatientInfo/view/' element={<PatientInfo />} />
           <Route path='/PatientInfo/view' element={<PatientInfo />} />
           <Route path='/Add-new-record' element={<NewMedRecord />} />
+          <Route path='/ViewMedRec' element={<ViewMedRec />} />
           <Route path='/CreatePatient' element={<CreatePatient />} />
           {/* {user && <Route path='/Patient/Portal/*' exact element={<PatientPortal />} />} */}
           {/* <Route path='/Patient/Portal/*' exact element={<PatientPortal />} /> */}

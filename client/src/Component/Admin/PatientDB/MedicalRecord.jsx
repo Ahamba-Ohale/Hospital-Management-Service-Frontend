@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
-import { GrFormView  } from "react-icons/gr";
+import React, { useState } from "react";
+import { GrFormView } from "react-icons/gr";
 import { RiDeleteBin5Line } from "react-icons/ri";
-import { Link } from 'react-router-dom';
-import ViewMedRec from './ViewMedRec';
+import { Link } from "react-router-dom";
+import ViewMedRec from "./ViewMedRec";
 
 const MedicalRecord = () => {
-
   const [isAddModalVisible, setAddModalVisible] = useState(false);
 
   const toggleAddModal = () => {
@@ -19,13 +18,15 @@ const MedicalRecord = () => {
       <div className="patient-content__top">
         <h2>Medical Record</h2>
 
-        <Link to="/Add-new-record"><button
-          type="button"
-          onClick={() => setNewMedRecord(!NewMedRecord)}
-          className="patient-content__medre"
-        >
-          New Entry
-        </button></Link>
+        <Link to="/Add-new-record">
+          <button
+            type="button"
+            onClick={() => setNewMedRecord(!NewMedRecord)}
+            className="patient-content__medre"
+          >
+            New Entry
+          </button>
+        </Link>
       </div>
 
       <div className="patient-content__medd">
@@ -55,8 +56,12 @@ const MedicalRecord = () => {
             </p>
           </div>
           <div className="patient-content__ico">
-          <div onClick={toggleAddModal}><GrFormView  size={20}/></div>
-            <div className='del'>
+            <Link to="/ViewMedRec">
+              <div onClick={toggleAddModal}>
+                <GrFormView size={20} />
+              </div>
+            </Link>
+            <div className="del">
               <RiDeleteBin5Line size={20} />
             </div>
           </div>
@@ -87,8 +92,12 @@ const MedicalRecord = () => {
             </p>
           </div>
           <div className="patient-content__ico">
-          <div onClick={toggleAddModal}><GrFormView  size={20}/></div>
-            <div className='del'>
+            <Link to="/ViewMedRec">
+              <div onClick={toggleAddModal}>
+                <GrFormView size={20} />
+              </div>
+            </Link>
+            <div className="del">
               <RiDeleteBin5Line size={20} />
             </div>
           </div>
@@ -119,8 +128,12 @@ const MedicalRecord = () => {
             </p>
           </div>
           <div className="patient-content__ico">
-          <div onClick={toggleAddModal}><GrFormView  size={20}/></div>
-            <div className='del'>
+            <Link to="/ViewMedRec">
+              <div onClick={toggleAddModal}>
+                <GrFormView size={20} />
+              </div>
+            </Link>
+            <div className="del">
               <RiDeleteBin5Line size={20} />
             </div>
           </div>
@@ -129,6 +142,6 @@ const MedicalRecord = () => {
       {isAddModalVisible && <ViewMedRec onClose={toggleAddModal} />}
     </div>
   );
-}
+};
 
-export default MedicalRecord
+export default MedicalRecord;

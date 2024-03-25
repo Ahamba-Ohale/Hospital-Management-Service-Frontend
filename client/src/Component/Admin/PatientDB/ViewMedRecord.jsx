@@ -8,7 +8,7 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 import { MdOutlineSaveAlt } from "react-icons/md";
 
 
-const NewMedRecord = () => {
+const ViewMedRecord = () => {
 
     const [selectedOption, setSelectedOption] = useState(null);
 
@@ -74,7 +74,6 @@ const NewMedRecord = () => {
               {/* <div className="patient-img"></div> */}
               <div className="patient-content__text">
                 <h3>John Doe</h3>
-                <p>Male</p>
                 <p>johndoe@gmail.com</p>
                 <p>(+234) 456-7890</p>
               </div>
@@ -110,14 +109,9 @@ const NewMedRecord = () => {
                 <textarea name="diagnosis" id="diagnosis" className='textarea'></textarea>
                 </label>
                 
-                <div><b>Vitals :</b>
-                <div className="patient-vita">
-              <div className="vitals">Blood Pressure <br /><br /> 120/80</div>
-              <div className="vitals">Blood Pressure <br /><br /> 120/80</div>
-              <div className="vitals">Blood Pressure <br /><br /> 120/80</div>
-              <div className="vitals">Blood Pressure <br /><br /> 120/80</div>
-            </div>
-                </div>
+                <label htmlFor="vitals">Vitals :
+                <textarea name="vitals" id="vitals" className='textarea'></textarea>
+                </label>
 
                 <label>Treatments:</label>
                     {treatmentOptions.map((treatment) => (
@@ -209,4 +203,4 @@ const NewMedRecord = () => {
   );
 };
 
-export default NewMedRecord;
+export default ViewMedRecord;
