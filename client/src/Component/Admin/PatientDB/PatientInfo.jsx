@@ -18,6 +18,7 @@ import { GiHealthPotion } from "react-icons/gi";
 import { IoReturnUpBack } from 'react-icons/io5';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import LoadingEffect from '../../LoadingEffects/LoadingEffect';
 
 
 
@@ -34,6 +35,8 @@ const PatientInfo = () => {
   const [activeTab, setActiveTab] = useState('MedicalRecord');
   
   const apiUrl = `http://localhost:8080/api`;
+
+  const loading = LoadingEffect()
 
   
 
@@ -53,7 +56,12 @@ const PatientInfo = () => {
   }, [apiUrl, patient_id]);
  
   if (!patientData) {
-    return <div>Loading...</div>;
+    return <div style={{
+      display: 'flex',
+      position: 'fixed',
+      top: '50%',
+      left: '50%'
+    }}>{loading}</div>;
   }
    
 
