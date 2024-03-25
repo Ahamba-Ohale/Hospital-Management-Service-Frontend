@@ -22,6 +22,7 @@ body{
     background-color: white;
     position: sticky;
     top: 0;
+    z-index: 10;
 }
 
 .nav .title{
@@ -220,11 +221,11 @@ small{
 
 @keyframes wait {
     0%{
-        transform: translateX(10%);
+        transform: translateY(-10%);
         opacity: 0;
     }
     10%{
-        transform: translateX(100%);
+        transform: translateY(-100%);
         transition: all 1s ease;
         opacity: 0;
     }

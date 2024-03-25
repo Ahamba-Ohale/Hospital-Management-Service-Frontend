@@ -9,6 +9,10 @@
     height: 100vh;
     align-content: center;
     justify-content: center;
+    background-image: url(string.jpg);
+    background-size: cover;
+    background-position: right;
+
 }
 
 
@@ -16,6 +20,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    BACKGROUND-COLOR: #dbdbdb;
+    PADDING: 40PX 20PX;
+    BORDER: 2PX SOLID WHITE;
+    BORDER-RADIUS: 10PX;
 }
 
 
@@ -25,7 +34,7 @@
     margin: 10px 0;
     border-radius: 10px;
     border: none;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     background-color: white;
     outline: none;
@@ -34,6 +43,10 @@
 .reg-name, .reg-pword:hover{
     outline: none;
 }
+.reg-name, .reg-pword:focus{
+    background-color: white;
+}
+
 
 .submt{
     border: none;

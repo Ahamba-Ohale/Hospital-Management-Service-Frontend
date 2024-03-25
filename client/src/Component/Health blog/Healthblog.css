@@ -13,10 +13,10 @@
     width: 50vw;
 }
 .health2{
+    box-shadow: 0px 0px 10px 0px #276ab3;
     width: 38vw;
     background-color: lightblue;
     border-radius: 5px;
-    border: 1px solid #276ab3;
 }
 
 .bblog-pic{
@@ -38,8 +38,9 @@
 .bblog{
     display: flex;
     margin-bottom: 20px;
-    border: 1.2px solid #276ab3;
+    /* border: 1.2px solid #276ab3; */
     border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px #276ab3;
 }
 .bblog-title{
     padding: 20px 0;
@@ -138,9 +139,14 @@
     margin-top: 20px 0 20px;
 }
 
-.insta-img{
-    width: 15.9vw;
+.insta-li{
+    width: 16.9vw;
     height: 175px;
+}
+
+.insta-img{
+    width: 100%;
+    height: 100%;
 }
 
 .btn-learn{
@@ -150,14 +156,26 @@
     color: #ddd;
     font-size: 15px;
     font-weight: 500;
+    margin-bottom: 20px;
+    
 }
 
 .grid{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 5px;
     margin-top: 30px;
+}
+
+.social-link{
+    margin-top: 20px;
+}
+
+.social-icon{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 }
 
 @media (max-width:425px) {
@@ -204,6 +222,9 @@
     .bblog-date {
         padding-top: 20px;
         font-size: 11px;
+    }    
+    .insta-li {
+        width: 45%;
     }    
 }
 

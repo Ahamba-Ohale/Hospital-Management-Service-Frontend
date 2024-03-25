@@ -1,18 +1,31 @@
 import { useState } from 'react'
 import React from 'react'
-// import './Homepage.css'
 import './Home.css'
 import './Imagechanger.css'
 import {Link} from 'react-router-dom'
 import Nav from '../Important/Nav/Nav'
 import Foot from '../Important/Footer/Foot'
 import {useEffect, useRef } from 'react';
+import '../Important/Slidecss/Transition.css'
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+
 
 
 
 const Homepage = () => {    
-    const [menuOpen, setMenuOpen] = useState(false)
-
+    const { ref, inView } = useInView({
+        triggerOnce: true, // Only trigger once
+        threshold: 0.2, // Trigger animation when 50% of the element is in view
+      });
+    
+      useEffect(() => {
+        if (inView) {
+          // Trigger animations when the component is in view
+          // You can customize this logic based on your needs
+        }
+      }, [inView]);
   return (
     <div>
 
@@ -21,7 +34,7 @@ const Homepage = () => {
 
         <div id="contain">
             <div id="home">
-                <div className="home-body">
+                <div className="home-body slide-in">
                     <h1 className='header1' >
                         <p>GREAT TOWERS</p>
                         <p>SPECIALIST HOSPITAL</p>
@@ -34,22 +47,48 @@ const Homepage = () => {
                 </div>
             </div>
             <div className="about">
-                <div className="img">
+                <motion.div 
+                    ref={ref}
+                    className="img"
+                    initial={{ opacity: 0 }} // Initial state: hidden
+                    animate={inView ? { opacity: 1 } : {}} // Fade in when in view
+                    transition={{ delay: 0.8, duration: 0.5 }} 
+                >
                     {/* <img src="new.jpg" alt="Image" /> */}
-                </div>
-                <div className="about-us">
-                    <h2 className='para-h2-1' >About Us</h2>
-                    <p className='para-g1'>
+                </motion.div>
+                <motion.div 
+                className="about-us" 
+                ref={ref}
+                initial={{ opacity: 0, x: 100 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay:2 ,duration: 1.5 }}
+                >
+                    <h2
+                        className='para-h2-1'
+                    >
+                        About Us
+                    </h2>
+                    <p
+                        className='para-g1'
+                    >
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
                     </p>
-                    <a href="/About" className='learn'>Learn More</a>
-                </div>
+                    <a className='learn'
+                    >
+                        Learn More
+                    </a>
+                </motion.div>
             </div>
             <div className="about">
-                <div className="about-uss">
+                <motion.div 
+                className="about-uss"
+                initial={{ opacity: 0, x: -100 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay:2, duration: 1.5 }}
+                >
                     <h2 className='para-h2-2'>Our Services</h2>
                     <p className='para-g2'>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
@@ -58,56 +97,66 @@ const Homepage = () => {
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, vel.
                     </p>
                     <a href="/Services" className='learn'>Learn More</a>
-                </div>
-                <div className="img">
+                </motion.div>
+                <motion.div 
+                    ref={ref}
+                    className="img"
+                    initial={{ opacity: 0 }} // Initial state: hidden
+                    animate={inView ? { opacity: 1 } : {}} // Fade in when in view
+                    transition={{ delay: 0.8, duration: 0.5 }} 
+                >
                     {/* <img src="new.jpg" alt="Image" /> */}
-                </div>
+                </motion.div>
             </div>
         </div>
 
-        <div id="Health-Blog">
-            <h2 className='health-h2'>Health Blog</h2>
-            <div id="blog">
-                <div className="blogs">
-                    <div className="pic">
-
+        <div className="mhb">
+            <motion.h2 
+                initial={{ opacity: 0, y: -100 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay:0,duration: 0.5 }}
+                className="mhb-h2">Health Blog</motion.h2>
+            <div id="Helt-Blog">
+                <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay:2,duration: 1.5 }}
+                    className="b-blog">
+                    <div className="b-blog-pic">
+                        <img src="doctor.jpg" alt="" className='b-blog-img'/>
                     </div>
-                    <p className="contents">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Ipsa quis dolores vero facere, porro provident est sequi 
+                    <div className="b-blog-content">
+                    <p className="b-blog-date">
+                        MARCH 10 2024
                     </p>
-                    <b className="dat">
-                        FEB 21,2024
-                    </b>
-                </div>
-                <div className="blogs">
-                    <div className="pic">
-
+                    <p className="b-blog-title">
+                        Blog title and more
+                    </p>
+                    <p className="b-blog-text">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, voluptates?
+                    </p>
                     </div>
-                    <p className="contents">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Ipsa quis dolores vero facere, porro provident est sequi 
-                    </p>
-                    <b className="dat">
-                        FEB 21,2024
-                    </b>
-                </div>
-                <div className="blogs">
-                    <div className="pic">
-
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, y: 100}}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay:2, duration: 1.5 }}
+                    className="b-blog">
+                    <div className="b-blog-pic">
+                        <img src="doctor.jpg" alt="" className='b-blog-img'/>
                     </div>
-                    <p className="contents">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Ipsa quis dolores vero facere, porro provident est sequi 
+                    <div className="b-blog-content">
+                    <p className="b-blog-date">
+                        MARCH 10 2024
                     </p>
-                    <b className="dat">
-                        FEB 21,2024
-                    </b>
-                </div>
-                
-            </div>
-            <div className="button">
-                <a href="Healthblog" className='learn'>Learn More</a>
+                    <p className="b-blog-title">
+                        Blog title and more
+                    </p>
+                    <p className="b-blog-text">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, voluptates?
+                    </p>
+                    </div>
+                </motion.div>
             </div>
         </div>
 

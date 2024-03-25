@@ -9,6 +9,7 @@ import Foot from './Component/Important/Footer/Foot';
 import Contact from './Component/Contact-us/Contact';
 import Blogview from './Component/Blog-view/Blogview';
 import Registration from './Component/Registertion/Registration';
+import ABlogs from './Component/A-Blogs/ABlogs';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path='/About' element={<About />} />
           <Route path='/Blog' element={<Healthblog />} />
           <Route path='/Healthblog' element={<Healthblog />} />
+          <Route path='/Allblogs' element={<ABlogs />} />
           <Route path='/Contact-Us' element={<Contact />} />
           <Route path='/Blogview' element={<Blogview />} />
           <Route path='/Foot' element={<Foot />} />
