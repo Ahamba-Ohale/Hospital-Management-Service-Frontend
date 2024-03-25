@@ -60,7 +60,7 @@ const PatientInfo = () => {
       display: 'flex',
       position: 'fixed',
       top: '50%',
-      left: '50%'
+      left: '50%',
     }}>{loading}</div>;
   }
    
