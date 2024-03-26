@@ -54,51 +54,50 @@ const About = () => {
         <div className="profile">
             <h2>STAFF PROFILE</h2>
             <div className="details">
-                <div className="staff">
+                <motion.div 
+                    className="staff"
+                    initial={{ opacity: 0, y: -100 }} // Initial state: hidden
+                    animate={inView ? { opacity: 1, y: 0 } : {}} // Fade in when in view
+                    transition={{ delay: 2, duration: 1.5 }} 
+                    ref={ref}
+                >
                     <div className="pic"></div>
                     <div className="name">Lorem lorem</div>
                     <div className="Course">Lorem lorem</div>
-                </div>
-                <div className="staff">
+                </motion.div>
+                <motion.div 
+                    className="staff"
+                    initial={{ opacity: 0, y: -100 }} // Initial state: hidden
+                    animate={inView ? { opacity: 1, y: 0 } : {}} // Fade in when in view
+                    transition={{ delay: 2, duration: 1.5 }} 
+                    ref={ref}
+                >
                     <div className="pic"></div>
                     <div className="name">Lorem lorem</div>
                     <div className="Course">Lorem lorem</div>
-                </div>
-                <div className="staff">
+                </motion.div>
+                <motion.div 
+                    className="staff"
+                    initial={{ opacity: 0, y: -100 }} // Initial state: hidden
+                    animate={inView ? { opacity: 1, y: 0 } : {}} // Fade in when in view
+                    transition={{ delay: 2, duration: 1.5 }} 
+                    ref={ref}
+                >
                     <div className="pic"></div>
                     <div className="name">Lorem lorem</div>
                     <div className="Course">Lorem lorem</div>
-                </div>
-                <div className="staff">
+                </motion.div>
+                <motion.div 
+                    className="staff"
+                    initial={{ opacity: 0, y: -100 }} // Initial state: hidden
+                    animate={inView ? { opacity: 1, y: 0 } : {}} // Fade in when in view
+                    transition={{ delay: 2, duration: 1.5 }} 
+                    ref={ref}
+                >
                     <div className="pic"></div>
                     <div className="name">Lorem lorem</div>
                     <div className="Course">Lorem lorem</div>
-                </div>
-                <div className="staff">
-                    <div className="pic"></div>
-                    <div className="name">Lorem lorem</div>
-                    <div className="Course">Lorem lorem</div>
-                </div>
-                <div className="staff">
-                    <div className="pic"></div>
-                    <div className="name">Lorem lorem</div>
-                    <div className="Course">Lorem lorem</div>
-                </div>
-                <div className="staff">
-                    <div className="pic"></div>
-                    <div className="name">Lorem lorem</div>
-                    <div className="Course">Lorem lorem</div>
-                </div>
-                <div className="staff">
-                    <div className="pic"></div>
-                    <div className="name">Lorem lorem</div>
-                    <div className="Course">Lorem lorem</div>
-                </div>
-                <div className="staff">
-                    <div className="pic"></div>
-                    <div className="name">Lorem lorem</div>
-                    <div className="Course">Lorem lorem</div>
-                </div>
+                </motion.div>
             </div>
             <div className="load-btn">
                 <a href="" className='load'>Load More</a>

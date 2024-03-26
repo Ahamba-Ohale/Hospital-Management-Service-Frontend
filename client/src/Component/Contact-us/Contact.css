@@ -85,4 +85,14 @@
     .contact-form {
         padding: 20px;
     }
+
+    .contact-in {
+        margin: 50px auto;
+    }
+}
+
+@media (max-width:540px) {
+.contact-form {
+    padding: 15px;
+}
 }

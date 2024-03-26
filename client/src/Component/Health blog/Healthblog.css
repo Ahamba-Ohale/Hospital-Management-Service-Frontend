@@ -252,3 +252,9 @@
         text-transform: capitalize;
     }
 }
+
+@media (max-width:320px) {
+    .sub-btn {
+        padding: 12px 70px;
+    }
+}
