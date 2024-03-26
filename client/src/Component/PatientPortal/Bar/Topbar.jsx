@@ -5,7 +5,7 @@ import { MdLogout } from "react-icons/md";
 import { useState, useEffect } from "react";
 import { NavLink } from 'react-router-dom';
 
-export default function Topbar() {
+export default function Topbar({ toggleSidebar }) {
     const [showNotification, setShowNotification] = useState(false);
     const [showProfile, setShowProfile] = useState(false);
 

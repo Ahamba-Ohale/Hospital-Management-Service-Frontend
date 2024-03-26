@@ -1,7 +1,5 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
+import "../PatientPortal.css";
 import { useEffect, useState } from "react";
-import axios from "axios"; // Changed import
 import {
   LuClipboardList,
   LuUserCircle2,
@@ -12,45 +10,54 @@ import {
   LuCalendarDays,
   LuMessagesSquare,
 } from "react-icons/lu";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaChevronLeft } from "react-icons/fa6";
 
-export default function Sidebar({ sidebarClose, setSidebarClose, selected }) { 
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-  });
-
-  const ModSidebarOpen = () => {
-    setSidebarClose(!sidebarClose);
-  };
+export default function Sidebar({ sidebarClose, toggleSidebar }) {
+  const [selected, setSelected] = useState(0);
+  const location = useLocation();
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const url = "http://localhost:8080/api/users/all";
-        const { data: response } = await axios.get(url); // Changed Axios to axios
-        setUser({
-          name: response.name,
-          email: response.email,
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
-  }, []);
+    switch (location.pathname) {
+      case "/Patient/Overview":
+        setSelected(0);
+        break;
+      case "/Patient/Profile":
+        setSelected(1);
+        break;
+      case "/Patient/Records":
+        setSelected(2);
+        break;
+      case "/Patient/Appointments":
+        setSelected(3);
+        break;
+      case "/Patient/Prescriptions":
+        setSelected(4);
+        break;
+      case "/Patient/Payments":
+        setSelected(5);
+        break;
+      case "/Patient/Messages":
+        setSelected(6);
+        break;
+      case "/Patient/Help":
+        setSelected(8);
+        break;
+      default:
+        setSelected(0);
+    }
+  }, [location.pathname]);
 
   return (
     <nav className={`portal_navigation ${sidebarClose ? "pactive" : ""}`}>
-      <div className="toggle" onClick={ModSidebarOpen}>
-           <button style={{ transform: sidebarClose ? 'rotate(180deg)' : 'initial' }}>
-             <FaChevronLeft color="#f5f5f5" />
-           </button>
+      <div className="toggle" onClick={toggleSidebar}>
+        <button style={{ transform: sidebarClose ? "rotate(180deg)" : "initial" }}>
+          <FaChevronLeft color="#f5f5f5" />
+        </button>
       </div>
-    <div className="portal_logo" style={{ left: sidebarClose ? '-40px' : '' }}>
-      <img src="/Logo.png" alt="G.T.H Logo" style={{ transform: sidebarClose ? 'scale(0.5)' : 'scale(1)' }} />
-    </div>
+      <div className="portal_logo" style={{ left: sidebarClose ? "-40px" : "" }}>
+        <img src="/Logo.png" alt="G.T.H Logo" style={{ transform: sidebarClose ? "scale(0.5)" : "scale(1)" }} />
+      </div>
 
       <ul>
         <li>
@@ -162,7 +169,7 @@ export default function Sidebar({ sidebarClose, setSidebarClose, selected }) {
             <span>johndoe@gmail.com</span>
           </div>
         </div>
-        </div>
+      </div>
     </nav>
   );
 }
