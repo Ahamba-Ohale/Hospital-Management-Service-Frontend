@@ -6,6 +6,8 @@ import Select from 'react-select';
 import DatePicker from "react-datepicker";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { MdAddCall } from "react-icons/md";
+import { FaUserDoctor } from "react-icons/fa6";
 
 const options = [
   { value: 'view', label: 'View', link: '/PatientHealthInfo' },
@@ -21,8 +23,10 @@ const gender = [
   { value: 'female', label: 'Female' },
 ];
 
-
+const apiUrl = 'http://localhost:8080/api'
 const Health = () => {
+
+
   const [selectedOption, setSelectedOption] = useState(null);
 
   const [startDate, setStartDate] = useState(null);
@@ -36,7 +40,7 @@ const Health = () => {
     // Fetch data from the backend when the component mounts
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/Patients/");
+        const response = await axios.get(`${apiUrl}/Patients/`);
         setPatients(response.data);
       } catch (error) {
         console.error("Error fetching patients:", error);
@@ -46,6 +50,87 @@ const Health = () => {
     fetchData();
   }, []); 
 
+
+
+
+
+  const [consultationCount, setconsultationCount] = useState(0);
+
+  useEffect(() => {
+    const fetchDailyconsultation = async () => {
+      try {
+        const response = await fetch(`${apiUrl}/consultation`);
+        const consultations = await response.json();
+
+        // Filter appointments created on the current day
+        const currentDate = new Date();
+        const currentDayconsultation = consultations.filter(consultation => {
+          const consultationCreatedAt = new Date(consultation.createdAt);
+          return consultationCreatedAt.getDate() === currentDate.getDate() &&
+                 consultationCreatedAt.getMonth() === currentDate.getMonth() &&
+                 consultationCreatedAt.getFullYear() === currentDate.getFullYear();
+        });
+
+        setconsultationCount(currentDayconsultation.length); // Update the state using setconsultationCount
+      } catch (error) {
+        console.error('Error fetching appointments:', error);
+      }
+    };
+
+    fetchDailyconsultation();
+
+    // Refresh the count at the start of each day
+    const interval = setInterval(() => {
+      setconsultationCount(0);
+      fetchDailyconsultation();
+    }, 86400000); // 24 hours in milliseconds
+
+    return () =>clearInterval(interval);
+  }, []);
+
+
+
+
+  
+
+
+  
+
+  const [userDayCount, setUserDayCount] = useState(0);
+
+  useEffect(() => {
+    const fetchDailyAppointment = async () => {
+      try {
+        const response = await fetch(`${apiUrl}/appointment`);
+        const appointments = await response.json();
+
+        // Filter appointments created on the current day
+        const currentDate = new Date();
+        const currentDayAppointments = appointments.filter(appointment => {
+          const appointmentCreatedAt = new Date(appointment.createdAt);
+          return appointmentCreatedAt.getDate() === currentDate.getDate() &&
+                 appointmentCreatedAt.getMonth() === currentDate.getMonth() &&
+                 appointmentCreatedAt.getFullYear() === currentDate.getFullYear();
+        });
+
+        setUserDayCount(currentDayAppointments.length);
+      } catch (error) {
+        console.error('Error fetching appointments:', error);
+      }
+    };
+
+    fetchDailyAppointment();
+
+    // Refresh the count at the start of each day
+    const interval = setInterval(() => {
+      setUserDayCount(0);
+      fetchDailyAppointment();
+    }, 86400000); // 24 hours in milliseconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  
 
   return (
       <div className="dashboard">
@@ -63,9 +148,17 @@ const Health = () => {
           </div>
 
           <div className="sub-header">
-            <div className="cards">Total Appointments Today</div>
+            <div className="cards">
+              <p className="today-appointment" style={{fontSize: '20px'}}>Appointment booked today</p>
+              <MdAddCall className="appointment-booked-icon"/>
+              <span className="total-appointment-number">{userDayCount}</span>
+            </div>
             <div className="cards">Medication</div>
-            <div className="cards">Total Consultations</div>
+            <div className="cards">
+              <p className="total-consultation" style={{fontSize: '20px'}}>Total consultations today</p>
+              <FaUserDoctor className="total-consultation-icon"/>
+              <span className="total-consultation-span">{consultationCount}</span>
+            </div>
           </div>
 
           <div className="page-title">

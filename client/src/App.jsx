@@ -1,5 +1,7 @@
 
 // import {Navigate, Route, BrowserRouter as Router, Routes} from 'react-router-dom';
+
+
 import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import Homepage from './Component/Homepage/Homepage';
 import About from './Component/About/About';
@@ -21,7 +23,7 @@ import CreatePatient from './Component/Admin/PatientDB/CreatePatient';
 import Register from './Component/auth/Register';
 import Login from './Component/auth/Login';
 import VerifyEmail from './Component/auth/VerifyEmail';
-import PatientPortal from './Component/PatientPortal/PatientPortal';
+// import PatientPortal from './Component/PatientPortal/PatientPortal';
 import CreateInvoice from './Component/Admin/PatientDB/CreateInvoice';
 import InvoiceEdit from './Component/Admin/PatientDB/InvoiceEdit';
 import InvoiceView from './Component/Admin/PatientDB/InvoiceView';
@@ -35,13 +37,22 @@ import AddRole from './Component/Admin/HospitalManagement/AddRole';
 import AddLeave from './Component/Admin/HospitalManagement/AddLeave';
 import AddTrainee from './Component/Admin/HospitalManagement/AddTrainee';
 
+import Overview from "./Component/PatientPortal/pages/Overview";
+import Records from "./Component/PatientPortal/pages/Records";
+import Appointments from "./Component/PatientPortal/pages/Appointments";
+import Prescriptions from "./Component/PatientPortal/pages/Prescriptions";
+import Bills from "./Component/PatientPortal/pages/Bills";
+import Feedback from "./Component/PatientPortal/pages/Feedback";
+import Settings from "./Component/PatientPortal/pages/Settings";
+import Help from "./Component/PatientPortal/pages/Help";
+import ViewMedRec from './Component/Admin/PatientDB/ViewMedRec';
+
 function App() {
   // const user = localStorage.getItem("token");
 
   return (
     <>
       <Router>
-        <PatientPortal />
         <Routes>
           <Route path='/Home' element={<Homepage />} />
           <Route path='/' element={<Homepage />} />
@@ -59,10 +70,19 @@ function App() {
           <Route path='/Hospital management' element={<HospitalManagement />} />
           <Route path='/Data Analytics' element={<Analytics />} />
           <Route path='/Register' element={<Register />} />
+        
+
+
           <Route path='/Patients Database' element={<PatientDB />} />
-          <Route path='/PatientInfo/view/' element={<PatientInfo />} />
+          <Route path='/PatientInfo/view/:patient_id' element={<PatientInfo />} />
+
+
+          <Route path='/Add-new-record/:patient_id' element={<NewMedRecord />} />
           <Route path='/PatientInfo/view' element={<PatientInfo />} />
+
           <Route path='/Add-new-record' element={<NewMedRecord />} />
+          <Route path='/ViewMedRec' element={<ViewMedRec />} />
+
           <Route path='/CreatePatient' element={<CreatePatient />} />
           {/* {user && <Route path='/Patient/Portal/*' exact element={<PatientPortal />} />} */}
           {/* <Route path='/Patient/Portal/*' exact element={<PatientPortal />} /> */}
@@ -82,7 +102,18 @@ function App() {
           <Route path='/AddRole' element={<AddRole />} />
           <Route path='/AddLeave' element={<AddLeave />} />
           <Route path='/AddTrainee' element={<AddTrainee />} />
+
+          <Route path="/Patient/Portal" element={<Overview />} />
+          <Route path="/Patient/Records" element={<Records />} />
+          <Route path="/Patient/Appointments" element={<Appointments />} />
+          <Route path="/Patient/Prescriptions" element={<Prescriptions />} />
+          <Route path="/Patient/Bills" element={<Bills />} />
+          <Route path="/Patient/Feedback" element={<Feedback />} />
+          <Route path="/Patient/Settings" element={<Settings />} />
+          <Route path="/Patient/Help" element={<Help />} />
         </Routes>
+                {/* <PatientPortal /> */}
+
       </Router>
     </>
   )

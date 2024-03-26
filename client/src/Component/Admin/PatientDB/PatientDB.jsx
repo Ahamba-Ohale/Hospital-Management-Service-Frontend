@@ -9,25 +9,33 @@ import axios from "axios";
 import { FaUsersLine } from "react-icons/fa6";
 
 const options = [
-  { value: 'view', label: 'View', link: '/PatientInfo/view' },
-  { value: 'delete', label: 'Delete', },
+  { value: 'view', label: 'View',},
+  { value: 'delete', label: 'Delete',  },
 ];
 
-const sortBy = [
-  { value: 'newest patient', label: 'Newest Patient' },
-  { value: 'oldest patient', label: 'Oldest Patient' },
+// Highlighted changes start here
+const sortByOptions = [
+  { value: 'newest', label: 'Newest Patient' },
+  { value: 'oldest', label: 'Oldest Patient' },
 ];
-const gender = [
+// Highlighted changes end here
+
+const genderOptions = [
   { value: 'male', label: 'Male' },
   { value: 'female', label: 'Female' },
 ];
-
 const PatientDB = () => {
   
+  
   const [selectedOption, setSelectedOption] = useState(null);
+  const [sortByOption, setSortByOption] = useState(null);
+  // Highlighted changes end here
+  const [selectedGender, setSelectedGender] = useState(null);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [userCount, setUserCount] = useState(0);
+  
+  
   useEffect(() => {
     const fetchUserCount = async () => {
       try {
@@ -76,9 +84,6 @@ const PatientDB = () => {
   };
 
 
-
-
-
   const [userMonthCount, setUserMonthCount] = useState(0);
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth() + 1); // Initialize with the current month
 
@@ -114,9 +119,44 @@ const PatientDB = () => {
     return () => clearInterval(interval);
   }, [currentMonth]);
 
+  const [totalUserCount, setTotalUserCount] = useState(0);
+  useEffect(() => {
+    const fetchPatients = async () => {
+      try {
+        const response = await fetch(`http://localhost:8080/api/Patients/`);
+        const patients = await response.json();
 
-  
+        // Calculate the total count of patients for all months
+        const totalCount = patients.length;
+        setTotalUserCount(totalCount);
+      } catch (error) {
+        console.error('Error fetching patients:', error);
+      }
+    };
 
+    fetchPatients();
+  }, []);
+
+
+// Highlighted changes start here
+const sortPatients = (sortByOption) => {
+  const sortedPatients = [...patients];
+  if (sortByOption === 'newest') {
+    sortedPatients.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  } else if (sortByOption === 'oldest') {
+    sortedPatients.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+  }
+  setPatients(sortedPatients);
+};
+// Highlighted changes end here
+
+// Highlighted changes start here
+useEffect(() => {
+  if (sortByOption) {
+    sortPatients(sortByOption.value); // Pass the value of the selected option
+  }
+}, [sortByOption]);
+// Highlighted changes end here
 
 
   return (
@@ -145,7 +185,11 @@ const PatientDB = () => {
             <FaUsersLine className="patient-icon"/>
             <span className="monthly-patient-icon-span">{userMonthCount}</span>
           </div>
-          <div className="cards">Yearly Patients</div>
+          <div className="cards">
+          <p style={{color: '#1E528E', fontSize: '25px', fontWeight:'bold',}} className="total-patients">YEARLY PATIENTS</p>
+            <FaUsersLine className="patient-icon"/>
+            <span className="yearly-patient-icon-span">{totalUserCount}</span>
+          </div>
         </div>
 
         <div className="page-title">
@@ -155,27 +199,22 @@ const PatientDB = () => {
 
         <div className="filter">
           <div className="card1">
-            <Select
-              defaultValue={selectedOption}
-              onChange={setSelectedOption}
-              options={sortBy.map(option => ({
-                value: option.value,
-                label: option.label
-              }))} 
-              placeholder= "Sort By"
-            />
+          <Select
+            value={sortByOption}
+            onChange={setSortByOption}
+            options={sortByOptions}
+            placeholder="Sort By"
+          />
           </div>
-          <div className="card1">
-            <Select
-              defaultValue={selectedOption}
-              onChange={setSelectedOption}
-              options={gender.map(option => ({
-                value: option.value,
-                label: option.label
-              }))} 
-              placeholder= "Gender"
-            />
-          </div>
+         {/* Highlighted changes end here */}
+        <div className="card1">
+          <Select
+            value={selectedGender}
+            onChange={setSelectedGender}
+            options={genderOptions}
+            placeholder="Gender"
+          />
+        </div>
           <div className="card1">
             <DatePicker
               selected={startDate}
@@ -221,6 +260,8 @@ const PatientDB = () => {
                   onChange={(selectedOption)=> {
                     if (selectedOption.value === 'delete') {
                       handleDelete(patient._id);
+                    } else if (selectedOption.value === 'view') {
+                      navigate(`/PatientInfo/view/${patient._id}`);
                     }
                   }}
                   isSearchable={false}

@@ -2,12 +2,10 @@ import React, { useState } from 'react'
 import { GrView } from "react-icons/gr";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { Link } from 'react-router-dom';
-import Employee from './Employee'
-import Specialist from './Specialist';
-import Roles from './RolesMgt';
+import RevenueMgt from './RevenueMgt';
+import ExpenseManagement from './ExpenseManagement';
 import LeaveMgt from './LeaveMgt';
 import TrainingMgt from './TrainingMgt';
-import BillingAndInvoicing from './BillingAndInvoicing';
 
 
 
@@ -15,7 +13,7 @@ const FinancilaReporting = () => {
 
       // const [employee, setEmployee] = useState(false);
 
-      const [activeTab, setActiveTab] = useState('BillingAndInvoicing');
+      const [activeTab, setActiveTab] = useState('RevenueMgt');
 
       const handleTabClick = (tabName) => {
         setActiveTab(tabName);
@@ -29,24 +27,17 @@ const FinancilaReporting = () => {
 
     <div className="staff-button">
     <button 
-       onClick={() => handleTabClick('BillingAndInvoicing')}
+       onClick={() => handleTabClick('RevenueMgt')}
        className={`hospital-mgt__but ${
-       activeTab === 'BillingAndInvoicing' ? 'active' : ''
+       activeTab === 'RevenueMgt' ? 'active' : ''
        }`}>
-          Bills & Invoice
-       </button>
-    <button 
-       onClick={() => handleTabClick('Specialist')}
-       className={`hospital-mgt__but ${
-       activeTab === 'Specialist' ? 'active' : ''
-       }`}>
-          Revenue
+          Revenue Mgt
        </button>
       
        <button 
-       onClick={() => handleTabClick('Roles')}
+       onClick={() => handleTabClick('ExpenseManagement')}
        className={`hospital-mgt__but ${
-       activeTab === 'Roles' ? 'active' : ''
+       activeTab === 'ExpenseManagement' ? 'active' : ''
        }`}>
           Expenses
        </button>
@@ -69,9 +60,8 @@ const FinancilaReporting = () => {
     </div>
 
     <div className="patient-content__medd">
-    {activeTab === 'BillingAndInvoicing' && <BillingAndInvoicing />}
-    {activeTab === 'Specialist' && <Specialist />}
-    {activeTab === 'Roles' && <Roles />}
+    {activeTab === 'RevenueMgt' && <RevenueMgt />}
+    {activeTab === 'ExpenseManagement' && <ExpenseManagement />}
     {activeTab === 'LeaveMgt' && <LeaveMgt />}
     {activeTab === 'TrainingMgt' && <TrainingMgt />}
 
