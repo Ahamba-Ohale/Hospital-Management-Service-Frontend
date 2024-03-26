@@ -115,13 +115,13 @@ export default function Sidebar({ sidebarClose, setSidebarClose, selected }) {
 
         <li>
           <Link
-            to="/Patient/Bills"
+            to="/Patient/Payments"
             className={selected === 5 ? "active_link" : ""}
           >
             <i className="icon">
               <LuCreditCard size={25} />
             </i>
-            {!sidebarClose && <span>Billings and Payments</span>}
+            {!sidebarClose && <span>Payments</span>}
           </Link>
         </li>
 

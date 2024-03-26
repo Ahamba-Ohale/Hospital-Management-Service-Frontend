@@ -27,7 +27,7 @@ export default function PatientPortal() {
             case "/Patient/Prescriptions":
                 setSelected(4);
                 break;
-            case "/Patient/Bills":
+            case "/Patient/Payments":
                 setSelected(5);
                 break;
             case "/Patient/Messages":
