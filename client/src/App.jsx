@@ -23,7 +23,6 @@ import CreatePatient from './Component/Admin/PatientDB/CreatePatient';
 import Register from './Component/auth/Register';
 import Login from './Component/auth/Login';
 import VerifyEmail from './Component/auth/VerifyEmail';
-import PatientPortal from './Component/PatientPortal/PatientPortal';
 import CreateInvoice from './Component/Admin/PatientDB/CreateInvoice';
 import InvoiceEdit from './Component/Admin/PatientDB/InvoiceEdit';
 import InvoiceView from './Component/Admin/PatientDB/InvoiceView';
@@ -112,7 +111,6 @@ function App() {
           <Route path="/Patient/Profile" element={<Profile />} />
           <Route path="/Patient/Help" element={<Help />} />
         </Routes>
-        {/* <PatientPortal /> */}
       </Router>
     </>
   )
