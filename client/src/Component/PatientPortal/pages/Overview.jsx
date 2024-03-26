@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom"
 export default function Overview() {
     const greet = new Date().getHours();
     let time;
-    
+
     if (greet >= 0 && greet < 12) {
         time = 'Morning';
     } else if (greet >= 12 && greet < 17) {
@@ -14,7 +14,7 @@ export default function Overview() {
     } else {
         time = 'Evening';
     }
-    
+
     return (
         <>
             <div className="greet">
@@ -40,7 +40,9 @@ export default function Overview() {
                             <div className="vitals_card">
                                 <div>
                                     <div className="vitals_name">Body Temperature</div>
-                                    <div className="vitals_number">36.2 <sub>&deg;c</sub></div>
+                                    <div className="vitals_number">
+                                        <span>36.2 <sub>&deg;c</sub></span>
+                                    </div>
                                 </div>
                                 <div className="vitals_icon">
                                     <FaTemperatureLow />
@@ -49,7 +51,8 @@ export default function Overview() {
                             <div className="vitals_card">
                                 <div>
                                     <div className="vitals_name">Pulse</div>
-                                    <div className="vitals_number">85 <sub>bpm</sub></div>
+                                    <div className="vitals_number">
+                                        <span>85 <sub>bpm</sub></span></div>
                                 </div>
                                 <div className="vitals_icon">
                                     <IoIosPulse />
@@ -58,7 +61,7 @@ export default function Overview() {
                             <div className="vitals_card">
                                 <div>
                                     <div className="vitals_name">Blood Pressure</div>
-                                    <div className="vitals_number">80/70 <sub>mm/Hg</sub></div>
+                                    <div className="vitals_number"><span>80/70 <sub>mm/Hg</sub></span></div>
                                 </div>
                                 <div className="vitals_icon">
                                     <MdOutlineBloodtype />
@@ -67,7 +70,7 @@ export default function Overview() {
                             <div className="vitals_card">
                                 <div>
                                     <div className="vitals_name">Breathing Rate</div>
-                                    <div className="vitals_number">15 <sub>breath/m</sub></div>
+                                    <div className="vitals_number"><span>15 <sub>cycle/m</sub></span></div>
                                 </div>
                                 <div className="vitals_icon">
                                     <MdAir />
@@ -76,7 +79,7 @@ export default function Overview() {
                         </div>
                     </div>
                     <div className="overview_right">
-                        
+
                     </div>
                 </section>
                 <section className="overview_sides">
@@ -84,8 +87,8 @@ export default function Overview() {
                         <div className="overview_appoint">
                             <div className="overview_appoint-header">
                                 <h2>Appointments</h2>
-                                <NavLink 
-                                    to="/Patient/Appointments" 
+                                <NavLink
+                                    to="/Patient/Appointments"
                                     activeClassName="active_link">
                                     View All
                                 </NavLink>
@@ -201,7 +204,7 @@ export default function Overview() {
                                     </div>
                                 </td>
                                 <td>
-                                    <h4>Damien <br /> 
+                                    <h4>Damien <br />
                                         <span>Nigeria</span>
                                     </h4>
                                 </td>
@@ -213,7 +216,7 @@ export default function Overview() {
                                     </div>
                                 </td>
                                 <td>
-                                    <h4>Damien <br /> 
+                                    <h4>Damien <br />
                                         <span>Nigeria</span>
                                     </h4>
                                 </td>
@@ -225,7 +228,7 @@ export default function Overview() {
                                     </div>
                                 </td>
                                 <td>
-                                    <h4>Damien <br /> 
+                                    <h4>Damien <br />
                                         <span>Nigeria</span>
                                     </h4>
                                 </td>
@@ -237,7 +240,7 @@ export default function Overview() {
                                     </div>
                                 </td>
                                 <td>
-                                    <h4>Damien <br /> 
+                                    <h4>Damien <br />
                                         <span>Nigeria</span>
                                     </h4>
                                 </td>
@@ -249,7 +252,7 @@ export default function Overview() {
                                     </div>
                                 </td>
                                 <td>
-                                    <h4>Damien <br /> 
+                                    <h4>Damien <br />
                                         <span>Nigeria</span>
                                     </h4>
                                 </td>
@@ -261,7 +264,7 @@ export default function Overview() {
                                     </div>
                                 </td>
                                 <td>
-                                    <h4>Damien <br /> 
+                                    <h4>Damien <br />
                                         <span>Nigeria</span>
                                     </h4>
                                 </td>
@@ -273,7 +276,7 @@ export default function Overview() {
                                     </div>
                                 </td>
                                 <td>
-                                    <h4>Damien <br /> 
+                                    <h4>Damien <br />
                                         <span>Nigeria</span>
                                     </h4>
                                 </td>
@@ -285,7 +288,7 @@ export default function Overview() {
                                     </div>
                                 </td>
                                 <td>
-                                    <h4>Damien <br /> 
+                                    <h4>Damien <br />
                                         <span>Nigeria</span>
                                     </h4>
                                 </td>

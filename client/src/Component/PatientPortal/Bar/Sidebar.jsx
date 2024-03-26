@@ -44,7 +44,7 @@ export default function Sidebar({ sidebarClose, setSidebarClose, selected }) {
   return (
     <nav className={`portal_navigation ${sidebarClose ? "pactive" : ""}`}>
       <div className="toggle" onClick={ModSidebarOpen}>
-           <button style={{ transform: sidebarClose ? 'rotate(180deg)' : 'initial', left: sidebarClose ? '50px' : '270px' }}>
+           <button style={{ transform: sidebarClose ? 'rotate(180deg)' : 'initial' }}>
              <FaChevronLeft color="#f5f5f5" />
            </button>
       </div>

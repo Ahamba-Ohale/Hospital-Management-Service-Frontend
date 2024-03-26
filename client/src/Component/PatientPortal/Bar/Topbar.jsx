@@ -1,20 +1,13 @@
 /* eslint-disable react/prop-types */
 import { IoSearchOutline } from 'react-icons/io5';
-// import { FaChevronLeft, FaChevronRight, FaRegBell, FaRegUser } from 'react-icons/fa6';
 import {  FaChevronDown, FaRegBell, FaRegUser } from 'react-icons/fa6';
-import { MdLogout, MdOutlineSettings } from "react-icons/md";
+import { MdLogout } from "react-icons/md";
 import { useState, useEffect } from "react";
 import { NavLink } from 'react-router-dom';
 
 export default function Topbar() {
-    // const [isFirstIcon, setIsFirstIcon] = useState(true);
     const [showNotification, setShowNotification] = useState(false);
     const [showProfile, setShowProfile] = useState(false);
-
-    // const handleIconClick = () => {
-    //     setIsFirstIcon(prevIsFirstIcon => !prevIsFirstIcon);
-    //     handleToggleClick();
-    // };
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -67,22 +60,20 @@ export default function Topbar() {
                     />
                     <div className={`dropdown ${showProfile ? 'show' : ''}`} style={{ top: '2rem', right: '-.5rem' }}>
                         {/* Dropdown content */}
-                        <div className="dropdown-item">
+                        <NavLink 
+                            to="/Patient/Profile" 
+                            className="dropdown-item"
+                            activeclassname="active_link">
                             <FaRegUser />
-                            <NavLink 
-                                to="/Patient/Profile" 
-                                activeClassName="active_link">
-                                Profile
-                            </NavLink>
-                        </div>
-                        <div className="dropdown-item">
+                            Profile
+                        </NavLink>
+                        <NavLink 
+                            to="/Patient/Overview" 
+                            className="dropdown-item"
+                            activeclassname="active_link">
                             <MdLogout />
-                            <NavLink 
-                                to="/Patient/Portal" 
-                                activeClassName="active_link">
-                                Logout
-                            </NavLink>
-                        </div>
+                            Logout
+                        </NavLink>
                     </div>
                 </div>
             </div>

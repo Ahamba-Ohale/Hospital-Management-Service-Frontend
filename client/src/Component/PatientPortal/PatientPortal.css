@@ -1,6 +1,7 @@
 .patient_portal {
     width: 100%;
     background-color: #edf3fb;
+    font-size: 100%;
 }
 
 .patient_portal.pactive {
@@ -43,8 +44,9 @@
 }
 
 .portal_navigation .toggle button {
-    position: absolute;
-    top: 48px;
+    position: relative;
+    top: .5rem;
+    left: .5rem;
     width: 32px;
     height: 32px;
     z-index: 100;
@@ -344,6 +346,7 @@
     align-items: center;
     padding: 10px;
     cursor: pointer;
+    color: #276ab3;
     transition: background-color 0.3s ease;
 }
 
@@ -365,7 +368,9 @@
 }
 
 .patient_topbar .user_details .img_box,
-.patient_modals .img_box {
+.patient_modals .img_box,
+.overview_right-img,
+.prescribe_img {
     position: relative;
     width: 40px;
     height: 40px;
@@ -375,7 +380,9 @@
 }
 
 .patient_topbar .user_details img,
-.patient_modals img {
+.patient_modals img,
+.overview_right-img img,
+.prescribe_img img {
     position: absolute;
     top: 0;
     left: 0;
@@ -419,7 +426,7 @@
     position: relative;
     width: 100%;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr; 
     grid-gap: 30px;
     margin-top: 2rem;
 }
@@ -469,8 +476,8 @@
     width: 100%;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 20px;
 }
 
 .vitals_card {
@@ -478,6 +485,7 @@
     background: #fff;
     padding: 25px;
     border-radius: 20px;
+    overflow: hidden;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
@@ -487,6 +495,12 @@
 .vitals_card:hover {
     background: #276ab3;
     transition: all 0.5s;
+}
+
+.vitals_card div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .vitals_name {
@@ -659,23 +673,6 @@
     color: #f5f5f5;
 }
 
-.overview_right-img {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.overview_right-img img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 /*==========================================================
     ---------------    Modals Styling   ---------------
 ==========================================================*/
@@ -688,7 +685,7 @@
 
 .patient_modals-left {
     height: 30rem;
-    width: 35%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -748,7 +745,7 @@
 }
 
 .patient_modals-right {
-    flex: 2;
+    width: 100%;
     height: max-content;
     display: flex;
     flex-direction: column;
@@ -866,6 +863,230 @@
 } */
 
 /*==========================================================
+    ---------------    Appointments Styling   ---------------
+==========================================================*/
+
+
+
+/*==========================================================
+    ---------------    Prescriptions Styling   ---------------
+==========================================================*/
+
+.patient_prescriptions {
+    animation: slideInDown 1s ease-in-out;
+}
+
+.patient_prescriptions-sides {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    margin-top: 2rem;
+}
+
+.patient_prescriptions-sides .prescribe_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: rgba(43, 41, 41, 0.6);
+    padding: 20px 30px;
+}
+
+.patient_prescriptions-sides .prescribe_header p {
+    font-size: 18px;
+    letter-spacing: .5px;
+    color: rgba(43, 41, 41, 0.6);
+}
+
+.patient_prescriptions-sides .prescribe_table {
+    padding: 0 30px;
+}
+.prescribe_table .prescribe_card {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    letter-spacing: 1px;
+    border-bottom: .1px solid #ddd;
+}
+
+.prescribe_table .prescribe_card:nth-child(1) {
+    border-top: .1px solid #ddd;
+}
+
+.patient_prescriptions-sides .prescribe_table .prescribe_card:hover {
+    cursor: pointer;
+    background: #276ab3;
+    color: #f5f5f5;
+}
+
+.patient_prescriptions-sides .prescribe_table .prescribe_card:hover p {
+    color: #f5f5f5;
+}
+
+.prescribe_left,
+.prescribe_bottom {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 0 0 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.prescribe_left {
+    height: 80vh;
+}
+
+.prescribe_left .prescribe_table, 
+.prescribe_bottom .prescribe_table {
+    overflow-y: scroll;
+}
+
+.prescribe_left .prescribe_table::-webkit-scrollbar,
+.prescribe_bottom .prescribe_table::-webkit-scrollbar {
+    width: .5em;
+}
+
+.prescribe_left .prescribe_table::-webkit-scrollbar-thumb,
+.prescribe_bottom .prescribe_table::-webkit-scrollbar-thumb {
+    background: #276ab3;
+    border-radius: 10px;
+}
+
+.patient_prescriptions-sides .prescribe_table .prescribe_card.active_card {
+    background: #f0f8ff;
+    border-top: 1px solid rgba(179, 173, 173, 0.2);
+    border-right: 1px solid rgba(179, 173, 173, 0.2);
+    border-bottom: none;
+    border-left: 3px solid #276ab3;
+    border-bottom-right-radius: 5px;
+    box-shadow: rgb(240, 248, 255) 3px 3px 6px 0px inset;
+}
+
+.patient_prescriptions-sides .prescribe_table .prescribe_card.active_card:hover {
+    background: #f0f8ff;
+    color: #222;
+}
+
+.patient_prescriptions-sides .prescribe_table .prescribe_card.active_card:hover p {
+    color: #276ab3;
+}
+
+.prescribe_specification {
+    height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.prescribe_specification p {
+    color: #276ab3; 
+    font-weight: 900;
+    text-shadow: .5px .5px 1px #276ab3;
+}
+
+.prescribe_right {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.prescribe_right .prescribe_bottom .prescribe_table {
+    opacity:  0.5;
+}
+
+.prescribe_right .prescribe_bottom .prescribe_table .prescribe_card:hover {
+    cursor: default;
+}
+
+.prescribe_right .prescribe_top {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(39, 106, 179, 0.50) 0px 2px 4px 0px, rgba(39, 106, 179, 0.50) 0px 2px 16px 0px;
+    border-radius: 20px;
+}
+
+.prescribe_top img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.prescribe_modal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 20px;
+    /* backdrop-filter: blur(1px); */
+    z-index: 1;
+    background: rgba(25, 25, 25, 0.6);
+    align-items: center;
+    justify-content: center;
+}
+
+.prescribe_modal-title {
+    font-size: 1.5rem;
+    color: #fafafa;
+    letter-spacing: 1px;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.prescribe_modal-list {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.prescribe_modal-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prescribe_modal-icon {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #276ab3;
+}
+
+.prescribe_modal-info {
+    color: #fafafa;
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.prescribe_guide {
+    z-index: 1;
+    font-weight: 900;
+    color: #000000;
+    letter-spacing: 1px;
+}
+
+/*==========================================================
+    ---------------    Payment Styling   ---------------
+==========================================================*/
+
+
+
+/*==========================================================
     ---------------    Keyframes   ---------------
 ==========================================================*/
 
@@ -907,75 +1128,38 @@
 ==========================================================*/
 
 @media screen and (max-width: 1024px) and (max-width: 1300px) {
-    .portal_logo {
+
+}
+
+@media screen and (max-width: 884px) {
+    .portal_navigation .toggle button {
+        top: 0;
+        left: 1rem;
+    }
+
+    .overview_sides {
+        grid-template-columns: 1fr; 
+    }
+
+    .patient_modals {
+        flex-direction: column;
+    }
+
+    .patient_prescriptions-sides {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .overview_banner {
+        flex-direction: column;
+    }
+
+    .banner_text {
+        width: auto;
+    }
+
+    .banner_text p {
         display: none;
-    }
-
-    .portal_navigation {
-        flex-direction: column-reverse;
-        justify-content: center;
-        width: 250px;
-        border-left: 5px solid #276ab3;
-    }
-
-    .portal_navigation.pactive {
-        width: 70px;
-    }
-
-    .portal_navigation ul {
-        margin: 2rem 0 0 0;
-    }
-
-    .portal_navigation ul li {
-        margin: 0;
-    }
-
-    .portal_navigation ul li a {
-        height: 50px;
-    }
-    
-    .portal_navigation ul li a .icon {
-        padding-left: 0;
-    }
-    
-    .portal_navigation ul li a .icon svg {
-        width: 20px;
-    }
-
-    .portal_footer {
-        padding-left: 1.25rem;
-    }
-
-    .portal_footer .user {
-        margin-left: 1.25rem;
-    }
-
-    .patient_topbar {
-        left: 250px;
-        width: calc(100% - 250px);
-    }
-
-    .patient_main.pactive {
-        width: calc(100% - 70px);
-        left: 70px;
-    }
-    
-    .patient_topbar {
-        left: 250px;
-        width: calc(100% - 250px);
-    }
-    
-    .patient_main.pactive .patient_topbar {
-        width: calc(100% - 70px);
-        left: 70px;
-    }
-
-    .patient_topbar .toggle i {
-        padding: .2rem;
-    }
-
-    .patient_topbar .toggle i svg {
-        width: 20px;
-        height: 20px;
     }
 }
