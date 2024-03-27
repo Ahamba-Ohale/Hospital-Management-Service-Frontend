@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import { IoMdNotificationsOutline } from "react-icons/io";
 import Sidebar from '../AdminSidebar/Sidebar'
 import './PatientDB.css'
@@ -9,7 +8,7 @@ import Invoice from './Invoice'
 import Payment from './Payment'
 import Images from './Images'
 import HealthInfo from './HealthInfo';
-import { FaHandHoldingMedical } from "react-icons/fa6"
+import { FaHandHoldingMedical } from "react-icons/fa6";
 import { SlCalender } from "react-icons/sl";
 import { LiaFileInvoiceDollarSolid } from "react-icons/lia";
 import { MdOutlinePayment } from "react-icons/md";
@@ -22,24 +21,12 @@ import LoadingEffect from '../../LoadingEffects/LoadingEffect';
 
 
 const PatientInfo = () => {
-
-
   const navigate = useNavigate();
-
   const { patient_id } = useParams();
-
   const [patientData, setPatientData] = useState(null);
-
   const [activeTab, setActiveTab] = useState('MedicalRecord');
-  
   const apiUrl = `http://localhost:8080/api`;
-
   const loading = LoadingEffect()
-
-  
-
-
-
   useEffect(() => {
     const fetchPatientData = async () => {
       try {
@@ -61,21 +48,15 @@ const PatientInfo = () => {
       left: '50%',
     }}>{loading}</div>;
   }
-   
-
-   
 
     const handleTabClick = (tabName) => {
       setActiveTab(tabName);
     };
 
-   
-
   const handleGoBack = () => {
     navigate(-1); // This will go back to the previous page in history
   };
     
-
   return (
     <div className="dashboard">
         <Sidebar />
@@ -111,11 +92,11 @@ const PatientInfo = () => {
                     <div className="patient-menu__content">
                         {/* <div className="patient-img"></div> */}
                         <div className="patient-content__text">
-                            <h3>Name: {patientData.name}</h3>
+                            <h3>{patientData.name}</h3>
                             <p>
-                               Email: {patientData.email}<br/>
+                               {patientData.email}<br/>
                             </p>
-                            <p>Number: {patientData.phoneNumber}</p>
+                            <p>{patientData.phoneNumber}</p>
                         </div>
                         <div className="patient-menu__buttons">
                             <button 
@@ -167,12 +148,12 @@ const PatientInfo = () => {
                 </div>
 
                 <div className="patient-content">
-                    {activeTab === 'MedicalRecord' && <MedicalRecord />}
-                    {activeTab === 'Appointment' && <Appointment />}
-                    {activeTab === 'Invoice' && <Invoice />}
-                    {activeTab === 'Payment' && <Payment />}
-                    {activeTab === 'Images' && <Images />}
-                    {activeTab === 'HealthInfo' && <HealthInfo />}
+                  {activeTab === 'MedicalRecord' && <MedicalRecord />}
+                  {activeTab === 'Appointment' && <Appointment />}
+                  {activeTab === 'Invoice' && <Invoice />}
+                  {activeTab === 'Payment' && <Payment />}
+                  {activeTab === 'Images' && <Images />}
+                  {activeTab === 'HealthInfo' && <HealthInfo />}
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { RiDeleteBin5Line } from "react-icons/ri";
+import AddMed from "../PatientDB/AddMed";
 
 const MedicalSupplies = () => {
   // State variables for stock levels and reorder point
@@ -46,6 +47,13 @@ const MedicalSupplies = () => {
       [itemName]: value,
     }));
   };
+
+  const [isAddModalVisible, setAddModalVisible] = useState(false);
+
+  const toggleAddModal = () => {
+    setAddModalVisible(!isAddModalVisible);
+  };
+
 
   return (
     <div className="medical-supplies-container">
@@ -94,7 +102,7 @@ const MedicalSupplies = () => {
             </tbody>
           </table>
 
-          <div className="invoice-btn">+ Add Medical Supplies</div>
+          <div className="invoice-btn" onClick={toggleAddModal}>+ Add Medical Supplies</div>
         </div>
       </div>
 
@@ -122,6 +130,7 @@ const MedicalSupplies = () => {
           ))}
         </form>
       </div>
+      {isAddModalVisible && <AddMed onClose={toggleAddModal} />}
     </div>
   );
 };
