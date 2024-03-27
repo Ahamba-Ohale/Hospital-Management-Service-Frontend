@@ -56,12 +56,9 @@ const navItems = [
   },
 ]
 
-export default function Sidebar({ sidebarClose, toggleSidebar }) {
+export default function Sidebar({ sidebarClose, toggleSidebar, selected }) {
   // const [selected, setSelected] = useState(0);
-  const [selected, setSelected] = useState("");
   // const location = useLocation();
-  const { pathname } = useLocation();
-  const navigate = useNavigate();
 
   // useEffect(() => {
   //   switch (location.pathname) {
@@ -93,10 +90,6 @@ export default function Sidebar({ sidebarClose, toggleSidebar }) {
   //       setSelected(0);
   //   }
   // }, [location.pathname]);
-
-  useEffect(() => {
-    setSelected(pathname);
-  }, [pathname]);
 
   return (
     <nav className={`portal_navigation ${sidebarClose ? "pactive" : ""}`}>
@@ -207,7 +200,7 @@ export default function Sidebar({ sidebarClose, toggleSidebar }) {
         </li>
       </ul> */}
 
-      <ul>
+      {/* <ul>
         {navItems.map(({ text, icon, link }) => {
           if (!icon) {
             return (
@@ -235,6 +228,20 @@ export default function Sidebar({ sidebarClose, toggleSidebar }) {
             </li>
           )
         })}
+      </ul> */}
+
+      <ul>
+        {navItems.map(({ text, icon, link }) => (
+          <li key={text}>
+            <Link
+              to={link}
+              className={selected === link ? "active_link" : ""}
+            >
+              <i className="icon">{icon}</i>
+              {!sidebarClose && <span>{text}</span>}
+            </Link>
+          </li>
+        ))}
       </ul>
 
       <div className="portal_footer">

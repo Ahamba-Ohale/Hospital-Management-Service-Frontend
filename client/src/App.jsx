@@ -35,7 +35,7 @@ import AddSpecialist from './Component/Admin/HospitalManagement/AddSpecialist';
 import AddRole from './Component/Admin/HospitalManagement/AddRole';
 import AddLeave from './Component/Admin/HospitalManagement/AddLeave';
 import AddTrainee from './Component/Admin/HospitalManagement/AddTrainee';
-
+import PatientPortal from "./Component/PatientPortal/PatientPortal"
 import Overview from "./Component/PatientPortal/pages/Overview";
 import Profile from "./Component/PatientPortal/pages/Profile";
 import Records from "./Component/PatientPortal/pages/Records";
@@ -84,7 +84,6 @@ function App() {
 
           <Route path='/CreatePatient' element={<CreatePatient />} />
           {/* {user && <Route path='/Patient/Portal/*' exact element={<PatientPortal />} />} */}
-          {/* <Route path='/Patient/Portal/*' exact element={<PatientPortal />} /> */}
           <Route path='/register' exact element={<Register />} />
           <Route path='/login' exact element={<Login />} />
           {/* <Route path='/Portal' exact element={<Navigate replace to="/login" />} /> */}
@@ -102,6 +101,7 @@ function App() {
           <Route path='/AddLeave' element={<AddLeave />} />
           <Route path='/AddTrainee' element={<AddTrainee />} />
 
+          <Route element={<PatientPortal />} >
           <Route path="/Patient/Overview" element={<Overview />} />
           <Route path="/Patient/Records" element={<Records />} />
           <Route path="/Patient/Appointments" element={<Appointments />} />
@@ -110,6 +110,7 @@ function App() {
           {/* <Route path="/Patient/Feedback" element={<Feedback />} /> */}
           <Route path="/Patient/Profile" element={<Profile />} />
           <Route path="/Patient/Help" element={<Help />} />
+          </Route>
         </Routes>
       </Router>
     </>
