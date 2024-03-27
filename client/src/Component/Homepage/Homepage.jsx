@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import React from 'react'
+
+// import React from 'react'
+
 import './Home.css'
 import './Imagechanger.css'
 import {Link} from 'react-router-dom'
@@ -9,10 +12,6 @@ import {useEffect, useRef } from 'react';
 import '../Important/Slidecss/Transition.css'
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-
-
-
-
 
 const Homepage = () => {    
     const { ref, inView } = useInView({
@@ -26,11 +25,11 @@ const Homepage = () => {
           // You can customize this logic based on your needs
         }
       }, [inView]);
+const Homepage = () => {    
+    const[menuOpen, setMenuOpen] = useState("")
   return (
     <div>
-
         <Nav />
-
 
         <div id="contain">
             <div id="home">
@@ -162,8 +161,6 @@ const Homepage = () => {
 
         <Foot/>
     </div>
-
-
 
 
   )

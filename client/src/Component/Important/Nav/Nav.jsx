@@ -39,9 +39,11 @@ const Nav = () => {
                 </li>
                 <li>
                     <NavLink to="/Book Appointment">Book Appointment</NavLink>
+
+                    <NavLink to="/BookAppointment" className='Book'>Book Appointment</NavLink>
                 </li>
                 <li>
-                    <Link to='/' className="act" >
+                    <Link to='/' className="active">
                         SIGNUP
                     </Link>
                 </li>
