@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.reg-contain{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    align-content: center;
+    justify-content: center;
+    background-image: url(string.jpg);
+    background-size: cover;
+    background-position: right;
+
+}
+
+
+.reg-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    BACKGROUND-COLOR: #dbdbdb;
+    PADDING: 40PX 20PX;
+    BORDER: 2PX SOLID WHITE;
+    BORDER-RADIUS: 10PX;
+}
+
+
+.reg-name, .reg-pword{
+    padding: 15px;
+    width: 40vw;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: white;
+    outline: none;
+}
+
+.reg-name, .reg-pword:hover{
+    outline: none;
+}
+.reg-name, .reg-pword:focus{
+    background-color: white;
+}
+
+
+.submt{
+    border: none;
+    font-size: 17px;
+    padding: 10px 100px;
+    font-weight: 600;
+    margin-top: 20px;
+    color: white;
+    border-radius: 10px;
+    background-color: #276ab3;
+}
+
+
+
+.reg-h1{
+    margin-bottom: 20px;
+    color: #276ab3;
+}
+
+.basic-single{
+    width: 30vw;
+    height: 30px;
+    padding: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+@media (max-width:768px) {
+    .reg-name, .reg-pword {
+        width: 70vw;
+    }
+}

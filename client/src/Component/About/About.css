@@ -1,5 +1,5 @@
 .about-page{
-    height: 55svh;
+    height: 70svh;
     background-color: #276ab3;
     display: grid;
     align-content: center;
@@ -162,9 +162,6 @@
 }
 
 @media (max-width:500px) {
-    .details{
-        padding: 50px 20px;
-    }
 
     .home-body{
         padding: 0 40px;
@@ -186,12 +183,13 @@
     
 }
 
-@media (max-width:300px) {
+@media (max-width:320px) {
     .details{
         display: block;
     }
 
     .pic{
-        width: 200px;
+        width: 260px;
     }
+    
 }

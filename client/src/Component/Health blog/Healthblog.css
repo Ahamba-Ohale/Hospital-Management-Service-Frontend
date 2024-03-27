@@ -1,86 +1,260 @@
-/* .blog:active{
-    color: orange;
-    border-bottom: 3px solid orange;
-    animation: unset;
-} */
+.healthm{
+    display: flex;
+    margin: 20px 40px;
+    justify-content: center;
+}
 
-.Navigate {
-    background-color: #276ab3;
+.hblog{
+    margin: 30%;
+}
+
+.health1{
+    margin-right: 20px;
+    width: 50vw;
+}
+.health2{
+    box-shadow: 0px 0px 10px 0px #276ab3;
+    width: 38vw;
+    background-color: lightblue;
+    border-radius: 5px;
+}
+
+.bblog-pic{
+    width: 45vw;
+    height: 270px;
+}
+.bblog-content{
+    width: 60vw;
+    height: 270px;
+    padding-left: 20px;
+    border-left: none;
+}
+
+.bblog-img{
+    width: 100%;
+    height: 100%;
+}
+
+.bblog{
+    display: flex;
+    margin-bottom: 20px;
+    /* border: 1.2px solid #276ab3; */
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px #276ab3;
+}
+.bblog-title{
+    padding: 20px 0;
+    font-weight: 700;
+    font-size: 20px;
+    overflow: hidden;
     display: block;
-    height: 20px;
+    text-transform: capitalize;
+}
+.bblog-date{
+    font-weight: 500;
+    padding-top: 40px;
+    font-size: 13px;
+}
+.bblog-text{
+    font-weight: 500;
+    font-size: 15px;
 }
 
-
-.healthblog .health{
-    text-align: center;
-    margin-top: 20px;
-    color: #276ab3;
+.post-h2{
+    font-size: 40px;
+    font-weight: 300;
+    color: #ddd;
+    font-family: serif;
 }
-.healthblog .details {
+
+.post-form{
+    outline: none;
+    padding-top: 100px;
+}
+
+.post-input{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid white;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 20px 0;
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
+
+.button-div{
     display: grid;
     justify-content: center;
-    margin: auto 100px;
 }
 
-.cont a{
+.post{
+    background-color: #276ab3;
+    padding: 40px 60px;
+    margin: 30px 20px;
+}
+
+.post-input:focus{
+    border-color: black;
+    transition: 1s;
     color: white;
-    font-size: 14px;
 }
 
-.cont{
-    padding-left: 10px;
+.sub-btn{
+    border: none;
+    background-color: #fff7f7f0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #276ab3;
+    padding: 12px 90px;
+    letter-spacing: 1px;
+    border-radius: 10px;
 }
 
-.author{
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 5px;
-    margin-top: 5px;
+.sub-btn:hover{
+    background-color: black;
+    color: #fff7f7f0;
+    transition: 1s;
 }
 
-.content{
-    font-size: 14px;
-    font-family: sans-serif;
-    max-height: 40px;
-    overflow: hidden;
-    display: none;
-    width: 345px;
+.post-label{
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
 }
 
-.titles{
+.Instag{
+    margin-top: 80px;
+}
+
+.Instag-h2{
+    font-family: serif;
+    font-weight: 600;
     text-align: center;
-    max-width: 100%;
-    max-height: 25px;
-    margin: 10px 0;
 }
 
+.Instag-pics{
+    margin-top: 20px 0 20px;
+}
 
-.pictures{
+.insta-li{
+    width: 16.9vw;
+    height: 175px;
+}
+
+.insta-img{
     width: 100%;
-    height: 25vh;
-    border-radius: 5px;
-    max-width: 100%;
-    background-color: #ededed;
+    height: 100%;
 }
 
-@media (max-width:700px) {
-    nav ul.Open {
-        display: flex;
-        text-align-last: justify;
-        background-color: #ededed;
+.btn-learn{
+    border: none;
+    padding: 12px 80px;
+    background-color: #276ab3;
+    color: #ddd;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    
+}
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 30px;
+}
+
+.social-link{
+    margin-top: 20px;
+}
+
+.social-icon{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+@media (max-width:425px) {
+    
+    .healthm {
+        display: block;
+
+    }
+
+    .health1 {
+        margin: 0;
+        width: unset;
+    }
+
+    .post {
+        padding: 40px 30px;
+    }
+    
+    .healthm {
+        margin: 20px 10px;
+    }
+    
+    .health2{
+        width: 100%;
+        padding-top: 15px;
+    }
+    
+    .bblog-pic {
+        width: 50%;
+        height: 200px;
+    }
+
+    .bblog-content {
+        width: 60vw;
+        height: 200px;
+    }
+
+    .bblog-text {
+        font-size: 13px;
+        font-weight: 500;
+    }
+    .bblog-title {
+        font-size: 16px;
+    }
+    .bblog-date {
+        padding-top: 20px;
+        font-size: 11px;
+    }    
+    .insta-li {
+        width: 45%;
     }    
 }
 
-@media (max-width:800px) {
-    .pictures{
-        width: 100%;
-        height: 25vh;
-        border-radius: 5px;
-        max-width: 100%;
-        background-color: #ededed;
+@media (max-width:768px) {
+    .post {
+        padding: 20px 20px;
     }
+    .Instag {
+        margin-top: 40px;
+    }        
+    .bblog-content {
+        height: 230px;
+    }
+    .bblog-pic {
+        height: 230px;
+    }
+    .bblog-text {
+        font-size: 14px;
+    }
+    .bblog-date {
+        font-size: 11px;
+    }
+    .bblog-title {
+        text-transform: capitalize;
+    }
+}
 
-    .healthblog .details {
-        margin: auto 20px;
+@media (max-width:320px) {
+    .sub-btn {
+        padding: 12px 70px;
     }
 }

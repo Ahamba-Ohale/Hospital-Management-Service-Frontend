@@ -1,7 +1,7 @@
 import React from 'react'
 import './Nav.css'
 import { useState } from 'react'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import {Link} from 'react-router-dom'
 
 const Nav = () => {
@@ -9,35 +9,36 @@ const Nav = () => {
     
 
   return (
-        <nav>
+        <nav className='nav'>
             <NavLink to="/" className='title'><img src="Logo.png" alt="Logo" className='Logo' /></NavLink>
             <div className='menu' 
                 onClick={ () => {
                     setMenuOpen(!menuOpen);
                 }}
             >
-                <i class="fa-duotone fa-bars"></i>
+                <i className="fa-duotone fa-bars"></i>
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <ul className={menuOpen ? "Open" : ""}>
                 <li>
-                    <NavLink to="/Home" className='activate'>Home</NavLink>
+                    <NavLink to="/">Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/About" className='About'>About Us</NavLink>
+                    <NavLink to="/About">About Us</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/Blog" className='blog' id='blogs' >Blogs</NavLink>
+                    <NavLink to="/Blog" >Blogs</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/Services" className='service'>Services</NavLink>
+                    <NavLink to="/Services">Services</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/Contact-Us" className='Contact'>Contact Us</NavLink>
+                    <NavLink to="/Contact-Us">Contact Us</NavLink>
                 </li>
                 <li>
+                    <NavLink to="/Book Appointment">Book Appointment</NavLink>
 
                     <NavLink to="/BookAppointment" className='Book'>Book Appointment</NavLink>
                 </li>
