@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { IoSearchOutline } from 'react-icons/io5';
 import {  FaChevronDown, FaRegBell, FaRegUser } from 'react-icons/fa6';
 import { MdLogout } from "react-icons/md";

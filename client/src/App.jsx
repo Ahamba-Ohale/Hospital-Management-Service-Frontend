@@ -2,7 +2,7 @@
 // import {Navigate, Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 
 
-import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Homepage from './Component/Homepage/Homepage';
 import About from './Component/About/About';
 import Services from './Component/Services/Services';
@@ -69,7 +69,7 @@ function App() {
           <Route path='/Hospital management' element={<HospitalManagement />} />
           <Route path='/Data Analytics' element={<Analytics />} />
           <Route path='/Register' element={<Register />} />
-        
+
 
 
           <Route path='/Patients Database' element={<PatientDB />} />
@@ -102,14 +102,14 @@ function App() {
           <Route path='/AddTrainee' element={<AddTrainee />} />
 
           <Route element={<PatientPortal />} >
-          <Route path="/Patient/Overview" element={<Overview />} />
-          <Route path="/Patient/Records" element={<Records />} />
-          <Route path="/Patient/Appointments" element={<Appointments />} />
-          <Route path="/Patient/Prescriptions" element={<Prescriptions />} />
-          <Route path="/Patient/Payments" element={<Payments />} />
-          {/* <Route path="/Patient/Feedback" element={<Feedback />} /> */}
-          <Route path="/Patient/Profile" element={<Profile />} />
-          <Route path="/Patient/Help" element={<Help />} />
+            <Route path="/Patient/Overview" element={<Overview />} />
+            <Route path="/Patient/Records" element={<Records />} />
+            <Route path="/Patient/Appointments" element={<Appointments />} />
+            <Route path="/Patient/Prescriptions" element={<Prescriptions />} />
+            <Route path="/Patient/Payments" element={<Payments />} />
+            {/* <Route path="/Patient/Feedback" element={<Feedback />} /> */}
+            <Route path="/Patient/Profile" element={<Profile />} />
+            <Route path="/Patient/Help" element={<Help />} />
           </Route>
         </Routes>
       </Router>
