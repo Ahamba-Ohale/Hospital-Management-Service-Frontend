@@ -2,6 +2,12 @@ import React from 'react'
 import './Foot.css'
 import { useState } from 'react'
 import {Link} from 'react-router-dom'
+import { FaFacebook } from "react-icons/fa6";
+import { IoLogoLinkedin } from "react-icons/io5";
+import { RiInstagramFill } from "react-icons/ri";
+
+
+
 
 const Foot = () => {
     const [menuOpen, setMenuOpen] = useState(false)
@@ -65,13 +71,13 @@ const Foot = () => {
                             </b>
                         </label>
                         <li>
-                            <a href=""><i className='fa fa-facebook'></i>Facebook</a>
+                            <a href=""><FaFacebook className='icn'/><i className='fa fa-facebook'></i>Facebook</a>
                         </li>
                         <li>
-                            <a href=""><i className='fa fa-Instagran'></i>Instagram</a>
+                            <a href=""><RiInstagramFill  className='icn'/><i className='fa fa-Instagran'></i>Instagram</a>
                         </li>
                         <li>
-                            <a href=""><i className='fa fa-Linkedin'></i>Linkedin</a>
+                            <a href=""><IoLogoLinkedin className='icn'/><i className='fa fa-Linkedin'></i>Linkedin</a>
                         </li>
                     </ul>
                 </div> 

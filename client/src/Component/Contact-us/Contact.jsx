@@ -18,11 +18,11 @@ const Contact = () => {
 
         <div className="contact-form">
           <h1 className='contact-h1'>Contact Us</h1>
-          <form action="davidmel187@gmail.com" method='post'>
-            <input type="text" placeholder='Name' className='contact-form-txt' required/>
-            <input type="Email" placeholder='Email' className='contact-form-txt' required/>
-            <textarea placeholder='Message' className='contact-form-textarea' required></textarea>
-            <input type="Submit" placeholder='Submit' className='contact-form-btn'/>
+          <form action="/api/email" method="post">
+            <input type="text" placeholder="Name" name="name" className="contact-form-txt" required />
+            <input type="email" placeholder="Email" name="email" className="contact-form-txt" required />
+            <textarea placeholder="Message" name="message" className="contact-form-textarea" required></textarea>
+            <input type="submit" placeholder="Submit" className="contact-form-btn" />
           </form>
         </div>
       </div>

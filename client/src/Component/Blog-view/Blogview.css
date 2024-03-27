@@ -16,25 +16,64 @@
 
 .tview .bpicture {
     width: 80%;
-    text-align: center;
 }
 .tview .btitle .b-h2{
-    font-size: 28px;
+    font-size: 20px;
+    letter-spacing: 0.2px;
 }
 
 .tview .bpicture .bimg{
-    width: 60%;
+    width: 80%;
     height: 100%;
 }
 .bview .cview .pcontent{
-    font-size: 20px;
+    font-size: 16px;
+    letter-spacing: 1px;
 }
 .bview .cview {
     margin-top: 30px;
 }
 
+.date{
+    padding-top: 10px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
 @media (max-width:425px) {
     .bview{
         margin: 10px 20px;
+    }
+}
+
+@media (max-width:768px) {
+    .tview .btitle .b-h2 {
+        font-size: 20px;
+    }
+
+    .bview .cview .pcontent {
+        font-size: 17px;
+    }
+
+    .date {
+        padding-top: 10px;
+        font-size: 13px;
+        font-weight: 400;
+    }
+}
+
+@media (max-width:425px) {
+    .tview {
+        display: block;
+        height: 100%;
+    }   
+
+    .tview .bpicture {
+        width: 100%;
+    }
+
+    .tview .btitle {
+        width: 100%;
+        padding: 10px-;
     }
 }

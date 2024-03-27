@@ -7,7 +7,7 @@ footer .main .sub-dom{
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    padding: 2.5rem 4rem;
+    padding: 2.5rem 2rem;
 }
 
 .main .sub-dom .company ul li a{
@@ -33,6 +33,12 @@ footer{
 
 .line{
     border-top: 2px solid white;
+}
+
+.icn{
+    margin-right: 10px;
+    font-size: 15px;
+    vertical-align: top;
 }
 
 @media (max-width:800px) {

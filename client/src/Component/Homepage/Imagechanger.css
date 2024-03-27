@@ -2,7 +2,7 @@
     background-position: center;
     animation-name: animation;
     animation-direction: alternate-reverse;
-    animation-duration: 30s;
+    animation-duration: 50s;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-play-state: running;
