@@ -25,7 +25,7 @@ const Homepage = () => {
           // You can customize this logic based on your needs
         }
       }, [inView]);
-const Homepage = () => {    
+   
     const[menuOpen, setMenuOpen] = useState("")
   return (
     <div>
