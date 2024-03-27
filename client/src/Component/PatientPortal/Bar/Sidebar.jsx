@@ -16,42 +16,42 @@ export default function Sidebar({ sidebarClose, setSidebarClose, selected }) {
   {
     text: "Overview",
     link: "/Patient/Overview",
-    icon: <LuLayoutDashboard />
+    icon: <LuLayoutDashboard size={25} />
   },
   {
     text: "Profile",
     link: "/Patient/Profile",
-    icon: <LuUserCircle2 />
+    icon: <LuUserCircle2 size={25} />
   },
   {
     text: "Medical Records",
     link: "/Patient/Records",
-    icon: <LuClipboardList />
+    icon: <LuClipboardList size={25} />
   },
   {
     text: "Appointments",
     link: "/Patient/Appointments",
-    icon: <LuCalendarDays />
+    icon: <LuCalendarDays size={25} />
   },
   {
     text: "Prescriptions",
     link: "/Patient/Prescriptions",
-    icon: <LuPill />
+    icon: <LuPill size={25} />
   },
   {
     text: "Payments",
     link: "/Patient/Payments",
-    icon: <LuCreditCard />
+    icon: <LuCreditCard size={25} />
   },
   {
     text: "Messages",
     link: "/Patient/Feedback",
-    icon: <LuMessagesSquare />
+    icon: <LuMessagesSquare size={25} />
   },
   {
     text: "Help",
     link: "/Patient/Help",
-    icon: <LuLifeBuoy />
+    icon: <LuLifeBuoy size={25} />
   },
 ]
 
