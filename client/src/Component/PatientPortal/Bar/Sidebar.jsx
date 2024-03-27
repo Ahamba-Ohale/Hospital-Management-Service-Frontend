@@ -10,43 +10,93 @@ import {
   LuCalendarDays,
   LuMessagesSquare,
 } from "react-icons/lu";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaChevronLeft } from "react-icons/fa6";
 
+const navItems = [
+  {
+    text: "Overview",
+    link: "/Patient/Overview",
+    icon: <LuLayoutDashboard />
+  },
+  {
+    text: "Profile",
+    link: "/Patient/Profile",
+    icon: <LuUserCircle2 />
+  },
+  {
+    text: "Medical Records",
+    link: "/Patient/Records",
+    icon: <LuClipboardList />
+  },
+  {
+    text: "Appointments",
+    link: "/Patient/Appointments",
+    icon: <LuCalendarDays />
+  },
+  {
+    text: "Prescriptions",
+    link: "/Patient/Prescriptions",
+    icon: <LuPill />
+  },
+  {
+    text: "Payments",
+    link: "/Patient/Payments",
+    icon: <LuCreditCard />
+  },
+  {
+    text: "Messages",
+    link: "/Patient/Feedback",
+    icon: <LuMessagesSquare />
+  },
+  {
+    text: "Help",
+    link: "/Patient/Help",
+    icon: <LuLifeBuoy />
+  },
+]
+
 export default function Sidebar({ sidebarClose, toggleSidebar }) {
-  const [selected, setSelected] = useState(0);
-  const location = useLocation();
+  // const [selected, setSelected] = useState(0);
+  const [selected, setSelected] = useState("");
+  // const location = useLocation();
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   switch (location.pathname) {
+  //     case "/Patient/Overview":
+  //       setSelected(0);
+  //       break;
+  //     case "/Patient/Profile":
+  //       setSelected(1);
+  //       break;
+  //     case "/Patient/Records":
+  //       setSelected(2);
+  //       break;
+  //     case "/Patient/Appointments":
+  //       setSelected(3);
+  //       break;
+  //     case "/Patient/Prescriptions":
+  //       setSelected(4);
+  //       break;
+  //     case "/Patient/Payments":
+  //       setSelected(5);
+  //       break;
+  //     case "/Patient/Messages":
+  //       setSelected(6);
+  //       break;
+  //     case "/Patient/Help":
+  //       setSelected(8);
+  //       break;
+  //     default:
+  //       setSelected(0);
+  //   }
+  // }, [location.pathname]);
 
   useEffect(() => {
-    switch (location.pathname) {
-      case "/Patient/Overview":
-        setSelected(0);
-        break;
-      case "/Patient/Profile":
-        setSelected(1);
-        break;
-      case "/Patient/Records":
-        setSelected(2);
-        break;
-      case "/Patient/Appointments":
-        setSelected(3);
-        break;
-      case "/Patient/Prescriptions":
-        setSelected(4);
-        break;
-      case "/Patient/Payments":
-        setSelected(5);
-        break;
-      case "/Patient/Messages":
-        setSelected(6);
-        break;
-      case "/Patient/Help":
-        setSelected(8);
-        break;
-      default:
-        setSelected(0);
-    }
-  }, [location.pathname]);
+    setSelected(pathname);
+  }, [pathname]);
 
   return (
     <nav className={`portal_navigation ${sidebarClose ? "pactive" : ""}`}>
@@ -59,7 +109,7 @@ export default function Sidebar({ sidebarClose, toggleSidebar }) {
         <img src="/Logo.png" alt="G.T.H Logo" style={{ transform: sidebarClose ? "scale(0.5)" : "scale(1)" }} />
       </div>
 
-      <ul>
+      {/* <ul>
         <li>
           <Link
             to="/Patient/Overview"
@@ -155,6 +205,36 @@ export default function Sidebar({ sidebarClose, toggleSidebar }) {
             {!sidebarClose && <span>Help</span>}
           </Link>
         </li>
+      </ul> */}
+
+      <ul>
+        {navItems.map(({ text, icon, link }) => {
+          if (!icon) {
+            return (
+              <li key={text}>
+                {text}
+              </li>
+            )
+          }
+          // const lcText = text.toLocaleLowerCase();
+
+          return (
+            <li key={text}>
+              <Link
+                to={link}
+                className={selected === link ? "active_link" : ""}
+                onClick={() => {
+                  setSelected(link);
+                }}
+              >
+                <i className="icon">
+                  {icon}
+                </i>
+                {!sidebarClose && <span>{text}</span>}
+              </Link>
+            </li>
+          )
+        })}
       </ul>
 
       <div className="portal_footer">
